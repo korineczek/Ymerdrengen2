@@ -27,7 +27,6 @@ public class UnlockLevel : MonoBehaviour {
         {
             //EditorSceneManager.LoadScene(level);
             Application.LoadLevel(level);
-           
         }
     }
 }

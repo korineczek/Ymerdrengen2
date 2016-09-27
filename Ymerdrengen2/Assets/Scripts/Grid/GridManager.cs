@@ -103,7 +103,7 @@ public class GridManager : MonoBehaviour {
         try {
             Debug.Log(newPos);
             newPosValue = getTile(newPos).GetValue();
-        } catch (IndexOutOfRangeException ex) {
+        } catch (IndexOutOfRangeException) {
             Debug.LogWarning("New playerposition outside possible range.");
         }
 

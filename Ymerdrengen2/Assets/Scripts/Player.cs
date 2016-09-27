@@ -2,26 +2,63 @@
 
 public class Player : MonoBehaviour
 {
+
+    public Vector3 startPos;
+    public Vector3 endPos;
+    public float speed;
+    private float startTime;
+    private float journeyLength;
+    void Start()
+    {
+        speed = 10.0F;
+        startTime = Time.time;
+        journeyLength = 1;
+        startPos = endPos = transform.position;
+    }
+
     public void Move(MoveDirection dir)
     {
         switch (dir) {
             case MoveDirection.LeftUp: {
-                    transform.Translate(0, 0, 1);
+                    startTime = Time.time;
+
+                    startPos = transform.position; 
+                    endPos = transform.position + new Vector3(0, 0, 1);
+                    //transform.Translate(0, 0, 1);
                     break;
                 }
             case MoveDirection.RightUp: {
-                    transform.Translate(1, 0, 0);
+                    startTime = Time.time;
+
+                    startPos = transform.position;
+                    endPos = transform.position + new Vector3(1, 0, 0);
+                    //transform.Translate(1, 0, 0);
                     break;
                 }
             case MoveDirection.RightDown: {
-                    transform.Translate(0, 0, -1);
+                    startTime = Time.time;
+
+                    startPos = transform.position;
+                    endPos = transform.position + new Vector3(0, 0, -1);
+                    //transform.Translate(0, 0, -1);
                     break;
                 }
             case MoveDirection.LeftDown: {
-                    transform.Translate(-1, 0, 0);
+                    startTime = Time.time;
+
+                    startPos = transform.position;
+                    endPos = transform.position + new Vector3(-1, 0, 0);
+                    //transform.Translate(-1, 0, 0);
                     break;
                 }
             default: throw new System.Exception("ERROR: Enum had unrecognizable value.");
         }
+    }
+
+    public void Update()
+    {
+        float distCovered = (Time.time - startTime) * speed;
+        float fracJourney = distCovered / journeyLength;
+        transform.position = Vector3.Lerp(startPos, endPos, fracJourney);
     }
 }
