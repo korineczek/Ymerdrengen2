@@ -19,7 +19,12 @@ namespace Grid
         /// <summary>
         /// Field has floor
         /// </summary>
-        Floor
+        Floor,
+
+        /// <summary>
+        /// Field has a floor and is on fire
+        /// </summary>
+        OnFire
     }
 
     /// <summary>

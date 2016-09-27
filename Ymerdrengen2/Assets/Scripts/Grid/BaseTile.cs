@@ -24,5 +24,10 @@ namespace Grid
         {
             return this.Value == FieldStatus.Floor;
         }
+
+        public bool IsOnFire()
+        {
+            return this.Value == FieldStatus.OnFire;
+        }
     }
 }
