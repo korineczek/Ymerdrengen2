@@ -2,16 +2,6 @@
 
 public class Player : MonoBehaviour
 {
-    /// <summary>
-    /// Position on the grid in local space (Worldspace(X,Z) = Localspace(X,Y))
-    /// </summary>
-    public Vector2 Position;
-
-    void Start()
-    {
-
-    }
-
     public void Move(MoveDirection dir)
     {
         switch (dir) {

@@ -9,8 +9,6 @@ public class SwipeManager : MonoBehaviour
 
     private Lean.LeanFinger swipingFinger;
 
-    public Player PlayerCharacter;
-
     protected virtual void OnEnable()
     {
         // Hook into the OnFingerDown event
@@ -62,25 +60,25 @@ public class SwipeManager : MonoBehaviour
                 if (SwipedInThisDirection(swipe, left + up) == true)
                 {
                     //InfoText.text = "You swiped left and up!";
-                    PlayerCharacter.Move(MoveDirection.LeftUp);
+                    GridData.gridManager.TryMovePlayer(MoveDirection.LeftUp);
                 }
 
                 if (SwipedInThisDirection(swipe, left + down) == true)
                 {
                     //InfoText.text = "You swiped left and down!";
-                    PlayerCharacter.Move(MoveDirection.LeftDown);
+                    GridData.gridManager.TryMovePlayer(MoveDirection.LeftDown);
                 }
 
                 if (SwipedInThisDirection(swipe, right + up) == true)
                 {
                     //InfoText.text = "You swiped right and up!";
-                    PlayerCharacter.Move(MoveDirection.RightUp);
+                    GridData.gridManager.TryMovePlayer(MoveDirection.RightUp);
                 }
 
                 if (SwipedInThisDirection(swipe, right + down) == true)
                 {
                     //InfoText.text = "You swiped right and down!";
-                    PlayerCharacter.Move(MoveDirection.RightDown);
+                    GridData.gridManager.TryMovePlayer(MoveDirection.RightDown);
                 }
 
                 // Unset the finger so we don't continually add forces to it

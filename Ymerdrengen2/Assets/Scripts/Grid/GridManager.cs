@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System;
+using UnityEngine;
 
 using Grid;
 
@@ -9,6 +9,9 @@ public class GridManager : MonoBehaviour {
     public float offset = 0.5f;
 
     GameObject tileObj;
+
+    public Player PlayerCharacter;
+    public Vector2 PlayerPosition;
 
     // Use this for initialization
     void Start()
@@ -38,6 +41,10 @@ public class GridManager : MonoBehaviour {
                 setTile(x, y, FieldStatus.Floor);
             }
         }
+
+        setTile(2, 2, FieldStatus.None);
+        setTile(0, 0, FieldStatus.None);
+        setTile(2, 0, FieldStatus.None);
     }
 
     void createGridObj()
@@ -67,10 +74,52 @@ public class GridManager : MonoBehaviour {
     {
         return GridData.grid[x, y];
     }
+    public ITile getTile(Vector2 coord)
+    {
+        return GridData.grid[(int)coord.x, (int)coord.y];
+    }
 
     public bool hitTile(int x, int y)
     {
         Debug.Log("Has hit tile on (" + x + ", " + y + ")");
         return false;
+    }
+
+    public void TryMovePlayer(MoveDirection dir)
+    {
+        if (!PlayerCharacter.gameObject.activeSelf) {
+            PlayerCharacter.gameObject.SetActive(true);
+            return;
+        }
+            
+
+        Vector2 newPos = PlayerPosition + TransformMoveDirection(dir);
+        bool newPosValue = false;
+        try {
+            Debug.Log(newPos);
+            newPosValue = getTile(newPos).GetValue();
+        } catch (IndexOutOfRangeException ex) {
+            Debug.LogWarning("New playerposition outside possible range.");
+        }
+
+        if (newPosValue)
+        {
+            PlayerCharacter.Move(dir);
+            PlayerPosition = newPos;
+        }
+        else {
+            PlayerCharacter.gameObject.SetActive(false);
+        }
+    }
+
+    public Vector2 TransformMoveDirection(MoveDirection dir)
+    {
+        switch (dir) {
+            case MoveDirection.LeftUp:      return new Vector2(0, 1);
+            case MoveDirection.RightUp:     return new Vector2(1, 0);
+            case MoveDirection.RightDown:   return new Vector2(0, -1);
+            case MoveDirection.LeftDown:    return new Vector2(-1, 0);
+            default: throw new Exception("ERROR: Enum had unrecognizable value.");
+        }
     }
 }

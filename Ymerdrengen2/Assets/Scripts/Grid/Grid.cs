@@ -69,11 +69,16 @@ namespace Grid
         {
             get
             {
-                return this.innerGrid[x + (y * this.GridSideLength)];
+                if (x < 0 || y < 0 || x >= gridSideLength || y >= gridSideLength)
+                    throw new IndexOutOfRangeException();
+                else
+                    return this.innerGrid[x + (y * this.GridSideLength)];
             }
 
             set
             {
+                if (x < 0 || y < 0)
+                    throw new IndexOutOfRangeException();
                 this.innerGrid[x + (y * this.GridSideLength)] = value;
             }
         }
@@ -87,11 +92,15 @@ namespace Grid
         {
             get
             {
+                if (idx >= MaxGridCount)
+                    throw new IndexOutOfRangeException();
                 return this.innerGrid[idx];
             }
 
             set
             {
+                if (idx >= MaxGridCount)
+                    throw new IndexOutOfRangeException();
                 this.innerGrid[idx] = value;
             }
         }
