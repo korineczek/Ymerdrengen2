@@ -4,6 +4,8 @@
 // <author>Alexander Kirk Jørgensen</author>
 // <date>27-09-2016</date>
 // <summary>Test class for the Grid structure.</summary>
+using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Grid;
 
@@ -64,6 +66,58 @@ namespace Ymerdrengen.Grid.Tests
                         Assert.IsFalse(testGridIdx[i]); break;
                 }
             }
+        }
+
+        [TestMethod]
+        public void GridNegativeCoordTest()
+        {
+            Grid<bool> testGridIdx = new Grid<bool>(5);
+            testGridIdx[6] = true;
+            testGridIdx[7] = true;
+            testGridIdx[8] = true;
+            testGridIdx[12] = true;
+
+            var invalidIdxs = new int[] { -1, testGridIdx.MaxGridCount };
+
+            int errorCount = 0;
+            foreach (int idx in invalidIdxs) {
+                try {
+                    var test = testGridIdx[idx];
+                    Assert.Fail("Object test didn't throw IndexOutOfRangeException.");
+                }
+                catch (IndexOutOfRangeException) {
+                    errorCount++;
+                }
+            }
+
+            Assert.IsTrue(errorCount == invalidIdxs.Count(), string.Format("testGridIdx[idx] did not throw IndexOutOfRangeException as expected for idx = [{0}, {1}]", invalidIdxs[0], invalidIdxs[1]));
+        }
+
+        [TestMethod]
+        public void GridInvalidIndexTest()
+        {
+            Grid<bool> testGridCoords = new Grid<bool>(5);
+            testGridCoords[1, 1] = true;
+            testGridCoords[2, 1] = true;
+            testGridCoords[3, 1] = true;
+            testGridCoords[2, 2] = true;
+
+            var xCoords = new int[] { -1, testGridCoords.GridSideLength + 1 };
+            var yCoords = new int[] { -1, testGridCoords.GridSideLength + 1 };
+
+            int errorCount = 0;
+            foreach (int x in xCoords) {
+                foreach (int y in yCoords) {
+                    try {
+                        var test = testGridCoords[x, y];
+                        Assert.Fail("Object test didn't throw IndexOutOfRangeException.");
+                    } catch (IndexOutOfRangeException) {
+                        errorCount++;
+                    }
+                }
+            }
+
+            Assert.IsTrue(errorCount == xCoords.Count() + yCoords.Count(), string.Format("testGridCoords[x,y] did not throw IndexOutOfRangeException as expected for x = [{0}, {1}] and y = [{2}, {3}]", xCoords[0], xCoords[1], yCoords[0], yCoords[1]));
         }
     }
 }

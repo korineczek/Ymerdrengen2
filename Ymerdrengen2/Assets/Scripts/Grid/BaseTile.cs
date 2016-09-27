@@ -22,12 +22,17 @@ namespace Grid
         /// <returns>The FieldStatus of this field.</returns>
         public bool GetValue()
         {
-            return this.Value == FieldStatus.Floor;
+            return (Value & FieldStatus.Floor) != FieldStatus.None;
         }
 
         public bool IsOnFire()
         {
-            return this.Value == FieldStatus.OnFire;
+            return (Value & FieldStatus.OnFire) != FieldStatus.None;
+        }
+
+        public bool IsPickUp()
+        {
+            return (Value & FieldStatus.PickUp) != FieldStatus.None;
         }
     }
 }
