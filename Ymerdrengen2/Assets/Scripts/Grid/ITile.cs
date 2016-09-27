@@ -23,7 +23,15 @@ namespace Grid
         /// </summary>
         Floor = 1,
 
-        PowerUp = 2
+        /// <summary>
+        /// Field is on fire
+        /// </summary>
+        OnFire = 2,
+
+        /// <summary>
+        /// Field contains power-up
+        /// </summary>
+        PowerUp = 4,
     }
 
     /// <summary>

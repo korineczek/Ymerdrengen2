@@ -81,8 +81,13 @@ public class GridManager : MonoBehaviour {
 
     public bool hitTile(int x, int y)
     {
-        Debug.Log("Has hit tile on (" + x + ", " + y + ")");
-        return false;
+        bool isPlayerHit = PlayerPosition.x == x && PlayerPosition.y == y;
+        if (isPlayerHit)
+        {
+            Debug.Log("Has hit player on tile on (" + x + ", " + y + ")");
+            PlayerCharacter.gameObject.SetActive(false);
+        }
+        return isPlayerHit;
     }
 
     public void TryMovePlayer(MoveDirection dir)
@@ -98,7 +103,7 @@ public class GridManager : MonoBehaviour {
         try {
             Debug.Log(newPos);
             newPosValue = getTile(newPos).GetValue();
-        } catch (IndexOutOfRangeException ex) {
+        } catch (IndexOutOfRangeException) {
             Debug.LogWarning("New playerposition outside possible range.");
         }
 

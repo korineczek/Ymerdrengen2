@@ -84,6 +84,12 @@
     <Compile Include="Assets\LeanTouch\Scripts\LeanFinger.cs" />
     <Compile Include="Assets\LeanTouch\Scripts\LeanSnapshot.cs" />
     <Compile Include="Assets\LeanTouch\Scripts\LeanTouch.cs" />
+    <Compile Include="Assets\Scripts\Enemy\DropDude.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyManager.cs" />
+    <Compile Include="Assets\Scripts\Enemy\HARDCODEDTESTSCRIPT.cs" />
+    <Compile Include="Assets\Scripts\Enemy\LineGuy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\SpawnPattern.cs" />
     <Compile Include="Assets\Scripts\Grid\BaseTile.cs" />
     <Compile Include="Assets\Scripts\Grid\Grid.cs" />
     <Compile Include="Assets\Scripts\Grid\GridData.cs" />
@@ -92,6 +98,14 @@
     <Compile Include="Assets\Scripts\MoveDirection.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\SwipeManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Game\Score.cs" />
+    <Compile Include="Assets\Scripts\UI\Menu\Language.cs" />
+    <Compile Include="Assets\Scripts\UI\Menu\LevelSelection.cs" />
+    <Compile Include="Assets\Scripts\UI\Menu\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\Menu\Options.cs" />
+    <Compile Include="Assets\Scripts\UI\Menu\SetupData.cs" />
+    <Compile Include="Assets\Scripts\UI\Menu\TestSave.cs" />
+    <Compile Include="Assets\Scripts\UI\Menu\UnlockLevel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\3D models\Description.txt" />
