@@ -22,7 +22,7 @@ namespace Grid
         /// <returns>The FieldStatus of this field.</returns>
         public bool GetValue()
         {
-            return this.Value == FieldStatus.Floor;
+            return (Value & FieldStatus.Floor) != FieldStatus.None;
         }
     }
 }

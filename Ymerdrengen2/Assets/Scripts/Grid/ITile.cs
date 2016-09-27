@@ -6,20 +6,24 @@
 // <summary>Interface defining grid tiles.</summary>
 namespace Grid
 {
+    using System;
     /// <summary>
     /// Defines whether field has a floor or is special.
     /// </summary>
+    [Flags]
     public enum FieldStatus
     {
         /// <summary>
         /// Field has no floor.
         /// </summary>
-        None,
+        None = 0,
 
         /// <summary>
         /// Field has floor
         /// </summary>
-        Floor
+        Floor = 1,
+
+        PowerUp = 2
     }
 
     /// <summary>
