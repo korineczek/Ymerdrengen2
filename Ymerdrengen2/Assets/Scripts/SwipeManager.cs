@@ -4,24 +4,12 @@ using UnityEngine.UI;
 // This script will tell you which direction you swiped in
 public class SwipeManager : MonoBehaviour
 {
-	[Tooltip("The text element we will display the swipe information in")]
-	public Text InfoText;
-
-    //protected virtual void OnEnable()
-    //{
-    //	// Hook into the OnSwipe event
-    //	Lean.LeanTouch.OnFingerSwipe += OnFingerSwipe;
-
-    //}
-
-    //protected virtual void OnDisable()
-    //{
-    //	// Unhook from the OnSwipe event
-    //	Lean.LeanTouch.OnFingerSwipe -= OnFingerSwipe;
-    //}
+	//[Tooltip("The text element we will display the swipe information in")]
+	//public Text InfoText;
 
     private Lean.LeanFinger swipingFinger;
 
+    public Player PlayerCharacter;
 
     protected virtual void OnEnable()
     {
@@ -46,48 +34,6 @@ public class SwipeManager : MonoBehaviour
         // Unhook from the OnFingerUp event
         Lean.LeanTouch.OnFingerUp -= OnFingerUp;
     }
-
- //   public void OnFingerSwipe(Lean.LeanFinger finger)
-	//{
-
-	//	// Make sure the info text exists
-	//	if (InfoText != null)
-	//	{
-	//		// Store the swipe delta in a temp variable
-	//		var swipe = finger.SwipeDelta;
-	//		var left  = new Vector2(-1.0f,  0.0f);
-	//		var right = new Vector2( 1.0f,  0.0f);
-	//		var down  = new Vector2( 0.0f, -1.0f);
-	//		var up    = new Vector2( 0.0f,  1.0f);
-
-	//		if (SwipedInThisDirection(swipe, left + up) == true)
-	//		{
-	//			InfoText.text = "You swiped left and up!";
- //               transform.Translate(0, 0, 1);
-	//		}
-
-	//		if (SwipedInThisDirection(swipe, left + down) == true)
-	//		{
-	//			InfoText.text = "You swiped left and down!";
- //               transform.Translate(-1, 0, 0);
-
- //           }
-
- //           if (SwipedInThisDirection(swipe, right + up) == true)
-	//		{
-	//			InfoText.text = "You swiped right and up!";
- //               transform.Translate(1, 0, 0);
-
- //           }
-
- //           if (SwipedInThisDirection(swipe, right + down) == true)
-	//		{
-	//			InfoText.text = "You swiped right and down!";
- //               transform.Translate(0, 0, -1);
-
- //           }
- //       }
-	//}
 
     public void OnFingerSet(Lean.LeanFinger finger)
     {
@@ -115,29 +61,26 @@ public class SwipeManager : MonoBehaviour
 
                 if (SwipedInThisDirection(swipe, left + up) == true)
                 {
-                    InfoText.text = "You swiped left and up!";
-                    transform.Translate(0, 0, 1);
+                    //InfoText.text = "You swiped left and up!";
+                    PlayerCharacter.Move(MoveDirection.LeftUp);
                 }
 
                 if (SwipedInThisDirection(swipe, left + down) == true)
                 {
-                    InfoText.text = "You swiped left and down!";
-                    transform.Translate(-1, 0, 0);
-
+                    //InfoText.text = "You swiped left and down!";
+                    PlayerCharacter.Move(MoveDirection.LeftDown);
                 }
 
                 if (SwipedInThisDirection(swipe, right + up) == true)
                 {
-                    InfoText.text = "You swiped right and up!";
-                    transform.Translate(1, 0, 0);
-
+                    //InfoText.text = "You swiped right and up!";
+                    PlayerCharacter.Move(MoveDirection.RightUp);
                 }
 
                 if (SwipedInThisDirection(swipe, right + down) == true)
                 {
-                    InfoText.text = "You swiped right and down!";
-                    transform.Translate(0, 0, -1);
-
+                    //InfoText.text = "You swiped right and down!";
+                    PlayerCharacter.Move(MoveDirection.RightDown);
                 }
 
                 // Unset the finger so we don't continually add forces to it
