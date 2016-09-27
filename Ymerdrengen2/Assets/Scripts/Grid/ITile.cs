@@ -31,7 +31,7 @@ namespace Grid
         /// <summary>
         /// Field contains power-up
         /// </summary>
-        PowerUp = 4,
+        PickUp = 4,
     }
 
     /// <summary>

@@ -29,5 +29,10 @@ namespace Grid
         {
             return (Value & FieldStatus.OnFire) != FieldStatus.None;
         }
+
+        public bool IsPickUp()
+        {
+            return (Value & FieldStatus.PickUp) != FieldStatus.None;
+        }
     }
 }
