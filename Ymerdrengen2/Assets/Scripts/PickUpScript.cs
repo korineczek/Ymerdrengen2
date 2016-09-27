@@ -57,10 +57,13 @@ public class PickUpScript : MonoBehaviour
                 //if (newTile != null)
                 //{
                 newTile.transform.position = Vector3.Lerp(newTile.transform.position, TileEndPos, PlaceNewTileSpeed * Time.deltaTime);
+  
             }
-            if(newTile.transform.position == TileEndPos)
+            if (Vector3.Distance(newTile.transform.position, TileEndPos) < 0.01f)
             {
+                Debug.Log("should be snapped");
                 isPicked = false;
+                Destroy(pickUp.gameObject);
             }
         }
         

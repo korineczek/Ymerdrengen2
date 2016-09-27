@@ -5,16 +5,16 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2BAF3BF5-09AA-2106-0723-4D6EAAA86683}</ProjectGuid>
+    <ProjectGuid>{C63A5E25-0B43-1B65-F6D0-394F74926219}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
-    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityProjectType>Editor:5</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.4.0f3</UnityVersion>
     <RootNamespace></RootNamespace>
@@ -52,47 +52,54 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>Library\UnityAssemblies\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.EditorTestsRunner">
+      <HintPath>Library\UnityAssemblies\UnityEditor.EditorTestsRunner.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\UnityAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor">
-      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    <Reference Include="UnityEditor.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.TreeEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.TreeEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Android.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Android.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+      <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\LeanTouch\Examples\SimpleDrag.cs" />
-    <Compile Include="Assets\LeanTouch\Examples\SimpleDragRigidbody.cs" />
-    <Compile Include="Assets\LeanTouch\Examples\SimpleDragSmooth.cs" />
-    <Compile Include="Assets\LeanTouch\Examples\SimpleInfo.cs" />
-    <Compile Include="Assets\LeanTouch\Examples\SimplePan.cs" />
-    <Compile Include="Assets\LeanTouch\Examples\SimplePanClamp.cs" />
-    <Compile Include="Assets\LeanTouch\Examples\SimpleSelect.cs" />
-    <Compile Include="Assets\LeanTouch\Examples\SimpleSelectTransform.cs" />
-    <Compile Include="Assets\LeanTouch\Examples\SimpleSelectTransformRelative.cs" />
-    <Compile Include="Assets\LeanTouch\Examples\SimpleSnapshots.cs" />
-    <Compile Include="Assets\LeanTouch\Examples\SimpleSplitScreen.cs" />
-    <Compile Include="Assets\LeanTouch\Examples\SimpleSwipe.cs" />
-    <Compile Include="Assets\LeanTouch\Examples\SimpleSwipeDirection.cs" />
-    <Compile Include="Assets\LeanTouch\Examples\SimpleSwipeDirection8.cs" />
-    <Compile Include="Assets\LeanTouch\Examples\SimpleSwipeNoRelease.cs" />
-    <Compile Include="Assets\LeanTouch\Examples\SimpleTap.cs" />
-    <Compile Include="Assets\LeanTouch\Examples\SimpleZoom2D.cs" />
-    <Compile Include="Assets\LeanTouch\Examples\SimpleZoom3D.cs" />
-    <Compile Include="Assets\LeanTouch\Scripts\LeanFinger.cs" />
-    <Compile Include="Assets\LeanTouch\Scripts\LeanSnapshot.cs" />
-    <Compile Include="Assets\LeanTouch\Scripts\LeanTouch.cs" />
-    <Compile Include="Assets\Scripts\Grid\BaseTile.cs" />
-    <Compile Include="Assets\Scripts\Grid\Grid.cs" />
-    <Compile Include="Assets\Scripts\Grid\GridData.cs" />
-    <Compile Include="Assets\Scripts\Grid\GridManager.cs" />
-    <Compile Include="Assets\Scripts\Grid\ITile.cs" />
-    <Compile Include="Assets\Scripts\MoveDirection.cs" />
-    <Compile Include="Assets\Scripts\PickUpScript.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\SwipeManager.cs" />
+    <ProjectReference Include="Ymerdrengen2.CSharp.csproj">
+      <Project>{2BAF3BF5-09AA-2106-0723-4D6EAAA86683}</Project>
+      <Name>Ymerdrengen2.CSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\LeanTouch\Editor\LeanTouch_Editor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\3D models\Description.txt" />
