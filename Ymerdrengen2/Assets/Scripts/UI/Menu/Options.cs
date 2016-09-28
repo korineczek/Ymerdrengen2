@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Options : MonoBehaviour {
 
@@ -8,10 +9,21 @@ public class Options : MonoBehaviour {
     public GameObject menu;
     public GameObject options;
     
+
+
+    public void Dansk()
+    {
+        PlayerPrefs.SetString("Language", "Dansk");
+    }
+
+    public void English()
+    {
+        PlayerPrefs.SetString("Language", "English");
+    }
   
     public void SoundVolume()
     {
-        // Do stuff
+        PlayerPrefs.SetFloat("SoundVolume", gameObject.GetComponent<Slider>().value);
     }
 
     public void SoundMute()
@@ -30,10 +42,11 @@ public class Options : MonoBehaviour {
     public void ResetData()
     {
         PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetInt("Level", 1);
+        Application.LoadLevel(0);
 
-        menu.SetActive(true);
-        options.SetActive(false);
+        //PlayerPrefs.SetInt("Level", 1);
+        //menu.SetActive(true);
+        //options.SetActive(false);
     }
 
     public void Back()
