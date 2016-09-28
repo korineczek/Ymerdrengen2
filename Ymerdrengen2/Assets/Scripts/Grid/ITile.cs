@@ -44,5 +44,6 @@ namespace Grid
         /// </summary>
         /// <returns>The current state of the tile; true means "Has floor", false means "Has no floor".</returns>
         bool GetValue();
+        bool IsPickUp();
     }
 }

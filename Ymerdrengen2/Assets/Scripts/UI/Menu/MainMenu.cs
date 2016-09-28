@@ -6,7 +6,6 @@ public class MainMenu : MonoBehaviour {
 
     public GameObject levelSelection;
     public GameObject options;
-    
 
 	void Start () {
 

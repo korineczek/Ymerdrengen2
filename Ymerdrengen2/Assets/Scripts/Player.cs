@@ -5,9 +5,11 @@ public class Player : MonoBehaviour
 
     public Vector3 startPos;
     public Vector3 endPos;
+    public bool isLerping;
     public float speed;
     private float startTime;
     private float journeyLength;
+
     void Start()
     {
         startTime = Time.time;
@@ -59,5 +61,13 @@ public class Player : MonoBehaviour
         float distCovered = (Time.time - startTime) * speed;
         float fracJourney = distCovered / journeyLength;
         transform.position = Vector3.Lerp(startPos, endPos, fracJourney);
+        if(transform.position == endPos)
+        {
+            isLerping = false;
+        }
+        else
+        {
+            isLerping = true;
+        }
     }
 }
