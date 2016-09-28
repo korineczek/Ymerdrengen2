@@ -18,11 +18,6 @@ public abstract class Enemy : MonoBehaviour
     public Direction direction;
     int[][] attackPattern;
 
-    void Start()
-    {
-        init();
-    }
-
     void Update()
     {
         behavior();
@@ -38,10 +33,12 @@ public abstract class Enemy : MonoBehaviour
 
     public void destroyThis()
     {
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 
     public abstract void behavior();
     public abstract void init();
+    public abstract void init(int x, int y);
+    public abstract void init(int x, int y, Direction dir);
 
 }
