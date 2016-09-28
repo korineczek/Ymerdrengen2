@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     private float journeyLength;
     void Start()
     {
-        speed = 10.0F;
         startTime = Time.time;
         journeyLength = 1;
         startPos = endPos = transform.position;

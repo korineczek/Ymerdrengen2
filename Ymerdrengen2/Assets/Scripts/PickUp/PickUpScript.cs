@@ -48,7 +48,7 @@ public class PickUpScript : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                NewTile.Move(MoveDirection.LeftUp, 3);
+                //NewTile.Move(MoveDirection.LeftUp, 3);
 
                 TileEndPos = Input.mousePosition;
                 TileEndPos.z = 45;
