@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DeviceSetup.cs" />
+    <Compile Include="Assets\DoorScript.cs" />
     <Compile Include="Assets\LeanTouch\Examples\SimpleDrag.cs" />
     <Compile Include="Assets\LeanTouch\Examples\SimpleDragRigidbody.cs" />
     <Compile Include="Assets\LeanTouch\Examples\SimpleDragSmooth.cs" />

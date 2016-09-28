@@ -120,14 +120,17 @@ public class GridManager : MonoBehaviour {
             PlayerPosition = newPos;
 
             // if player steps in a tile where a pick up exists
-            if (GridData.grid[(int)newPos.x, (int)newPos.y].IsPickUp())
+            //if (GridData.grid[(int)newPos.x, (int)newPos.y].IsPickUp())
+            if (getTile(newPos).IsPickUp())
             {
                 // identify which pick up player touches (if there are a lot)
                 PickUpDic.TryGetValue(new Vector2((int)newPos.x, (int)newPos.y), out targetPickUp);
                 // say to the grid that this tile doesn't have a pick up anymore
                 ToggleFlags(GridData.grid[(int)newPos.x, (int)newPos.y], FieldStatus.PickUp);
                 // call the triggerPickUp function from PickUpScript
-                targetPickUp.GetComponent<PickUpScript>().triggerPickUp();
+                targetPickUp.GetComponent<PickUpScript>().TriggerPickUp();
+                // remove ymer from dict
+                PickUpDic.Remove(new Vector2((int)newPos.x, (int)newPos.y));
             }
         }
         else {
@@ -177,8 +180,6 @@ public class GridManager : MonoBehaviour {
 
     void createPickUp(int x, int y)
     {
-        Vector3 pos = new Vector3(x + offset, -0.5f, y + offset);
-       
         // instantiate the pick up on the randomly chosen tile
         GameObject pickUp = Instantiate(Resources.Load("Prefabs/YogurtCarton") as GameObject);
         // put pick up on the center of the tile
