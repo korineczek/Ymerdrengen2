@@ -63,7 +63,7 @@ public class GridManager : MonoBehaviour {
                 if (GridData.grid[x, y].GetValue())
                 { 
                     GameObject tile = Instantiate(tileObj, this.transform) as GameObject;
-                    tile.transform.position = new Vector3(x + offset, 0, y + offset);
+                    tile.transform.position = new Vector3(x + offset, -0.5f, y + offset);
                 }
             }
         }
@@ -134,6 +134,7 @@ public class GridManager : MonoBehaviour {
         }
     }
 
+
     public void SpawnPickUp()
     {
         List<Vector2> FlooredTiles = new List<Vector2>();
@@ -169,4 +170,10 @@ public class GridManager : MonoBehaviour {
      }
         
     
+
+    public BaseTile ToggleFlags(BaseTile tile, FieldStatus flags)
+    {
+        return new BaseTile() { Value = tile.Value ^ flags }; // '^' ís a bitwise XOR operator.
+    }
+
 }
