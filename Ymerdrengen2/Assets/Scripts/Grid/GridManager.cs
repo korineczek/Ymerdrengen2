@@ -57,7 +57,7 @@ public class GridManager : MonoBehaviour {
                 if (GridData.grid[x, y].GetValue())
                 { 
                     GameObject tile = Instantiate(tileObj, this.transform) as GameObject;
-                    tile.transform.position = new Vector3(x + offset, 0, y + offset);
+                    tile.transform.position = new Vector3(x + offset, -0,5f, y + offset);
                 }
             }
         }

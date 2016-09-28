@@ -14,6 +14,8 @@ public class PickUpScript : MonoBehaviour
     public float pickUpGoesUp;
     public float PlaceNewTileSpeed;
 
+    public MoveTile NewTile;
+
     GameObject pickUp;
     GameObject tile;
     GameObject newTile;
@@ -46,7 +48,7 @@ public class PickUpScript : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                //newTile.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
+                NewTile.Move(MoveDirection.LeftUp, 3);
 
                 TileEndPos = Input.mousePosition;
                 TileEndPos.z = 45;

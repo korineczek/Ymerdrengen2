@@ -16,7 +16,7 @@ public class LineGuy : Enemy
     {
 
         //Collide with grid tile
-        GridData.gridManager.hitTile((int)oldPos.x, (int)newPos.z);
+        GridData.gridManager.hitTile((int)newPos.x, (int)newPos.z);
 
         t += Time.deltaTime * speed;
         transform.position = Vector3.Lerp(oldPos, newPos, t);
