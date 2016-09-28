@@ -127,4 +127,9 @@ public class GridManager : MonoBehaviour {
             default: throw new Exception("ERROR: Enum had unrecognizable value.");
         }
     }
+
+    public BaseTile ToggleFlags(BaseTile tile, FieldStatus flags)
+    {
+        return new BaseTile() { Value = tile.Value ^ flags }; // '^' ís a bitwise XOR operator.
+    }
 }
