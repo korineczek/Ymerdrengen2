@@ -63,7 +63,6 @@ public class HARDCODEDTESTSCRIPT : MonoBehaviour {
 
         for (int i = 0; i < monsterList.Length; i++)
         {
-            Debug.Log(monsterList[i].gameObject.name.ToLower());
             monsterDictionary.Add(monsterList[i].gameObject.name.ToLower(), monsterList[i]);
         }
     }

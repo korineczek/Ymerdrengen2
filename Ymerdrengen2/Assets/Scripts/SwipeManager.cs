@@ -63,19 +63,19 @@ public class SwipeManager : MonoBehaviour
                     GridData.gridManager.TryMovePlayer(MoveDirection.LeftUp);
                 }
 
-                if (SwipedInThisDirection(swipe, left + down) == true)
+                else if (SwipedInThisDirection(swipe, left + down) == true)
                 {
                     //InfoText.text = "You swiped left and down!";
                     GridData.gridManager.TryMovePlayer(MoveDirection.LeftDown);
                 }
 
-                if (SwipedInThisDirection(swipe, right + up) == true)
+                else if (SwipedInThisDirection(swipe, right + up) == true)
                 {
                     //InfoText.text = "You swiped right and up!";
                     GridData.gridManager.TryMovePlayer(MoveDirection.RightUp);
                 }
 
-                if (SwipedInThisDirection(swipe, right + down) == true)
+                else if (SwipedInThisDirection(swipe, right + down) == true)
                 {
                     //InfoText.text = "You swiped right and down!";
                     GridData.gridManager.TryMovePlayer(MoveDirection.RightDown);

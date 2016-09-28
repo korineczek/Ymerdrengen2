@@ -8,30 +8,51 @@ public class DropDude : Enemy {
     Vector3 endPoint;
     float t = 0;
 
+    public float startHeight = 8f;
     public float dropTime = 2f;
+    public float deathTime = 1f;
 
     public override void behavior()
     {
-        t +=  Time.deltaTime / dropTime;
-        transform.position = Vector3.Lerp(startPoint, endPoint, t);
-
-        if(t >= 1)
+        if(t < 1)
+        { 
+            t +=  Time.deltaTime * speed / dropTime;
+            transform.position = Vector3.Lerp(startPoint, endPoint, t);
+        }
+        else
         {
-            hasDropped();
+            Debug.Log(t);
+            GridData.gridManager.hitTile((int)endPoint.x, (int)endPoint.z);
+            t += Time.deltaTime;
+            if (t >= 1 + deathTime)
+                hasDropped();
         }
     }
 
     public override void init()
     {
-        startPoint = new Vector3(1 + 0.5f, 5, 1 + 0.5f);
+        int randX = UnityEngine.Random.Range(0, GridData.gridSize);
+        int randY = UnityEngine.Random.Range(0, GridData.gridSize);
+        startPoint = new Vector3(randX + GridData.offset, startHeight, randY + GridData.offset);
         transform.position = startPoint;
-        endPoint = new Vector3(1 + 0.5f, 0, 1 + 0.5f);
+        endPoint = new Vector3(randX + GridData.offset, 0, randY + GridData.offset);
     }
 
     void hasDropped()
     {
         transform.position = endPoint;
-        GridData.gridManager.hitTile((int)endPoint.x, (int)endPoint.z);
         base.destroyThis();
+    }
+
+    public override void init(int x, int y)
+    {
+        startPoint = new Vector3(x + GridData.offset, startHeight, y + GridData.offset);
+        transform.position = startPoint;
+        endPoint = new Vector3(x + GridData.offset, 0, y + GridData.offset);
+    }
+
+    public override void init(int x, int y, Direction dir)
+    {
+        init();
     }
 }
