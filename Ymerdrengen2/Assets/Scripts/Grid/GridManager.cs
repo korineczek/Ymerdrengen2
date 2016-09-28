@@ -2,11 +2,15 @@
 using UnityEngine;
 
 using Grid;
+using System.Collections.Generic;
 
 public class GridManager : MonoBehaviour {
 
     public int gridSize = 5;
     public float offset = 0.5f;
+
+    System.Random rnd = new System.Random();
+
 
     GameObject tileObj;
 
@@ -20,6 +24,7 @@ public class GridManager : MonoBehaviour {
         initFields();
         initGrid();
         createGridObj();
+        SpawnPickUp();
 
     }
 
@@ -45,6 +50,7 @@ public class GridManager : MonoBehaviour {
         setTile(2, 2, FieldStatus.None);
         setTile(0, 0, FieldStatus.None);
         setTile(2, 0, FieldStatus.None);
+
     }
 
     void createGridObj()
@@ -57,7 +63,7 @@ public class GridManager : MonoBehaviour {
                 if (GridData.grid[x, y].GetValue())
                 { 
                     GameObject tile = Instantiate(tileObj, this.transform) as GameObject;
-                    tile.transform.position = new Vector3(x + offset, -0,5f, y + offset);
+                    tile.transform.position = new Vector3(x + offset, -0.5f, y + offset);
                 }
             }
         }
@@ -128,8 +134,46 @@ public class GridManager : MonoBehaviour {
         }
     }
 
+
+    public void SpawnPickUp()
+    {
+        List<Vector2> FlooredTiles = new List<Vector2>();
+        for (int x = 0; x < gridSize; x++)
+        {
+            for (int y = 0; y < gridSize; y++)
+            {
+                Vector2 currentTile = new Vector2(x, y);
+                if (getTile(currentTile).GetValue())
+                {
+                    FlooredTiles.Add(currentTile);
+                }
+            }
+        }
+
+
+        int tileIndex = rnd.Next(FlooredTiles.Count);
+        Vector2 nextTile = FlooredTiles[tileIndex];
+        
+
+        setTile((int)nextTile.x, (int)nextTile.y, FieldStatus.PickUp);
+        createPickUp((int)nextTile.x, (int)nextTile.y);
+
+    }
+
+    void createPickUp(int x, int y)
+    {
+        if (GridData.grid[x, y].IsPickUp())
+        {
+            GameObject pickUp = Instantiate(Resources.Load("YogurtCarton") as GameObject);
+            pickUp.transform.position = new Vector3(x, 1, y);
+        }
+     }
+        
+    
+
     public BaseTile ToggleFlags(BaseTile tile, FieldStatus flags)
     {
         return new BaseTile() { Value = tile.Value ^ flags }; // '^' ís a bitwise XOR operator.
     }
+
 }
