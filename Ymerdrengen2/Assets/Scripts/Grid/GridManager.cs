@@ -24,9 +24,6 @@ public class GridManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        Screen.orientation = ScreenOrientation.Portrait;
-        Screen.sleepTimeout = SleepTimeout.NeverSleep;
-
         PickUpDic = new Dictionary<Vector2, GameObject>();
  
         initFields();
@@ -118,6 +115,7 @@ public class GridManager : MonoBehaviour {
 
         if (newPosValue)
         {
+            PlayerCharacter.isLerping = true;
             PlayerCharacter.Move(dir);
             PlayerPosition = newPos;
 
@@ -152,13 +150,15 @@ public class GridManager : MonoBehaviour {
     public void SpawnPickUp()
     {
         List<Vector2> FlooredTiles = new List<Vector2>();
+
         // go through all the tiles and save into a list the ones that have floor
+        // and the ones that have a pick up
         for (int x = 0; x < gridSize; x++)
         {
             for (int y = 0; y < gridSize; y++)
             {
                 Vector2 currentTile = new Vector2(x, y);
-                if (getTile(currentTile).GetValue())
+                if (getTile(currentTile).GetValue() && !getTile(currentTile).IsPickUp())
                 {
                     FlooredTiles.Add(currentTile);
                 }
