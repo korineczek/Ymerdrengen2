@@ -126,7 +126,8 @@ public class GridManager : MonoBehaviour {
                 // identify which pick up player touches (if there are a lot)
                 PickUpDic.TryGetValue(new Vector2((int)newPos.x, (int)newPos.y), out targetPickUp);
                 // say to the grid that this tile doesn't have a pick up anymore
-                ToggleFlags(GridData.grid[(int)newPos.x, (int)newPos.y], FieldStatus.PickUp);
+                GridData.grid[(int)newPos.x, (int)newPos.y] = ToggleFlags(GridData.grid[(int)newPos.x, (int)newPos.y], FieldStatus.PickUp);
+                //ToggleFlags(GridData.grid[(int)newPos.x, (int)newPos.y], FieldStatus.PickUp);
                 // call the triggerPickUp function from PickUpScript
                 targetPickUp.GetComponent<PickUpScript>().TriggerPickUp();
                 // remove ymer from dict
@@ -194,7 +195,8 @@ public class GridManager : MonoBehaviour {
     public void ToggleFlags(Vector2 tilePos, FieldStatus flags)
     {
         var curTile = GridData.grid[(int)tilePos.x, (int)tilePos.y];
-        GridData.grid[(int)tilePos.x, (int)tilePos.y] = new BaseTile() { Value = curTile.Value ^ flags };
+        GridData.grid[(int)tilePos.x, (int)tilePos.y] = ToggleFlags(GridData.grid[(int)tilePos.x, (int)tilePos.y], FieldStatus.PickUp);
+        //GridData.grid[(int)tilePos.x, (int)tilePos.y] = new BaseTile() { Value = curTile.Value ^ flags };
     }
 
     public BaseTile ToggleFlags(BaseTile tile, FieldStatus flags)
