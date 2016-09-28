@@ -11,8 +11,9 @@ public class GridManager : MonoBehaviour {
 
     System.Random rnd = new System.Random();
 
-    Dictionary<int[], GameObject> PickUpDic;
+    Dictionary<Vector2, GameObject> PickUpDic;
     GameObject tileObj;
+    GameObject targetPickUp;
 
     public Player PlayerCharacter;
     public Vector2 PlayerPosition;
@@ -20,12 +21,17 @@ public class GridManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        PickUpDic = new Dictionary<int[], GameObject>();
-       // PickUpDic.Add([1,0], tileObj);
+        Screen.orientation = ScreenOrientation.Portrait;
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
+        PickUpDic = new Dictionary<Vector2, GameObject>();
+ 
         initFields();
         initGrid();
         createGridObj();
-        //SpawnPickUp();
+        SpawnPickUp();
+        SpawnPickUp();
+
 
     }
 
@@ -45,6 +51,7 @@ public class GridManager : MonoBehaviour {
             for (int y = 0; y < gridSize; y++)
             {
                 setTile(x, y, FieldStatus.Floor);
+
             }
         }
 
@@ -117,9 +124,16 @@ public class GridManager : MonoBehaviour {
         {
             PlayerCharacter.Move(dir);
             PlayerPosition = newPos;
+
+            // if player steps in a tile where a pick up exists
             if (GridData.grid[(int)newPos.x, (int)newPos.y].IsPickUp())
             {
-
+                // identify which pick up player touches (if there are a lot)
+                PickUpDic.TryGetValue(new Vector2((int)newPos.x, (int)newPos.y), out targetPickUp);
+                // say to the grid that this tile doesn't have a pick up anymore
+                ToggleFlags(GridData.grid[(int)newPos.x, (int)newPos.y], FieldStatus.PickUp);
+                // call the triggerPickUp function from PickUpScript
+                targetPickUp.GetComponent<PickUpScript>().triggerPickUp();
             }
         }
         else {
@@ -139,41 +153,47 @@ public class GridManager : MonoBehaviour {
     }
 
 
-    //public void SpawnPickUp()
-    //{
-    //    List<Vector2> FlooredTiles = new List<Vector2>();
-    //    for (int x = 0; x < gridSize; x++)
-    //    {
-    //        for (int y = 0; y < gridSize; y++)
-    //        {
-    //            Vector2 currentTile = new Vector2(x, y);
-    //            if (getTile(currentTile).GetValue())
-    //            {
-    //                FlooredTiles.Add(currentTile);
-    //            }
-    //        }
-    //    }
+    public void SpawnPickUp()
+    {
+        List<Vector2> FlooredTiles = new List<Vector2>();
+        // go through all the tiles and save into a list the ones that have floor
+        for (int x = 0; x < gridSize; x++)
+        {
+            for (int y = 0; y < gridSize; y++)
+            {
+                Vector2 currentTile = new Vector2(x, y);
+                if (getTile(currentTile).GetValue())
+                {
+                    FlooredTiles.Add(currentTile);
+                }
+            }
+        }
 
+        // generate a pickup on a random tile
+        int tileIndex = rnd.Next(FlooredTiles.Count);
+        Vector2 nextTile = FlooredTiles[tileIndex];
 
-    //    int tileIndex = rnd.Next(FlooredTiles.Count);
-    //    Vector2 nextTile = FlooredTiles[tileIndex];
+        ToggleFlags(nextTile, FieldStatus.PickUp);
+        //setTile((int)nextTile.x, (int)nextTile.y, FieldStatus.PickUp);
+        createPickUp((int)nextTile.x, (int)nextTile.y);
 
-    //    ToggleFlags(nextTile, FieldStatus.PickUp);
-    //    //setTile((int)nextTile.x, (int)nextTile.y, FieldStatus.PickUp);
-    //    createPickUp((int)nextTile.x, (int)nextTile.y);
-
-    //}
+    }
 
     void createPickUp(int x, int y)
     {
         Vector3 pos = new Vector3(x + offset, -0.5f, y + offset);
-        
-    
-            GameObject pickUp = Instantiate(Resources.Load("Prefabs/YogurtCarton") as GameObject);
-            pickUp.transform.position = new Vector3(x + offset, 0, y + offset);
-        
-     }
-        
+       
+        // instantiate the pick up on the randomly chosen tile
+        GameObject pickUp = Instantiate(Resources.Load("Prefabs/YogurtCarton") as GameObject);
+        // put pick up on the center of the tile
+        pickUp.transform.position = new Vector3(x + offset, 0, y + offset);
+
+        // associate the pickup with its coordinates (so we know which one to destroy when picked)
+        PickUpDic.Add(new Vector2(x, y), pickUp);
+
+
+    }
+
     public void ToggleFlags(Vector2 tilePos, FieldStatus flags)
     {
         var curTile = GridData.grid[(int)tilePos.x, (int)tilePos.y];

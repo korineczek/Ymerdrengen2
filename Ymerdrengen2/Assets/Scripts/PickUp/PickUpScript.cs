@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
+using System.Collections.Generic;
+
 
 /// <summary>
 /// Script for pick ups
@@ -16,33 +18,41 @@ public class PickUpScript : MonoBehaviour
 
     public MoveTile NewTile;
 
-    GameObject pickUp;
+    //GameObject pickUp;
     GameObject tile;
     GameObject newTile;
-    GameObject player;
     bool isPicked;
     Vector3 TileEndPos;
 
+    Dictionary<Vector2, GameObject> PickUpDic;
+
+
     // Use this for initialization
     void Start () {
-        tile = GameObject.Find("TileObject");
+        tile = GameObject.Find("Tile");
         isPicked = false;
-        pickUp = GameObject.FindGameObjectWithTag("PickUp");
-        pickUp.transform.position = new Vector3(pickUp.transform.position.x, pickUp.transform.position.y + 0.3f, pickUp.transform.position.z);
-        player = GameObject.Find("Character");
+        //pickUp = GameObject.FindGameObjectWithTag("PickUp");
+        transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
         PickUpGoesUpSpeed = 10f;
         PickUpRotateSpeed = 40f;
         pickUpGoesUp = 5f;
-        PickUpStartPos = pickUp.transform.position.y;
-        PickUpEndPos = player.transform.position.y + pickUpGoesUp;
+        PickUpStartPos = transform.position.y;
+        PickUpEndPos = transform.position.y + pickUpGoesUp;
         PlaceNewTileSpeed = 2f;
         //isPickUp = false;
 
+
+        //PickUpDic = new Dictionary<Vector2, GameObject>();
+        //PickUpDic.Add(new Vector2(1, 0), pickUp);
+        //PickUpDic.Add(new Vector2(1, 1), pickUp);
+        //GameObject potato;
+        //PickUpDic.TryGetValue(new Vector2(1, 0), out potato);
+        //Destroy(potato.gameObject);
     }
 
     // Update is called once per frame
     void Update() {
-        pickUp.transform.Rotate(0, Time.deltaTime * PickUpRotateSpeed, 0);
+        transform.Rotate(0, Time.deltaTime * PickUpRotateSpeed, 0);
 
 
         if (isPicked)
@@ -62,7 +72,7 @@ public class PickUpScript : MonoBehaviour
             {
                 Debug.Log("should be snapped");
                 isPicked = false;
-                Destroy(pickUp.gameObject);
+                Destroy(this.gameObject);
             }
         }
         
@@ -80,11 +90,16 @@ public class PickUpScript : MonoBehaviour
     //    }
     //}
 
-    void triggerPickUp()
+    public void triggerPickUp()
     { 
-            pickUp.transform.position = new Vector3(0, Mathf.Lerp(PickUpStartPos, PickUpEndPos, Time.deltaTime * PickUpGoesUpSpeed), 0);
-            newTile = Instantiate(tile, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), transform.rotation) as GameObject;
-            isPicked = true;
+        // lerp the pick up above player's head
+        transform.position = new Vector3(0, Mathf.Lerp(PickUpStartPos, PickUpEndPos, Time.deltaTime * PickUpGoesUpSpeed), 0);
+
+
+
+
+            //newTile = Instantiate(tile, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), transform.rotation) as GameObject;
+            //isPicked = true;
 
             //Destroy(gameObject);
         
