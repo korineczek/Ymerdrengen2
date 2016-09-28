@@ -3,9 +3,11 @@ using UnityEngine;
 
 using Grid;
 
+[Serializable]
 public class GridManager : MonoBehaviour {
 
-    public int gridSize = 5;
+    public bool[] FloorInitializer;
+    public int gridSize = 7;
     public float offset = 0.5f;
 
     GameObject tileObj;
@@ -18,7 +20,7 @@ public class GridManager : MonoBehaviour {
     {
 
         initFields();
-        initGrid();
+        initGrid(FloorInitializer);
         createGridObj();
 
     }
@@ -32,19 +34,15 @@ public class GridManager : MonoBehaviour {
         tileObj = Resources.Load<GameObject>("Prefabs/TileObject");
     }
 
-    void initGrid()
+    void initGrid(bool[] floorInitializer)
     {
         for (int x = 0; x < gridSize; x++)
         {
             for (int y = 0; y < gridSize; y++)
             {
-                setTile(x, y, FieldStatus.Floor);
+                setTile(x, y, (FieldStatus)Convert.ToInt32(floorInitializer[x + (y*gridSize)]));
             }
         }
-
-        setTile(2, 2, FieldStatus.None);
-        setTile(0, 0, FieldStatus.None);
-        setTile(2, 0, FieldStatus.None);
     }
 
     void createGridObj()
@@ -57,7 +55,7 @@ public class GridManager : MonoBehaviour {
                 if (GridData.grid[x, y].GetValue())
                 { 
                     GameObject tile = Instantiate(tileObj, this.transform) as GameObject;
-                    tile.transform.position = new Vector3(x + offset, -0,5f, y + offset);
+                    tile.transform.position = new Vector3(x + offset, -0.5f, y + offset);
                 }
             }
         }
