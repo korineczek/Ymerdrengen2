@@ -9,7 +9,7 @@ public class EnemyManager : MonoBehaviour {
 
     SpawnPattern curSpawnPattern;
 
-    int curLvl = 0;
+    public int curentLevel = 0;
     int spawnPatternIndex = 0;
     float stopTime = 0;
     float t = 0;
@@ -21,7 +21,7 @@ public class EnemyManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         if(curSpawnPattern == null)
-            loadSpawnPattern("lvl" + curLvl);
+            loadSpawnPattern("lvl" + curentLevel);
 
         fetchMonsters();
 	}
@@ -58,7 +58,7 @@ public class EnemyManager : MonoBehaviour {
         string[] list = s.Split(' ');
 
         if (list.Length <= 0)
-            Debug.LogError("Line " + spawnPatternIndex + " in lvl " + curLvl + " could not be loaded");
+            Debug.LogError("Line " + spawnPatternIndex + " in lvl " + curentLevel + " could not be loaded");
 
         if(list.Length == 1)
         {

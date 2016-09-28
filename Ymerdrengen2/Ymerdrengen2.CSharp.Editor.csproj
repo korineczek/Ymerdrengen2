@@ -103,14 +103,14 @@
     <Compile Include="Assets\Scripts\Enemy\Editor\EnemyEditor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\3D models\Description.txt" />
-    <None Include="Assets\Animation\Description.txt" />
     <None Include="Assets\Audio\Description.txt" />
-    <None Include="Assets\Materials\Description.txt" />
+    <None Include="Assets\Graphics\3D models\Description.txt" />
+    <None Include="Assets\Graphics\Animation\Description.txt" />
+    <None Include="Assets\Graphics\Materials\Description.txt" />
+    <None Include="Assets\Graphics\Shaders\PickUpGlowShader.shader" />
     <None Include="Assets\Prefabs\Description.txt" />
     <None Include="Assets\Scenes\Description.txt" />
     <None Include="Assets\Scripts\Description.txt" />
-    <None Include="Assets\Shaders\PickUpGlowShader.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
