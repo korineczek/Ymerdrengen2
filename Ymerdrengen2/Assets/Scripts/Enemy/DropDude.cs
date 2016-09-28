@@ -16,7 +16,7 @@ public class DropDude : Enemy {
     {
         if(t < 1)
         { 
-            t +=  Time.deltaTime / dropTime;
+            t +=  Time.deltaTime * speed / dropTime;
             transform.position = Vector3.Lerp(startPoint, endPoint, t);
         }
         else
