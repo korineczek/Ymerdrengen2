@@ -11,7 +11,14 @@ public class GridEditor : Editor
     {
         gridTarget = (GridManager)target;
 
+        // Set the player position.
+        gridTarget.PlayerPosition = EditorGUILayout.Vector2Field("Player Position", gridTarget.PlayerPosition);
+
         gridTarget.gridSize = EditorGUILayout.IntField("Grid Size:", gridTarget.gridSize);
+        serializedObject.Update();
+
+        if (gridTarget.FloorInitializer == null || gridTarget.FloorInitializer.Length != (gridTarget.gridSize * gridTarget.gridSize))
+            gridTarget.FloorInitializer = new bool[gridTarget.gridSize * gridTarget.gridSize];
 
         // Setup Editor layout.
         EditorGUILayout.LabelField("Floor Designer:");

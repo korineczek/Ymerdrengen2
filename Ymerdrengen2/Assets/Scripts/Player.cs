@@ -10,11 +10,17 @@ public class Player : MonoBehaviour
     private float startTime;
     private float journeyLength;
 
+    public int maxYmer;
+    public int numYmer;
+
     void Start()
     {
         startTime = Time.time;
         journeyLength = 1;
         startPos = endPos = transform.position;
+
+        maxYmer = 3;
+        numYmer = 0;
     }
 
     public void Move(MoveDirection dir)
