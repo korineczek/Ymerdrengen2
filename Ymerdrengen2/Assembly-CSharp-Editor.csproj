@@ -50,6 +50,7 @@
      <None Include="Assets\Scripts\Description.txt" />
      <None Include="Assets\Prefabs\Description.txt" />
      <None Include="Assets\Audio\Description.txt" />
+     <None Include="Assets\Shaders\PickUpGlowShader.shader" />
      <None Include="Assets\Scenes\Description.txt" />
      <None Include="Assets\3D models\Description.txt" />
      <None Include="Assets\Animation\Description.txt" />
