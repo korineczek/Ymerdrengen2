@@ -13,6 +13,9 @@ public class GridEditor : Editor
 
         gridTarget.gridSize = EditorGUILayout.IntField("Grid Size:", gridTarget.gridSize);
 
+        if (gridTarget.FloorInitializer == null || gridTarget.FloorInitializer.Length != (gridTarget.gridSize * gridTarget.gridSize))
+            gridTarget.FloorInitializer = new bool[gridTarget.gridSize * gridTarget.gridSize];
+
         // Setup Editor layout.
         EditorGUILayout.LabelField("Floor Designer:");
         for (int i = 0; i < gridTarget.gridSize; i++) {
