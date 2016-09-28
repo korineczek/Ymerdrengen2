@@ -2,52 +2,33 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Assets.Scripts.Grid
+[CustomEditor(typeof(GridManager))]
+public class GridEditor : Editor
 {
-    [CustomEditor(typeof(GridManager))]
-    public class GridEditor : Editor
+    GridManager gridTarget;
+
+    public override void OnInspectorGUI()
     {
-        SerializedProperty gridSideLength;
-        SerializedProperty gridInitializer;
+        gridTarget = (GridManager)target;
 
-        private bool[] floorTiles;
-        private int sideLength { get { return gridSideLength.intValue; } }
+        gridTarget.gridSize = EditorGUILayout.IntField("Grid Size:", gridTarget.gridSize);
 
-        void OnEnable()
-        {
-            gridSideLength = serializedObject.FindProperty("gridSize");
-            gridInitializer = serializedObject.FindProperty("FloorInitializer");
-            if (floorTiles == null) {
-                floorTiles = new bool[sideLength * sideLength];
+        // Setup Editor layout.
+        EditorGUILayout.LabelField("Floor Designer:");
+        for (int i = 0; i < gridTarget.gridSize; i++) {
+            // Create row of toggle controls.
+            EditorGUILayout.BeginHorizontal(GUILayout.MaxHeight(10), GUILayout.MaxWidth(7 * 12));
+            for (int j = 0; j < gridTarget.gridSize; j++) {
+                // Hook floorTiles[x,y] to the designer x,y.
+                gridTarget.FloorInitializer[TranslateVector(i, j, gridTarget.gridSize)] = EditorGUILayout.Toggle(gridTarget.FloorInitializer[TranslateVector(i, j, gridTarget.gridSize)]);
             }
+            EditorGUILayout.EndHorizontal();
         }
+    }
 
-        public override void OnInspectorGUI()
-        {
-            serializedObject.Update();
-            
-            EditorGUILayout.LabelField("Grid Side Length:", sideLength.ToString());
-
-            EditorGUILayout.LabelField("Floor Designer:");
-            for (int i = 0; i < sideLength; i++) {
-                EditorGUILayout.BeginHorizontal(GUILayout.MaxHeight(10), GUILayout.MaxWidth(7 * 12));
-                for (int j = 0; j < sideLength; j++) {
-                    floorTiles[TranslateVector(i, j)] = EditorGUILayout.Toggle(floorTiles[TranslateVector(i, j)]);
-                }
-                EditorGUILayout.EndHorizontal();
-            }
-
-            for (int i = 0; i < gridInitializer.arraySize; i++) {
-                gridInitializer.GetArrayElementAtIndex(i).boolValue = floorTiles[i];
-            }
-
-            serializedObject.ApplyModifiedProperties();
-        }
-
-        private int TranslateVector(int x, int y)
-        {
-            return x + (y * sideLength);
-        }
+    private int TranslateVector(int x, int y, int sideLength)
+    {
+        return x + (y * sideLength);
     }
 }
 #endif
