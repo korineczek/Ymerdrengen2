@@ -5,6 +5,8 @@ public class Options : MonoBehaviour {
 
     //float PlayerSound = PlayerPrefs.GetFloat("Sound");
 
+    public GameObject menu;
+    public GameObject options;
     
   
     public void SoundVolume()
@@ -29,5 +31,14 @@ public class Options : MonoBehaviour {
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("Level", 1);
+
+        menu.SetActive(true);
+        options.SetActive(false);
+    }
+
+    public void Back()
+    {
+        menu.SetActive(true);
+        options.SetActive(false);
     }
 }
