@@ -11,7 +11,7 @@ public class GridManager : MonoBehaviour {
 
     System.Random rnd = new System.Random();
 
-
+    Dictionary<int[], GameObject> PickUpDic;
     GameObject tileObj;
 
     public Player PlayerCharacter;
@@ -20,11 +20,12 @@ public class GridManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        PickUpDic = new Dictionary<int[], GameObject>();
+       // PickUpDic.Add([1,0], tileObj);
         initFields();
         initGrid();
         createGridObj();
-        SpawnPickUp();
+        //SpawnPickUp();
 
     }
 
@@ -48,7 +49,6 @@ public class GridManager : MonoBehaviour {
         }
 
         setTile(2, 2, FieldStatus.None);
-        setTile(0, 0, FieldStatus.None);
         setTile(2, 0, FieldStatus.None);
 
     }
@@ -117,6 +117,10 @@ public class GridManager : MonoBehaviour {
         {
             PlayerCharacter.Move(dir);
             PlayerPosition = newPos;
+            if (GridData.grid[(int)newPos.x, (int)newPos.y].IsPickUp())
+            {
+
+            }
         }
         else {
             PlayerCharacter.gameObject.SetActive(false);
@@ -135,41 +139,46 @@ public class GridManager : MonoBehaviour {
     }
 
 
-    public void SpawnPickUp()
-    {
-        List<Vector2> FlooredTiles = new List<Vector2>();
-        for (int x = 0; x < gridSize; x++)
-        {
-            for (int y = 0; y < gridSize; y++)
-            {
-                Vector2 currentTile = new Vector2(x, y);
-                if (getTile(currentTile).GetValue())
-                {
-                    FlooredTiles.Add(currentTile);
-                }
-            }
-        }
+    //public void SpawnPickUp()
+    //{
+    //    List<Vector2> FlooredTiles = new List<Vector2>();
+    //    for (int x = 0; x < gridSize; x++)
+    //    {
+    //        for (int y = 0; y < gridSize; y++)
+    //        {
+    //            Vector2 currentTile = new Vector2(x, y);
+    //            if (getTile(currentTile).GetValue())
+    //            {
+    //                FlooredTiles.Add(currentTile);
+    //            }
+    //        }
+    //    }
 
 
-        int tileIndex = rnd.Next(FlooredTiles.Count);
-        Vector2 nextTile = FlooredTiles[tileIndex];
-        
+    //    int tileIndex = rnd.Next(FlooredTiles.Count);
+    //    Vector2 nextTile = FlooredTiles[tileIndex];
 
-        setTile((int)nextTile.x, (int)nextTile.y, FieldStatus.PickUp);
-        createPickUp((int)nextTile.x, (int)nextTile.y);
+    //    ToggleFlags(nextTile, FieldStatus.PickUp);
+    //    //setTile((int)nextTile.x, (int)nextTile.y, FieldStatus.PickUp);
+    //    createPickUp((int)nextTile.x, (int)nextTile.y);
 
-    }
+    //}
 
     void createPickUp(int x, int y)
     {
-        if (GridData.grid[x, y].IsPickUp())
-        {
-            GameObject pickUp = Instantiate(Resources.Load("YogurtCarton") as GameObject);
-            pickUp.transform.position = new Vector3(x, 1, y);
-        }
-     }
+        Vector3 pos = new Vector3(x + offset, -0.5f, y + offset);
         
     
+            GameObject pickUp = Instantiate(Resources.Load("Prefabs/YogurtCarton") as GameObject);
+            pickUp.transform.position = new Vector3(x + offset, 0, y + offset);
+        
+     }
+        
+    public void ToggleFlags(Vector2 tilePos, FieldStatus flags)
+    {
+        var curTile = GridData.grid[(int)tilePos.x, (int)tilePos.y];
+        GridData.grid[(int)tilePos.x, (int)tilePos.y] = new BaseTile() { Value = curTile.Value ^ flags };
+    }
 
     public BaseTile ToggleFlags(BaseTile tile, FieldStatus flags)
     {

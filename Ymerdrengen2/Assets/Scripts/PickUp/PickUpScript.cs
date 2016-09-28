@@ -25,11 +25,11 @@ public class PickUpScript : MonoBehaviour
 
     // Use this for initialization
     void Start () {
-        tile = GameObject.FindGameObjectWithTag("Tile");
+        tile = GameObject.Find("TileObject");
         isPicked = false;
         pickUp = GameObject.FindGameObjectWithTag("PickUp");
         pickUp.transform.position = new Vector3(pickUp.transform.position.x, pickUp.transform.position.y + 0.3f, pickUp.transform.position.z);
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.Find("Character");
         PickUpGoesUpSpeed = 10f;
         PickUpRotateSpeed = 40f;
         pickUpGoesUp = 5f;
@@ -44,6 +44,7 @@ public class PickUpScript : MonoBehaviour
     void Update() {
         pickUp.transform.Rotate(0, Time.deltaTime * PickUpRotateSpeed, 0);
 
+
         if (isPicked)
         {
             if (Input.GetMouseButton(0))
@@ -54,10 +55,6 @@ public class PickUpScript : MonoBehaviour
                 TileEndPos.z = 45;
                 TileEndPos = Camera.main.ScreenToWorldPoint(TileEndPos);
 
-                //}
-
-                //if (newTile != null)
-                //{
                 newTile.transform.position = Vector3.Lerp(newTile.transform.position, TileEndPos, PlaceNewTileSpeed * Time.deltaTime);
   
             }
@@ -71,24 +68,25 @@ public class PickUpScript : MonoBehaviour
         
     }
 
-    
-
-    //public void PickUp()
+    //void OnTriggerEnter(Collider other)
     //{
-    //    pickUp.transform.position = new Vector3(Mathf.Lerp(PickUpStartPos, PickUpEndPos, Time.deltaTime * PickUpSpeed), 0, 0);
+    //    if (other.gameObject == GameObject.Find("Player"))
+    //    {
+    //        pickUp.transform.position = new Vector3(0, Mathf.Lerp(PickUpStartPos, PickUpEndPos, Time.deltaTime * PickUpGoesUpSpeed), 0);
+    //        newTile = Instantiate(tile, new Vector3(transform.position.x, transform.position.y+1f, transform.position.z), transform.rotation) as GameObject;
+    //        isPicked = true;
 
-    //    Instantiate(tile, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), transform.rotation);
+    //        //Destroy(gameObject);
+    //    }
     //}
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == GameObject.Find("Player"))
-        {
+    void triggerPickUp()
+    { 
             pickUp.transform.position = new Vector3(0, Mathf.Lerp(PickUpStartPos, PickUpEndPos, Time.deltaTime * PickUpGoesUpSpeed), 0);
-            newTile = Instantiate(tile, new Vector3(transform.position.x, transform.position.y+1f, transform.position.z), transform.rotation) as GameObject;
+            newTile = Instantiate(tile, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), transform.rotation) as GameObject;
             isPicked = true;
-            
+
             //Destroy(gameObject);
-        }
+        
     }
 }
