@@ -24,7 +24,7 @@ public class GridManager : MonoBehaviour {
         initFields();
         initGrid();
         createGridObj();
-        SpawnPickUp();
+        //SpawnPickUp();
 
     }
 
@@ -48,7 +48,6 @@ public class GridManager : MonoBehaviour {
         }
 
         setTile(2, 2, FieldStatus.None);
-        setTile(0, 0, FieldStatus.None);
         setTile(2, 0, FieldStatus.None);
 
     }
