@@ -7,6 +7,7 @@ using System.Collections.Generic;
 [Serializable]
 public class GridManager : MonoBehaviour {
 
+    [SerializeField]
     public bool[] FloorInitializer;
     public int gridSize = 7;
     public float offset = 0.5f;
@@ -30,7 +31,6 @@ public class GridManager : MonoBehaviour {
         createGridObj();
         SpawnPickUp();
         SpawnPickUp();
-       
     }
 
     void initFields()
