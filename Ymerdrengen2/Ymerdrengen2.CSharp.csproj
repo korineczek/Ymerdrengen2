@@ -96,7 +96,8 @@
     <Compile Include="Assets\Scripts\Grid\GridManager.cs" />
     <Compile Include="Assets\Scripts\Grid\ITile.cs" />
     <Compile Include="Assets\Scripts\MoveDirection.cs" />
-    <Compile Include="Assets\Scripts\PickUpScript.cs" />
+    <Compile Include="Assets\Scripts\PickUp\MoveTile.cs" />
+    <Compile Include="Assets\Scripts\PickUp\PickUpScript.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\SwipeManager.cs" />
     <Compile Include="Assets\Scripts\UI\Game\Score.cs" />
