@@ -21,6 +21,9 @@ public class GridManager : MonoBehaviour {
     public Player PlayerCharacter;
     public Vector2 PlayerPosition;
 
+    //GameObjects
+    GameObject[,] tileObjects;
+
     // Use this for initialization
     void Start()
     {
@@ -55,6 +58,7 @@ public class GridManager : MonoBehaviour {
 
     void createGridObj()
     {
+        tileObjects = new GameObject[gridSize, gridSize];
         for (int x = 0; x < gridSize; x++)
         {
             for (int y = 0; y < gridSize; y++)
@@ -63,10 +67,32 @@ public class GridManager : MonoBehaviour {
                 if (GridData.grid[x, y].GetValue())
                 { 
                     GameObject tile = Instantiate(tileObj, this.transform) as GameObject;
+                    tileObjects[x, y] = tile;
                     tile.transform.position = new Vector3(x + offset, -0.5f, y + offset);
                 }
             }
         }
+    }
+
+    public void removeTile(int x, int y)
+    {
+        if (GridData.grid[x, y].GetValue())
+        {
+            Destroy(tileObjects[x, y]);
+            tileObjects[x, y] = null;
+            ToggleFlags(new Vector2(x, y), FieldStatus.Floor);
+        }
+    }
+
+    public void addTile(int x, int y)
+    {   
+        if(!GridData.grid[x, y].GetValue())
+        {
+            GameObject tile = Instantiate(tileObj, this.transform) as GameObject;
+            tileObjects[x, y] = tile;
+            tile.transform.position = new Vector3(x + offset, -0.5f, y + offset);
+            ToggleFlags(new Vector2(x, y), FieldStatus.Floor);
+        } 
     }
 
     public void setTile(int x, int y, FieldStatus status)

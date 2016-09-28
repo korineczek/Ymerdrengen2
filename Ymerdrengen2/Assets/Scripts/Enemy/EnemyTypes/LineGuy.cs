@@ -4,10 +4,8 @@ using System.Collections;
 public class LineGuy : Enemy
 {
 
-    Vector3 newPos;
-    Vector3 oldPos;
-
     Vector3 vectorDir;
+    Direction direction;
 
     float t = 0;
 
@@ -32,7 +30,7 @@ public class LineGuy : Enemy
     public override void init(int x, int y, Direction dir)
     {
         transform.position = new Vector3(x + GridData.offset, 0, y + GridData.offset);
-        base.direction = dir;
+        direction = dir;
 
         setDirVector();
 
@@ -43,13 +41,11 @@ public class LineGuy : Enemy
 
     public override void init(int x, int y)
     {
-        Debug.Log("RANDOM");
         init();
     }
 
     public override void init()
     {
-        Debug.Log("RANDOM");
         int rand = Random.Range(0, 3);
         int laneNum = Random.Range(0, 5);
         switch (rand)
@@ -77,21 +73,13 @@ public class LineGuy : Enemy
 
     public void setDirVector()
     {
-        if (base.direction == Direction.Down)
-        {
+        if (direction == Direction.Down)
             vectorDir = new Vector3(0, 0, -1);
-        }
-        else if (base.direction == Direction.Up)
-        {
+        else if (direction == Direction.Up)
             vectorDir = new Vector3(0, 0, 1);
-        }
-        else if (base.direction == Direction.Left)
-        {
+        else if (direction == Direction.Left)
             vectorDir = new Vector3(-1, 0, 0);
-        }
-        else if (base.direction == Direction.Right)
-        {
+        else if (direction == Direction.Right)
             vectorDir = new Vector3(1, 0, 0);
-        }
     }
 }
