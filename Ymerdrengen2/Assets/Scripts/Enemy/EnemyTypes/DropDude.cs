@@ -15,6 +15,20 @@ public class DropDude : Enemy {
     public float dropTime = 2f;
     public float deathTime = 1f;
 
+    public Animator anim;
+
+    void Update()
+    {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("EndState"))
+        {
+            GameObject CherrySplosion = Instantiate(Resources.Load("Prefabs/CherrySplosion") as GameObject);
+            CherrySplosion.transform.position = transform.position;
+            Debug.Log("FJDIAWOJODW");
+            hitAllFields();
+            isDone();
+        }
+    }
+
     public override void behavior()
     {
         if(t < 1)
