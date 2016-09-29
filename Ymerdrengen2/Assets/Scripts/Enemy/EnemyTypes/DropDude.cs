@@ -17,7 +17,7 @@ public class DropDude : Enemy {
 
     public Animator anim;
 
-    void Update()
+    void animationControl()
     {
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("EndState"))
         {
@@ -31,7 +31,8 @@ public class DropDude : Enemy {
 
     public override void behavior()
     {
-        if(t < 1)
+        animationControl();
+        if (t < 1)
         { 
             t +=  Time.deltaTime * speed / dropTime;
             transform.position = Vector3.Lerp(oldPos, newPos, t);
