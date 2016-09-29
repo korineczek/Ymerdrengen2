@@ -47,14 +47,13 @@
   <ItemGroup>
      <Compile Include="Assets\LeanTouch\Editor\LeanTouch_Editor.cs" />
      <Compile Include="Assets\Scripts\Enemy\Editor\EnemyEditor.cs" />
+     <Compile Include="Assets\Scripts\Grid\Editor\GridEditor.cs" />
      <None Include="Assets\Scripts\Description.txt" />
      <None Include="Assets\Prefabs\Description.txt" />
      <None Include="Assets\Audio\Description.txt" />
-     <None Include="Assets\Shaders\PickUpGlowShader.shader" />
+     <None Include="Assets\Graphics\Shaders\PickUpGlowShader.shader" />
      <None Include="Assets\Scenes\Description.txt" />
-     <None Include="Assets\3D models\Description.txt" />
-     <None Include="Assets\Animation\Description.txt" />
-     <None Include="Assets\Materials\Description.txt" />
+     <None Include="Assets\Graphics\Materials\Description.txt" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>

@@ -87,7 +87,6 @@ public class ConeBuddy : Enemy
     {
         GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
         cube.transform.position = p;
-        
         if(direction == Direction.Down || direction == Direction.Up)
             cube.transform.localScale = new Vector3(f, 0.5f, 0.5f);
         else
