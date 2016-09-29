@@ -30,12 +30,16 @@ public class GridManager : MonoBehaviour {
     void Start()
     {
         PickUpDic = new Dictionary<Vector2, GameObject>();
- 
+
+        initPlayer();
         initFields();
         initGrid(FloorInitializer);
         createGridObj();
-        //SpawnPickUp();
-        //SpawnPickUp();
+    }
+
+    void initPlayer()
+    {
+        PlayerCharacter.transform.position = new Vector3(PlayerPosition.x + GridData.offset, 0, PlayerPosition.y + GridData.offset);
     }
 
     void initFields()
@@ -123,6 +127,7 @@ public class GridManager : MonoBehaviour {
     {
         return GridData.grid[x, y];
     }
+
     public ITile getTile(Vector2 coord)
     {
         return GridData.grid[(int)coord.x, (int)coord.y];
@@ -134,7 +139,7 @@ public class GridManager : MonoBehaviour {
         if (isPlayerHit)
         {
             Debug.Log("Has hit player on tile on (" + x + ", " + y + ")");
-            PlayerCharacter.gameObject.SetActive(false);
+            killPlayer();
         }
         return isPlayerHit;
     }
@@ -142,11 +147,10 @@ public class GridManager : MonoBehaviour {
     public void TryMovePlayer(MoveDirection dir)
     {
         if (!PlayerCharacter.gameObject.activeSelf) {
-            PlayerCharacter.gameObject.SetActive(true);
+            revivePlayer();
             return;
         }
             
-
         Vector2 newPos = PlayerPosition + TransformMoveDirection(dir);
         bool newPosValue = false;
         try {
@@ -176,11 +180,37 @@ public class GridManager : MonoBehaviour {
                 targetPickUp.GetComponent<PickUpScript>().TriggerPickUp();
                 // remove ymer from dict
                 PickUpDic.Remove(new Vector2((int)newPos.x, (int)newPos.y));
+
             }
         }
-        else {
-            PlayerCharacter.gameObject.SetActive(false);
+        else if (targetPickUp != null)
+        {
+            // add a new tile if there is a charge
+            addTile((int)newPos.x, (int)newPos.y);
+            // Move the player to the new tile
+            PlayerCharacter.isLerping = true;
+            PlayerCharacter.Move(dir);
+            PlayerPosition = newPos;
+            // destroy the pick up above player's head
+            Destroy(targetPickUp);
         }
+        else {
+            killPlayer();
+        }
+    }
+
+    public void killPlayer()
+    {
+        PlayerCharacter.GetComponent<Player>().loseYogurt();
+        PlayerCharacter.gameObject.SetActive(false);
+
+        GameObject.FindGameObjectWithTag("Progression").GetComponent<LevelProgression>().Death();
+
+    }
+
+    public void revivePlayer()
+    {
+        PlayerCharacter.gameObject.SetActive(true);
     }
 
     public Vector2 TransformMoveDirection(MoveDirection dir)
@@ -236,7 +266,7 @@ public class GridManager : MonoBehaviour {
         GameObject pickUp = Instantiate(Resources.Load("Prefabs/YogurtCarton") as GameObject);
         // put pick up on the center of the tile
         pickUp.transform.position = new Vector3(x + offset, 0, y + offset);
-
+        getTile(x, y).ToggleFlags(FieldStatus.PickUp);
         // associate the pickup with its coordinates (so we know which one to destroy when picked)
         PickUpDic.Add(new Vector2(x, y), pickUp);
 
