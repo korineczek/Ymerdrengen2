@@ -40,7 +40,7 @@ public abstract class Enemy : MonoBehaviour
     {
         if (round(newPos.x) >= 0 && round(newPos.z) >= 0 && round(newPos.x) < GridData.gridSize && round(newPos.z) < GridData.gridSize)
         {
-            if (GridData.grid[round(newPos.x), round(newPos.z)].GetValue())
+            if (GridData.grid[round(newPos.x), round(newPos.z)].HasFloor())
             {
                 return true;
             }
