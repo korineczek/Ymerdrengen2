@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class LevelProgression : MonoBehaviour {
 
     public GameObject tracker;
+    public GameObject progressionTracker;
     public Animator anim;
     public GameObject winText;
     public GameObject deathText;
@@ -54,6 +55,7 @@ public class LevelProgression : MonoBehaviour {
     {
         progressTimer = false;
         deathText.SetActive(true);
+        progressionTracker.SetActive(false);
     }
 
     IEnumerator LevelTransition()
