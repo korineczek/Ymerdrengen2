@@ -91,8 +91,8 @@ namespace Ymerdrengen2.Tests
                 new BaseTile() { Value = FieldStatus.None },
                 new BaseTile() { Value = FieldStatus.Floor },
                 new BaseTile() { Value = FieldStatus.OnFire },
-                new BaseTile() { Value = FieldStatus.PickUp },
                 new BaseTile() { Value = FieldStatus.Floor | FieldStatus.OnFire },
+                new BaseTile() { Value = FieldStatus.PickUp },
                 new BaseTile() { Value = FieldStatus.Floor | FieldStatus.PickUp },
                 new BaseTile() { Value = FieldStatus.OnFire | FieldStatus.PickUp },
                 new BaseTile() { Value = FieldStatus.Floor | FieldStatus.OnFire | FieldStatus.PickUp }
@@ -107,8 +107,8 @@ namespace Ymerdrengen2.Tests
                 (FieldStatus)7, // FieldStatus.Floor | FieldStatus.OnFire | FieldStatus.PickUp OR 1 + 2 + 4
                 (FieldStatus)6, // FieldStatus.OnFire | FieldStatus.PickUp OR 2 + 4
                 (FieldStatus)5, // FieldStatus.Floor | FieldStatus.PickUp OR 1 + 4
-                (FieldStatus)3, // FieldStatus.Floor | FieldStatus.Onfire OR 1 + 2
                 (FieldStatus)4, // FieldStatus.PickUp OR 4
+                (FieldStatus)3, // FieldStatus.Floor | FieldStatus.Onfire OR 1 + 2
                 (FieldStatus)2, // FieldStatus.OnFire OR 2
                 (FieldStatus)1, // FieldStatus.Floor OR 1
                 (FieldStatus)0  // FieldStatus.None OR 0
@@ -117,6 +117,12 @@ namespace Ymerdrengen2.Tests
             for (int i = 0; i < testTiles.Length; i++) {
                 Assert.AreEqual(expectedResults[i], testTiles[i].Value);
             }
+
+            BaseTile pickupTest = new BaseTile() { Value = FieldStatus.Floor | FieldStatus.PickUp };
+            pickupTest = ToggleFlags(pickupTest, FieldStatus.PickUp); // Actually toggles flags.
+            //ToggleFlags(pickupTest, FieldStatus.PickUp); // Fails to toggle flags.
+
+            Assert.AreEqual(FieldStatus.Floor, pickupTest.Value); 
         }
 
         public BaseTile ToggleFlags(BaseTile tile, FieldStatus flags)

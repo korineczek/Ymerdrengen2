@@ -9,6 +9,8 @@ public class GridManager : MonoBehaviour {
 
     [SerializeField]
     public bool[] FloorInitializer;
+    [SerializeField]
+    public bool[] YoghurtInitializer;
     public int gridSize = 7;
     public float offset = 0.5f;
 
@@ -49,6 +51,17 @@ public class GridManager : MonoBehaviour {
             for (int y = 0; y < gridSize; y++)
             {
                 setTile(x, y, (FieldStatus)Convert.ToInt32(floorInitializer[x + (y*gridSize)]));
+            }
+        }
+    }
+
+    void initPickups(bool[] pickupInitializer)
+    {
+        for (int x = 0; x < gridSize; x++) {
+            for (int y = 0; y < gridSize; y++) {
+                if (pickupInitializer[x + (y * gridSize)]) {
+                    SpawnPickUp(x, y);
+                }
             }
         }
     }
@@ -149,6 +162,11 @@ public class GridManager : MonoBehaviour {
         }
     }
 
+    public void SpawnPickUp(int x, int y)
+    {
+        ToggleFlags(GridData.grid[x, y], FieldStatus.PickUp);
+        createPickUp(x, y);
+    }
 
     public void SpawnPickUp()
     {
