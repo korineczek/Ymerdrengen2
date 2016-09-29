@@ -62,8 +62,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void loseYogurt()
+    {
+
+        foreach (Transform child in transform)
+        {
+            if(child.gameObject.tag == "PickUp")
+                GameObject.Destroy(child.gameObject);
+        }
+    }
+
     public void Update()
     {
+        //Debug.Log("LERPING");
         float distCovered = (Time.time - startTime) * speed;
         float fracJourney = distCovered / journeyLength;
         transform.position = Vector3.Lerp(startPos, endPos, fracJourney);
