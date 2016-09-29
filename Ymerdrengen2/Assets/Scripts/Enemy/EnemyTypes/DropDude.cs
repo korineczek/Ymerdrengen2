@@ -11,6 +11,7 @@ public class DropDude : Enemy {
     [Range(1, 3)]
     public int size = 1;
     public float startHeight = 8f;
+    public float endHeight = 0.5f;
     public float dropTime = 2f;
     public float deathTime = 1f;
 
@@ -55,7 +56,7 @@ public class DropDude : Enemy {
         internalZ = y;
         oldPos = new Vector3(x + (float)(size) / 2, startHeight, y + (float)(size) / 2);
         transform.position = oldPos;
-        newPos = new Vector3(x + (float)(size) / 2, 0, y + (float)(size) / 2);
+        newPos = new Vector3(x + (float)(size) / 2, endHeight, y + (float)(size) / 2);
     }
 
     private void hitAllFields()
