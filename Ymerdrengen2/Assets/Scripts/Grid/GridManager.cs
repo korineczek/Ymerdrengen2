@@ -147,7 +147,7 @@ public class GridManager : MonoBehaviour {
     public void TryMovePlayer(MoveDirection dir)
     {
         if (!PlayerCharacter.gameObject.activeSelf) {
-            revivePlayer();
+            //revivePlayer();
             return;
         }
             
