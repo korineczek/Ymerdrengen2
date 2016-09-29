@@ -123,6 +123,7 @@ public class GridManager : MonoBehaviour {
     {
         return GridData.grid[x, y];
     }
+
     public ITile getTile(Vector2 coord)
     {
         return GridData.grid[(int)coord.x, (int)coord.y];
