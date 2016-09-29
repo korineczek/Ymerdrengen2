@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿// <copyright file="PickUpScript.cs" company="Team4">
+// CC
+// </copyright>
+// <author>Angeliki</author>
+// <summary>Script attached to every pick up.</summary>
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,51 +12,81 @@ using UnityEngine;
 /// </summary>
 public class PickUpScript : MonoBehaviour
 {
-    public float PickUpEndPos;
-    public float PickUpStartPos;
+    /// <summary>
+    /// float that makes pick up stand above ground instead of touching it at the beginning
+    /// </summary>
+    public float PickUpStandingHeight;
+
+    /// <summary>
+    /// speed that pickup goes above player's head
+    /// </summary>
     public float PickUpGoesUpSpeed;
+
+    /// <summary>
+    /// speed for pick up rotation
+    /// </summary>
     public float PickUpRotateSpeed;
-    public float pickUpGoesUp;
+
+    /// <summary>
+    /// how high pick up goes above player's head
+    /// </summary>
+    public float PickUpAboveHead;
 
     /// <summary>
     /// The player game object
     /// </summary>
-    GameObject player;
-    bool isPicked;
+    public GameObject Player;
 
-    // Use this for initialization
-    public void Start() {
-        
-        player = GameObject.Find("Character");
+    /// <summary>
+    /// where pick up spawns
+    /// </summary>
+    private float pickUpStartPos;
+
+    /// <summary>
+    /// final position of pickup above head
+    /// </summary>
+    private float pickUpEndPos;
+
+    /// <summary>
+    /// boolean is picked
+    /// </summary>
+    private bool isPicked;
+
+    /// <summary>
+    /// start function
+    /// </summary>
+    public void Start()
+    {
+        Player = GameObject.Find("Character");
         isPicked = false;
-        transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
-        PickUpGoesUpSpeed = 10f;
-        PickUpRotateSpeed = 40f;
-        pickUpGoesUp = 5f;
-        PickUpStartPos = transform.position.y;
-        PickUpEndPos = transform.position.y + pickUpGoesUp;
-  
+        transform.position = new Vector3(transform.position.x, transform.position.y + PickUpStandingHeight, transform.position.z);
+        pickUpStartPos = transform.position.y;
+        pickUpEndPos = transform.position.y + PickUpAboveHead;
     }
 
-    // Update is called once per frame
-    public void Update() {
+    /// <summary>
+    /// Update function
+    /// </summary>
+    public void Update()
+    {
         transform.Rotate(0, Time.deltaTime * PickUpRotateSpeed, 0);
 
-        if (isPicked && !player.GetComponent<Player>().isLerping)
+        if (isPicked && !Player.GetComponent<Player>().isLerping)
         {
             // set pickUp child of the character so it follows him
-            this.transform.SetParent(player.transform);
-            player.GetComponent<Player>().numYmer++;
+            this.transform.SetParent(Player.transform);
+            Player.GetComponent<Player>().numYmer++;
             isPicked = false;
         }
     }
 
+    /// <summary>
+    /// is called when a pick up is picked
+    /// </summary>
     public void TriggerPickUp()
     {
-        
         // lerp the pick up above player's head
-        transform.position = new Vector3(transform.position.x, Mathf.Lerp(PickUpStartPos, PickUpEndPos, Time.deltaTime * PickUpGoesUpSpeed), transform.position.z);
+        transform.position = new Vector3(transform.position.x, Mathf.Lerp(pickUpStartPos, pickUpEndPos, Time.deltaTime * PickUpGoesUpSpeed), transform.position.z);
         isPicked = true;
-
     }
 }

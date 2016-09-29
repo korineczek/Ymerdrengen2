@@ -5,7 +5,10 @@ using UnityEngine.UI;
 public class LevelProgression : MonoBehaviour {
 
     public GameObject tracker;
+    public GameObject progressionTracker;
     public Animator anim;
+    public GameObject winText;
+    public GameObject deathText;
 
     public int nextLevel;
     public bool progressTimer = false;
@@ -35,7 +38,7 @@ public class LevelProgression : MonoBehaviour {
                     PlayerPrefs.SetInt("Level", nextLevel);
                 }
 
-                Application.LoadLevel(Application.loadedLevel + 1);
+                StartCoroutine("LevelTransition");
             }
         }
        
@@ -48,6 +51,19 @@ public class LevelProgression : MonoBehaviour {
         progressTimer = true;
     }
 
+    public void Death()
+    {
+        progressTimer = false;
+        deathText.SetActive(true);
+        progressionTracker.SetActive(false);
+    }
 
+    IEnumerator LevelTransition()
+    {
+        winText.SetActive(true);
+        //yield return new WaitForSeconds(2);
+        Application.LoadLevel(nextLevel);
+        yield break;
+    }
    
 }

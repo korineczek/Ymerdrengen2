@@ -71,7 +71,10 @@ public class EnemyManager : MonoBehaviour {
             }
         }
 
-        spawnMonster(list);
+        if(list[0] == "Yogurt")
+            spawnYogurt(list);
+        else
+            spawnMonster(list);
 
         spawnPatternIndex++;
         stopTime = 0;
@@ -111,6 +114,23 @@ public class EnemyManager : MonoBehaviour {
                 enemyScript.init(x, y, parseDirection(list[3]));
                 break;
         }
+    }
+
+    public void spawnYogurt(string[] list)
+    {
+        if (list.Length > 1)
+        {
+            int x;
+            int y;
+
+            //Debug.Log("YOGURT BABY");
+            int.TryParse(list[1], out x);
+            int.TryParse(list[2], out y);
+
+            GridData.gridManager.createPickUp(x, y);
+        }
+        else
+            GridData.gridManager.SpawnPickUp();
     }
 
     private Direction parseDirection(string s)

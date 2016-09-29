@@ -47,7 +47,11 @@ namespace Grid
             private set
             {
                 this.gridSideLength = value;
-                this.innerGrid = Enumerable.Repeat(Activator.CreateInstance<T>(), this.GridSideLength * this.GridSideLength).ToArray();
+                this.innerGrid = new T[MaxGridCount];
+                for (int i = 0; i < this.innerGrid.Length; i++) {
+                    innerGrid[i] = Activator.CreateInstance<T>();
+                }
+                //this.innerGrid = Enumerable.Repeat(Activator.CreateInstance<T>(), this.GridSideLength * this.GridSideLength).ToArray();
             }
         }
 

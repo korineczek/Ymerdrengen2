@@ -63,8 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DeviceSetup.cs" />
-    <Compile Include="Assets\DoorScript.cs" />
     <Compile Include="Assets\LeanTouch\Examples\SimpleDrag.cs" />
     <Compile Include="Assets\LeanTouch\Examples\SimpleDragRigidbody.cs" />
     <Compile Include="Assets\LeanTouch\Examples\SimpleDragSmooth.cs" />
@@ -86,9 +84,10 @@
     <Compile Include="Assets\LeanTouch\Scripts\LeanFinger.cs" />
     <Compile Include="Assets\LeanTouch\Scripts\LeanSnapshot.cs" />
     <Compile Include="Assets\LeanTouch\Scripts\LeanTouch.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Scripts\DeviceSetup.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyManager.cs" />
-    <Compile Include="Assets\Scripts\Enemy\HARDCODEDTESTSCRIPT.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyTypes\DropDude.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyTypes\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\LineGuy.cs" />
     <Compile Include="Assets\Scripts\Enemy\SpawnPattern.cs" />
     <Compile Include="Assets\Scripts\Grid\BaseTile.cs" />
@@ -100,6 +99,7 @@
     <Compile Include="Assets\Scripts\PickUp\PickUpScript.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\SwipeManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Game\Death.cs" />
     <Compile Include="Assets\Scripts\UI\Game\LevelProgression.cs" />
     <Compile Include="Assets\Scripts\UI\Game\Pause.cs" />
     <Compile Include="Assets\Scripts\UI\Game\Score.cs" />
@@ -113,8 +113,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Audio\Description.txt" />
-    <None Include="Assets\Graphics\3D models\Description.txt" />
-    <None Include="Assets\Graphics\Animation\Description.txt" />
     <None Include="Assets\Graphics\Materials\Description.txt" />
     <None Include="Assets\Graphics\Shaders\PickUpGlowShader.shader" />
     <None Include="Assets\Prefabs\Description.txt" />
