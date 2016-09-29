@@ -46,7 +46,6 @@ public class ConeBuddy : Enemy
         else if (hold && timer > holdTime)
         {
             revereseDirection();
-            Debug.Log(vectorDir);
             newPos = oldPos + vectorDir;
             hold = false;
             timer = 0;
@@ -67,11 +66,14 @@ public class ConeBuddy : Enemy
                     Vector3 point = rotVector + oldPos;
                     int intX = round(point.x);
                     int intZ = round(point.z);
-                    if (x == 2)
+                    //DEBUG
+                    if (x == 2) { 
                         SPAWNCUBE(point, z + 1);
+                    }
+                    //DEBUG
                     if (intX >= 0 && intZ >= 0 && intX < GridData.gridSize && intZ < GridData.gridSize)
                     {
-                        if (GridData.grid[intX, intZ].GetValue())
+                        if (GridData.grid[intX, intZ].HasFloor())
                         {
                             GridData.gridManager.hitTile(intX, intZ);
                         }
@@ -161,7 +163,7 @@ public class ConeBuddy : Enemy
             case Direction.Left:  direction = Direction.Right; break;
             case Direction.Right: direction = Direction.Left; break;
         }
-        Debug.Log(direction);
+        transform.Rotate(new Vector3(0, 180, 0));
         setDirVector();
     }
 }
