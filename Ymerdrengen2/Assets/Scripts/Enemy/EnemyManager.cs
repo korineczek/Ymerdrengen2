@@ -118,7 +118,7 @@ public class EnemyManager : MonoBehaviour {
 
     public void spawnYogurt(string[] list)
     {
-        if (list.Length >= 1)
+        if (list.Length > 1)
         {
             int x;
             int y;
