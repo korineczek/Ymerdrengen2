@@ -80,7 +80,7 @@ public class GridManager : MonoBehaviour {
             for (int y = 0; y < gridSize; y++)
             {
                 //Objects
-                if (GridData.grid[x, y].HasFloor())
+                if (getTile(x,y).HasFloor())
                 { 
                     GameObject tile = Instantiate(tileObj, this.transform) as GameObject;
                     tileObjects[x, y] = tile;
