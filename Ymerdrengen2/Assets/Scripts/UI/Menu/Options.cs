@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -42,7 +43,8 @@ public class Options : MonoBehaviour {
     public void ResetData()
     {
         PlayerPrefs.DeleteAll();
-        Application.LoadLevel(0);
+        SceneManager.LoadScene(0);
+        //Application.LoadLevel(0);
 
         //PlayerPrefs.SetInt("Level", 1);
         //menu.SetActive(true);
