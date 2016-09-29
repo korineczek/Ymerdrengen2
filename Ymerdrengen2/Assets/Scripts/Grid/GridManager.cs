@@ -34,8 +34,8 @@ public class GridManager : MonoBehaviour {
         initFields();
         initGrid(FloorInitializer);
         createGridObj();
-        SpawnPickUp();
-        SpawnPickUp();
+        //SpawnPickUp();
+        //SpawnPickUp();
     }
 
     void initFields()
@@ -220,11 +220,12 @@ public class GridManager : MonoBehaviour {
 
         nextTile.ToggleFlags(FieldStatus.PickUp);
         //setTile((int)nextTile.x, (int)nextTile.y, FieldStatus.PickUp);
+
         createPickUp((int)nextTilePos.x, (int)nextTilePos.y);
 
     }
 
-    void createPickUp(int x, int y)
+    public void createPickUp(int x, int y)
     {
         // instantiate the pick up on the randomly chosen tile
         GameObject pickUp = Instantiate(Resources.Load("Prefabs/YogurtCarton") as GameObject);
