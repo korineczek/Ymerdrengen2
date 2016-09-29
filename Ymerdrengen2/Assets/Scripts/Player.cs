@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
 
     public void Update()
     {
+        //Debug.Log("LERPING");
         float distCovered = (Time.time - startTime) * speed;
         float fracJourney = distCovered / journeyLength;
         transform.position = Vector3.Lerp(startPos, endPos, fracJourney);
