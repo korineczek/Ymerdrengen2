@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -7,6 +6,8 @@ public class LevelProgression : MonoBehaviour {
 
     public GameObject tracker;
     public Animator anim;
+    public GameObject winText;
+    public GameObject deathText;
 
     public int nextLevel;
     public bool progressTimer = false;
@@ -14,15 +15,15 @@ public class LevelProgression : MonoBehaviour {
     float levelTime;
 
 
+
     // Use this for initialization
-    void Start ()
-    {
+    void Start () {
         StartGame();
 	}
 	
 	// Update is called once per frame
-	void Update ()
-    {
+	void Update () {
+
         if (progressTimer)
         {
             levelTime += Time.deltaTime;
@@ -36,14 +37,31 @@ public class LevelProgression : MonoBehaviour {
                     PlayerPrefs.SetInt("Level", nextLevel);
                 }
 
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                //Application.LoadLevel(Application.loadedLevel + 1);
+                StartCoroutine("LevelTransition");
             }
         }
+       
+       
+
 	}
 
     public void StartGame()
     {
         progressTimer = true;
     }
+
+    public void Death()
+    {
+        progressTimer = false;
+        deathText.SetActive(true);
+    }
+
+    IEnumerator LevelTransition()
+    {
+        winText.SetActive(true);
+        yield return new WaitForSeconds(2);
+        Application.LoadLevel(nextLevel);
+
+    }
+   
 }
