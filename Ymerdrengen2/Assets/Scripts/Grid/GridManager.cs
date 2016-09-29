@@ -199,6 +199,9 @@ public class GridManager : MonoBehaviour {
     {
         PlayerCharacter.GetComponent<Player>().loseYogurt();
         PlayerCharacter.gameObject.SetActive(false);
+
+        GameObject.FindGameObjectWithTag("Progression").GetComponent<LevelProgression>().Death();
+
     }
 
     public void revivePlayer()
