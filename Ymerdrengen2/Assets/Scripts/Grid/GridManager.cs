@@ -176,7 +176,19 @@ public class GridManager : MonoBehaviour {
                 targetPickUp.GetComponent<PickUpScript>().TriggerPickUp();
                 // remove ymer from dict
                 PickUpDic.Remove(new Vector2((int)newPos.x, (int)newPos.y));
+
             }
+        }
+        else if (targetPickUp != null)
+        {
+            // add a new tile if there is a charge
+            addTile((int)newPos.x, (int)newPos.y);
+            // Move the player to the new tile
+            PlayerCharacter.isLerping = true;
+            PlayerCharacter.Move(dir);
+            PlayerPosition = newPos;
+            // destroy the pick up above player's head
+            Destroy(targetPickUp);
         }
         else {
             PlayerCharacter.gameObject.SetActive(false);
@@ -236,7 +248,7 @@ public class GridManager : MonoBehaviour {
         GameObject pickUp = Instantiate(Resources.Load("Prefabs/YogurtCarton") as GameObject);
         // put pick up on the center of the tile
         pickUp.transform.position = new Vector3(x + offset, 0, y + offset);
-
+        getTile(x, y).ToggleFlags(FieldStatus.PickUp);
         // associate the pickup with its coordinates (so we know which one to destroy when picked)
         PickUpDic.Add(new Vector2(x, y), pickUp);
 
