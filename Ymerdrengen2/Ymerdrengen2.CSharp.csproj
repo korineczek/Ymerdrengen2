@@ -61,6 +61,12 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DeviceSetup.cs" />
@@ -100,6 +106,7 @@
     <Compile Include="Assets\Scripts\PickUp\PickUpScript.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\SwipeManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Game\Death.cs" />
     <Compile Include="Assets\Scripts\UI\Game\LevelProgression.cs" />
     <Compile Include="Assets\Scripts\UI\Game\Pause.cs" />
     <Compile Include="Assets\Scripts\UI\Game\Score.cs" />
