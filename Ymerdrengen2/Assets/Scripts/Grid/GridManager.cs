@@ -30,12 +30,16 @@ public class GridManager : MonoBehaviour {
     void Start()
     {
         PickUpDic = new Dictionary<Vector2, GameObject>();
- 
+
+        initPlayer();
         initFields();
         initGrid(FloorInitializer);
         createGridObj();
-        //SpawnPickUp();
-        //SpawnPickUp();
+    }
+
+    void initPlayer()
+    {
+        PlayerCharacter.transform.position = new Vector3(PlayerPosition.x + GridData.offset, 0, PlayerPosition.y + GridData.offset);
     }
 
     void initFields()
@@ -147,7 +151,6 @@ public class GridManager : MonoBehaviour {
             return;
         }
             
-
         Vector2 newPos = PlayerPosition + TransformMoveDirection(dir);
         bool newPosValue = false;
         try {
