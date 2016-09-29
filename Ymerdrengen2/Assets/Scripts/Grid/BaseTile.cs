@@ -18,6 +18,10 @@ namespace Grid
         /// </summary>
         public FieldStatus Value { get; set; }
 
+        /// <summary>
+        /// Gets the current value of the field, determining what kind of field it is.
+        /// </summary>
+        /// <returns>FieldStatus describing the current state of the field.</returns>
         public FieldStatus GetStatus()
         {
             return Value;
