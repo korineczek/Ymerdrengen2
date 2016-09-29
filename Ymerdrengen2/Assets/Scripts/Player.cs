@@ -62,6 +62,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void loseYogurt()
+    {
+
+        foreach (Transform child in transform)
+        {
+            if(child.gameObject.tag == "PickUp")
+                GameObject.Destroy(child.gameObject);
+        }
+    }
+
     public void Update()
     {
         //Debug.Log("LERPING");
