@@ -49,13 +49,16 @@ public class GridManager : MonoBehaviour {
 
     void initGrid(bool[] floorInitializer)
     {
-        for (int x = 0; x < gridSize; x++)
-        {
-            for (int y = 0; y < gridSize; y++)
-            {
-                setTile(x, y, (FieldStatus)Convert.ToInt32(floorInitializer[x + (y*gridSize)]));
+        string preDebugString = string.Empty;
+        string postDebugString = string.Empty;
+
+        for (int x = 0; x < gridSize; x++) {
+            for (int y = 0; y < gridSize; y++) {
+                setTile(x, y, (FieldStatus)Convert.ToInt32(floorInitializer[x + (y * gridSize)]));
             }
         }
+
+        Console.WriteLine(postDebugString);
     }
 
     void initPickups(bool[] pickupInitializer)
@@ -89,7 +92,7 @@ public class GridManager : MonoBehaviour {
 
     public void removeTile(int x, int y)
     {
-        if (GridData.grid[x, y].HasFloor())
+        if (getTile(x,y).HasFloor())
         {
             Destroy(tileObjects[x, y]);
             tileObjects[x, y] = null;
@@ -99,7 +102,7 @@ public class GridManager : MonoBehaviour {
 
     public void addTile(int x, int y)
     {   
-        if(!GridData.grid[x, y].HasFloor())
+        if(!getTile(x,y).HasFloor())
         {
             GameObject tile = Instantiate(tileObj, this.transform) as GameObject;
             tileObjects[x, y] = tile;
@@ -110,9 +113,10 @@ public class GridManager : MonoBehaviour {
 
     public void setTile(int x, int y, FieldStatus status)
     {
-        BaseTile bt = GridData.grid[x, y];
-        bt.Value = status;
-        GridData.grid[x, y] = bt;
+        GridData.grid[x, y].Value = status;
+        //BaseTile bt = GridData.grid[x, y];
+        //bt.Value = status;
+        //GridData.grid[x, y] = bt;
     }
 
     public ITile getTile(int x, int y)
@@ -165,7 +169,8 @@ public class GridManager : MonoBehaviour {
                 // identify which pick up player touches (if there are a lot)
                 PickUpDic.TryGetValue(new Vector2((int)newPos.x, (int)newPos.y), out targetPickUp);
                 // say to the grid that this tile doesn't have a pick up anymore
-                GridData.grid[(int)newPos.x, (int)newPos.y] = ToggleFlags(GridData.grid[(int)newPos.x, (int)newPos.y], FieldStatus.PickUp);
+                getTile(newPos).ToggleFlags(FieldStatus.PickUp);
+                //GridData.grid[(int)newPos.x, (int)newPos.y] = ToggleFlags(GridData.grid[(int)newPos.x, (int)newPos.y], FieldStatus.PickUp);
                 //ToggleFlags(GridData.grid[(int)newPos.x, (int)newPos.y], FieldStatus.PickUp);
                 // call the triggerPickUp function from PickUpScript
                 targetPickUp.GetComponent<PickUpScript>().TriggerPickUp();
