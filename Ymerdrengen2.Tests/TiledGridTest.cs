@@ -27,16 +27,16 @@ namespace Ymerdrengen2.Tests
             for (int i = 0; i < testGridCoords.GridSideLength; i++) {
                 for (int j = 0; j < testGridCoords.GridSideLength; j++) {
                     if (i == 1 && j == 1) {
-                        Assert.IsTrue(testGridCoords[i, j].GetValue()); continue;
+                        Assert.IsTrue(testGridCoords[i, j].HasFloor()); continue;
                     }
                     else if (i == 2 && (j == 1 || j == 2)) {
-                        Assert.IsTrue(testGridCoords[i, j].GetValue()); continue;
+                        Assert.IsTrue(testGridCoords[i, j].HasFloor()); continue;
                     }
                     else if (i == 3 && j == 1) {
-                        Assert.IsTrue(testGridCoords[i, j].GetValue()); continue;
+                        Assert.IsTrue(testGridCoords[i, j].HasFloor()); continue;
                     }
                     else
-                        Assert.IsFalse(testGridCoords[i, j].GetValue());
+                        Assert.IsFalse(testGridCoords[i, j].HasFloor());
                 }
             }
         }
@@ -56,9 +56,9 @@ namespace Ymerdrengen2.Tests
                     case 7:
                     case 8:
                     case 12:
-                        Assert.IsTrue(testGridIdx[i].GetValue()); break;
+                        Assert.IsTrue(testGridIdx[i].HasFloor()); break;
                     default:
-                        Assert.IsFalse(testGridIdx[i].GetValue()); break;
+                        Assert.IsFalse(testGridIdx[i].HasFloor()); break;
                 }
             }
         }

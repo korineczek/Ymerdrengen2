@@ -27,10 +27,10 @@ namespace Ymerdrengen2.Tests
             };
 
             foreach (BaseTile bT in testTilesNone) {
-                Assert.IsFalse(bT.GetValue());
+                Assert.IsFalse(bT.HasFloor());
             }
             foreach (BaseTile bT in testTilesFloor) {
-                Assert.IsTrue(bT.GetValue());
+                Assert.IsTrue(bT.HasFloor());
             }
         }
 
@@ -99,8 +99,9 @@ namespace Ymerdrengen2.Tests
             };
 
             for (int i = 0; i < testTiles.Length; i++) {
-                testTiles[i] = ToggleFlags(testTiles[i], FieldStatus.Floor | FieldStatus.OnFire | FieldStatus.PickUp);
-                // ToggleFlags should be located in the GridManager.
+                testTiles[i].ToggleFlags(FieldStatus.Floor | FieldStatus.OnFire | FieldStatus.PickUp); // After converting BaseTile to Class instead of Struct.
+                //testTiles[i] = ToggleFlags(testTiles[i], FieldStatus.Floor | FieldStatus.OnFire | FieldStatus.PickUp);
+                // DEPRECATED(ToggleFlags should be located in the GridManager.)
             }
 
             FieldStatus[] expectedResults = new FieldStatus[] {
@@ -118,8 +119,10 @@ namespace Ymerdrengen2.Tests
                 Assert.AreEqual(expectedResults[i], testTiles[i].Value);
             }
 
+            // Deprecated functionality, use ITile.ToggleFlags(FieldStatus).
             BaseTile pickupTest = new BaseTile() { Value = FieldStatus.Floor | FieldStatus.PickUp };
-            pickupTest = ToggleFlags(pickupTest, FieldStatus.PickUp); // Actually toggles flags.
+            pickupTest.ToggleFlags(FieldStatus.PickUp);
+            //pickupTest = ToggleFlags(pickupTest, FieldStatus.PickUp); // Actually toggles flags.
             //ToggleFlags(pickupTest, FieldStatus.PickUp); // Fails to toggle flags.
 
             Assert.AreEqual(FieldStatus.Floor, pickupTest.Value); 

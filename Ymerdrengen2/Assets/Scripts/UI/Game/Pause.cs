@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Pause : MonoBehaviour {
@@ -45,12 +46,14 @@ public class Pause : MonoBehaviour {
 
     public void ResetLevel()
     {
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //Application.LoadLevel(Application.loadedLevel);
     }
 
     public void MainMenu()
     {
-        Application.LoadLevel(0);
+        SceneManager.LoadScene(0);
+        //Application.LoadLevel(0);
     }
 
 }
