@@ -17,6 +17,7 @@ public class GridManager : MonoBehaviour {
     Dictionary<Vector2, GameObject> PickUpDic;
     GameObject tileObj;
     GameObject targetPickUp;
+    GameObject pickUp;
 
     public Player PlayerCharacter;
     public Vector2 PlayerPosition;
@@ -91,7 +92,7 @@ public class GridManager : MonoBehaviour {
             GameObject tile = Instantiate(tileObj, this.transform) as GameObject;
             tileObjects[x, y] = tile;
             tile.transform.position = new Vector3(x + offset, -0.5f, y + offset);
-            ToggleFlags(new Vector2(x, y), FieldStatus.Floor);
+            GridData.grid[(int)x, (int)y] = ToggleFlags(GridData.grid[(int)x, (int)y], FieldStatus.Floor);
         } 
     }
 
@@ -146,7 +147,6 @@ public class GridManager : MonoBehaviour {
             PlayerPosition = newPos;
 
             // if player steps in a tile where a pick up exists
-            //if (GridData.grid[(int)newPos.x, (int)newPos.y].IsPickUp())
             if (getTile(newPos).IsPickUp())
             {
                 // identify which pick up player touches (if there are a lot)
@@ -159,6 +159,17 @@ public class GridManager : MonoBehaviour {
                 // remove ymer from dict
                 PickUpDic.Remove(new Vector2((int)newPos.x, (int)newPos.y));
             }
+        }
+        else if(targetPickUp != null)
+        {
+            // add a new tile if there is a charge
+            addTile((int)newPos.x, (int)newPos.y);
+            // Move the player to the new tile
+            PlayerCharacter.isLerping = true;
+            PlayerCharacter.Move(dir);
+            PlayerPosition = newPos;
+            // destroy the pick up above player's head
+            Destroy(targetPickUp);
         }
         else {
             PlayerCharacter.gameObject.SetActive(false);
@@ -200,7 +211,6 @@ public class GridManager : MonoBehaviour {
         Vector2 nextTile = FlooredTiles[tileIndex];
 
         ToggleFlags(nextTile, FieldStatus.PickUp);
-        //setTile((int)nextTile.x, (int)nextTile.y, FieldStatus.PickUp);
         createPickUp((int)nextTile.x, (int)nextTile.y);
 
     }
@@ -208,7 +218,7 @@ public class GridManager : MonoBehaviour {
     void createPickUp(int x, int y)
     {
         // instantiate the pick up on the randomly chosen tile
-        GameObject pickUp = Instantiate(Resources.Load("Prefabs/YogurtCarton") as GameObject);
+        pickUp = Instantiate(Resources.Load("Prefabs/YogurtCarton") as GameObject);
         // put pick up on the center of the tile
         pickUp.transform.position = new Vector3(x + offset, 0, y + offset);
 
