@@ -59,9 +59,9 @@ public class LevelProgression : MonoBehaviour {
     IEnumerator LevelTransition()
     {
         winText.SetActive(true);
-        yield return new WaitForSeconds(2);
+        //yield return new WaitForSeconds(2);
         Application.LoadLevel(nextLevel);
-
+        yield break;
     }
    
 }
