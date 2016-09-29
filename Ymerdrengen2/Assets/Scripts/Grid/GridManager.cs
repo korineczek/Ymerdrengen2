@@ -134,7 +134,7 @@ public class GridManager : MonoBehaviour {
         if (isPlayerHit)
         {
             Debug.Log("Has hit player on tile on (" + x + ", " + y + ")");
-            PlayerCharacter.gameObject.SetActive(false);
+            killPlayer();
         }
         return isPlayerHit;
     }
@@ -142,7 +142,7 @@ public class GridManager : MonoBehaviour {
     public void TryMovePlayer(MoveDirection dir)
     {
         if (!PlayerCharacter.gameObject.activeSelf) {
-            PlayerCharacter.gameObject.SetActive(true);
+            revivePlayer();
             return;
         }
             
@@ -191,8 +191,19 @@ public class GridManager : MonoBehaviour {
             Destroy(targetPickUp);
         }
         else {
-            PlayerCharacter.gameObject.SetActive(false);
+            killPlayer();
         }
+    }
+
+    public void killPlayer()
+    {
+        PlayerCharacter.GetComponent<Player>().loseYogurt();
+        PlayerCharacter.gameObject.SetActive(false);
+    }
+
+    public void revivePlayer()
+    {
+        PlayerCharacter.gameObject.SetActive(true);
     }
 
     public Vector2 TransformMoveDirection(MoveDirection dir)

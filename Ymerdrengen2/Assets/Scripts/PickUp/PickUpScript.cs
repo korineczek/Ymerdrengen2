@@ -15,22 +15,22 @@ public class PickUpScript : MonoBehaviour
     /// <summary>
     /// float that makes pick up stand above ground instead of touching it at the beginning
     /// </summary>
-    public float PickUpStandingPos = 0.3f;
+    public float PickUpStandingHeight;
 
     /// <summary>
     /// speed that pickup goes above player's head
     /// </summary>
-    public float PickUpGoesUpSpeed = 10f;
+    public float PickUpGoesUpSpeed;
 
     /// <summary>
     /// speed for pick up rotation
     /// </summary>
-    public float PickUpRotateSpeed = 40f;
+    public float PickUpRotateSpeed;
 
     /// <summary>
     /// how high pick up goes above player's head
     /// </summary>
-    public float PickUpAboveHead = 5f;
+    public float PickUpAboveHead;
 
     /// <summary>
     /// The player game object
@@ -59,7 +59,7 @@ public class PickUpScript : MonoBehaviour
     {
         Player = GameObject.Find("Character");
         isPicked = false;
-        transform.position = new Vector3(transform.position.x, transform.position.y + PickUpStandingPos, transform.position.z);
+        transform.position = new Vector3(transform.position.x, transform.position.y + PickUpStandingHeight, transform.position.z);
         pickUpStartPos = transform.position.y;
         pickUpEndPos = transform.position.y + PickUpAboveHead;
     }
