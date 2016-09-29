@@ -36,6 +36,26 @@ public abstract class Enemy : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    protected bool checkNextTile()
+    {
+        if (round(newPos.x) >= 0 && round(newPos.z) >= 0 && round(newPos.x) < GridData.gridSize && round(newPos.z) < GridData.gridSize)
+        {
+            if (GridData.grid[round(newPos.x), round(newPos.z)].GetValue())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    protected int round(float f)
+    {
+        if (f >= 0)
+            return (int)f;
+        else
+            return (int)f - 1;
+    }
+
     public abstract void behavior();
     public abstract void init();
     public abstract void init(int x, int y);
