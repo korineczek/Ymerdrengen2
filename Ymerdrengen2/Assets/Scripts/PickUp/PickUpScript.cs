@@ -7,16 +7,18 @@ using UnityEngine;
 /// </summary>
 public class PickUpScript : MonoBehaviour
 {
-    public float PickUpEndPos;
-    public float PickUpStartPos;
-    public float PickUpGoesUpSpeed;
-    public float PickUpRotateSpeed;
-    public float pickUpGoesUp;
-
+    public float PickUpStandingPos = 0.3f;
+    public float PickUpGoesUpSpeed = 10f;
+    public float PickUpRotateSpeed = 40f;
+    public float pickUpAboveHead = 5f;
     /// <summary>
     /// The player game object
     /// </summary>
-    GameObject player;
+    public GameObject player;
+
+    private float PickUpEndPos;
+    private float PickUpStartPos;
+
     bool isPicked;
 
     // Use this for initialization
@@ -24,12 +26,9 @@ public class PickUpScript : MonoBehaviour
         
         player = GameObject.Find("Character");
         isPicked = false;
-        transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
-        PickUpGoesUpSpeed = 10f;
-        PickUpRotateSpeed = 40f;
-        pickUpGoesUp = 5f;
+        transform.position = new Vector3(transform.position.x, transform.position.y + PickUpStandingPos, transform.position.z);
         PickUpStartPos = transform.position.y;
-        PickUpEndPos = transform.position.y + pickUpGoesUp;
+        PickUpEndPos = transform.position.y + pickUpAboveHead;
   
     }
 
