@@ -86,7 +86,6 @@
     <Compile Include="Assets\LeanTouch\Scripts\LeanFinger.cs" />
     <Compile Include="Assets\LeanTouch\Scripts\LeanSnapshot.cs" />
     <Compile Include="Assets\LeanTouch\Scripts\LeanTouch.cs" />
-    <Compile Include="Assets\Scripts\Enemy\DropDude.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\HARDCODEDTESTSCRIPT.cs" />
