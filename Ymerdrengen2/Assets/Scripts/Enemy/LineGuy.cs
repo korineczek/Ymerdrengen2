@@ -4,9 +4,6 @@ using System.Collections;
 public class LineGuy : Enemy
 {
 
-    Vector3 newPos;
-    Vector3 oldPos;
-
     Vector3 vectorDir;
     Direction direction;
 
