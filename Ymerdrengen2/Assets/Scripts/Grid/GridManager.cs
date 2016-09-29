@@ -9,6 +9,8 @@ public class GridManager : MonoBehaviour {
 
     [SerializeField]
     public bool[] FloorInitializer;
+    [SerializeField]
+    public bool[] YoghurtInitializer;
     public int gridSize = 7;
     public float offset = 0.5f;
 
@@ -17,7 +19,6 @@ public class GridManager : MonoBehaviour {
     Dictionary<Vector2, GameObject> PickUpDic;
     GameObject tileObj;
     GameObject targetPickUp;
-    GameObject pickUp;
 
     public Player PlayerCharacter;
     public Vector2 PlayerPosition;
@@ -33,8 +34,8 @@ public class GridManager : MonoBehaviour {
         initFields();
         initGrid(FloorInitializer);
         createGridObj();
-        SpawnPickUp();
-        SpawnPickUp();
+        //SpawnPickUp();
+        //SpawnPickUp();
     }
 
     void initFields()
@@ -57,6 +58,17 @@ public class GridManager : MonoBehaviour {
         }
     }
 
+    void initPickups(bool[] pickupInitializer)
+    {
+        for (int x = 0; x < gridSize; x++) {
+            for (int y = 0; y < gridSize; y++) {
+                if (pickupInitializer[x + (y * gridSize)]) {
+                    SpawnPickUp(x, y);
+                }
+            }
+        }
+    }
+
     void createGridObj()
     {
         tileObjects = new GameObject[gridSize, gridSize];
@@ -65,7 +77,7 @@ public class GridManager : MonoBehaviour {
             for (int y = 0; y < gridSize; y++)
             {
                 //Objects
-                if (GridData.grid[x, y].GetValue())
+                if (GridData.grid[x, y].HasFloor())
                 { 
                     GameObject tile = Instantiate(tileObj, this.transform) as GameObject;
                     tileObjects[x, y] = tile;
@@ -77,22 +89,22 @@ public class GridManager : MonoBehaviour {
 
     public void removeTile(int x, int y)
     {
-        if (GridData.grid[x, y].GetValue())
+        if (GridData.grid[x, y].HasFloor())
         {
             Destroy(tileObjects[x, y]);
             tileObjects[x, y] = null;
-            ToggleFlags(new Vector2(x, y), FieldStatus.Floor);
+            getTile(x,y).ToggleFlags(FieldStatus.Floor);
         }
     }
 
     public void addTile(int x, int y)
     {   
-        if(!GridData.grid[x, y].GetValue())
+        if(!GridData.grid[x, y].HasFloor())
         {
             GameObject tile = Instantiate(tileObj, this.transform) as GameObject;
             tileObjects[x, y] = tile;
             tile.transform.position = new Vector3(x + offset, -0.5f, y + offset);
-            GridData.grid[(int)x, (int)y] = ToggleFlags(GridData.grid[(int)x, (int)y], FieldStatus.Floor);
+            getTile(x, y).ToggleFlags(FieldStatus.Floor);
         } 
     }
 
@@ -135,7 +147,7 @@ public class GridManager : MonoBehaviour {
         bool newPosValue = false;
         try {
             Debug.Log(newPos);
-            newPosValue = getTile(newPos).GetValue();
+            newPosValue = getTile(newPos).HasFloor();
         } catch (IndexOutOfRangeException) {
             Debug.LogWarning("New playerposition outside possible range.");
         }
@@ -147,6 +159,7 @@ public class GridManager : MonoBehaviour {
             PlayerPosition = newPos;
 
             // if player steps in a tile where a pick up exists
+            //if (GridData.grid[(int)newPos.x, (int)newPos.y].IsPickUp())
             if (getTile(newPos).IsPickUp())
             {
                 // identify which pick up player touches (if there are a lot)
@@ -159,17 +172,6 @@ public class GridManager : MonoBehaviour {
                 // remove ymer from dict
                 PickUpDic.Remove(new Vector2((int)newPos.x, (int)newPos.y));
             }
-        }
-        else if(targetPickUp != null)
-        {
-            // add a new tile if there is a charge
-            addTile((int)newPos.x, (int)newPos.y);
-            // Move the player to the new tile
-            PlayerCharacter.isLerping = true;
-            PlayerCharacter.Move(dir);
-            PlayerPosition = newPos;
-            // destroy the pick up above player's head
-            Destroy(targetPickUp);
         }
         else {
             PlayerCharacter.gameObject.SetActive(false);
@@ -187,6 +189,11 @@ public class GridManager : MonoBehaviour {
         }
     }
 
+    public void SpawnPickUp(int x, int y)
+    {
+        getTile(x, y).ToggleFlags(FieldStatus.PickUp);
+        createPickUp(x, y);
+    }
 
     public void SpawnPickUp()
     {
@@ -199,7 +206,7 @@ public class GridManager : MonoBehaviour {
             for (int y = 0; y < gridSize; y++)
             {
                 Vector2 currentTile = new Vector2(x, y);
-                if (getTile(currentTile).GetValue() && !getTile(currentTile).IsPickUp())
+                if (getTile(currentTile).HasFloor() && !getTile(currentTile).IsPickUp())
                 {
                     FlooredTiles.Add(currentTile);
                 }
@@ -208,17 +215,20 @@ public class GridManager : MonoBehaviour {
 
         // generate a pickup on a random tile
         int tileIndex = rnd.Next(FlooredTiles.Count);
-        Vector2 nextTile = FlooredTiles[tileIndex];
+        Vector2 nextTilePos = FlooredTiles[tileIndex];
+        ITile nextTile = getTile(nextTilePos);
 
-        ToggleFlags(nextTile, FieldStatus.PickUp);
-        createPickUp((int)nextTile.x, (int)nextTile.y);
+        nextTile.ToggleFlags(FieldStatus.PickUp);
+        //setTile((int)nextTile.x, (int)nextTile.y, FieldStatus.PickUp);
+
+        createPickUp((int)nextTilePos.x, (int)nextTilePos.y);
 
     }
 
-    void createPickUp(int x, int y)
+    public void createPickUp(int x, int y)
     {
         // instantiate the pick up on the randomly chosen tile
-        pickUp = Instantiate(Resources.Load("Prefabs/YogurtCarton") as GameObject);
+        GameObject pickUp = Instantiate(Resources.Load("Prefabs/YogurtCarton") as GameObject);
         // put pick up on the center of the tile
         pickUp.transform.position = new Vector3(x + offset, 0, y + offset);
 
@@ -228,6 +238,7 @@ public class GridManager : MonoBehaviour {
 
     }
 
+    [Obsolete("Use ITile.ToggleFlags(FieldStatus) instead.")]
     public void ToggleFlags(Vector2 tilePos, FieldStatus flags)
     {
         var curTile = GridData.grid[(int)tilePos.x, (int)tilePos.y];
@@ -235,6 +246,7 @@ public class GridManager : MonoBehaviour {
         //GridData.grid[(int)tilePos.x, (int)tilePos.y] = new BaseTile() { Value = curTile.Value ^ flags };
     }
 
+    [Obsolete("Use ITile.ToggleFlags(FieldStatus) instead.")]
     public BaseTile ToggleFlags(BaseTile tile, FieldStatus flags)
     {
         return new BaseTile() { Value = tile.Value ^ flags }; // '^' ís a bitwise XOR operator.

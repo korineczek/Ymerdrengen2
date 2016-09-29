@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -13,15 +14,15 @@ public class LevelProgression : MonoBehaviour {
     float levelTime;
 
 
-
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         StartGame();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update ()
+    {
         if (progressTimer)
         {
             levelTime += Time.deltaTime;
@@ -35,19 +36,14 @@ public class LevelProgression : MonoBehaviour {
                     PlayerPrefs.SetInt("Level", nextLevel);
                 }
 
-                Application.LoadLevel(Application.loadedLevel + 1);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                //Application.LoadLevel(Application.loadedLevel + 1);
             }
         }
-       
-       
-
 	}
 
     public void StartGame()
     {
         progressTimer = true;
     }
-
-
-   
 }

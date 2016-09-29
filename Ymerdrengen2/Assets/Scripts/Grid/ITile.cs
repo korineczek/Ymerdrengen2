@@ -43,7 +43,10 @@ namespace Grid
         /// Get the boolean value of the Tile, describing whether it has a floor or not.
         /// </summary>
         /// <returns>The current state of the tile; true means "Has floor", false means "Has no floor".</returns>
-        bool GetValue();
+        bool HasFloor();
         bool IsPickUp();
+        bool IsOnFire();
+        void ToggleFlags(FieldStatus toggles);
+        FieldStatus GetStatus();
     }
 }
