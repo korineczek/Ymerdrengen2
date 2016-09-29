@@ -71,7 +71,7 @@ public class EnemyManager : MonoBehaviour {
             }
         }
 
-        if(list[0] == "Yogurt")
+        if(list[0] == "yogurt")
             spawnYogurt(list);
         else
             spawnMonster(list);

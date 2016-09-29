@@ -17,5 +17,6 @@ public class DeviceSetup : MonoBehaviour
     {
         Screen.orientation = ScreenOrientation.Portrait;
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        Time.timeScale = 1f;
     }
 }
