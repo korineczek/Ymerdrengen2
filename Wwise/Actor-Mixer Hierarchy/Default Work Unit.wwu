@@ -6,12 +6,44 @@
 				<Folder Name="enemies" ID="{8618921A-E37C-4EA4-B025-A5918277702B}" ShortID="92707867">
 					<ChildrenList>
 						<RandomSequenceContainer Name="cherryExplosion" ID="{214CA860-E102-4FA2-91B4-D67E1C449732}" ShortID="37959094">
+							<PropertyList>
+								<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{0FE53A17-2926-4B2D-9CD0-900B9AC945CD}" ShortID="157913451">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="distanceToCharacter" ID="{AED74BE3-B165-42CC-B249-5370AD0935CA}" WorkUnitID="{BB8737AF-E5BA-41B7-9A7C-1A8B7150A1DA}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{8D1E5AA5-848F-4F97-B3D4-5D2EE068CA67}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-0.04812</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Log3</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>-200</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+									<ObjectRef Name="enemies" ID="{BEB2EB97-AD3E-4777-86A3-A305E06BA669}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -113,12 +145,44 @@
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<Sound Name="cherry lunte" ID="{942FD078-D0C0-41C8-9266-3827806BA717}" ShortID="424494878" Type="SoundFX">
+							<PropertyList>
+								<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{3EA4338E-3B37-4475-8B5A-61892AB5C331}" ShortID="837159215">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="distanceToCharacter" ID="{AED74BE3-B165-42CC-B249-5370AD0935CA}" WorkUnitID="{BB8737AF-E5BA-41B7-9A7C-1A8B7150A1DA}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{189E121B-F6DF-4FC7-BDD5-6659C876D78D}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0.04812</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Log3</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>-200</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+									<ObjectRef Name="enemies" ID="{BEB2EB97-AD3E-4777-86A3-A305E06BA669}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -132,16 +196,52 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="tomat fall" ID="{C40C24B8-636E-4451-8971-C47B3B9950A4}" ShortID="114134837" Type="SoundFX">
+							<PropertyList>
+								<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{955E0682-9718-4E3D-AD99-AECA643F1840}" ShortID="352942940">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="distanceToCharacter" ID="{AED74BE3-B165-42CC-B249-5370AD0935CA}" WorkUnitID="{BB8737AF-E5BA-41B7-9A7C-1A8B7150A1DA}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{E36D83B1-4B12-4263-AB80-BA84A420ECBC}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0.04812</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Log3</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>-200</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+									<ObjectRef Name="enemies" ID="{BEB2EB97-AD3E-4777-86A3-A305E06BA669}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="tomat fall" ID="{3AE94B85-0E13-4F97-9630-8D291741CFDE}" ShortID="859442589">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.690808078045223"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.93493330598104"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>tomat fall.wav</AudioFile>
 								</AudioFileSource>
@@ -151,12 +251,43 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="tomat splat" ID="{64E24174-5806-4EEE-B8E7-1FD9E3FCAC95}" ShortID="149731923" Type="SoundFX">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{340718C3-3122-473A-8F8F-F9AA6369C366}" ShortID="1036787721">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="distanceToCharacter" ID="{AED74BE3-B165-42CC-B249-5370AD0935CA}" WorkUnitID="{BB8737AF-E5BA-41B7-9A7C-1A8B7150A1DA}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{F9CFFA02-F8BB-4BD3-B103-C63EF3DC4926}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0.04812</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Log3</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>-200</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+									<ObjectRef Name="enemies" ID="{BEB2EB97-AD3E-4777-86A3-A305E06BA669}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -172,13 +303,42 @@
 						<RandomSequenceContainer Name="coffeFloating" ID="{DEF377FF-1A1F-4CA4-9B7B-8BC8659F6EFD}" ShortID="23117840">
 							<PropertyList>
 								<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{2442A32A-EA6C-41EC-8AEF-F03B387B8F6D}" ShortID="131925281">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="distanceToCharacter" ID="{AED74BE3-B165-42CC-B249-5370AD0935CA}" WorkUnitID="{BB8737AF-E5BA-41B7-9A7C-1A8B7150A1DA}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{F3A6B4C4-6B10-4859-9C58-F9E5E07D2D02}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0.04812</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Log3</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>-200</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+									<ObjectRef Name="enemies" ID="{BEB2EB97-AD3E-4777-86A3-A305E06BA669}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -195,7 +355,10 @@
 										<AudioFileSource Name="kaffe svæve" ID="{51CE3429-47E8-49CB-92B3-0627645F0BFA}" ShortID="369275642">
 											<PropertyList>
 												<Property Name="FadeInDuration" Type="Real64" Value="0.0389201312910284"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.29895938183807"/>
+												<Property Name="FadeOutShape" Type="int16" Value="3"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.379471280087527"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.49088840262582"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>kaffe svæve.wav</AudioFile>
@@ -218,7 +381,10 @@
 										<AudioFileSource Name="kaffe svæve2" ID="{89F67953-3EB4-4DE6-ADA5-D7C0A6DAFDA7}" ShortID="11612723">
 											<PropertyList>
 												<Property Name="FadeInDuration" Type="Real64" Value="0.033699466630197"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.958027694201313"/>
+												<Property Name="FadeOutShape" Type="int16" Value="3"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.375508342450766"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.98826853118162"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>kaffe svæve2.wav</AudioFile>
@@ -241,7 +407,10 @@
 										<AudioFileSource Name="kaffe svæve3" ID="{76013AE2-39F3-4B81-AE02-A46B9B612BA4}" ShortID="583747879">
 											<PropertyList>
 												<Property Name="FadeInDuration" Type="Real64" Value="0.0474410557986871"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.33625640499635"/>
+												<Property Name="FadeOutShape" Type="int16" Value="3"/>
 												<Property Name="TrimBegin" Type="Real64" Value="1.70787800875274"/>
+												<Property Name="TrimEnd" Type="Real64" Value="5.0129382293946"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>kaffe svæve3.wav</AudioFile>
@@ -264,7 +433,10 @@
 										<AudioFileSource Name="kaffe svæve4" ID="{E2C256F0-5C88-4243-94E1-236DCEFBD7FF}" ShortID="386686197">
 											<PropertyList>
 												<Property Name="FadeInDuration" Type="Real64" Value="0.0362017915754923"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.12949589715536"/>
+												<Property Name="FadeOutShape" Type="int16" Value="3"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.760237623085339"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.94599528172866"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>kaffe svæve4.wav</AudioFile>
@@ -277,12 +449,44 @@
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="piePacman" ID="{22E68334-8125-4409-AC6A-932F2B945186}" ShortID="389585807">
+							<PropertyList>
+								<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{1F7B235F-1A97-46DE-B3A3-205B79D39619}" ShortID="1039535994">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="distanceToCharacter" ID="{AED74BE3-B165-42CC-B249-5370AD0935CA}" WorkUnitID="{BB8737AF-E5BA-41B7-9A7C-1A8B7150A1DA}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{370C80B4-B822-4935-90B8-D4D2956DC2EF}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-0.04812</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Log3</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>-200</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+									<ObjectRef Name="enemies" ID="{BEB2EB97-AD3E-4777-86A3-A305E06BA669}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -374,6 +578,142 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="tærte pacman4" ID="{6E72A9B9-F957-4822-8DFF-10959C073551}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<Sound Name="kaffesip" ID="{5FA9368E-B17B-4C53-A4E6-7415DA598BEC}" ShortID="795410302" Type="SoundFX">
+							<PropertyList>
+								<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="enemies" ID="{BEB2EB97-AD3E-4777-86A3-A305E06BA669}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="kaffesip" ID="{EAB6A29F-1DD1-4CCE-ADD0-5D393C299EBB}" ShortID="1041246594">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0170711159737418"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0396293763676149"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.278625"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>kaffesip.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="kaffesip" ID="{EAB6A29F-1DD1-4CCE-ADD0-5D393C299EBB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="coffeSpit" ID="{4543C872-E799-4F33-AFC3-F059FF494B46}" ShortID="571378878">
+							<PropertyList>
+								<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{0DBC23D1-D19B-4271-B044-59012B6F069B}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="100"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="enemies" ID="{BEB2EB97-AD3E-4777-86A3-A305E06BA669}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="kaffespyt" ID="{12BBC10D-91CC-4849-BF72-60E10F4E379F}" ShortID="912979222" Type="SoundFX">
+									<PropertyList>
+										<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="kaffespyt" ID="{CEAEB492-35BB-4615-904C-26F5C6C3EEE2}" ShortID="726322053">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0273737235594457"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.00187828227571"/>
+												<Property Name="FadeOutShape" Type="int16" Value="3"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.662444110138585"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.43813967906638"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>kaffespyt.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="kaffespyt" ID="{CEAEB492-35BB-4615-904C-26F5C6C3EEE2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="kaffespyt2" ID="{E9BDA51B-DC59-44D5-ABDE-BB10BA895F8D}" ShortID="1071598785" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="kaffespyt2" ID="{812A5D72-4F65-45F4-BB9A-C79F6036BA43}" ShortID="375116576">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0383232129832239"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.750040025528812"/>
+												<Property Name="FadeOutShape" Type="int16" Value="3"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.662444110138585"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.36696799781182"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>kaffespyt2.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="kaffespyt2" ID="{812A5D72-4F65-45F4-BB9A-C79F6036BA43}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="kaffespyt3" ID="{4C554096-EA77-4C00-AAED-25FB96C33F45}" ShortID="833320617" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="kaffespyt3" ID="{A518473F-B76C-44EF-B213-C8E0BD21DD2A}" ShortID="601422202">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0273737235594457"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.08399945295405"/>
+												<Property Name="FadeOutShape" Type="int16" Value="3"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.667918854850474"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.40529121079504"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>kaffespyt3.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="kaffespyt3" ID="{A518473F-B76C-44EF-B213-C8E0BD21DD2A}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
