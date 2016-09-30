@@ -36,7 +36,7 @@ namespace Grid
         /// <summary>
         /// Field is blocked
         /// </summary>
-        Blocked = 5
+        Blocked = 8
     }
 
     /// <summary>

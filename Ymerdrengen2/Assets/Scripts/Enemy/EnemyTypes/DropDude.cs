@@ -8,6 +8,8 @@ public class DropDude : Enemy {
     float t = 0;
 
     public bool DestroyTiles = false;
+    public bool BlockTiles = false;
+    bool blockedTiles = false; //Flag indicating if the tiles has already been blocked
     [Range(1, 3)]
     public int size = 1;
     public float startHeight = 8f;
@@ -24,6 +26,13 @@ public class DropDude : Enemy {
         else
         {
             hitAllFields();
+
+            if (BlockTiles && !blockedTiles)
+            {
+                blockTiles(true);
+                blockedTiles = true;
+            }
+
             t += Time.deltaTime;
             if (t >= 1 + deathTime)
                 isDone();
@@ -37,6 +46,9 @@ public class DropDude : Enemy {
 
     void isDone()
     {
+        if (BlockTiles)
+           blockTiles(false);
+
         if (DestroyTiles)
             removeTiles();
 
@@ -75,7 +87,6 @@ public class DropDude : Enemy {
         {
             for (int z = 0; z < size; z++)
             {
-                Debug.Log(x + ". " + z);
                 GridData.gridManager.removeTile((int)(internalX) + x, (int)(internalZ) + z);
             }
         }
@@ -87,8 +98,12 @@ public class DropDude : Enemy {
         {
             for (int z = 0; z < size; z++)
             {
-                Debug.Log(x + ". " + z);
-                //GridData.gridManager.setTileBlocked((int)(internalX) + x, (int)(internalZ) + z, b);
+                int posX = (int)(internalX) + x;
+                int posZ = (int)(internalZ) + z;
+                Debug.Log("Blocked : " + posX + ", " + posZ);
+                if (GridData.grid[posX, posZ].IsBlocked() != b)
+                    GridData.grid[posX, posZ].ToggleFlags(Grid.FieldStatus.Blocked);
+                    
             }
         }
     }

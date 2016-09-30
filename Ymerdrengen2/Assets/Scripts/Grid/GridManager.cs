@@ -138,7 +138,6 @@ public class GridManager : MonoBehaviour {
         bool isPlayerHit = PlayerPosition.x == x && PlayerPosition.y == y;
         if (isPlayerHit)
         {
-            Debug.Log("Has hit player on tile on (" + x + ", " + y + ")");
             killPlayer();
         }
         return isPlayerHit;
@@ -155,10 +154,14 @@ public class GridManager : MonoBehaviour {
         bool newPosValue = false;
         try {
             Debug.Log(newPos);
-            newPosValue = getTile(newPos).HasFloor();
+            newPosValue = getTile(newPos).HasFloor(); //Added isblocked to this so the player cannot move into a blocked tile
         } catch (IndexOutOfRangeException) {
             Debug.LogWarning("New playerposition outside possible range.");
         }
+
+        Debug.Log(getTile(newPos).IsBlocked());
+        if (getTile(newPos).IsBlocked())
+            return;
 
         if (newPosValue)
         {
