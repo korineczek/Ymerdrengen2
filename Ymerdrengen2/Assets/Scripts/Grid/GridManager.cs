@@ -327,4 +327,12 @@ public class GridManager : MonoBehaviour {
         Debug.Log("Triggered kill event");
     }
 
+    /// <summary>
+    /// Triggers events that are associated with the conebuddy fire
+    /// </summary>
+    internal void triggerConeFireEvent()
+    {
+        Debug.Log("Triggered kill event");
+    }
+
 }
