@@ -10,6 +10,7 @@ public class GridEditor : Editor
 
     public override void OnInspectorGUI()
     {
+        DrawDefaultInspector();
         gridTarget = (GridManager)target;
 
         // Set the player position.
