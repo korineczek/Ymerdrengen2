@@ -463,7 +463,215 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: explode1_anim
+      takeName: explode1_anim
+      firstFrame: 1
+      lastFrame: 6
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: grp_controls_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_botStretch_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_botStretch_01/anim_tie_a_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_botStretch_01/anim_tie_a_01/anim_tie_b_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_botStretch_01/anim_tie_a_01/anim_tie_b_01/anim_tie_c_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_botStretch_01/anim_tie_a_01/anim_tie_b_01/anim_tie_c_01/anim_tie_d_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_botStretch_01/anim_tie_a_01/anim_tie_b_01/anim_tie_c_01/anim_tie_d_01/anim_tie_e_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_midStretch_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_midStretch_01/grp_anim_l_bigEye_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_midStretch_01/grp_anim_l_bigEye_01/anim_l_bigEye_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_midStretch_01/grp_anim_l_bigEye_01/anim_l_bigEye_01/group1
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_midStretch_01/grp_anim_l_bigEye_01/anim_l_bigEye_01/group1/anim_l_pupil_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_midStretch_01/grp_anim_l_brow_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_midStretch_01/grp_anim_l_brow_01/anim_l_brow_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_midStretch_01/grp_anim_l_chin_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_midStretch_01/grp_anim_l_chin_01/anim_l_chin_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_midStretch_01/grp_anim_r_bigEye_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_midStretch_01/grp_anim_r_bigEye_01/anim_r_bigEye_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_midStretch_01/grp_anim_r_bigEye_01/anim_r_bigEye_01/group2
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_midStretch_01/grp_anim_r_bigEye_01/anim_r_bigEye_01/group2/anim_r_pupil_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_midStretch_01/grp_anim_r_bigEye_01/grp_anim_r_brow_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_midStretch_01/grp_anim_r_bigEye_01/grp_anim_r_brow_01/anim_r_brow_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_midStretch_01/grp_anim_r_chin_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_midStretch_01/grp_anim_r_chin_01/anim_r_chin_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_topStretch_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_topStretch_01/grp_anim_stalk_a_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_topStretch_01/grp_anim_stalk_a_01/anim_stalk_a_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_topStretch_01/grp_anim_stalk_a_01/anim_stalk_a_01/grp_anim_stalk_b_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_topStretch_01/grp_anim_stalk_a_01/anim_stalk_a_01/grp_anim_stalk_b_01/anim_stalk_b_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_topStretch_01/grp_anim_stalk_a_01/anim_stalk_a_01/grp_anim_stalk_b_01/anim_stalk_b_01/grp_anim_stalk_c_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_topStretch_01/grp_anim_stalk_a_01/anim_stalk_a_01/grp_anim_stalk_b_01/anim_stalk_b_01/grp_anim_stalk_c_01/anim_stalk_c_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_topStretch_01/grp_anim_stalk_a_01/anim_stalk_a_01/grp_anim_stalk_b_01/anim_stalk_b_01/grp_anim_stalk_c_01/anim_stalk_c_01/grp_anim_stalk_d_01
+        weight: 1
+      - path: grp_controls_01/anim_master_01/anim_topStretch_01/grp_anim_stalk_a_01/anim_stalk_a_01/grp_anim_stalk_b_01/anim_stalk_b_01/grp_anim_stalk_c_01/anim_stalk_c_01/grp_anim_stalk_d_01/anim_stalk_d_01
+        weight: 1
+      - path: grp_extras_01
+        weight: 1
+      - path: grp_extras_01/ik_l_brow_01
+        weight: 1
+      - path: grp_extras_01/ik_l_sc_pupil_01
+        weight: 1
+      - path: grp_extras_01/ik_r_brow_01
+        weight: 1
+      - path: grp_extras_01/ik_r_sc_pupil_01
+        weight: 1
+      - path: grp_mesh_01
+        weight: 1
+      - path: grp_mesh_01/geo_cherry_01
+        weight: 1
+      - path: grp_mesh_01/geo_l_eye_01
+        weight: 1
+      - path: grp_mesh_01/geo_l_inner_eye_01
+        weight: 1
+      - path: grp_mesh_01/geo_mouth_01
+        weight: 1
+      - path: grp_mesh_01/geo_r_eye_01
+        weight: 1
+      - path: grp_mesh_01/geo_r_eyeBrow_01
+        weight: 1
+      - path: grp_mesh_01/geo_r_eyeBrow_02
+        weight: 1
+      - path: grp_mesh_01/geo_r_inner_eye_01
+        weight: 1
+      - path: grp_mesh_01/geo_tie_01
+        weight: 1
+      - path: grp_mesh_01/geo_tieKnot_01
+        weight: 1
+      - path: grp_mesh_01/geo_tooth_01
+        weight: 1
+      - path: grp_mesh_01/geo_tooth_02
+        weight: 1
+      - path: grp_mesh_01/geo_tooth_03
+        weight: 1
+      - path: grp_rig_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/bind_chins_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/bind_chins_01/bind_l_chin_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/bind_chins_01/bind_l_chin_01/be_l_chin_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/bind_chins_01/bind_r_chin_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/bind_chins_01/bind_r_chin_01/be_r_chin_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/bind_l_eye_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/bind_l_eye_01/be_l_eye_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/bind_r_eye_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/bind_r_eye_01/be_r_eye_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/grpDrv_moreScaling_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/grpDrv_moreScaling_01/gDrv_facialFeaturesScale_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/grpDrv_moreScaling_01/gDrv_facialFeaturesScale_01/jDrv_l_brow_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/grpDrv_moreScaling_01/gDrv_facialFeaturesScale_01/jDrv_l_brow_01/bind_l_brow_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/grpDrv_moreScaling_01/gDrv_facialFeaturesScale_01/jDrv_l_pupil_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/grpDrv_moreScaling_01/gDrv_facialFeaturesScale_01/jDrv_l_pupil_01/bind_l_pupil_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/grpDrv_moreScaling_01/gDrv_facialFeaturesScale_01/jDrv_r_brow_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/grpDrv_moreScaling_01/gDrv_facialFeaturesScale_01/jDrv_r_brow_01/bind_r_brow_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/grpDrv_moreScaling_01/gDrv_facialFeaturesScale_01/jDrv_r_pupil_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_faceMaster_01/grpDrv_moreScaling_01/gDrv_facialFeaturesScale_01/jDrv_r_pupil_01/bind_r_pupil_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_scaleButt_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_scaleButt_01/bind_tie_a_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_scaleButt_01/bind_tie_a_01/bind_tie_b_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_scaleButt_01/bind_tie_a_01/bind_tie_b_01/bind_tie_c_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_scaleButt_01/bind_tie_a_01/bind_tie_b_01/bind_tie_c_01/bind_tie_d_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_scaleButt_01/bind_tie_a_01/bind_tie_b_01/bind_tie_c_01/bind_tie_d_01/bind_tie_e_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_scaleButt_01/bind_tie_a_01/bind_tie_b_01/bind_tie_c_01/bind_tie_d_01/bind_tie_e_01/bind_tie_f_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_scaleButt_01/bind_tie_a_01/bind_tie_b_01/bind_tie_c_01/bind_tie_d_01/bind_tie_e_01/bind_tie_f_01/be_tie_g_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_scaleHead_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_scaleHead_01/bind_stalk_a_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_scaleHead_01/bind_stalk_a_01/bind_stalk_b_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_scaleHead_01/bind_stalk_a_01/bind_stalk_b_01/bind_stalk_c_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_scaleHead_01/bind_stalk_a_01/bind_stalk_b_01/bind_stalk_c_01/bind_stalk_d_01
+        weight: 1
+      - path: grp_rig_01/jDrv_root_01/bind_scaleHead_01/bind_stalk_a_01/bind_stalk_b_01/bind_stalk_c_01/bind_stalk_d_01/be_stalk_e_01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []
