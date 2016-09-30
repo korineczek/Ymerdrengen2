@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 2c573a5d96d7bf342b637f8ce5ea5f2a
+timeCreated: 1475238808
+=======
 guid: 700f5fd97ed0e2c459c1320759c7fa25
 timeCreated: 1475238374
+>>>>>>> 4ed6ee7e18d8ccd5009b112b1bf610b70fc8965c
 licenseType: Pro
 MonoImporter:
   serializedVersion: 2

@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Graphics\Shaders\Glow\Script\MKGlow.cs" />
      <Compile Include="Assets\LeanTouch\Examples\SimpleDrag.cs" />
      <Compile Include="Assets\LeanTouch\Examples\SimpleDragRigidbody.cs" />
      <Compile Include="Assets\LeanTouch\Examples\SimpleDragSmooth.cs" />
@@ -66,6 +67,7 @@
      <Compile Include="Assets\LeanTouch\Scripts\LeanFinger.cs" />
      <Compile Include="Assets\LeanTouch\Scripts\LeanSnapshot.cs" />
      <Compile Include="Assets\LeanTouch\Scripts\LeanTouch.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
      <Compile Include="Assets\Scripts\DeviceSetup.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyManager.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyTypes\ConeBuddy.cs" />
@@ -78,9 +80,11 @@
      <Compile Include="Assets\Scripts\Grid\GridData.cs" />
      <Compile Include="Assets\Scripts\Grid\GridManager.cs" />
      <Compile Include="Assets\Scripts\Grid\ITile.cs" />
+     <Compile Include="Assets\Scripts\JoystickManager.cs" />
      <Compile Include="Assets\Scripts\MoveDirection.cs" />
      <Compile Include="Assets\Scripts\PickUp\PickUpScript.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\PossibleTilePosScript.cs" />
      <Compile Include="Assets\Scripts\SwipeManager.cs" />
      <Compile Include="Assets\Scripts\UI\Game\Death.cs" />
      <Compile Include="Assets\Scripts\UI\Game\LevelProgression.cs" />
@@ -93,12 +97,20 @@
      <Compile Include="Assets\Scripts\UI\Menu\SetupData.cs" />
      <Compile Include="Assets\Scripts\UI\Menu\TestSave.cs" />
      <Compile Include="Assets\Scripts\UI\Menu\UnlockLevel.cs" />
+     <None Include="Assets\Graphics\Shaders\Glow\Shaders\MK_Mobile-Diffuse.shader" />
      <None Include="Assets\Scripts\Description.txt" />
      <None Include="Assets\Prefabs\Description.txt" />
+     <None Include="Assets\Graphics\Shaders\Glow\_Internal\_MKGlowEffect\MKGlowCompose.shader" />
+     <None Include="Assets\Graphics\Shaders\Glow\_Internal\_MKGlowEffect\MKGlowBlur.shader" />
+     <None Include="Assets\Graphics\Shaders\Glow\Shaders\MK_Mobile-DiffuseBumped.shader" />
      <None Include="Assets\Audio\Description.txt" />
      <None Include="Assets\Graphics\Shaders\PickUpGlowShader.shader" />
      <None Include="Assets\Scenes\Description.txt" />
+     <None Include="Assets\Graphics\Shaders\Glow\Shaders\MK_Mobile-DiffuseBumpSpec-1DirectionalLight.shader" />
      <None Include="Assets\Graphics\Materials\Description.txt" />
+     <None Include="Assets\Graphics\Shaders\Glow\_Internal\_MKGlowEffect\MKGlowRender.shader" />
+     <None Include="Assets\Graphics\Shaders\Glow\_Internal\_MKGlowEffect\MKGlowBlurVHP.shader" />
+     <None Include="Assets\Graphics\Shaders\Glow\Shaders\MK_Mobile-DiffuseBumpSpec.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
