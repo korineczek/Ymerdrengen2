@@ -40,7 +40,6 @@ public class GridManager : MonoBehaviour {
         initFields();
         initGrid(FloorInitializer);
         createGridObj();
-        NewTilePossiblePlace();
     }
 
     void initPlayer()
@@ -191,6 +190,8 @@ public class GridManager : MonoBehaviour {
                 //ToggleFlags(GridData.grid[(int)newPos.x, (int)newPos.y], FieldStatus.PickUp);
                 // call the triggerPickUp function from PickUpScript
                 targetPickUp[PickUpCount].GetComponent<PickUpScript>().TriggerPickUp();
+                // start blinking possible positions
+                NewTilePossiblePlace();
                 // remove ymer from dict
                 PickUpDic.Remove(new Vector2((int)newPos.x, (int)newPos.y));
 
@@ -318,6 +319,30 @@ public class GridManager : MonoBehaviour {
                 }
             }
         }
+    }
+
+    /// <summary>
+    /// Triggers events that are associated with landing of drop dude
+    /// </summary>
+    public void triggerLandEvent()
+    {
+        Debug.Log("Triggered landing event");
+    }
+
+    /// <summary>
+    /// Triggers events that are associated with killing the character
+    /// </summary>
+    public void triggerKillEvent()
+    {
+        Debug.Log("Triggered kill event");
+    }
+
+    /// <summary>
+    /// Triggers events that are associated with the conebuddy fire
+    /// </summary>
+    internal void triggerConeFireEvent()
+    {
+        Debug.Log("Triggered kill event");
     }
 
 }
