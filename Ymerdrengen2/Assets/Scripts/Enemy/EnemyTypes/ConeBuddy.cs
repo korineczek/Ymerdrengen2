@@ -66,7 +66,7 @@ public class ConeBuddy : Enemy
 
     private void fire()
     {
-        GridData.gridManager.triggerConeFireEvent();
+        //GridData.gridManager.triggerConeFireEvent();
         for(int x = 0; x < attackPattern.GetLength(1); x++)
         {
             for(int z = 0; z < attackPattern.GetLength(0); z++)
