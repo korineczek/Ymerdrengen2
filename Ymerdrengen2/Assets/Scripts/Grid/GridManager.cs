@@ -124,7 +124,7 @@ public class GridManager : MonoBehaviour {
         {
             GameObject tile = Instantiate(tileObj, this.transform) as GameObject;
             tileObjects[x, y] = tile;
-            tile.transform.position = new Vector3(x + offset, -0.5f, y + offset);
+            tile.transform.position = new Vector3(x + offset, 0f, y + offset);
             getTile(x, y).ToggleFlags(FieldStatus.Floor);
         } 
     }
@@ -332,7 +332,7 @@ public class GridManager : MonoBehaviour {
                 if(!getTile(x, y).HasFloor())
                 {
                     GameObject possibleTile = Instantiate(Resources.Load("Prefabs/PossTileObject") as GameObject);
-                    possibleTile.transform.position = new Vector3(x + offset, -offset, y + offset);
+                    possibleTile.transform.position = new Vector3(x + offset, 0, y + offset);
                 }
             }
         }
