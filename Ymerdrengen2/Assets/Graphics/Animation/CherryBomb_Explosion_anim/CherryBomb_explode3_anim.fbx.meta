@@ -95,6 +95,95 @@ ModelImporter:
     100174: cherryBomb_rig:jDrv_r_brow_01
     100176: cherryBomb_rig:jDrv_r_pupil_01
     100178: cherryBomb_rig:jDrv_root_01
+    100180: anim_botStretch_01
+    100182: anim_l_bigEye_01
+    100184: anim_l_brow_01
+    100186: anim_l_chin_01
+    100188: anim_l_pupil_01
+    100190: anim_master_01
+    100192: anim_midStretch_01
+    100194: anim_r_bigEye_01
+    100196: anim_r_brow_01
+    100198: anim_r_chin_01
+    100200: anim_r_pupil_01
+    100202: anim_stalk_a_01
+    100204: anim_stalk_b_01
+    100206: anim_stalk_c_01
+    100208: anim_stalk_d_01
+    100210: anim_tie_a_01
+    100212: anim_tie_b_01
+    100214: anim_tie_c_01
+    100216: anim_tie_d_01
+    100218: anim_tie_e_01
+    100220: anim_topStretch_01
+    100222: be_l_chin_01
+    100224: be_l_eye_01
+    100226: be_r_chin_01
+    100228: be_r_eye_01
+    100230: be_stalk_e_01
+    100232: be_tie_g_01
+    100234: bind_chins_01
+    100236: bind_faceMaster_01
+    100238: bind_l_brow_01
+    100240: bind_l_chin_01
+    100242: bind_l_eye_01
+    100244: bind_l_pupil_01
+    100246: bind_r_brow_01
+    100248: bind_r_chin_01
+    100250: bind_r_eye_01
+    100252: bind_r_pupil_01
+    100254: bind_scaleButt_01
+    100256: bind_scaleHead_01
+    100258: bind_stalk_a_01
+    100260: bind_stalk_b_01
+    100262: bind_stalk_c_01
+    100264: bind_stalk_d_01
+    100266: bind_tie_a_01
+    100268: bind_tie_b_01
+    100270: bind_tie_c_01
+    100272: bind_tie_d_01
+    100274: bind_tie_e_01
+    100276: bind_tie_f_01
+    100278: gDrv_facialFeaturesScale_01
+    100280: geo_cherry_01
+    100282: geo_l_eye_01
+    100284: geo_l_inner_eye_01
+    100286: geo_mouth_01
+    100288: geo_r_eye_01
+    100290: geo_r_eyeBrow_01
+    100292: geo_r_eyeBrow_02
+    100294: geo_r_inner_eye_01
+    100296: geo_tie_01
+    100298: geo_tieKnot_01
+    100300: geo_tooth_01
+    100302: geo_tooth_02
+    100304: geo_tooth_03
+    100306: group1
+    100308: group2
+    100310: grp_anim_l_bigEye_01
+    100312: grp_anim_l_brow_01
+    100314: grp_anim_l_chin_01
+    100316: grp_anim_r_bigEye_01
+    100318: grp_anim_r_brow_01
+    100320: grp_anim_r_chin_01
+    100322: grp_anim_stalk_a_01
+    100324: grp_anim_stalk_b_01
+    100326: grp_anim_stalk_c_01
+    100328: grp_anim_stalk_d_01
+    100330: grp_controls_01
+    100332: grp_extras_01
+    100334: grp_mesh_01
+    100336: grp_rig_01
+    100338: grpDrv_moreScaling_01
+    100340: ik_l_brow_01
+    100342: ik_l_sc_pupil_01
+    100344: ik_r_brow_01
+    100346: ik_r_sc_pupil_01
+    100348: jDrv_l_brow_01
+    100350: jDrv_l_pupil_01
+    100352: jDrv_r_brow_01
+    100354: jDrv_r_pupil_01
+    100356: jDrv_root_01
     400000: //RootNode
     400002: cherryBomb_rig:anim_botStretch_01
     400004: cherryBomb_rig:anim_l_bigEye_01
@@ -185,6 +274,95 @@ ModelImporter:
     400174: cherryBomb_rig:jDrv_r_brow_01
     400176: cherryBomb_rig:jDrv_r_pupil_01
     400178: cherryBomb_rig:jDrv_root_01
+    400180: anim_botStretch_01
+    400182: anim_l_bigEye_01
+    400184: anim_l_brow_01
+    400186: anim_l_chin_01
+    400188: anim_l_pupil_01
+    400190: anim_master_01
+    400192: anim_midStretch_01
+    400194: anim_r_bigEye_01
+    400196: anim_r_brow_01
+    400198: anim_r_chin_01
+    400200: anim_r_pupil_01
+    400202: anim_stalk_a_01
+    400204: anim_stalk_b_01
+    400206: anim_stalk_c_01
+    400208: anim_stalk_d_01
+    400210: anim_tie_a_01
+    400212: anim_tie_b_01
+    400214: anim_tie_c_01
+    400216: anim_tie_d_01
+    400218: anim_tie_e_01
+    400220: anim_topStretch_01
+    400222: be_l_chin_01
+    400224: be_l_eye_01
+    400226: be_r_chin_01
+    400228: be_r_eye_01
+    400230: be_stalk_e_01
+    400232: be_tie_g_01
+    400234: bind_chins_01
+    400236: bind_faceMaster_01
+    400238: bind_l_brow_01
+    400240: bind_l_chin_01
+    400242: bind_l_eye_01
+    400244: bind_l_pupil_01
+    400246: bind_r_brow_01
+    400248: bind_r_chin_01
+    400250: bind_r_eye_01
+    400252: bind_r_pupil_01
+    400254: bind_scaleButt_01
+    400256: bind_scaleHead_01
+    400258: bind_stalk_a_01
+    400260: bind_stalk_b_01
+    400262: bind_stalk_c_01
+    400264: bind_stalk_d_01
+    400266: bind_tie_a_01
+    400268: bind_tie_b_01
+    400270: bind_tie_c_01
+    400272: bind_tie_d_01
+    400274: bind_tie_e_01
+    400276: bind_tie_f_01
+    400278: gDrv_facialFeaturesScale_01
+    400280: geo_cherry_01
+    400282: geo_l_eye_01
+    400284: geo_l_inner_eye_01
+    400286: geo_mouth_01
+    400288: geo_r_eye_01
+    400290: geo_r_eyeBrow_01
+    400292: geo_r_eyeBrow_02
+    400294: geo_r_inner_eye_01
+    400296: geo_tie_01
+    400298: geo_tieKnot_01
+    400300: geo_tooth_01
+    400302: geo_tooth_02
+    400304: geo_tooth_03
+    400306: group1
+    400308: group2
+    400310: grp_anim_l_bigEye_01
+    400312: grp_anim_l_brow_01
+    400314: grp_anim_l_chin_01
+    400316: grp_anim_r_bigEye_01
+    400318: grp_anim_r_brow_01
+    400320: grp_anim_r_chin_01
+    400322: grp_anim_stalk_a_01
+    400324: grp_anim_stalk_b_01
+    400326: grp_anim_stalk_c_01
+    400328: grp_anim_stalk_d_01
+    400330: grp_controls_01
+    400332: grp_extras_01
+    400334: grp_mesh_01
+    400336: grp_rig_01
+    400338: grpDrv_moreScaling_01
+    400340: ik_l_brow_01
+    400342: ik_l_sc_pupil_01
+    400344: ik_r_brow_01
+    400346: ik_r_sc_pupil_01
+    400348: jDrv_l_brow_01
+    400350: jDrv_l_pupil_01
+    400352: jDrv_r_brow_01
+    400354: jDrv_r_pupil_01
+    400356: jDrv_root_01
     2300000: cherryBomb_rig:geo_cherry_01
     2300002: cherryBomb_rig:geo_l_eye_01
     2300004: cherryBomb_rig:geo_l_inner_eye_01
@@ -198,6 +376,19 @@ ModelImporter:
     2300020: cherryBomb_rig:geo_tooth_01
     2300022: cherryBomb_rig:geo_tooth_02
     2300024: cherryBomb_rig:geo_tooth_03
+    2300026: geo_cherry_01
+    2300028: geo_l_eye_01
+    2300030: geo_l_inner_eye_01
+    2300032: geo_mouth_01
+    2300034: geo_r_eye_01
+    2300036: geo_r_eyeBrow_01
+    2300038: geo_r_eyeBrow_02
+    2300040: geo_r_inner_eye_01
+    2300042: geo_tie_01
+    2300044: geo_tieKnot_01
+    2300046: geo_tooth_01
+    2300048: geo_tooth_02
+    2300050: geo_tooth_03
     3300000: cherryBomb_rig:geo_cherry_01
     3300002: cherryBomb_rig:geo_l_eye_01
     3300004: cherryBomb_rig:geo_l_inner_eye_01
@@ -211,6 +402,19 @@ ModelImporter:
     3300020: cherryBomb_rig:geo_tooth_01
     3300022: cherryBomb_rig:geo_tooth_02
     3300024: cherryBomb_rig:geo_tooth_03
+    3300026: geo_cherry_01
+    3300028: geo_l_eye_01
+    3300030: geo_l_inner_eye_01
+    3300032: geo_mouth_01
+    3300034: geo_r_eye_01
+    3300036: geo_r_eyeBrow_01
+    3300038: geo_r_eyeBrow_02
+    3300040: geo_r_inner_eye_01
+    3300042: geo_tie_01
+    3300044: geo_tieKnot_01
+    3300046: geo_tooth_01
+    3300048: geo_tooth_02
+    3300050: geo_tooth_03
     4300000: cherryBomb_rig:geo_tie_01
     4300002: cherryBomb_rig:geo_cherry_01
     4300004: cherryBomb_rig:geo_r_eye_01
@@ -224,6 +428,19 @@ ModelImporter:
     4300020: cherryBomb_rig:geo_tieKnot_01
     4300022: cherryBomb_rig:geo_r_inner_eye_01
     4300024: cherryBomb_rig:geo_l_inner_eye_01
+    4300026: geo_tie_01
+    4300028: geo_cherry_01
+    4300030: geo_r_eye_01
+    4300032: geo_l_eye_01
+    4300034: geo_r_eyeBrow_01
+    4300036: geo_r_eyeBrow_02
+    4300038: geo_mouth_01
+    4300040: geo_tooth_01
+    4300042: geo_tooth_02
+    4300044: geo_tooth_03
+    4300046: geo_tieKnot_01
+    4300048: geo_r_inner_eye_01
+    4300050: geo_l_inner_eye_01
     7400000: explode3_anim
     9500000: //RootNode
   materials:
