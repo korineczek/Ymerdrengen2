@@ -140,6 +140,7 @@ public class GridManager : MonoBehaviour {
         {
             Debug.Log("Has hit player on tile on (" + x + ", " + y + ")");
             killPlayer();
+            AudioManager.Instance.PlaySound(SoundHandle.Death);
         }
         return isPlayerHit;
     }
@@ -199,6 +200,7 @@ public class GridManager : MonoBehaviour {
         }
         else {
             killPlayer();
+            AudioManager.Instance.PlaySound(SoundHandle.FallDeath);
         }
     }
 
