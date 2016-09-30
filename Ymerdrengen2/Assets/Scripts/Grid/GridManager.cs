@@ -22,6 +22,8 @@ public class GridManager : MonoBehaviour {
     GameObject[] targetPickUp;
     int PickUpCount;
 
+    bool killEventTriggered = false;
+
     public Player PlayerCharacter;
     public Vector2 PlayerPosition;
 
@@ -141,8 +143,10 @@ public class GridManager : MonoBehaviour {
     public bool hitTile(int x, int y)
     {
         bool isPlayerHit = PlayerPosition.x == x && PlayerPosition.y == y;
-        if (isPlayerHit)
+        if (isPlayerHit && !killEventTriggered)
         {
+            killEventTriggered = true;
+            triggerKillEvent();
             killPlayer();
         }
         return isPlayerHit;
@@ -305,6 +309,22 @@ public class GridManager : MonoBehaviour {
     public BaseTile ToggleFlags(BaseTile tile, FieldStatus flags)
     {
         return new BaseTile() { Value = tile.Value ^ flags }; // '^' ís a bitwise XOR operator.
+    }
+
+    /// <summary>
+    /// Triggers events that are associated with landing of drop dude
+    /// </summary>
+    public void triggerLandEvent()
+    {
+        Debug.Log("Triggered landing event");
+    }
+
+    /// <summary>
+    /// Triggers events that are associated with killing the character
+    /// </summary>
+    public void triggerKillEvent()
+    {
+        Debug.Log("Triggered kill event");
     }
 
 }

@@ -43,8 +43,11 @@ public class DropDude : Enemy {
 
             hitAllFields();
 
+            //Hit Floor Event
             if (BlockTiles && !blockedTiles)
             {
+                //Triggers landing sound
+                GridData.gridManager.triggerLandEvent();
                 transform.position = newPos;
                 blockTiles(true);
                 blockedTiles = true;
@@ -119,7 +122,6 @@ public class DropDude : Enemy {
             {
                 int posX = (int)(internalX) + x;
                 int posZ = (int)(internalZ) + z;
-                Debug.Log("Blocked : " + posX + ", " + posZ);
                 if (GridData.grid[posX, posZ].IsBlocked() != b)
                     GridData.grid[posX, posZ].ToggleFlags(Grid.FieldStatus.Blocked);
                     
