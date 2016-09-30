@@ -94,6 +94,9 @@ public class DropDude : Enemy {
         oldPos = new Vector3(x + (float)(size) / 2, startHeight, y + (float)(size) / 2);
         transform.position = oldPos;
         newPos = new Vector3(x + (float)(size) / 2, endHeight, y + (float)(size) / 2);
+
+        // Hack to play sound upon spawn. Reevaluate later.
+        AudioData.PlaySound(SoundHandle.TomatoFall);
     }
 
     private void hitAllFields()
