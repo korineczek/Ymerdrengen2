@@ -20,7 +20,8 @@ public class GridManager : MonoBehaviour {
     Dictionary<Vector2, GameObject> PickUpDic;
     GameObject tileObj;
     GameObject[] targetPickUp;
-    public int PickUpCount;
+    int PickUpCount;
+    public bool possiblePlacement;
 
     public Player PlayerCharacter;
     public Vector2 PlayerPosition;
@@ -38,12 +39,20 @@ public class GridManager : MonoBehaviour {
         numPickUpsCanCarry = 3;
         targetPickUp = new GameObject[numPickUpsCanCarry];
         PickUpCount = 0;
+        possiblePlacement = false;
 
         initPlayer();
         initFields();
         initGrid(FloorInitializer);
         createGridObj();
-        NewTilePossiblePlace();
+    }
+
+    void Update()
+    {
+        if(PickUpCount <= 0)
+        {
+            possiblePlacement = false;
+        }
     }
 
     void initPlayer()
@@ -166,12 +175,10 @@ public class GridManager : MonoBehaviour {
             
         Vector2 newPos = PlayerPosition + TransformMoveDirection(dir);
         bool newPosValue = false;
-        bool possiblePlacement = false;
         try
         {
             //Debug.Log(newPos); /*this drove me mad*/
             newPosValue = getTile(newPos).HasFloor();
-            possiblePlacement = true;
         } catch (IndexOutOfRangeException) {
             Debug.LogWarning("New playerposition outside possible range.");
         }
@@ -199,13 +206,15 @@ public class GridManager : MonoBehaviour {
                 //ToggleFlags(GridData.grid[(int)newPos.x, (int)newPos.y], FieldStatus.PickUp);
                 // call the triggerPickUp function from PickUpScript
                 targetPickUp[PickUpCount].GetComponent<PickUpScript>().TriggerPickUp();
+                // start blinking possible positions
+                NewTilePossiblePlace();
                 // remove ymer from dict
                 PickUpDic.Remove(new Vector2((int)newPos.x, (int)newPos.y));
 
             }
         }
         //else if (targetPickUp[PickUpCount] != null && possiblePlacement)
-        else if (PickUpCount > 0 && possiblePlacement)
+        else if (PickUpCount > 0)
         {
             // add a new tile if there is a charge
             addTile((int)newPos.x, (int)newPos.y);
@@ -316,6 +325,7 @@ public class GridManager : MonoBehaviour {
 
     public void NewTilePossiblePlace()
     {
+        possiblePlacement = true;
         for (int x = 0; x < gridSize; x++)
         {
             for (int y = 0; y < gridSize; y++)
@@ -327,6 +337,30 @@ public class GridManager : MonoBehaviour {
                 }
             }
         }
+    }
+
+    /// <summary>
+    /// Triggers events that are associated with landing of drop dude
+    /// </summary>
+    public void triggerLandEvent()
+    {
+        Debug.Log("Triggered landing event");
+    }
+
+    /// <summary>
+    /// Triggers events that are associated with killing the character
+    /// </summary>
+    public void triggerKillEvent()
+    {
+        Debug.Log("Triggered kill event");
+    }
+
+    /// <summary>
+    /// Triggers events that are associated with the conebuddy fire
+    /// </summary>
+    internal void triggerConeFireEvent()
+    {
+        Debug.Log("Triggered kill event");
     }
 
 }
