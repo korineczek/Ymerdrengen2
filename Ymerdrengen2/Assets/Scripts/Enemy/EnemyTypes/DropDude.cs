@@ -52,7 +52,7 @@ public class DropDude : Enemy {
             if (BlockTiles && !blockedTiles)
             {
                 //Triggers landing sound
-                GridData.gridManager.triggerLandEvent();
+                //GridData.gridManager.triggerLandEvent();
                 transform.position = newPos;
                 blockTiles(true);
                 blockedTiles = true;

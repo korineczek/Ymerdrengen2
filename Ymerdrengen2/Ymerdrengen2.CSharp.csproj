@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GodModeScript.cs" />
     <Compile Include="Assets\LeanTouch\Examples\SimpleDrag.cs" />
     <Compile Include="Assets\LeanTouch\Examples\SimpleDragRigidbody.cs" />
     <Compile Include="Assets\LeanTouch\Examples\SimpleDragSmooth.cs" />

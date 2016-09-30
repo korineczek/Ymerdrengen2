@@ -33,7 +33,7 @@ public class GridManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        Godmode = false;
+        Godmode = GameObject.Find("GodModeObject").GetComponent<GodModeScript>().Godmode;
         PickUpDic = new Dictionary<Vector2, GameObject>();
         numPickUpsCanCarry = 3;
         targetPickUp = new GameObject[numPickUpsCanCarry];
@@ -144,12 +144,17 @@ public class GridManager : MonoBehaviour {
 
     public bool hitTile(int x, int y)
     {
-        bool isPlayerHit = PlayerPosition.x == x && PlayerPosition.y == y;
-        if (isPlayerHit)
+        if (!Godmode)
         {
-            killPlayer();
+            bool isPlayerHit = PlayerPosition.x == x && PlayerPosition.y == y;
+            if (isPlayerHit)
+            {
+                killPlayer();
+            }
+            return isPlayerHit;
         }
-        return isPlayerHit;
+        else
+            return false;
     }
 
     public void TryMovePlayer(MoveDirection dir)
@@ -214,7 +219,8 @@ public class GridManager : MonoBehaviour {
             PickUpCount--;
         }
         else {
-            killPlayer();
+            if(!Godmode)
+                killPlayer();
         }
     }
 
