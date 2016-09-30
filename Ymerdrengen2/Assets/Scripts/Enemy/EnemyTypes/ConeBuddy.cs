@@ -80,7 +80,7 @@ public class ConeBuddy : Enemy
                     int intZ = round(point.z);
                     //DEBUG
                     if (x == 2) { 
-                        SPAWNCUBE(point, z + 1);
+                        SPAWNCUBE(point, z + (1 * z) + 1);
                     }
                     //DEBUG
                     if (intX >= 0 && intZ >= 0 && intX < GridData.gridSize && intZ < GridData.gridSize)
