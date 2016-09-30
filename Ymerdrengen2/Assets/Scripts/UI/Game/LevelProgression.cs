@@ -70,6 +70,7 @@ public class LevelProgression : MonoBehaviour {
         pause.SetActive(false);
         winText.SetActive(true);
         yield return new WaitForSeconds(2);
+        GameObject.Destroy(AudioData.audioManager.gameObject);
         Application.LoadLevel(nextLevel);
         yield break;
     }
