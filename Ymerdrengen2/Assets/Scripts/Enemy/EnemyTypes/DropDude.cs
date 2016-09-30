@@ -25,8 +25,6 @@ public class DropDude : Enemy {
         {
             GameObject CherrySplosion = Instantiate(Resources.Load("Prefabs/CherrySplosion") as GameObject);
             CherrySplosion.transform.position = transform.position;
-            Debug.Log("FJDIAWOJODW");
-            hitAllFields();
             isDone();
         }
     }
@@ -34,6 +32,7 @@ public class DropDude : Enemy {
     public override void behavior()
     {
         animationControl();
+
         if (t < 1)
         { 
             t +=  Time.deltaTime * speed / dropTime;
@@ -41,10 +40,12 @@ public class DropDude : Enemy {
         }
         else
         {
+
             hitAllFields();
 
             if (BlockTiles && !blockedTiles)
             {
+                transform.position = newPos;
                 blockTiles(true);
                 blockedTiles = true;
             }
@@ -63,13 +64,14 @@ public class DropDude : Enemy {
 
     void isDone()
     {
+        Debug.Log("HERE");
+
         if (BlockTiles)
            blockTiles(false);
 
         if (DestroyTiles)
             removeTiles();
-
-        transform.position = newPos;
+        
         base.destroyThis();
     }
 
