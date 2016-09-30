@@ -8,7 +8,7 @@ public class DropDude : Enemy {
     float t = 0;
 
     public bool DestroyTiles = false;
-    public bool BlockTiles = false;
+    public bool BlockTiles = true;
     bool blockedTiles = false; //Flag indicating if the tiles has already been blocked
     [Range(1, 3)]
     public int size = 1;
@@ -17,11 +17,11 @@ public class DropDude : Enemy {
     public float dropTime = 2f;
     public float deathTime = 1f;
 
-    public Animator anim;
+    Animator anim;
 
     void animationControl()
     {
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("EndState"))
+        if (anim != null && anim.GetCurrentAnimatorStateInfo(0).IsName("EndState"))
         {
             GameObject CherrySplosion = Instantiate(Resources.Load("Prefabs/CherrySplosion") as GameObject);
             CherrySplosion.transform.position = transform.position;
@@ -57,6 +57,7 @@ public class DropDude : Enemy {
 
     public override void init()
     {
+        anim = transform.GetComponent<Animator>();
         setPos(UnityEngine.Random.Range(0, GridData.gridSize), UnityEngine.Random.Range(0, GridData.gridSize));
     }
 
