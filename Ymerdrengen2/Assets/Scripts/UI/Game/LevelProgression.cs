@@ -39,7 +39,6 @@ public class LevelProgression : MonoBehaviour {
                     PlayerPrefs.SetInt("Level", nextLevel);
                 }
 
-                AudioData.audioManager.UnloadBank();
                 StartCoroutine("LevelTransition");
             }
         }
@@ -65,6 +64,7 @@ public class LevelProgression : MonoBehaviour {
     {
         winText.SetActive(true);
         //yield return new WaitForSeconds(2);
+        GameObject.Destroy(AudioData.audioManager.gameObject);
         Application.LoadLevel(nextLevel);
         yield break;
     }
