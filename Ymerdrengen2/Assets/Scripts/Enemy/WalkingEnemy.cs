@@ -1,55 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class LineGuy : Enemy
+public enum Direction
 {
+    Left, Right, Up, Down
+}
 
-    Vector3 vectorDir;
-    Direction direction;
+public class WalkingEnemy : Enemy {
 
-    float t = 0;
+    protected Vector3 vectorDir;
+    protected Direction direction;
 
-    public override void behavior()
-    {
-
-        //Collide with grid tile
-        GridData.gridManager.hitTile(round(newPos.x), (round(newPos.z)));
-
-        t += Time.deltaTime * speed;
-        transform.position = Vector3.Lerp(oldPos, newPos, t);
-
-        if (t >= 1)
-        {
-            oldPos = newPos;
-            newPos += vectorDir;
-            t = 0;
-        }
-
-    }
-
-    public override void init(int x, int y, Direction dir)
-    {
-        transform.position = new Vector3(x + GridData.offset, 0, y + GridData.offset);
-        direction = dir;
-
-        setDirVector();
-
-        oldPos = transform.position;
-        newPos = oldPos + vectorDir;
-        transform.LookAt(newPos);
-    }
-
-    public override void init(int x, int y)
-    {
-        Debug.Log("RANDOM");
-        init();
-    }
+    public override void behavior() { } // DO nothing
 
     public override void init()
     {
-        Debug.Log("RANDOM");
-        int rand = Random.Range(0, 3);
-        int laneNum = Random.Range(0, 5);
+        int rand = UnityEngine.Random.Range(0, 3);
+        int laneNum = UnityEngine.Random.Range(0, 5);
         switch (rand)
         {
             case 0:
@@ -73,26 +41,46 @@ public class LineGuy : Enemy
         setDirVector();
     }
 
+    public override void init(int x, int y)
+    {
+        init();
+    }
+
+    public override void init(int x, int y, Direction dir)
+    {
+        transform.position = new Vector3(x + GridData.offset, 0, y + GridData.offset);
+        direction = dir;
+
+        setDirVector();
+
+        oldPos = transform.position;
+        newPos = oldPos + vectorDir;
+        transform.LookAt(newPos);
+    }
+
     public void setDirVector()
     {
         if (direction == Direction.Down)
-        {
             vectorDir = new Vector3(0, 0, -1);
-        }
         else if (direction == Direction.Up)
-        {
             vectorDir = new Vector3(0, 0, 1);
-        }
         else if (direction == Direction.Left)
-        {
             vectorDir = new Vector3(-1, 0, 0);
-        }
         else if (direction == Direction.Right)
-        {
             vectorDir = new Vector3(1, 0, 0);
-        }
+    }
 
-        //Hack for sound on the enemy, change when possible
-        //AudioManager.Instance.PlaySound(SoundHandle.PieCharge);
+    protected void revereseDirection()
+    {
+        Debug.Log(direction);
+        switch (direction)
+        {
+            case Direction.Down: direction = Direction.Up; break;
+            case Direction.Up: direction = Direction.Down; break;
+            case Direction.Left: direction = Direction.Right; break;
+            case Direction.Right: direction = Direction.Left; break;
+        }
+        transform.Rotate(new Vector3(0, 180, 0));
+        setDirVector();
     }
 }

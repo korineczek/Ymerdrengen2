@@ -2,11 +2,6 @@
 using System.Collections;
 using System;
 
-public enum Direction
-{
-    Left, Right, Up, Down
-}
-
 public abstract class Enemy : MonoBehaviour
 {
 
