@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>5.4.1f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -65,8 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AudioData.cs" />
-    <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\GodModeScript.cs" />
     <Compile Include="Assets\LeanTouch\Examples\SimpleDrag.cs" />
     <Compile Include="Assets\LeanTouch\Examples\SimpleDragRigidbody.cs" />
@@ -89,6 +85,8 @@
     <Compile Include="Assets\LeanTouch\Scripts\LeanFinger.cs" />
     <Compile Include="Assets\LeanTouch\Scripts\LeanSnapshot.cs" />
     <Compile Include="Assets\LeanTouch\Scripts\LeanTouch.cs" />
+    <Compile Include="Assets\Scripts\AudioData.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
     <Compile Include="Assets\Scripts\DeviceSetup.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyManager.cs" />
@@ -229,6 +227,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Audio\Description.txt" />
+    <None Include="Assets\Audio\GeneratedSoundBanks\Android_backup\Init.txt" />
+    <None Include="Assets\Audio\GeneratedSoundBanks\Android_backup\New_SoundBank.txt" />
+    <None Include="Assets\Audio\GeneratedSoundBanks\Android_backup\PluginInfo.xml" />
+    <None Include="Assets\Audio\GeneratedSoundBanks\Android_backup\SoundbanksInfo.xml" />
     <None Include="Assets\Audio\GeneratedSoundBanks\Mac\Init.txt" />
     <None Include="Assets\Audio\GeneratedSoundBanks\Mac\New_SoundBank.txt" />
     <None Include="Assets\Audio\GeneratedSoundBanks\Mac\PluginInfo.xml" />
