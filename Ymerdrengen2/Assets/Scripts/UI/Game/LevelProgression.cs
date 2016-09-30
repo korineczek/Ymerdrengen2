@@ -19,6 +19,7 @@ public class LevelProgression : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Time.timeScale = 1f;
         StartGame();
 	}
 	
@@ -56,6 +57,7 @@ public class LevelProgression : MonoBehaviour {
         progressTimer = false;
         deathText.SetActive(true);
         progressionTracker.SetActive(false);
+        Time.timeScale = 0f;
     }
 
     IEnumerator LevelTransition()

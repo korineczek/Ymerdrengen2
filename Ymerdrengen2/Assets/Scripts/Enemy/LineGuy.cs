@@ -4,9 +4,6 @@ using System.Collections;
 public class LineGuy : Enemy
 {
 
-    Vector3 newPos;
-    Vector3 oldPos;
-
     Vector3 vectorDir;
     Direction direction;
 
@@ -16,7 +13,7 @@ public class LineGuy : Enemy
     {
 
         //Collide with grid tile
-        GridData.gridManager.hitTile((int)newPos.x, (int)newPos.z);
+        GridData.gridManager.hitTile(round(newPos.x), (round(newPos.z)));
 
         t += Time.deltaTime * speed;
         transform.position = Vector3.Lerp(oldPos, newPos, t);

@@ -147,15 +147,18 @@ public class GridManager : MonoBehaviour {
     public void TryMovePlayer(MoveDirection dir)
     {
         if (!PlayerCharacter.gameObject.activeSelf) {
-            revivePlayer();
+            //revivePlayer();
             return;
         }
             
         Vector2 newPos = PlayerPosition + TransformMoveDirection(dir);
         bool newPosValue = false;
-        try {
+        bool possiblePlacement = false;
+        try
+        {
             Debug.Log(newPos);
             newPosValue = getTile(newPos).HasFloor();
+            possiblePlacement = true;
         } catch (IndexOutOfRangeException) {
             Debug.LogWarning("New playerposition outside possible range.");
         }
@@ -183,7 +186,7 @@ public class GridManager : MonoBehaviour {
 
             }
         }
-        else if (targetPickUp != null)
+        else if (targetPickUp != null && possiblePlacement)
         {
             // add a new tile if there is a charge
             addTile((int)newPos.x, (int)newPos.y);
