@@ -91,5 +91,8 @@ public class LineGuy : Enemy
         {
             vectorDir = new Vector3(1, 0, 0);
         }
+
+        //Hack for sound on the enemy, change when possible
+        //AudioManager.Instance.PlaySound(SoundHandle.PieCharge);
     }
 }

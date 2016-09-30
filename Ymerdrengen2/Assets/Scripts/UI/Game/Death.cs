@@ -17,6 +17,7 @@ public class Death : MonoBehaviour {
     public void Retry()
     {
         Application.LoadLevel(Application.loadedLevel);
+        GameObject.Destroy(AudioData.audioManager.gameObject);
     }
 
     public void Menu()
