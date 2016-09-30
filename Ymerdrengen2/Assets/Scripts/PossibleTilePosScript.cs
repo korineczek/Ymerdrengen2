@@ -17,13 +17,17 @@ public class PossibleTilePosScript : MonoBehaviour
     void Update()
     {
         StartCoroutine(Blink());
+        if (!grid.GetComponent<GridManager>().possiblePlacement)
+        {
+            this.GetComponent<Renderer>().enabled = false;
+        }
 
     }
 
     IEnumerator Blink()
     {
         //float endTime = Time.time + waitTime;
-        while (grid.GetComponent<GridManager>().PickUpCount >= 0)
+        while (grid.GetComponent<GridManager>().possiblePlacement)
         {
             this.GetComponent<Renderer>().enabled = false;
             yield return new WaitForSeconds(0.8f);
