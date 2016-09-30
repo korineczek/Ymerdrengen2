@@ -21,6 +21,9 @@ public class Player : MonoBehaviour
 
         maxYmer = 3;
         numYmer = 0;
+
+        // Hack for music in game, change when applicable.
+        AudioData.StartMusic();
     }
 
     public void Move(MoveDirection dir)
