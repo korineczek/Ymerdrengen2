@@ -107,7 +107,7 @@ public class GridManager : MonoBehaviour {
                 { 
                     GameObject tile = Instantiate(tileObj, this.transform) as GameObject;
                     tileObjects[x, y] = tile;
-                    tile.transform.position = new Vector3(x + offset, -0.5f, y + offset);
+                    tile.transform.position = new Vector3(x + offset, 0, y + offset);
                 }
             }
         }
