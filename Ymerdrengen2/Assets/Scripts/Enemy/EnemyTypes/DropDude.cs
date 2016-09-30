@@ -4,6 +4,8 @@ using System;
 
 public class DropDude : Enemy {
 
+    enum State { preState, Dropping, Waiting }
+
     int internalX, internalZ;
     float t = 0;
 
@@ -14,10 +16,15 @@ public class DropDude : Enemy {
     public int size = 1;
     public float startHeight = 8f;
     public float endHeight = 0.5f;
+
+    float waitTime = 1f;
     public float dropTime = 2f;
     public float deathTime = 1f;
+    public float preShadowTime = 1f;
 
+    State state = State.preState;
     Animator anim;
+    GameObject shadow;
 
     void animationControl()
     {
@@ -32,36 +39,92 @@ public class DropDude : Enemy {
     void Start()
     {
         anim = transform.GetComponent<Animator>();
+        if(anim != null)
+            anim.Stop();
+        this.transform.position = oldPos + new Vector3(0, 5000, 0);
+        spawnShadow();
+        waitTime = preShadowTime;
     }
 
     public override void behavior()
     {
+
         animationControl();
 
-        if (t < 1)
-        { 
-            t +=  Time.deltaTime * speed / dropTime;
-            transform.position = Vector3.Lerp(oldPos, newPos, t);
-        }
-        else
+        switch (state)
         {
-
-            hitAllFields();
-
-            //Hit Floor Event
-            if (BlockTiles && !blockedTiles)
-            {
-                //Triggers landing sound
-                GridData.gridManager.triggerLandEvent();
-                transform.position = newPos;
-                blockTiles(true);
-                blockedTiles = true;
-            }
-
-            t += Time.deltaTime;
-            if (t >= 1 + deathTime)
-                isDone();
+            case State.preState:
+                setShadow();
+                if (wait())
+                {
+                    this.transform.position = oldPos;
+                    if (anim != null)
+                        anim.StartPlayback();
+                    state = State.Dropping;
+                    waitTime = deathTime;
+                }
+                break;
+            case State.Dropping:
+                dropCalc();
+                break;
+            case State.Waiting:
+                hitAllFields();
+                if (wait())
+                {
+                    isDone();
+                    state = State.Dropping;
+                }
+                break;
         }
+    }
+
+    void dropCalc()
+    {
+        t += Time.deltaTime * speed / dropTime;
+        transform.position = Vector3.Lerp(oldPos, newPos, t);
+        if (t >= 1)
+        {
+            state = State.Waiting;
+            hitFloorEvent();
+            t = 0;
+        }   
+    }
+
+    void hitFloorEvent()
+    {
+        //Hit Floor Event
+        if (BlockTiles && !blockedTiles)
+        {
+            //Triggers landing sound
+            GridData.gridManager.triggerLandEvent();
+            transform.position = newPos;
+            blockTiles(true);
+            blockedTiles = true;
+        }
+    }
+
+    bool wait()
+    {
+        t += Time.deltaTime;
+        if(t > waitTime) {
+            t = 0;
+            return true;
+        }
+        return false;
+    }
+
+    void isDone()
+    {
+
+        if (BlockTiles)
+            blockTiles(false);
+
+        Destroy(shadow);
+
+        if (DestroyTiles)
+            removeTiles();
+
+        base.destroyThis();
     }
 
     public override void init()
@@ -69,17 +132,17 @@ public class DropDude : Enemy {
         setPos(UnityEngine.Random.Range(0, GridData.gridSize), UnityEngine.Random.Range(0, GridData.gridSize));
     }
 
-    void isDone()
+    void spawnShadow()
     {
-        Debug.Log("HERE");
+        shadow = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        shadow.transform.position = newPos;
+        shadow.transform.localScale = new Vector3(0, 0.1f, 0);
+    }
 
-        if (BlockTiles)
-           blockTiles(false);
-
-        if (DestroyTiles)
-            removeTiles();
-        
-        base.destroyThis();
+    void setShadow()
+    {
+        float scale = (t / preShadowTime) * size;
+        shadow.transform.localScale = new Vector3(scale, 0.1f, scale);
     }
 
     public override void init(int x, int y)
@@ -132,7 +195,6 @@ public class DropDude : Enemy {
             }
         }
     }
-
 
     public override void init(int x, int y, Direction dir)
     {

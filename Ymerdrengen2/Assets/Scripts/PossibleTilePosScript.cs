@@ -36,13 +36,13 @@ public class PossibleTilePosScript : MonoBehaviour
     void TileBlink()
     {
         //if (Time.time > timer)
-        if (grid.GetComponent<GridManager>().PickUpCount < 0)
+        /*if (grid.GetComponent<GridManager>().PickUpCount < 0)
         {
 
             //timer = Time.time + .4;
             onoff = !onoff;
             this.GetComponent<Renderer>().enabled = onoff;
 
-        }//Time.time > timer ends
+        }//Time.time > timer ends */
     }
 }
