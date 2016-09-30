@@ -20,9 +20,7 @@ public class GridManager : MonoBehaviour {
     Dictionary<Vector2, GameObject> PickUpDic;
     GameObject tileObj;
     GameObject[] targetPickUp;
-    int PickUpCount;
-
-    bool killEventTriggered = false;
+    public int PickUpCount;
 
     public Player PlayerCharacter;
     public Vector2 PlayerPosition;
@@ -45,6 +43,7 @@ public class GridManager : MonoBehaviour {
         initFields();
         initGrid(FloorInitializer);
         createGridObj();
+        NewTilePossiblePlace();
     }
 
     void initPlayer()
@@ -146,10 +145,8 @@ public class GridManager : MonoBehaviour {
     public bool hitTile(int x, int y)
     {
         bool isPlayerHit = PlayerPosition.x == x && PlayerPosition.y == y;
-        if (isPlayerHit && !killEventTriggered)
+        if (isPlayerHit)
         {
-            killEventTriggered = true;
-            triggerKillEvent();
             killPlayer();
         }
         return isPlayerHit;
@@ -167,7 +164,7 @@ public class GridManager : MonoBehaviour {
         bool possiblePlacement = false;
         try
         {
-            Debug.Log(newPos);
+            //Debug.Log(newPos); /*this drove me mad*/
             newPosValue = getTile(newPos).HasFloor();
             possiblePlacement = true;
         } catch (IndexOutOfRangeException) {
@@ -191,8 +188,6 @@ public class GridManager : MonoBehaviour {
                 PickUpCount++;
                 // identify which pick up player touches (if there are a lot)
                 PickUpDic.TryGetValue(new Vector2((int)newPos.x, (int)newPos.y), out targetPickUp[PickUpCount]);
-                Debug.Log("targetpickup" + targetPickUp[PickUpCount]);
-                Debug.Log("pickupcount" + PickUpCount);
                 // say to the grid that this tile doesn't have a pick up anymore
                 getTile(newPos).ToggleFlags(FieldStatus.PickUp);
                 //GridData.grid[(int)newPos.x, (int)newPos.y] = ToggleFlags(GridData.grid[(int)newPos.x, (int)newPos.y], FieldStatus.PickUp);
@@ -201,7 +196,6 @@ public class GridManager : MonoBehaviour {
                 targetPickUp[PickUpCount].GetComponent<PickUpScript>().TriggerPickUp();
                 // remove ymer from dict
                 PickUpDic.Remove(new Vector2((int)newPos.x, (int)newPos.y));
-
 
             }
         }
@@ -314,28 +308,19 @@ public class GridManager : MonoBehaviour {
         return new BaseTile() { Value = tile.Value ^ flags }; // '^' ís a bitwise XOR operator.
     }
 
-    /// <summary>
-    /// Triggers events that are associated with landing of drop dude
-    /// </summary>
-    public void triggerLandEvent()
+    public void NewTilePossiblePlace()
     {
-        Debug.Log("Triggered landing event");
-    }
-
-    /// <summary>
-    /// Triggers events that are associated with killing the character
-    /// </summary>
-    public void triggerKillEvent()
-    {
-        Debug.Log("Triggered kill event");
-    }
-
-    /// <summary>
-    /// Triggers events that are associated with the conebuddy fire
-    /// </summary>
-    internal void triggerConeFireEvent()
-    {
-        Debug.Log("Triggered kill event");
+        for (int x = 0; x < gridSize; x++)
+        {
+            for (int y = 0; y < gridSize; y++)
+            {
+                if(!getTile(x, y).HasFloor())
+                {
+                    GameObject possibleTile = Instantiate(Resources.Load("Prefabs/PossTileObject") as GameObject);
+                    possibleTile.transform.position = new Vector3(x + offset, -offset, y + offset);
+                }
+            }
+        }
     }
 
 }

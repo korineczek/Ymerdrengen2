@@ -101,6 +101,7 @@
     <Compile Include="Assets\Scripts\MoveDirection.cs" />
     <Compile Include="Assets\Scripts\PickUp\PickUpScript.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\PossibleTilePosScript.cs" />
     <Compile Include="Assets\Scripts\SwipeManager.cs" />
     <Compile Include="Assets\Scripts\UI\Game\Death.cs" />
     <Compile Include="Assets\Scripts\UI\Game\LevelProgression.cs" />
