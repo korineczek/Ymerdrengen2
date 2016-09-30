@@ -71,6 +71,71 @@ ModelImporter:
     100126: coffeeGuy_rig:polySurface6
     100128: coffeeGuy_rig:polySurface7
     100130: coffeeGuy_rig:polySurface8
+    100132: anim_chest_01
+    100134: anim_head_01
+    100136: anim_l_elbow_01
+    100138: anim_l_foot_01
+    100140: anim_l_hand_01
+    100142: anim_l_kneeAim_01
+    100144: anim_l_shoulder_01
+    100146: anim_lid_01
+    100148: anim_master_01
+    100150: anim_masterOffset_01
+    100152: anim_pelvis_01
+    100154: anim_r_elbow_01
+    100156: anim_r_foot_01
+    100158: anim_r_hand_01
+    100160: anim_r_kneeAim_01
+    100162: anim_r_shoulder_01
+    100164: anim_stomach_01
+    100166: bind_chest_01
+    100168: bind_head_01
+    100170: bind_head_02
+    100172: bind_l_ankle_01
+    100174: bind_l_elbow_01
+    100176: bind_l_knee_01
+    100178: bind_l_shoulder_01
+    100180: bind_l_thigh_01
+    100182: bind_l_wrist_01
+    100184: bind_neck_01
+    100186: bind_pelvis_01
+    100188: bind_r_ankle_01
+    100190: bind_r_elbow_01
+    100192: bind_r_knee_01
+    100194: bind_r_shoulder_01
+    100196: bind_r_thigh_01
+    100198: bind_r_wrist_01
+    100200: bind_spine_01
+    100202: geo_coffeeGuy_01
+    100204: geo_cup_01
+    100206: geo_l_eyeBrow_01
+    100208: geo_mustache_01
+    100210: geo_r_eye_01
+    100212: geo_r_eye_02
+    100214: geo_r_eyeBrow_01
+    100216: geo_r_eyeThing_01
+    100218: geo_r_eyeThing_02
+    100220: geo_tie_01
+    100222: grp_anim_l_elbow_01
+    100224: grp_anim_l_hand_01
+    100226: grp_anim_l_shoulder_01
+    100228: grp_anim_r_elbow_01
+    100230: grp_anim_r_hand_01
+    100232: grp_anim_r_shoulder_01
+    100234: grp_controls
+    100236: grp_geo
+    100238: grp_r_reverseTrans_arm_01
+    100240: grp_rig
+    100242: ik_l_rp_leg_01
+    100244: ik_r_rp_leg_01
+    100246: polySurface1
+    100248: polySurface2
+    100250: polySurface3
+    100252: polySurface4
+    100254: polySurface5
+    100256: polySurface6
+    100258: polySurface7
+    100260: polySurface8
     400000: //RootNode
     400002: coffeeGuy_rig:anim_chest_01
     400004: coffeeGuy_rig:anim_head_01
@@ -137,6 +202,71 @@ ModelImporter:
     400126: coffeeGuy_rig:polySurface6
     400128: coffeeGuy_rig:polySurface7
     400130: coffeeGuy_rig:polySurface8
+    400132: anim_chest_01
+    400134: anim_head_01
+    400136: anim_l_elbow_01
+    400138: anim_l_foot_01
+    400140: anim_l_hand_01
+    400142: anim_l_kneeAim_01
+    400144: anim_l_shoulder_01
+    400146: anim_lid_01
+    400148: anim_master_01
+    400150: anim_masterOffset_01
+    400152: anim_pelvis_01
+    400154: anim_r_elbow_01
+    400156: anim_r_foot_01
+    400158: anim_r_hand_01
+    400160: anim_r_kneeAim_01
+    400162: anim_r_shoulder_01
+    400164: anim_stomach_01
+    400166: bind_chest_01
+    400168: bind_head_01
+    400170: bind_head_02
+    400172: bind_l_ankle_01
+    400174: bind_l_elbow_01
+    400176: bind_l_knee_01
+    400178: bind_l_shoulder_01
+    400180: bind_l_thigh_01
+    400182: bind_l_wrist_01
+    400184: bind_neck_01
+    400186: bind_pelvis_01
+    400188: bind_r_ankle_01
+    400190: bind_r_elbow_01
+    400192: bind_r_knee_01
+    400194: bind_r_shoulder_01
+    400196: bind_r_thigh_01
+    400198: bind_r_wrist_01
+    400200: bind_spine_01
+    400202: geo_coffeeGuy_01
+    400204: geo_cup_01
+    400206: geo_l_eyeBrow_01
+    400208: geo_mustache_01
+    400210: geo_r_eye_01
+    400212: geo_r_eye_02
+    400214: geo_r_eyeBrow_01
+    400216: geo_r_eyeThing_01
+    400218: geo_r_eyeThing_02
+    400220: geo_tie_01
+    400222: grp_anim_l_elbow_01
+    400224: grp_anim_l_hand_01
+    400226: grp_anim_l_shoulder_01
+    400228: grp_anim_r_elbow_01
+    400230: grp_anim_r_hand_01
+    400232: grp_anim_r_shoulder_01
+    400234: grp_controls
+    400236: grp_geo
+    400238: grp_r_reverseTrans_arm_01
+    400240: grp_rig
+    400242: ik_l_rp_leg_01
+    400244: ik_r_rp_leg_01
+    400246: polySurface1
+    400248: polySurface2
+    400250: polySurface3
+    400252: polySurface4
+    400254: polySurface5
+    400256: polySurface6
+    400258: polySurface7
+    400260: polySurface8
     7400000: CoffeeGuy_Attack_anim_001
     9500000: //RootNode
   materials:
