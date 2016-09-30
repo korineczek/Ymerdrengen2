@@ -168,7 +168,7 @@ public class GridManager : MonoBehaviour {
 
             // if player steps in a tile where a pick up exists
             //if (GridData.grid[(int)newPos.x, (int)newPos.y].IsPickUp())
-            if (getTile(newPos).IsPickUp())
+            if (getTile(newPos).IsPickUp() && targetPickUp == null)
             {
                 // identify which pick up player touches (if there are a lot)
                 PickUpDic.TryGetValue(new Vector2((int)newPos.x, (int)newPos.y), out targetPickUp);
@@ -180,6 +180,7 @@ public class GridManager : MonoBehaviour {
                 targetPickUp.GetComponent<PickUpScript>().TriggerPickUp();
                 // remove ymer from dict
                 PickUpDic.Remove(new Vector2((int)newPos.x, (int)newPos.y));
+
 
             }
         }
@@ -269,7 +270,6 @@ public class GridManager : MonoBehaviour {
         getTile(x, y).ToggleFlags(FieldStatus.PickUp);
         // associate the pickup with its coordinates (so we know which one to destroy when picked)
         PickUpDic.Add(new Vector2(x, y), pickUp);
-
 
     }
 
