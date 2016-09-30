@@ -95,6 +95,10 @@ ModelImporter:
     100174: jDrv_r_brow_01
     100176: jDrv_r_pupil_01
     100178: jDrv_root_01
+    100180: grpDrv_l_pt_01
+    100182: grpDrv_r_pt_01
+    100184: jDrv_l_transPupil_01
+    100186: jDrv_r_transPupil_01
     400000: anim_botStretch_01
     400002: anim_l_bigEye_01
     400004: anim_l_brow_01
@@ -185,6 +189,10 @@ ModelImporter:
     400174: jDrv_r_brow_01
     400176: jDrv_r_pupil_01
     400178: jDrv_root_01
+    400180: grpDrv_l_pt_01
+    400182: grpDrv_r_pt_01
+    400184: jDrv_l_transPupil_01
+    400186: jDrv_r_transPupil_01
     2300000: geo_r_eye_01
     3300000: geo_r_eye_01
     4300000: geo_tie_01
@@ -213,6 +221,7 @@ ModelImporter:
     13700018: geo_tooth_01
     13700020: geo_tooth_02
     13700022: geo_tooth_03
+    13700024: geo_r_eye_01
   materials:
     importMaterials: 1
     materialName: 0
