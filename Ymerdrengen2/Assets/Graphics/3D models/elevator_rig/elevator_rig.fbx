@@ -12,9 +12,9 @@ FBXHeaderExtension:  {
 		Month: 9
 		Day: 30
 		Hour: 16
-		Minute: 0
-		Second: 30
-		Millisecond: 623
+		Minute: 9
+		Second: 1
+		Millisecond: 964
 	}
 	Creator: "FBX SDK/FBX Plugins version 2016.1.2"
 	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
@@ -30,21 +30,21 @@ FBXHeaderExtension:  {
 			Comment: ""
 		}
 		Properties70:  {
-			P: "DocumentUrl", "KString", "Url", "", "C:\Users\dadiu\Documents\Ymerdrengen2\Ymerdrengen2\Assets\Graphics\3D models\elevator\elevator.fbx"
-			P: "SrcDocumentUrl", "KString", "Url", "", "C:\Users\dadiu\Documents\Ymerdrengen2\Ymerdrengen2\Assets\Graphics\3D models\elevator\elevator.fbx"
+			P: "DocumentUrl", "KString", "Url", "", "C:\Users\dadiu\Documents\Ymerdrengen2\Ymerdrengen2\Assets\Graphics\3D models\elevator_rig\elevator_rig.fbx"
+			P: "SrcDocumentUrl", "KString", "Url", "", "C:\Users\dadiu\Documents\Ymerdrengen2\Ymerdrengen2\Assets\Graphics\3D models\elevator_rig\elevator_rig.fbx"
 			P: "Original", "Compound", "", ""
 			P: "Original|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "Original|ApplicationName", "KString", "", "", "Maya"
 			P: "Original|ApplicationVersion", "KString", "", "", "2016"
-			P: "Original|DateTime_GMT", "DateTime", "", "", "30/09/2016 14:00:30.622"
-			P: "Original|FileName", "KString", "", "", "C:\Users\dadiu\Documents\Ymerdrengen2\Ymerdrengen2\Assets\Graphics\3D models\elevator\elevator.fbx"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "30/09/2016 14:09:01.963"
+			P: "Original|FileName", "KString", "", "", "C:\Users\dadiu\Documents\Ymerdrengen2\Ymerdrengen2\Assets\Graphics\3D models\elevator_rig\elevator_rig.fbx"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "LastSaved|ApplicationName", "KString", "", "", "Maya"
 			P: "LastSaved|ApplicationVersion", "KString", "", "", "2016"
-			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "30/09/2016 14:00:30.622"
-			P: "Original|ApplicationActiveProject", "KString", "", "", "Z:\team4\shares\Nathalie\miniGame2\props"
-			P: "Original|ApplicationNativeFile", "KString", "", "", "Z:\team4\shares\Nathalie\miniGame2\props\elevator_01.ma"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "30/09/2016 14:09:01.963"
+			P: "Original|ApplicationActiveProject", "KString", "", "", "Z:\team4\Mini-Game Project 2\rig\elevator"
+			P: "Original|ApplicationNativeFile", "KString", "", "", "Z:\team4\Mini-Game Project 2\rig\elevator\elevator_rig.ma"
 		}
 	}
 }
@@ -79,10 +79,10 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 1250856736, "", "Scene" {
+	Document: 224607632, "", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
-			P: "ActiveAnimStackName", "KString", "", "", "elevator_01"
+			P: "ActiveAnimStackName", "KString", "", "", "elevator_rig"
 		}
 		RootNode: 0
 	}
@@ -99,7 +99,7 @@ References:  {
 
 Definitions:  {
 	Version: 100
-	Count: 20
+	Count: 50
 	ObjectType: "GlobalSettings" {
 		Count: 1
 	}
@@ -132,7 +132,7 @@ Definitions:  {
 		}
 	}
 	ObjectType: "NodeAttribute" {
-		Count: 2
+		Count: 8
 		PropertyTemplate: "FbxNull" {
 			Properties70:  {
 				P: "Color", "ColorRGB", "Color", "",0.8,0.8,0.8
@@ -142,7 +142,7 @@ Definitions:  {
 		}
 	}
 	ObjectType: "Model" {
-		Count: 8
+		Count: 16
 		PropertyTemplate: "FbxNode" {
 			Properties70:  {
 				P: "QuaternionInterpolate", "enum", "", "",0
@@ -220,7 +220,7 @@ Definitions:  {
 		}
 	}
 	ObjectType: "Geometry" {
-		Count: 6
+		Count: 8
 		PropertyTemplate: "FbxMesh" {
 			Properties70:  {
 				P: "Color", "ColorRGB", "Color", "",0.8,0.8,0.8
@@ -256,25 +256,39 @@ Definitions:  {
 			}
 		}
 	}
+	ObjectType: "AnimationCurveNode" {
+		Count: 8
+		PropertyTemplate: "FbxAnimCurveNode" {
+			Properties70:  {
+				P: "d", "Compound", "", ""
+			}
+		}
+	}
+	ObjectType: "Pose" {
+		Count: 2
+	}
+	ObjectType: "Deformer" {
+		Count: 4
+	}
 }
 
 ; Object properties
 ;------------------------------------------------------------------
 
 Objects:  {
-	NodeAttribute: 1248845776, "NodeAttribute::", "Null" {
+	NodeAttribute: 1342965696, "NodeAttribute::", "Null" {
 		Properties70:  {
 			P: "Look", "enum", "", "",0
 		}
 		TypeFlags: "Null"
 	}
-	NodeAttribute: 1248845952, "NodeAttribute::", "Null" {
+	NodeAttribute: 1342965872, "NodeAttribute::", "Null" {
 		Properties70:  {
 			P: "Look", "enum", "", "",0
 		}
 		TypeFlags: "Null"
 	}
-	Geometry: 222780096, "Geometry::", "Mesh" {
+	Geometry: 223256432, "Geometry::", "Mesh" {
 		Vertices: *48 {
 			a: -5.94563007354736,213.147186279297,1.45926523208618,-3.02709937095642,213.147186279297,1.45926523208618,-5.94563007354736,293.9169921875,1.45926523208618,-3.02709937095642,293.9169921875,1.45926523208618,-5.94563007354736,293.9169921875,-1.45926523208618,-3.02709937095642,293.9169921875,-1.45926523208618,-5.94563007354736,213.147186279297,-1.45926523208618,-3.02709937095642,213.147186279297,-1.45926523208618,-4.48636484146118,293.9169921875,-1.94568693637848,-4.48636484146118,213.147186279297,-1.94568693637848,-2.54067754745483,213.147186279297,3.5527136788005e-015,-2.54067754745483,293.9169921875,3.5527136788005e-015,-6.43205165863037,213.147186279297,3.5527136788005e-015,-6.43205165863037,293.9169921875,3.5527136788005e-015,-4.48636484146118,213.147186279297,1.94568693637848,-4.48636484146118,293.9169921875,1.94568693637848
 		} 
@@ -347,7 +361,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1250031808, "Geometry::", "Mesh" {
+	Geometry: 223245680, "Geometry::", "Mesh" {
 		Vertices: *48 {
 			a: 3.40626430511475,202.617813110352,1.45926523208618,6.32479476928711,202.617813110352,1.45926523208618,3.40626430511475,334.995513916016,1.45926523208618,6.32479476928711,334.995513916016,1.45926523208618,3.40626430511475,334.995513916016,-1.45926523208618,6.32479476928711,334.995513916016,-1.45926523208618,3.40626430511475,202.617813110352,-1.45926523208618,6.32479476928711,202.617813110352,-1.45926523208618,4.86552953720093,334.995513916016,-1.94568693637848,4.86552953720093,202.617813110352,-1.94568693637848,6.81121635437012,202.617813110352,0,6.81121635437012,334.995513916016,0,2.91984248161316,202.617813110352,0,2.91984248161316,334.995513916016,0,4.86552953720093,202.617813110352,1.94568693637848,4.86552953720093,334.995513916016,1.94568693637848
 		} 
@@ -420,7 +434,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1250031296, "Geometry::", "Mesh" {
+	Geometry: 223244656, "Geometry::", "Mesh" {
 		Vertices: *75 {
 			a: -6.89074802398682,199.383148193359,6.89074754714966,6.89074754714966,199.383148193359,6.89074802398682,-5.10425806045532,213.675064086914,5.10425806045532,5.10425806045532,213.675064086914,5.10425806045532,-5.10425806045532,213.675079345703,-5.10425806045532,5.10425806045532,213.675079345703,-5.10425806045532,-6.89074754714966,199.383148193359,-6.89074802398682,6.89074802398682,199.383148193359,-6.89074754714966,0,215.461563110352,6.89074802398682,-6.89074802398682,215.461563110352,0,6.89074802398682,215.461563110352,0,0,215.461563110352,-6.89074802398682,-6.89074802398682,208.570816040039,-6.89074802398682,6.89074802398682,208.570816040039,-6.89074802398682,0,199.383148193359,-9.18766403198242,9.18766403198242,199.383148193359,0,-9.18766403198242,199.383148193359,0,0,199.383148193359,9.18766403198242,-6.89074802398682,208.570816040039,6.89074802398682,6.89074802398682,208.570816040039,6.89074802398682,0,208.570816040039,9.18766403198242,0,217.758483886719,0,0,208.570816040039,-9.18766403198242,9.18766403198242,208.570816040039,0,-9.18766403198242,208.570816040039,0
 		} 
@@ -493,7 +507,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1250038464, "Geometry::", "Mesh" {
+	Geometry: 223245168, "Geometry::", "Mesh" {
 		Vertices: *18 {
 			a: 45.4906044006348,3.82952642440796,49.9608840942383,-0.037872314453125,3.82952642440796,49.9608840942383,-0.037872314453125,196.170471191406,49.9608840942383,45.4906044006348,196.170471191406,49.9608840942383,-0.037872314453125,3.82952642440796,42.6019325256348,-0.037872314453125,196.170471191406,42.6019325256348
 		} 
@@ -566,7 +580,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1250040000, "Geometry::", "Mesh" {
+	Geometry: 223253872, "Geometry::", "Mesh" {
 		Vertices: *18 {
 			a: -45.4906044006348,3.82952642440796,49.9608840942383,0.0378837585449219,3.82952642440796,49.9608840942383,0.0378837585449219,196.170471191406,49.9608840942383,-45.4906044006348,196.170471191406,49.9608840942383,0.0378837585449219,3.82952642440796,42.411994934082,0.0378837585449219,196.170471191406,42.411994934082
 		} 
@@ -639,7 +653,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 1056828528, "Geometry::", "Mesh" {
+	Geometry: 223259504, "Geometry::", "Mesh" {
 		Vertices: *48 {
 			a: -50,0,50,50,0,50,-50,200,50,50,200,50,-50,200,-50,50,200,-50,-50,0,-50,50,0,-50,-45.4906044006348,3.82952642440796,50,45.4906044006348,3.82952642440796,50,45.4906044006348,196.170471191406,50,-45.4906044006348,196.170471191406,50,-45.4906044006348,3.82952642440796,41.6454010009766,45.4906044006348,3.82952642440796,41.6454010009766,45.4906044006348,196.170471191406,41.6454010009766,-45.4906044006348,196.170471191406,41.6454010009766
 		} 
@@ -712,7 +726,73 @@ Objects:  {
 			}
 		}
 	}
-	Model: 224814976, "Model::grp_elevator_01", "Null" {
+	NodeAttribute: 1342966048, "NodeAttribute::", "Null" {
+		Properties70:  {
+			P: "Look", "enum", "", "",0
+		}
+		TypeFlags: "Null"
+	}
+	NodeAttribute: 227548160, "NodeAttribute::", "LimbNode" {
+		Properties70:  {
+			P: "Size", "double", "Number", "",33.3333333333333
+		}
+		TypeFlags: "Skeleton"
+	}
+	NodeAttribute: 227548928, "NodeAttribute::", "LimbNode" {
+		Properties70:  {
+			P: "Size", "double", "Number", "",33.3333333333333
+		}
+		TypeFlags: "Skeleton"
+	}
+	NodeAttribute: 1342966400, "NodeAttribute::", "Null" {
+		Properties70:  {
+			P: "Look", "enum", "", "",0
+		}
+		TypeFlags: "Null"
+	}
+	Geometry: 1317398432, "Geometry::", "NurbsCurve" {
+		GeometryVersion: 124
+		Type: "NurbsCurve"
+		NurbsCurveVersion: 100
+		Order: 4
+		Dimension: 3
+		Form: "Periodic"
+		Rational: 0
+		Points: *32 {
+			a: 63.6562252552734,3.89781962523366e-015,-63.6562252552733,1,-1.02706046029441e-014,5.51234937768947e-015,-90.0234970854842,1,-63.6562252552733,3.89781962523367e-015,-63.6562252552733,1,-90.0234970854842,1.59734094156161e-030,-2.60865572453011e-014,1,-63.6562252552733,-3.89781962523367e-015,63.6562252552733,1,-2.71258365810795e-014,-5.51234937768947e-015,90.0234970854843,1,63.6562252552733,-3.89781962523367e-015,63.6562252552733,1,90.0234970854842,-2.96069360388693e-030,4.83517958965521e-014,1
+		} 
+		KnotVector: *15 {
+			a: -3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11
+		} 
+	}
+	NodeAttribute: 1342922944, "NodeAttribute::", "Null" {
+		Properties70:  {
+			P: "Look", "enum", "", "",0
+		}
+		TypeFlags: "Null"
+	}
+	NodeAttribute: 1342922768, "NodeAttribute::", "Null" {
+		Properties70:  {
+			P: "Look", "enum", "", "",0
+		}
+		TypeFlags: "Null"
+	}
+	Geometry: 1317398064, "Geometry::", "NurbsCurve" {
+		GeometryVersion: 124
+		Type: "NurbsCurve"
+		NurbsCurveVersion: 100
+		Order: 4
+		Dimension: 3
+		Form: "Periodic"
+		Rational: 0
+		Points: *32 {
+			a: 79.4269477378133,4.86349786565785e-015,-79.4269477378131,1,-1.28151295770748e-014,6.87802464218593e-015,-112.326666708714,1,-79.4269477378132,4.86349786565785e-015,-79.4269477378132,1,-112.326666708714,1.99307946671521e-030,-3.25494578208651e-014,1,-79.4269477378132,-4.86349786565785e-015,79.4269477378132,1,-3.38462168598566e-014,-6.87802464218593e-015,112.326666708714,1,79.4269477378131,-4.86349786565785e-015,79.4269477378132,1,112.326666708714,-3.69420045251779e-030,6.03308718087507e-014,1
+		} 
+		KnotVector: *15 {
+			a: -3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11
+		} 
+	}
+	Model: 1343584496, "Model::grp_elevator_01", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationPivot", "Vector3D", "Vector", "",0,100,0
@@ -725,7 +805,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 224817296, "Model::grp_geo", "Null" {
+	Model: 1343586816, "Model::grp_geo", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -736,7 +816,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 224819616, "Model::geo_r_wire_01", "Mesh" {
+	Model: 1343589136, "Model::geo_r_wire_01", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationPivot", "Vector3D", "Vector", "",-4.48636462916762,213.147184484514,-1.15683117150161e-014
@@ -750,7 +830,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 224821936, "Model::geo_l_wire_01", "Mesh" {
+	Model: 1343591456, "Model::geo_l_wire_01", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationPivot", "Vector3D", "Vector", "",4.86552956964833,202.617806628176,0
@@ -764,7 +844,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 222902768, "Model::geo_topDetail_01", "Mesh" {
+	Model: 1343593776, "Model::geo_topDetail_01", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationPivot", "Vector3D", "Vector", "",0,208.570812434471,0
@@ -778,7 +858,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 222905088, "Model::geo_l_elevatorDoor_01", "Mesh" {
+	Model: 1343596096, "Model::geo_l_elevatorDoor_01", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationPivot", "Vector3D", "Vector", "",45.4906044006348,99.9999988079071,49.960882785416
@@ -787,12 +867,15 @@ Objects:  {
 			P: "InheritType", "enum", "", "",1
 			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
 			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "AL7",0,0,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "AL7",0,0,0
+			P: "Lcl Scaling", "Lcl Scaling", "", "AL7",1,1,1
 			P: "currentUVSet", "KString", "", "U", "map1"
 		}
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 222907408, "Model::geo_r_elevatorDoor_01", "Mesh" {
+	Model: 1343598416, "Model::geo_r_elevatorDoor_01", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationPivot", "Vector3D", "Vector", "",-45.4906044006348,99.9999988079071,49.960882785416
@@ -801,12 +884,15 @@ Objects:  {
 			P: "InheritType", "enum", "", "",1
 			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
 			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "AL7",0,0,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "AL7",0,0,0
+			P: "Lcl Scaling", "Lcl Scaling", "", "AL7",1,1,1
 			P: "currentUVSet", "KString", "", "U", "map1"
 		}
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 222909728, "Model::geo_elevator_01", "Mesh" {
+	Model: 1343600736, "Model::geo_elevator_01", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -818,7 +904,169 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Material: 223613632, "Material::lambert1", "" {
+	Model: 1343603056, "Model::grp_rig", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Visibility", "Visibility", "", "A",0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 1343605376, "Model::bind_l_elevatorDoor_01", "LimbNode" {
+		Version: 232
+		Properties70:  {
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A+",48.1935341471263,105.844817825586,48.2442080678503
+			P: "lockInfluenceWeights", "Bool", "", "A+U",0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 1343607696, "Model::bind_r_elevatorDoor_01", "LimbNode" {
+		Version: 232
+		Properties70:  {
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A+",-47.1214010477904,105.844817825586,48.2442080678503
+			P: "lockInfluenceWeights", "Bool", "", "A+U",0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 1340885248, "Model::grp_controls", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 1340887568, "Model::anim_masterOffset_01", "NurbsCurve" {
+		Version: 232
+		Properties70:  {
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Scaling", "Lcl Scaling", "", "AL7",1,1,1
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 1340889888, "Model::locDrv_r_scale_01", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationPivot", "Vector3D", "Vector", "",-72.9946522325097,105.844817825586,48.2442080678503
+			P: "ScalingPivot", "Vector3D", "Vector", "",-72.9946522325097,105.844817825586,48.2442080678503
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "AL7",0,0,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "AL7",0,0,0
+			P: "Lcl Scaling", "Lcl Scaling", "", "AL6",1,1,1
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 1340892208, "Model::locDrv_l_scale_01", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationPivot", "Vector3D", "Vector", "",72.995,105.844817825586,48.2442080678503
+			P: "ScalingPivot", "Vector3D", "Vector", "",72.995,105.844817825586,48.2442080678503
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "AL7",0,0,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "AL7",0,0,0
+			P: "Lcl Scaling", "Lcl Scaling", "", "AL6",1,1,1
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 1340894528, "Model::anim_master_01", "NurbsCurve" {
+		Version: 232
+		Properties70:  {
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "DefaultAttributeIndex", "int", "Integer", "",0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Pose: 1342922592, "Pose::skinCluster1", "BindPose" {
+		Type: "BindPose"
+		Version: 100
+		NbPoseNodes: 4
+		PoseNode:  {
+			Node: 1343596096
+			Matrix: *16 {
+				a: 1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1
+			} 
+		}
+		PoseNode:  {
+			Node: 1343605376
+			Matrix: *16 {
+				a: 1,0,0,0,0,1,0,0,0,0,1,0,48.1935341471263,105.844817825586,48.2442080678503,1
+			} 
+		}
+		PoseNode:  {
+			Node: 1343603056
+			Matrix: *16 {
+				a: 1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1
+			} 
+		}
+		PoseNode:  {
+			Node: 1343584496
+			Matrix: *16 {
+				a: 1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1
+			} 
+		}
+	}
+	Pose: 1342923120, "Pose::skinCluster2", "BindPose" {
+		Type: "BindPose"
+		Version: 100
+		NbPoseNodes: 4
+		PoseNode:  {
+			Node: 1343598416
+			Matrix: *16 {
+				a: 1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1
+			} 
+		}
+		PoseNode:  {
+			Node: 1343607696
+			Matrix: *16 {
+				a: 1,0,0,0,0,1,0,0,0,0,1,0,-47.1214010477904,105.844817825586,48.2442080678503,1
+			} 
+		}
+		PoseNode:  {
+			Node: 1343603056
+			Matrix: *16 {
+				a: 1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1
+			} 
+		}
+		PoseNode:  {
+			Node: 1343584496
+			Matrix: *16 {
+				a: 1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1
+			} 
+		}
+	}
+	Material: 1324238032, "Material::lambert1", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -833,7 +1081,49 @@ Objects:  {
 			P: "Opacity", "double", "Number", "",1
 		}
 	}
-	AnimationStack: 223060496, "AnimStack::elevator_01", "" {
+	Deformer: 227551616, "Deformer::", "Skin" {
+		Version: 101
+		Link_DeformAcuracy: 50
+		SkinningType: "Linear"
+	}
+	Deformer: 227551040, "Deformer::", "Skin" {
+		Version: 101
+		Link_DeformAcuracy: 50
+		SkinningType: "Linear"
+	}
+	Deformer: 223825312, "SubDeformer::", "Cluster" {
+		Version: 100
+		UserData: "", ""
+		Indexes: *6 {
+			a: 0,1,2,3,4,5
+		} 
+		Weights: *6 {
+			a: 1,1,1,1,1,1
+		} 
+		Transform: *16 {
+			a: 1,0,0,0,0,1,0,0,0,0,1,0,-48.1935341471263,-105.844817825586,-48.2442080678503,1
+		} 
+		TransformLink: *16 {
+			a: 1,0,0,0,-0,1,0,0,0,-0,1,0,48.1935341471263,105.844817825586,48.2442080678503,1
+		} 
+	}
+	Deformer: 223814032, "SubDeformer::", "Cluster" {
+		Version: 100
+		UserData: "", ""
+		Indexes: *6 {
+			a: 0,1,2,3,4,5
+		} 
+		Weights: *6 {
+			a: 1,1,1,1,1,1
+		} 
+		Transform: *16 {
+			a: 1,0,0,0,0,1,0,0,0,0,1,0,47.1214010477904,-105.844817825586,-48.2442080678503,1
+		} 
+		TransformLink: *16 {
+			a: 1,0,0,0,-0,1,0,0,0,-0,1,0,-47.1214010477904,105.844817825586,48.2442080678503,1
+		} 
+	}
+	AnimationStack: 1250716256, "AnimStack::elevator_rig", "" {
 		Properties70:  {
 			P: "LocalStart", "KTime", "Time", "",1924423250
 			P: "LocalStop", "KTime", "Time", "",230930790000
@@ -841,7 +1131,59 @@ Objects:  {
 			P: "ReferenceStop", "KTime", "Time", "",230930790000
 		}
 	}
-	AnimationLayer: 1310649376, "AnimLayer::BaseLayer", "" {
+	AnimationLayer: 224982192, "AnimLayer::BaseLayer", "" {
+	}
+	AnimationCurveNode: 1250714384, "AnimCurveNode::lockInfluenceWeights", "" {
+		Properties70:  {
+			P: "d|lockInfluenceWeights", "Bool", "", "A",0
+		}
+	}
+	AnimationCurveNode: 977129232, "AnimCurveNode::lockInfluenceWeights", "" {
+		Properties70:  {
+			P: "d|lockInfluenceWeights", "Bool", "", "A",0
+		}
+	}
+	AnimationCurveNode: 977129440, "AnimCurveNode::T", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",48.1935341471263
+			P: "d|Y", "Number", "", "A",105.844817825586
+			P: "d|Z", "Number", "", "A",48.2442080678503
+		}
+	}
+	AnimationCurveNode: 977129648, "AnimCurveNode::S", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurveNode: 977128816, "AnimCurveNode::R", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",0
+			P: "d|Y", "Number", "", "A",0
+			P: "d|Z", "Number", "", "A",0
+		}
+	}
+	AnimationCurveNode: 977129856, "AnimCurveNode::T", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",-47.1214010477904
+			P: "d|Y", "Number", "", "A",105.844817825586
+			P: "d|Z", "Number", "", "A",48.2442080678503
+		}
+	}
+	AnimationCurveNode: 977130064, "AnimCurveNode::S", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurveNode: 977130272, "AnimCurveNode::R", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",0
+			P: "d|Y", "Number", "", "A",0
+			P: "d|Z", "Number", "", "A",0
+		}
 	}
 }
 
@@ -851,81 +1193,195 @@ Objects:  {
 Connections:  {
 	
 	;Model::grp_elevator_01, Model::RootNode
-	C: "OO",224814976,0
+	C: "OO",1343584496,0
 	
-	;AnimLayer::BaseLayer, AnimStack::elevator_01
-	C: "OO",1310649376,223060496
+	;AnimLayer::BaseLayer, AnimStack::elevator_rig
+	C: "OO",224982192,1250716256
+	
+	;AnimCurveNode::lockInfluenceWeights, AnimLayer::BaseLayer
+	C: "OO",1250714384,224982192
+	
+	;AnimCurveNode::lockInfluenceWeights, AnimLayer::BaseLayer
+	C: "OO",977129232,224982192
+	
+	;AnimCurveNode::T, AnimLayer::BaseLayer
+	C: "OO",977129440,224982192
+	
+	;AnimCurveNode::S, AnimLayer::BaseLayer
+	C: "OO",977129648,224982192
+	
+	;AnimCurveNode::R, AnimLayer::BaseLayer
+	C: "OO",977128816,224982192
+	
+	;AnimCurveNode::T, AnimLayer::BaseLayer
+	C: "OO",977129856,224982192
+	
+	;AnimCurveNode::S, AnimLayer::BaseLayer
+	C: "OO",977130064,224982192
+	
+	;AnimCurveNode::R, AnimLayer::BaseLayer
+	C: "OO",977130272,224982192
 	
 	;NodeAttribute::, Model::grp_elevator_01
-	C: "OO",1248845776,224814976
+	C: "OO",1342965696,1343584496
 	
 	;Model::grp_geo, Model::grp_elevator_01
-	C: "OO",224817296,224814976
+	C: "OO",1343586816,1343584496
+	
+	;Model::grp_rig, Model::grp_elevator_01
+	C: "OO",1343603056,1343584496
+	
+	;Model::grp_controls, Model::grp_elevator_01
+	C: "OO",1340885248,1343584496
 	
 	;NodeAttribute::, Model::grp_geo
-	C: "OO",1248845952,224817296
+	C: "OO",1342965872,1343586816
 	
 	;Model::geo_r_wire_01, Model::grp_geo
-	C: "OO",224819616,224817296
+	C: "OO",1343589136,1343586816
 	
 	;Model::geo_l_wire_01, Model::grp_geo
-	C: "OO",224821936,224817296
+	C: "OO",1343591456,1343586816
 	
 	;Model::geo_topDetail_01, Model::grp_geo
-	C: "OO",222902768,224817296
+	C: "OO",1343593776,1343586816
 	
 	;Model::geo_l_elevatorDoor_01, Model::grp_geo
-	C: "OO",222905088,224817296
+	C: "OO",1343596096,1343586816
 	
 	;Model::geo_r_elevatorDoor_01, Model::grp_geo
-	C: "OO",222907408,224817296
+	C: "OO",1343598416,1343586816
 	
 	;Model::geo_elevator_01, Model::grp_geo
-	C: "OO",222909728,224817296
+	C: "OO",1343600736,1343586816
 	
 	;Geometry::, Model::geo_r_wire_01
-	C: "OO",222780096,224819616
+	C: "OO",223256432,1343589136
 	
 	;Material::lambert1, Model::geo_r_wire_01
-	C: "OO",223613632,224819616
+	C: "OO",1324238032,1343589136
 	
 	;Geometry::, Model::geo_l_wire_01
-	C: "OO",1250031808,224821936
+	C: "OO",223245680,1343591456
 	
 	;Material::lambert1, Model::geo_l_wire_01
-	C: "OO",223613632,224821936
+	C: "OO",1324238032,1343591456
 	
 	;Geometry::, Model::geo_topDetail_01
-	C: "OO",1250031296,222902768
+	C: "OO",223244656,1343593776
 	
 	;Material::lambert1, Model::geo_topDetail_01
-	C: "OO",223613632,222902768
+	C: "OO",1324238032,1343593776
+	
+	;Deformer::, Geometry::
+	C: "OO",227551616,223245168
 	
 	;Geometry::, Model::geo_l_elevatorDoor_01
-	C: "OO",1250038464,222905088
+	C: "OO",223245168,1343596096
 	
 	;Material::lambert1, Model::geo_l_elevatorDoor_01
-	C: "OO",223613632,222905088
+	C: "OO",1324238032,1343596096
+	
+	;Deformer::, Geometry::
+	C: "OO",227551040,223253872
 	
 	;Geometry::, Model::geo_r_elevatorDoor_01
-	C: "OO",1250040000,222907408
+	C: "OO",223253872,1343598416
 	
 	;Material::lambert1, Model::geo_r_elevatorDoor_01
-	C: "OO",223613632,222907408
+	C: "OO",1324238032,1343598416
 	
 	;Geometry::, Model::geo_elevator_01
-	C: "OO",1056828528,222909728
+	C: "OO",223259504,1343600736
 	
 	;Material::lambert1, Model::geo_elevator_01
-	C: "OO",223613632,222909728
+	C: "OO",1324238032,1343600736
+	
+	;NodeAttribute::, Model::grp_rig
+	C: "OO",1342966048,1343603056
+	
+	;Model::bind_l_elevatorDoor_01, Model::grp_rig
+	C: "OO",1343605376,1343603056
+	
+	;Model::bind_r_elevatorDoor_01, Model::grp_rig
+	C: "OO",1343607696,1343603056
+	
+	;NodeAttribute::, Model::bind_l_elevatorDoor_01
+	C: "OO",227548160,1343605376
+	
+	;AnimCurveNode::T, Model::bind_l_elevatorDoor_01
+	C: "OP",977129440,1343605376, "Lcl Translation"
+	
+	;AnimCurveNode::R, Model::bind_l_elevatorDoor_01
+	C: "OP",977128816,1343605376, "Lcl Rotation"
+	
+	;AnimCurveNode::S, Model::bind_l_elevatorDoor_01
+	C: "OP",977129648,1343605376, "Lcl Scaling"
+	
+	;AnimCurveNode::lockInfluenceWeights, Model::bind_l_elevatorDoor_01
+	C: "OP",1250714384,1343605376, "lockInfluenceWeights"
+	
+	;NodeAttribute::, Model::bind_r_elevatorDoor_01
+	C: "OO",227548928,1343607696
+	
+	;AnimCurveNode::T, Model::bind_r_elevatorDoor_01
+	C: "OP",977129856,1343607696, "Lcl Translation"
+	
+	;AnimCurveNode::R, Model::bind_r_elevatorDoor_01
+	C: "OP",977130272,1343607696, "Lcl Rotation"
+	
+	;AnimCurveNode::S, Model::bind_r_elevatorDoor_01
+	C: "OP",977130064,1343607696, "Lcl Scaling"
+	
+	;AnimCurveNode::lockInfluenceWeights, Model::bind_r_elevatorDoor_01
+	C: "OP",977129232,1343607696, "lockInfluenceWeights"
+	
+	;NodeAttribute::, Model::grp_controls
+	C: "OO",1342966400,1340885248
+	
+	;Model::anim_masterOffset_01, Model::grp_controls
+	C: "OO",1340887568,1340885248
+	
+	;Model::anim_master_01, Model::grp_controls
+	C: "OO",1340894528,1340885248
+	
+	;Geometry::, Model::anim_masterOffset_01
+	C: "OO",1317398432,1340887568
+	
+	;Model::locDrv_r_scale_01, Model::anim_masterOffset_01
+	C: "OO",1340889888,1340887568
+	
+	;Model::locDrv_l_scale_01, Model::anim_masterOffset_01
+	C: "OO",1340892208,1340887568
+	
+	;NodeAttribute::, Model::locDrv_r_scale_01
+	C: "OO",1342922944,1340889888
+	
+	;NodeAttribute::, Model::locDrv_l_scale_01
+	C: "OO",1342922768,1340892208
+	
+	;Geometry::, Model::anim_master_01
+	C: "OO",1317398064,1340894528
+	
+	;SubDeformer::, Deformer::
+	C: "OO",223825312,227551616
+	
+	;Model::bind_l_elevatorDoor_01, SubDeformer::
+	C: "OO",1343605376,223825312
+	
+	;SubDeformer::, Deformer::
+	C: "OO",223814032,227551040
+	
+	;Model::bind_r_elevatorDoor_01, SubDeformer::
+	C: "OO",1343607696,223814032
 }
 ;Takes section
 ;----------------------------------------------------
 
 Takes:  {
-	Current: "elevator_01"
-	Take: "elevator_01" {
-		FileName: "elevator_01.tak"
+	Current: "elevator_rig"
+	Take: "elevator_rig" {
+		FileName: "elevator_rig.tak"
 		LocalTime: 1924423250,230930790000
 		ReferenceTime: 1924423250,230930790000
 	}
