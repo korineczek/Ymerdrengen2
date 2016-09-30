@@ -37,6 +37,7 @@ public class MainMenu : MonoBehaviour {
     public void Play()
     {
         levelSelection.SetActive(true);
+        levelSelection.GetComponent<LevelSelection>().Fade();
     }	
 
     public void Options()
