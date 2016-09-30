@@ -32,6 +32,11 @@ public class GridManager : MonoBehaviour {
     //GameObjects
     GameObject[,] tileObjects;
 
+    bool leftTile;
+    bool behindTile;
+    bool rightTile;
+    bool frontTile;
+
     // Use this for initialization
     void Start()
     {
@@ -172,6 +177,8 @@ public class GridManager : MonoBehaviour {
         }
             
         Vector2 newPos = PlayerPosition + TransformMoveDirection(dir);
+        Debug.Log("newPos" + newPos);
+
         bool newPosHasFloor = false;
         try
         {
@@ -204,7 +211,7 @@ public class GridManager : MonoBehaviour {
                 targetPickUp[PickUpCount].GetComponent<PickUpScript>().TriggerPickUp();
                 AudioData.PlaySound(SoundHandle.PowerUp);
                 // start blinking possible positions
-                NewTilePossiblePlace();
+                NewTilePossiblePlace(newPos);
                 // remove ymer from dict
                 PickUpDic.Remove(new Vector2((int)newPos.x, (int)newPos.y));
             }
@@ -322,14 +329,38 @@ public class GridManager : MonoBehaviour {
         return new BaseTile() { Value = tile.Value ^ flags }; // '^' ís a bitwise XOR operator.
     }
 
-    public void NewTilePossiblePlace()
+    public void NewTilePossiblePlace(Vector2 newPos)
     {
         possiblePlacement = true;
         for (int x = 0; x < gridSize; x++)
         {
             for (int y = 0; y < gridSize; y++)
             {
-                if(!getTile(x, y).HasFloor())
+
+                //if (!getTile(x, y).HasFloor())
+                //{
+                //    GameObject possibleTile = Instantiate(Resources.Load("Prefabs/PossTileObject") as GameObject);
+                //    possibleTile.transform.position = new Vector3(x + offset, -offset, y + offset);
+                //}
+
+                if (x > 1)
+                {
+                    leftTile = getTile(x - 1, y).HasFloor();
+                }
+                if (y > 1)
+                {
+                    behindTile = getTile(x, y - 1).HasFloor();
+                }
+                if (x < 5)
+                {
+                    rightTile = getTile(x + 1, y).HasFloor();
+                }
+                if (y < 5)
+                {
+                    frontTile = getTile(x, y + 1).HasFloor();
+                }
+
+                if (leftTile || behindTile || rightTile || frontTile)
                 {
                     GameObject possibleTile = Instantiate(Resources.Load("Prefabs/PossTileObject") as GameObject);
                     possibleTile.transform.position = new Vector3(x + offset, -offset, y + offset);
