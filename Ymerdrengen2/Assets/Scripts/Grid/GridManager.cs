@@ -53,16 +53,11 @@ public class GridManager : MonoBehaviour {
 
     void initGrid(bool[] floorInitializer)
     {
-        string preDebugString = string.Empty;
-        string postDebugString = string.Empty;
-
         for (int x = 0; x < gridSize; x++) {
             for (int y = 0; y < gridSize; y++) {
                 setTile(x, y, (FieldStatus)Convert.ToInt32(floorInitializer[x + (y * gridSize)]));
             }
         }
-
-        Console.WriteLine(postDebugString);
     }
 
     void initPickups(bool[] pickupInitializer)
@@ -140,7 +135,7 @@ public class GridManager : MonoBehaviour {
         {
             Debug.Log("Has hit player on tile on (" + x + ", " + y + ")");
             killPlayer();
-            AudioManager.Instance.PlaySound(SoundHandle.Death);
+            AudioData.PlaySound(SoundHandle.Death);
         }
         return isPlayerHit;
     }
@@ -153,18 +148,19 @@ public class GridManager : MonoBehaviour {
         }
             
         Vector2 newPos = PlayerPosition + TransformMoveDirection(dir);
-        bool newPosValue = false;
+        bool newPosHasFloor = false;
         bool possiblePlacement = false;
         try
         {
             Debug.Log(newPos);
-            newPosValue = getTile(newPos).HasFloor();
+            newPosHasFloor = getTile(newPos).HasFloor();
             possiblePlacement = true;
         } catch (IndexOutOfRangeException) {
             Debug.LogWarning("New playerposition outside possible range.");
         }
 
-        if (newPosValue)
+        AudioData.PlaySound(SoundHandle.Jump);
+        if (newPosHasFloor)
         {
             PlayerCharacter.isLerping = true;
             PlayerCharacter.Move(dir);
@@ -178,17 +174,16 @@ public class GridManager : MonoBehaviour {
                 PickUpDic.TryGetValue(new Vector2((int)newPos.x, (int)newPos.y), out targetPickUp);
                 // say to the grid that this tile doesn't have a pick up anymore
                 getTile(newPos).ToggleFlags(FieldStatus.PickUp);
-                //GridData.grid[(int)newPos.x, (int)newPos.y] = ToggleFlags(GridData.grid[(int)newPos.x, (int)newPos.y], FieldStatus.PickUp);
-                //ToggleFlags(GridData.grid[(int)newPos.x, (int)newPos.y], FieldStatus.PickUp);
                 // call the triggerPickUp function from PickUpScript
                 targetPickUp.GetComponent<PickUpScript>().TriggerPickUp();
+                AudioData.PlaySound(SoundHandle.PowerUp);
                 // remove ymer from dict
                 PickUpDic.Remove(new Vector2((int)newPos.x, (int)newPos.y));
-
             }
         }
         else if (targetPickUp != null && possiblePlacement)
         {
+            AudioData.PlaySound(SoundHandle.PlaceTile);
             // add a new tile if there is a charge
             addTile((int)newPos.x, (int)newPos.y);
             // Move the player to the new tile
@@ -200,7 +195,7 @@ public class GridManager : MonoBehaviour {
         }
         else {
             killPlayer();
-            AudioManager.Instance.PlaySound(SoundHandle.FallDeath);
+            AudioData.PlaySound(SoundHandle.FallDeath);
         }
     }
 
@@ -210,7 +205,7 @@ public class GridManager : MonoBehaviour {
         PlayerCharacter.gameObject.SetActive(false);
 
         GameObject.FindGameObjectWithTag("Progression").GetComponent<LevelProgression>().Death();
-
+        AudioData.StopMusic();
     }
 
     public void revivePlayer()

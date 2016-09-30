@@ -39,6 +39,7 @@ public class LevelProgression : MonoBehaviour {
                     PlayerPrefs.SetInt("Level", nextLevel);
                 }
 
+                AudioData.audioManager.UnloadBank();
                 StartCoroutine("LevelTransition");
             }
         }
