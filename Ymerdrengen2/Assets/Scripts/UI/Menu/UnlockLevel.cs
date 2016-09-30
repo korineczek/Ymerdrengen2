@@ -17,7 +17,7 @@ public class UnlockLevel : MonoBehaviour {
 
         if (PlayerPrefs.GetInt("Level") < level)
         {
-            gameObject.GetComponent<Image>().color = new Color(255, 0, 0);
+            gameObject.SetActive(false);
         }
 	}
 

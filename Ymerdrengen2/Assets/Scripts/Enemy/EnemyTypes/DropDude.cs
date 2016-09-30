@@ -29,6 +29,11 @@ public class DropDude : Enemy {
         }
     }
 
+    void Start()
+    {
+        anim = transform.GetComponent<Animator>();
+    }
+
     public override void behavior()
     {
         animationControl();
@@ -47,7 +52,7 @@ public class DropDude : Enemy {
             if (BlockTiles && !blockedTiles)
             {
                 //Triggers landing sound
-                GridData.gridManager.triggerLandEvent();
+                //GridData.gridManager.triggerLandEvent();
                 transform.position = newPos;
                 blockTiles(true);
                 blockedTiles = true;
@@ -61,7 +66,6 @@ public class DropDude : Enemy {
 
     public override void init()
     {
-        anim = transform.GetComponent<Animator>();
         setPos(UnityEngine.Random.Range(0, GridData.gridSize), UnityEngine.Random.Range(0, GridData.gridSize));
     }
 

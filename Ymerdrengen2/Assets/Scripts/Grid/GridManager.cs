@@ -21,27 +21,39 @@ public class GridManager : MonoBehaviour {
     GameObject tileObj;
     GameObject[] targetPickUp;
     int PickUpCount;
-
-    bool killEventTriggered = false;
+    public bool possiblePlacement;
+    private bool killEventTriggered = false;
 
     public Player PlayerCharacter;
     public Vector2 PlayerPosition;
 
+
+    public bool Godmode;
     //GameObjects
     GameObject[,] tileObjects;
 
     // Use this for initialization
     void Start()
     {
+        Godmode = GameObject.Find("GodModeObject").GetComponent<GodModeScript>().Godmode;
         PickUpDic = new Dictionary<Vector2, GameObject>();
         numPickUpsCanCarry = 3;
         targetPickUp = new GameObject[numPickUpsCanCarry];
         PickUpCount = 0;
+        possiblePlacement = false;
 
         initPlayer();
         initFields();
         initGrid(FloorInitializer);
         createGridObj();
+    }
+
+    void Update()
+    {
+        if(PickUpCount <= 0)
+        {
+            possiblePlacement = false;
+        }
     }
 
     void initPlayer()
@@ -137,15 +149,19 @@ public class GridManager : MonoBehaviour {
 
     public bool hitTile(int x, int y)
     {
-        bool isPlayerHit = PlayerPosition.x == x && PlayerPosition.y == y;
-        if (isPlayerHit && !killEventTriggered)
+        if (!Godmode)
         {
-            killEventTriggered = true;
-            triggerKillEvent();
-            killPlayer();
-            AudioData.PlaySound(SoundHandle.Death);
+            bool isPlayerHit = PlayerPosition.x == x && PlayerPosition.y == y;
+            if (isPlayerHit && !killEventTriggered)
+            {
+                killEventTriggered = true;
+                killPlayer();
+                AudioData.PlaySound(SoundHandle.Death);
+            }
+            return isPlayerHit;
         }
-        return isPlayerHit;
+        else
+            return false;
     }
 
     public void TryMovePlayer(MoveDirection dir)
@@ -157,12 +173,9 @@ public class GridManager : MonoBehaviour {
             
         Vector2 newPos = PlayerPosition + TransformMoveDirection(dir);
         bool newPosHasFloor = false;
-        bool possiblePlacement = false;
         try
         {
-            Debug.Log(newPos);
             newPosHasFloor = getTile(newPos).HasFloor();
-            possiblePlacement = true;
         } catch (IndexOutOfRangeException) {
             Debug.LogWarning("New playerposition outside possible range.");
         }
@@ -185,19 +198,19 @@ public class GridManager : MonoBehaviour {
                 PickUpCount++;
                 // identify which pick up player touches (if there are a lot)
                 PickUpDic.TryGetValue(new Vector2((int)newPos.x, (int)newPos.y), out targetPickUp[PickUpCount]);
-                Debug.Log("targetpickup" + targetPickUp[PickUpCount]);
-                Debug.Log("pickupcount" + PickUpCount);
                 // say to the grid that this tile doesn't have a pick up anymore
                 getTile(newPos).ToggleFlags(FieldStatus.PickUp);
                 // call the triggerPickUp function from PickUpScript
                 targetPickUp[PickUpCount].GetComponent<PickUpScript>().TriggerPickUp();
                 AudioData.PlaySound(SoundHandle.PowerUp);
+                // start blinking possible positions
+                NewTilePossiblePlace();
                 // remove ymer from dict
                 PickUpDic.Remove(new Vector2((int)newPos.x, (int)newPos.y));
             }
         }
         //else if (targetPickUp[PickUpCount] != null && possiblePlacement)
-        else if (PickUpCount > 0 && possiblePlacement)
+        else if (PickUpCount > 0)
         {
             AudioData.PlaySound(SoundHandle.PlaceTile);
             // add a new tile if there is a charge
@@ -212,8 +225,10 @@ public class GridManager : MonoBehaviour {
             PickUpCount--;
         }
         else {
-            killPlayer();
-            AudioData.PlaySound(SoundHandle.FallDeath);
+            if(!Godmode) { 
+                killPlayer();
+                AudioData.PlaySound(SoundHandle.FallDeath);
+            }
         }
     }
 
@@ -307,6 +322,22 @@ public class GridManager : MonoBehaviour {
         return new BaseTile() { Value = tile.Value ^ flags }; // '^' ís a bitwise XOR operator.
     }
 
+    public void NewTilePossiblePlace()
+    {
+        possiblePlacement = true;
+        for (int x = 0; x < gridSize; x++)
+        {
+            for (int y = 0; y < gridSize; y++)
+            {
+                if(!getTile(x, y).HasFloor())
+                {
+                    GameObject possibleTile = Instantiate(Resources.Load("Prefabs/PossTileObject") as GameObject);
+                    possibleTile.transform.position = new Vector3(x + offset, -offset, y + offset);
+                }
+            }
+        }
+    }
+
     /// <summary>
     /// Triggers events that are associated with landing of drop dude
     /// </summary>
@@ -320,6 +351,14 @@ public class GridManager : MonoBehaviour {
     /// Triggers events that are associated with killing the character
     /// </summary>
     public void triggerKillEvent()
+    {
+        Debug.Log("Triggered kill event");
+    }
+
+    /// <summary>
+    /// Triggers events that are associated with the conebuddy fire
+    /// </summary>
+    internal void triggerConeFireEvent()
     {
         Debug.Log("Triggered kill event");
     }
