@@ -176,6 +176,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="coffeSip" ID="{CDCA9563-0D7C-40CE-AEE4-27CC4E7A4028}">
+					<ChildrenList>
+						<Action Name="Play" ID="{6CEA2391-5BB2-4A43-B3AF-4AFAA1C9A904}" ShortID="264595702" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{D1A2DFAA-7C99-439F-9B62-3C50A2C1E164}" Global="false">
+									<ObjectRef Name="kaffesip" ID="{5FA9368E-B17B-4C53-A4E6-7415DA598BEC}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="coffeSpit" ID="{112A6A65-DFC0-4D76-B15C-A696D794D85F}">
+					<ChildrenList>
+						<Action Name="Play" ID="{209A7F61-BA92-4ECE-A6F3-37B7E111EFD5}" ShortID="783120304" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{B88B74F5-52C5-401E-81D6-C91F420F6622}" Global="false">
+									<ObjectRef Name="coffeSpit" ID="{4543C872-E799-4F33-AFC3-F059FF494B46}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

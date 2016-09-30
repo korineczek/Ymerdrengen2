@@ -27,6 +27,7 @@
 								</Reference>
 							</ReferenceList>
 						</AuxBus>
+						<Bus Name="enemies" ID="{BEB2EB97-AD3E-4777-86A3-A305E06BA669}"/>
 					</ChildrenList>
 				</Bus>
 				<Bus Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}"/>
