@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="118">
+	<RootPaths>
+		<ProjectRoot>/Users/Victor/Library/Application Support/Wwise2016/Bottles/wwise/dosdevices/y:/Documents/WwiseProjects/grp4 minigame2/</ProjectRoot>
+		<SourceFilesRoot>/Users/Victor/Library/Application Support/Wwise2016/Bottles/wwise/dosdevices/y:/Documents/WwiseProjects/grp4 minigame2/.cache/Windows/</SourceFilesRoot>
+		<SoundBanksRoot>/Users/Victor/Library/Application Support/Wwise2016/Bottles/wwise/dosdevices/y:/Documents/WwiseProjects/grp4 minigame2/GeneratedSoundBanks/Windows/</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>/Users/Victor/Library/Application Support/Wwise2016/Bottles/wwise/dosdevices/y:/Documents/WwiseProjects/grp4 minigame2/GeneratedSoundBanks/Windows/</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="4072029455" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\New_SoundBank</ObjectPath>
+			<ShortName>New_SoundBank</ShortName>
+			<Path>New_SoundBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3619145211" Name="cherryExplosion" ObjectPath="\Events\Default Work Unit\cherryExplosion"/>
+				<Event Id="2044852745" Name="cherryFuse" ObjectPath="\Events\Default Work Unit\cherryFuse"/>
+				<Event Id="909770326" Name="coffeEnterScene" ObjectPath="\Events\Default Work Unit\coffeEnterScene"/>
+				<Event Id="779278001" Name="death" ObjectPath="\Events\Default Work Unit\death"/>
+				<Event Id="221836932" Name="fallDeath" ObjectPath="\Events\Default Work Unit\fallDeath"/>
+				<Event Id="3833651337" Name="jump" ObjectPath="\Events\Default Work Unit\jump"/>
+				<Event Id="1205645828" Name="musicPlay" ObjectPath="\Events\Default Work Unit\musicPlay"/>
+				<Event Id="3978196478" Name="musicStop" ObjectPath="\Events\Default Work Unit\musicStop"/>
+				<Event Id="605262137" Name="PieCharge" ObjectPath="\Events\Default Work Unit\PieCharge"/>
+				<Event Id="1961133422" Name="placeTile" ObjectPath="\Events\Default Work Unit\placeTile"/>
+				<Event Id="3950429679" Name="powerUp" ObjectPath="\Events\Default Work Unit\powerUp"/>
+				<Event Id="1142183312" Name="tomatoFall" ObjectPath="\Events\Default Work Unit\tomatoFall"/>
+				<Event Id="4180613081" Name="tomatoSplat" ObjectPath="\Events\Default Work Unit\tomatoSplat"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="11612723" Language="SFX">
+					<ShortName>kaffe svæve2.wav</ShortName>
+					<Path>SFX/kaffe svæve2_DCB6367B.wem</Path>
+				</File>
+				<File Id="47517820" Language="SFX">
+					<ShortName>power_up_4.wav</ShortName>
+					<Path>SFX/power_up_4_9E69E797.wem</Path>
+				</File>
+				<File Id="66191397" Language="SFX">
+					<ShortName>place_tile_1.wav</ShortName>
+					<Path>SFX/place_tile_1_E6427D45.wem</Path>
+				</File>
+				<File Id="96321094" Language="SFX">
+					<ShortName>footstep5.wav</ShortName>
+					<Path>SFX/footstep5_960863FB.wem</Path>
+				</File>
+				<File Id="98010391" Language="SFX">
+					<ShortName>footstep6.wav</ShortName>
+					<Path>SFX/footstep6_960863FB.wem</Path>
+				</File>
+				<File Id="139903624" Language="SFX">
+					<ShortName>power_up_3.wav</ShortName>
+					<Path>SFX/power_up_3_9E69E797.wem</Path>
+				</File>
+				<File Id="172811041" Language="SFX">
+					<ShortName>cherry eksplosion.wav</ShortName>
+					<Path>SFX/cherry eksplosion_CDFE0F68.wem</Path>
+				</File>
+				<File Id="186580343" Language="SFX">
+					<ShortName>cherry lunte.wav</ShortName>
+					<Path>SFX/cherry lunte_CDFE0F68.wem</Path>
+				</File>
+				<File Id="203156319" Language="SFX">
+					<ShortName>place_tile_2.wav</ShortName>
+					<Path>SFX/place_tile_2_9E69E797.wem</Path>
+				</File>
+				<File Id="204181595" Language="SFX">
+					<ShortName>cherry eksplosion5.wav</ShortName>
+					<Path>SFX/cherry eksplosion5_CDFE0F68.wem</Path>
+				</File>
+				<File Id="220625273" Language="SFX">
+					<ShortName>falling_bit_1.wav</ShortName>
+					<Path>SFX/falling_bit_1_CDFE0F68.wem</Path>
+				</File>
+				<File Id="244721812" Language="SFX">
+					<ShortName>music 1.0.wav</ShortName>
+					<Path>SFX/music 1.0_960863FB.wem</Path>
+				</File>
+				<File Id="251275923" Language="SFX">
+					<ShortName>yogurt_pickup_1.wav</ShortName>
+					<Path>SFX/yogurt_pickup_1_CDFE0F68.wem</Path>
+				</File>
+				<File Id="257221351" Language="SFX">
+					<ShortName>footstep_5.wav</ShortName>
+					<Path>SFX/footstep_5_960863FB.wem</Path>
+				</File>
+				<File Id="276664916" Language="SFX">
+					<ShortName>falldeath3.wav</ShortName>
+					<Path>SFX/falldeath3_CDFE0F68.wem</Path>
+				</File>
+				<File Id="279886706" Language="SFX">
+					<ShortName>footstep4.wav</ShortName>
+					<Path>SFX/footstep4_960863FB.wem</Path>
+				</File>
+				<File Id="322061684" Language="SFX">
+					<ShortName>footstep9.wav</ShortName>
+					<Path>SFX/footstep9_960863FB.wem</Path>
+				</File>
+				<File Id="362436617" Language="SFX">
+					<ShortName>footstep3.wav</ShortName>
+					<Path>SFX/footstep3_960863FB.wem</Path>
+				</File>
+				<File Id="369275642" Language="SFX">
+					<ShortName>kaffe svæve.wav</ShortName>
+					<Path>SFX/kaffe svæve_CB3D6DDB.wem</Path>
+				</File>
+				<File Id="386686197" Language="SFX">
+					<ShortName>kaffe svæve4.wav</ShortName>
+					<Path>SFX/kaffe svæve4_786BC65F.wem</Path>
+				</File>
+				<File Id="391536908" Language="SFX">
+					<ShortName>footstep1.wav</ShortName>
+					<Path>SFX/footstep1_960863FB.wem</Path>
+				</File>
+				<File Id="394011225" Language="SFX">
+					<ShortName>footstep7.wav</ShortName>
+					<Path>SFX/footstep7_960863FB.wem</Path>
+				</File>
+				<File Id="398732041" Language="SFX">
+					<ShortName>falldeath2.wav</ShortName>
+					<Path>SFX/falldeath2_CDFE0F68.wem</Path>
+				</File>
+				<File Id="426299725" Language="SFX">
+					<ShortName>tærte pacman2.wav</ShortName>
+					<Path>SFX/tærte pacman2_D4B331A7.wem</Path>
+				</File>
+				<File Id="456317862" Language="SFX">
+					<ShortName>footstep10.wav</ShortName>
+					<Path>SFX/footstep10_960863FB.wem</Path>
+				</File>
+				<File Id="497596001" Language="SFX">
+					<ShortName>dying_3.wav</ShortName>
+					<Path>SFX/dying_3_CDFE0F68.wem</Path>
+				</File>
+				<File Id="509327452" Language="SFX">
+					<ShortName>yogurt_pickup_2.wav</ShortName>
+					<Path>SFX/yogurt_pickup_2_EB90B8B7.wem</Path>
+				</File>
+				<File Id="560350528" Language="SFX">
+					<ShortName>falldeath1.wav</ShortName>
+					<Path>SFX/falldeath1_CDFE0F68.wem</Path>
+				</File>
+				<File Id="583747879" Language="SFX">
+					<ShortName>kaffe svæve3.wav</ShortName>
+					<Path>SFX/kaffe svæve3_A3420F01.wem</Path>
+				</File>
+				<File Id="637556535" Language="SFX">
+					<ShortName>footstep8.wav</ShortName>
+					<Path>SFX/footstep8_960863FB.wem</Path>
+				</File>
+				<File Id="639126855" Language="SFX">
+					<ShortName>tærte pacman1.wav</ShortName>
+					<Path>SFX/tærte pacman1_CDFE0F68.wem</Path>
+				</File>
+				<File Id="652017141" Language="SFX">
+					<ShortName>cherry eksplosion4.wav</ShortName>
+					<Path>SFX/cherry eksplosion4_CDFE0F68.wem</Path>
+				</File>
+				<File Id="681218366" Language="SFX">
+					<ShortName>dying_bit_3.wav</ShortName>
+					<Path>SFX/dying_bit_3_CDFE0F68.wem</Path>
+				</File>
+				<File Id="700799902" Language="SFX">
+					<ShortName>footstep2.wav</ShortName>
+					<Path>SFX/footstep2_960863FB.wem</Path>
+				</File>
+				<File Id="709227095" Language="SFX">
+					<ShortName>boy_jump_bit_2.wav</ShortName>
+					<Path>SFX/boy_jump_bit_2_CDFE0F68.wem</Path>
+				</File>
+				<File Id="789749720" Language="SFX">
+					<ShortName>falldeath4.wav</ShortName>
+					<Path>SFX/falldeath4_CDFE0F68.wem</Path>
+				</File>
+				<File Id="809159328" Language="SFX">
+					<ShortName>tærte pacman4.wav</ShortName>
+					<Path>SFX/tærte pacman4_CDFE0F68.wem</Path>
+				</File>
+				<File Id="839441337" Language="SFX">
+					<ShortName>footstep_3.wav</ShortName>
+					<Path>SFX/footstep_3_960863FB.wem</Path>
+				</File>
+				<File Id="859442589" Language="SFX">
+					<ShortName>tomat fall.wav</ShortName>
+					<Path>SFX/tomat fall_CDFE0F68.wem</Path>
+				</File>
+				<File Id="898442410" Language="SFX">
+					<ShortName>boy_jump_1.wav</ShortName>
+					<Path>SFX/boy_jump_1_CDFE0F68.wem</Path>
+				</File>
+				<File Id="902695573" Language="SFX">
+					<ShortName>footstep_2.wav</ShortName>
+					<Path>SFX/footstep_2_960863FB.wem</Path>
+				</File>
+				<File Id="906306353" Language="SFX">
+					<ShortName>power_up_1.wav</ShortName>
+					<Path>SFX/power_up_1_9E69E797.wem</Path>
+				</File>
+				<File Id="929128180" Language="SFX">
+					<ShortName>footstep_4.wav</ShortName>
+					<Path>SFX/footstep_4_960863FB.wem</Path>
+				</File>
+				<File Id="958543224" Language="SFX">
+					<ShortName>cherry eksplosion3.wav</ShortName>
+					<Path>SFX/cherry eksplosion3_CDFE0F68.wem</Path>
+				</File>
+				<File Id="962648408" Language="SFX">
+					<ShortName>boy_jump_2.wav</ShortName>
+					<Path>SFX/boy_jump_2_CDFE0F68.wem</Path>
+				</File>
+				<File Id="970149049" Language="SFX">
+					<ShortName>boy_jump_bit_1.wav</ShortName>
+					<Path>SFX/boy_jump_bit_1_CDFE0F68.wem</Path>
+				</File>
+				<File Id="987428480" Language="SFX">
+					<ShortName>move_swipe.wav</ShortName>
+					<Path>SFX/move_swipe_CDFE0F68.wem</Path>
+				</File>
+				<File Id="1022631105" Language="SFX">
+					<ShortName>tomat splat.wav</ShortName>
+					<Path>SFX/tomat splat_CDFE0F68.wem</Path>
+				</File>
+				<File Id="1047098623" Language="SFX">
+					<ShortName>cherry eksplosion2.wav</ShortName>
+					<Path>SFX/cherry eksplosion2_CDFE0F68.wem</Path>
+				</File>
+				<File Id="1063243270" Language="SFX">
+					<ShortName>tærte pacman3.wav</ShortName>
+					<Path>SFX/tærte pacman3_1C81D57F.wem</Path>
+				</File>
+				<File Id="1071447843" Language="SFX">
+					<ShortName>footstep_1.wav</ShortName>
+					<Path>SFX/footstep_1_960863FB.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

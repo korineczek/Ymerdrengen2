@@ -1,0 +1,153 @@
+Event	ID	Name			Wwise Object Path	Notes
+	221836932	fallDeath			\Default Work Unit\fallDeath	
+	605262137	PieCharge			\Default Work Unit\PieCharge	
+	779278001	death			\Default Work Unit\death	
+	909770326	coffeEnterScene			\Default Work Unit\coffeEnterScene	
+	1142183312	tomatoFall			\Default Work Unit\tomatoFall	
+	1205645828	musicPlay			\Default Work Unit\musicPlay	
+	1961133422	placeTile			\Default Work Unit\placeTile	
+	2044852745	cherryFuse			\Default Work Unit\cherryFuse	
+	3619145211	cherryExplosion			\Default Work Unit\cherryExplosion	
+	3833651337	jump			\Default Work Unit\jump	
+	3950429679	powerUp			\Default Work Unit\powerUp	
+	3978196478	musicStop			\Default Work Unit\musicStop	
+	4180613081	tomatoSplat			\Default Work Unit\tomatoSplat	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	822163944	SS_Air_RPM			\Factory SoundSeed Air Game Syncs\SS_Air_RPM	
+	1029930033	SS_Air_Fury			\Factory SoundSeed Air Game Syncs\SS_Air_Fury	
+	1351367891	SS_Air_Fear			\Factory SoundSeed Air Game Syncs\SS_Air_Fear	
+	2648548617	SS_Air_Month			\Factory SoundSeed Air Game Syncs\SS_Air_Month	
+	3002758120	SS_Air_Freefall			\Factory SoundSeed Air Game Syncs\SS_Air_Freefall	
+	3074696722	SS_Air_Size			\Factory SoundSeed Air Game Syncs\SS_Air_Size	
+	3203397129	SS_Air_TimeOfDay			\Factory SoundSeed Air Game Syncs\SS_Air_TimeOfDay	
+	3715662592	SS_Air_Storm			\Factory SoundSeed Air Game Syncs\SS_Air_Storm	
+	3847924954	SS_Air_Presence			\Factory SoundSeed Air Game Syncs\SS_Air_Presence	
+	4160247818	SS_Air_Turbulence			\Factory SoundSeed Air Game Syncs\SS_Air_Turbulence	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	805203703	Master Secondary Bus			\Default Work Unit\Master Secondary Bus	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	2425890738	rvb1			\Default Work Unit\Master Audio Bus\rvb1	
+
+Effect plug-ins	ID	Name	Type				Notes
+	109045632	Vibrato	Wwise Flanger			
+	3442768367	Hall_Large_Dark	Wwise RoomVerb			
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	25868842	SoundSeed Air Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Wind Ambiences\Polar Winds\SoundSeed Air Wind	
+	39885879	SoundSeed Air Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Weapons\Arrows\Arrow\SoundSeed Air Woosh	
+	45385959	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Golf Club\SoundSeed Woosh	
+	60142098	SoundSeed Air Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Vehicles\Airplane\Rumble\SoundSeed Air Wind	
+	60410286	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Weapons\Arrows\Silence\Wwise Silence	
+	71084047	SoundSeed Air Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Weapons\Arrows\Arrows_02\Arrow\SoundSeed Air Woosh	
+	71113179	SoundSeed Air Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Wind Ambiences\Eerie Tunnel\SoundSeed Air Wind	
+	73647974	SoundSeed Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Surf\Random Wavebreak\Random_Wave02\SoundSeed Wind	
+	111857556	SoundSeed Air Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Wind Ambiences\Grove\SoundSeed Air Wind	
+	118675477	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Weapons\jumpSwoosh\SoundSeed Woosh	
+	137670514	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Weapons\Wooden Staff\SoundSeed Woosh	
+	158738632	SoundSeed Air Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Weapons\Arrows\Arrows_04\Arrow\SoundSeed Air Woosh	
+	162772315	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Urban Scene\Random Car Pass-by_05\Car Pass-by\SoundSeed Woosh	
+	169132707	SoundSeed Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Surf\Random Wavebreak\Random_Wave01\SoundSeed Wind	
+	174409972	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Weapons\Arrows\Arrows_04\Silence\Wwise Silence	
+	188214797	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Urban Scene\Random Car Pass-by_04\Car Pass-by\SoundSeed Woosh	
+	223736328	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Weapons\Generic Weapon Swing\SoundSeed Woosh	
+	229589517	Ville	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Urban Scene\Background City Noise\Ville	
+	232816868	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Weapons\Arrows\Arrows_02\Silence\Wwise Silence	
+	292002125	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Weapons\Fly-By Dagger\SoundSeed Woosh	
+	309043750	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Urban Scene\Random Car Pass-by_01\Silence\Wwise Silence	
+	309737562	SoundSeed Air Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Wind Ambiences\Kansas\SoundSeed Air Wind	
+	347125916	SoundSeed Air Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Weapons\Arrows\Arrows_06\Arrow\SoundSeed Air Woosh	
+	356319053	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Urban Scene\Random Car Pass-by_01\Car Pass-by\SoundSeed Woosh	
+	365762760	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Urban Scene\Random Car Pass-by_03\Car Pass-by\SoundSeed Woosh	
+	372799448	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Urban Scene\Random Car Pass-by_02\Silence\Wwise Silence	
+	400146702	SoundSeed Air Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Vehicles\Locomotive\SoundSeed Air Woosh	Variations on a mechanical theme. Made for looping.
+	414142681	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Weapons\Arrows\Arrows_03\Silence\Wwise Silence	
+	480750206	SoundSeed Air Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Weapons\Arrows\Arrows_01\Arrow\SoundSeed Air Woosh	
+	482980946	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Weapons\Arrows\Arrows_06\Silence\Wwise Silence	
+	504047276	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Urban Scene\Random Car Pass-by_04\Silence\Wwise Silence	
+	511713507	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Surf\Random Wavebreak\Silence\Wwise Silence	
+	517142054	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Vehicles\Car Pass-by\SoundSeed Woosh	
+	563948639	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Weapons\Zorro\SoundSeed Woosh	
+	588094097	SoundSeed Air Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Weapons\Arrows\Arrows_05\Arrow\SoundSeed Air Woosh	
+	606150867	SoundSeed Air Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Wind Ambiences\Polar Winds\SoundSeed Air Wind	
+	640643725	SoundSeed Air Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Vehicles\Airplane\Jets\SoundSeed Air Wind	
+	642198329	SoundSeed Air Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Vehicles\Chopper\SoundSeed Air Woosh	Variations on a mechanical theme. Made for looping.
+	663109749	SoundSeed Air Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Wind Ambiences\Eerie Tunnel\SoundSeed Air Wind	
+	675627263	SoundSeed Air Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Wind Ambiences\Weeping Willows\SoundSeed Air Wind	
+	685503655	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Urban Scene\Random Car Pass-by_02\Car Pass-by\SoundSeed Woosh	
+	687451945	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Weapons\Ogre's Club Swing\SoundSeed Woosh	
+	699772409	SoundSeed Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Surf\Surf\SoundSeed Wind	
+	702525742	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Weapons\Arrows\Arrows_01\Silence\Wwise Silence	
+	709782740	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Weapons\Arrows\Arrows_05\Silence\Wwise Silence	
+	745928427	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Urban Scene\Random Car Pass-by_06\Silence\Wwise Silence	
+	761686719	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Weapons\Wooden Staff\SoundSeed Woosh	
+	767342224	SoundSeed Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Waterfall\SoundSeed Wind	
+	773812617	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Urban Scene\Random Car Pass-by_05\Silence\Wwise Silence	
+	789939026	SoundSeed Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Surf\Random Wavebreak\Random_Wave03\SoundSeed Wind	
+	790704623	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Urban Scene\Random Car Pass-by_03\Silence\Wwise Silence	
+	809721861	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Weapons\Generic Weapon Swing\SoundSeed Woosh	
+	849098007	SoundSeed Air Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Parachute Jump\SoundSeed Air Wind	
+	855318940	SoundSeed Air Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Wind Ambiences\Weeping Willows\SoundSeed Air Wind	
+	932020803	SoundSeed Air Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Wind Ambiences\Grove\SoundSeed Air Wind	
+	949017482	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Non-Windy Ambiences\Urban Scene\Random Car Pass-by_06\Car Pass-by\SoundSeed Woosh	
+	964146970	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Weapons\Fly-By Dagger\SoundSeed Woosh	
+	993923566	SoundSeed Air Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Static Presets (wave file substitutions)\Weapons\Arrows\Arrows_03\Arrow\SoundSeed Air Woosh	
+	1018093596	SoundSeed Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Weapons\Ogre's Club Swing\SoundSeed Woosh	
+	1055663783	SoundSeed Air Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Wings\SoundSeed Air Woosh	Each wing beating, made for looping.
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	11612723	kaffe svæve2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffe svæve2_DCB6367B.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeFloating\kaffe svæve2		60680
+	47517820	power_up_4	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\power_up_4_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\power_up_4		132620
+	66191397	place_tile_1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\place_tile_1_E6427D45.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\place_tile_1		6615
+	96321094	footstep5	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep5_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep5		4252
+	98010391	footstep6	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep6_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep6		4118
+	139903624	power_up_3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\power_up_3_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\power_up_3		71088
+	172811041	cherry eksplosion	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\cherry eksplosion_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion		15311
+	186580343	cherry lunte	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\cherry lunte_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherry lunte		63871
+	203156319	place_tile_2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\place_tile_2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\place_tile_2		60984
+	204181595	cherry eksplosion5	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\cherry eksplosion5_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion5		19501
+	220625273	falling_bit_1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\falling_bit_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falling_bit_1		43811
+	244721812	music 1_0	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\music 1.0_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\music\music 1_0		1289724
+	251275923	yogurt_pickup_1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\yogurt_pickup_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\youghurt\yogurt_pickup_1		21518
+	257221351	footstep_5	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep_5_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_5		4459
+	276664916	falldeath3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\falldeath3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falldeath3		4824
+	279886706	footstep4	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep4_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep4		3389
+	322061684	footstep9	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep9_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep9		4009
+	362436617	footstep3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep3_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep3		3672
+	369275642	kaffe svæve	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffe svæve_CB3D6DDB.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeFloating\kaffe svæve		67335
+	386686197	kaffe svæve4	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffe svæve4_786BC65F.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeFloating\kaffe svæve4		112116
+	391536908	footstep1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep1_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep1		3585
+	394011225	footstep7	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep7_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep7		4099
+	398732041	falldeath2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\falldeath2_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falldeath2		5606
+	426299725	tærte pacman2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\tærte pacman2_D4B331A7.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\piePacman\tærte pacman2		59299
+	456317862	footstep10	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep10_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep10		3361
+	497596001	dying_3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\dying_3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\death\dying_3		26065
+	509327452	yogurt_pickup_2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\yogurt_pickup_2_EB90B8B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\youghurt\yogurt_pickup_2		15613
+	560350528	falldeath1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\falldeath1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falldeath1		4604
+	583747879	kaffe svæve3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffe svæve3_A3420F01.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeFloating\kaffe svæve3		83137
+	637556535	footstep8	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep8_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep8		3739
+	639126855	tærte pacman1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\tærte pacman1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\piePacman\tærte pacman1		2930
+	652017141	cherry eksplosion4	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\cherry eksplosion4_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion4		24818
+	681218366	dying_bit_3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\dying_bit_3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\death\dying_bit_3		30842
+	700799902	footstep2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep2_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep2		3297
+	709227095	boy_jump_bit_2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\boy_jump_bit_2_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_bit_2		6600
+	789749720	falldeath4	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\falldeath4_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falldeath4		4466
+	809159328	tærte pacman4	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\tærte pacman4_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\piePacman\tærte pacman4		2012
+	839441337	footstep_3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep_3_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_3		4178
+	859442589	tomat fall	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\tomat fall_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\tomat fall		6940
+	898442410	boy_jump_1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\boy_jump_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_1		5757
+	902695573	footstep_2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep_2_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_2		4889
+	906306353	power_up_1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\power_up_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\power_up_1		104260
+	929128180	footstep_4	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep_4_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_4		4096
+	958543224	cherry eksplosion3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\cherry eksplosion3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion3		27858
+	962648408	boy_jump_2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\boy_jump_2_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_2		6461
+	970149049	boy_jump_bit_1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\boy_jump_bit_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_bit_1		5940
+	987428480	move_swipe	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\move_swipe_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\move_swipe		3059
+	1022631105	tomat splat	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\tomat splat_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\tomat splat		11042
+	1047098623	cherry eksplosion2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\cherry eksplosion2_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion2		16801
+	1063243270	tærte pacman3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\tærte pacman3_1C81D57F.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\piePacman\tærte pacman3		59087
+	1071447843	footstep_1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep_1_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_1		4913
+

@@ -8,22 +8,56 @@ public class DropDude : Enemy {
     float t = 0;
 
     public bool DestroyTiles = false;
+    public bool BlockTiles = true;
+    bool blockedTiles = false; //Flag indicating if the tiles has already been blocked
     [Range(1, 3)]
     public int size = 1;
     public float startHeight = 8f;
+    public float endHeight = 0.5f;
     public float dropTime = 2f;
     public float deathTime = 1f;
 
+    Animator anim;
+
+    void animationControl()
+    {
+        if (anim != null && anim.GetCurrentAnimatorStateInfo(0).IsName("EndState"))
+        {
+            GameObject CherrySplosion = Instantiate(Resources.Load("Prefabs/CherrySplosion") as GameObject);
+            CherrySplosion.transform.position = transform.position;
+            isDone();
+        }
+    }
+
+    void Start()
+    {
+        anim = transform.GetComponent<Animator>();
+    }
+
     public override void behavior()
     {
-        if(t < 1)
+        animationControl();
+
+        if (t < 1)
         { 
             t +=  Time.deltaTime * speed / dropTime;
             transform.position = Vector3.Lerp(oldPos, newPos, t);
         }
         else
         {
+
             hitAllFields();
+
+            //Hit Floor Event
+            if (BlockTiles && !blockedTiles)
+            {
+                //Triggers landing sound
+                //GridData.gridManager.triggerLandEvent();
+                transform.position = newPos;
+                blockTiles(true);
+                blockedTiles = true;
+            }
+
             t += Time.deltaTime;
             if (t >= 1 + deathTime)
                 isDone();
@@ -37,10 +71,14 @@ public class DropDude : Enemy {
 
     void isDone()
     {
+        Debug.Log("HERE");
+
+        if (BlockTiles)
+           blockTiles(false);
+
         if (DestroyTiles)
             removeTiles();
-
-        transform.position = newPos;
+        
         base.destroyThis();
     }
 
@@ -55,7 +93,10 @@ public class DropDude : Enemy {
         internalZ = y;
         oldPos = new Vector3(x + (float)(size) / 2, startHeight, y + (float)(size) / 2);
         transform.position = oldPos;
-        newPos = new Vector3(x + (float)(size) / 2, 0, y + (float)(size) / 2);
+        newPos = new Vector3(x + (float)(size) / 2, endHeight, y + (float)(size) / 2);
+
+        // Hack to play sound upon spawn. Reevaluate later.
+        AudioData.PlaySound(SoundHandle.TomatoFall);
     }
 
     private void hitAllFields()
@@ -75,7 +116,6 @@ public class DropDude : Enemy {
         {
             for (int z = 0; z < size; z++)
             {
-                Debug.Log(x + ". " + z);
                 GridData.gridManager.removeTile((int)(internalX) + x, (int)(internalZ) + z);
             }
         }
@@ -87,8 +127,11 @@ public class DropDude : Enemy {
         {
             for (int z = 0; z < size; z++)
             {
-                Debug.Log(x + ". " + z);
-                //GridData.gridManager.setTileBlocked((int)(internalX) + x, (int)(internalZ) + z, b);
+                int posX = (int)(internalX) + x;
+                int posZ = (int)(internalZ) + z;
+                if (GridData.grid[posX, posZ].IsBlocked() != b)
+                    GridData.grid[posX, posZ].ToggleFlags(Grid.FieldStatus.Blocked);
+                    
             }
         }
     }

@@ -10,13 +10,25 @@ public class MainMenu : MonoBehaviour {
 	void Start () {
 
 
-        if (PlayerPrefs.GetString("Setup") == "Ready")
+        if (!PlayerPrefs.HasKey("Setup"))
         {
+           
+            PlayerPrefs.SetString("Language", "English");
             PlayerPrefs.SetInt("Level", 1);
             PlayerPrefs.SetFloat("SoundVolume", 1);
             PlayerPrefs.SetInt("SoundMute", 1);
             PlayerPrefs.SetString("Setup", "Done");
             PlayerPrefs.Save();
+        }
+
+        if (PlayerPrefs.HasKey("Setup"))
+        {
+            
+        }
+
+        if (PlayerPrefs.GetString("Setup") == "Ready")
+        {
+           
             
            
         }
@@ -25,6 +37,7 @@ public class MainMenu : MonoBehaviour {
     public void Play()
     {
         levelSelection.SetActive(true);
+        levelSelection.GetComponent<LevelSelection>().Fade();
     }	
 
     public void Options()
