@@ -228,7 +228,6 @@
     <None Include="Assets\Audio\Description.txt" />
     <None Include="Assets\Graphics\Materials\Description.txt" />
     <None Include="Assets\Graphics\Shaders\PickUpGlowShader.shader" />
-    <None Include="Assets\Prefabs\Description.txt" />
     <None Include="Assets\Scenes\Description.txt" />
     <None Include="Assets\Scripts\Description.txt" />
     <None Include="Assets\StreamingAssets\Audio\GeneratedSoundBanks\Android\Init.txt" />

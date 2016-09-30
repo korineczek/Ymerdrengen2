@@ -130,6 +130,7 @@ ModelImporter:
     400120: joint5
     400122: //RootNode
     7400000: Tomato_JumpIn_anim_001
+    7400002: Tomato_JumpIn_anim_002
     9500000: //RootNode
   materials:
     importMaterials: 1
