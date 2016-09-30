@@ -11,13 +11,13 @@ public class PossibleTilePosScript : MonoBehaviour
     void Start()
     {
         grid = GameObject.Find("Grid");
-        TileBlink();
         // StartCoroutine(Blink(2.0f));
     }
 
     // Update is called once per frame
     void Update()
     {
+        TileBlink();
 
     }
 
