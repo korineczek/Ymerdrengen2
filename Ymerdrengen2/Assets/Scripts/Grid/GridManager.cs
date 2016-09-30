@@ -27,12 +27,15 @@ public class GridManager : MonoBehaviour {
     public Player PlayerCharacter;
     public Vector2 PlayerPosition;
 
+
+    public bool Godmode;
     //GameObjects
     GameObject[,] tileObjects;
 
     // Use this for initialization
     void Start()
     {
+        Godmode = false;
         PickUpDic = new Dictionary<Vector2, GameObject>();
         numPickUpsCanCarry = 3;
         targetPickUp = new GameObject[numPickUpsCanCarry];
