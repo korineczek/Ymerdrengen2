@@ -25,15 +25,19 @@ public class DropDude : Enemy {
         {
             GameObject CherrySplosion = Instantiate(Resources.Load("Prefabs/CherrySplosion") as GameObject);
             CherrySplosion.transform.position = transform.position;
-            Debug.Log("FJDIAWOJODW");
-            hitAllFields();
             isDone();
         }
+    }
+
+    void Start()
+    {
+        anim = transform.GetComponent<Animator>();
     }
 
     public override void behavior()
     {
         animationControl();
+
         if (t < 1)
         { 
             t +=  Time.deltaTime * speed / dropTime;
@@ -41,10 +45,15 @@ public class DropDude : Enemy {
         }
         else
         {
+
             hitAllFields();
 
+            //Hit Floor Event
             if (BlockTiles && !blockedTiles)
             {
+                //Triggers landing sound
+                GridData.gridManager.triggerLandEvent();
+                transform.position = newPos;
                 blockTiles(true);
                 blockedTiles = true;
             }
@@ -57,19 +66,19 @@ public class DropDude : Enemy {
 
     public override void init()
     {
-        anim = transform.GetComponent<Animator>();
         setPos(UnityEngine.Random.Range(0, GridData.gridSize), UnityEngine.Random.Range(0, GridData.gridSize));
     }
 
     void isDone()
     {
+        Debug.Log("HERE");
+
         if (BlockTiles)
            blockTiles(false);
 
         if (DestroyTiles)
             removeTiles();
-
-        transform.position = newPos;
+        
         base.destroyThis();
     }
 
@@ -117,7 +126,6 @@ public class DropDude : Enemy {
             {
                 int posX = (int)(internalX) + x;
                 int posZ = (int)(internalZ) + z;
-                Debug.Log("Blocked : " + posX + ", " + posZ);
                 if (GridData.grid[posX, posZ].IsBlocked() != b)
                     GridData.grid[posX, posZ].ToggleFlags(Grid.FieldStatus.Blocked);
                     

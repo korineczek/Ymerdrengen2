@@ -11,7 +11,9 @@ public class ConeBuddy : Enemy
     float timer = 0;
 
     bool hold = false;
+    bool hasShot = false;
     public float holdTime = 2f;
+    public float reverseTime = 2f;
 
     /*
      *  Controls the shape of attack of the conebuddy
@@ -26,6 +28,7 @@ public class ConeBuddy : Enemy
     {
 
         timer += Time.deltaTime;
+        //Walking
         if (!hold) { 
             t += timer * speed;
             transform.position = Vector3.Lerp(oldPos, newPos, t);
@@ -39,22 +42,31 @@ public class ConeBuddy : Enemy
                 timer = 0;
 
                 hold = base.checkNextTile();
-
-                if (hold) fire();
             }
         }
+        //IF enter reverse direction and go back to walking
         else if (hold && timer > holdTime)
         {
+            if (!hasShot)
+            { 
+                fire();
+                hasShot = true;
+                holdTime = reverseTime;
+                timer = 0;
+                return;
+            }
             revereseDirection();
             newPos = oldPos + vectorDir;
             hold = false;
             timer = 0;
         }
+
+        //Holding still
     }
 
     private void fire()
     {
-
+        GridData.gridManager.triggerConeFireEvent();
         for(int x = 0; x < attackPattern.GetLength(1); x++)
         {
             for(int z = 0; z < attackPattern.GetLength(0); z++)

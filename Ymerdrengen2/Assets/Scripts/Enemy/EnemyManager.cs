@@ -47,9 +47,7 @@ public class EnemyManager : MonoBehaviour {
 
     private void loadSpawnPattern(string v)
     {
-        Debug.Log("BUDIDOPIDUU");
         curSpawnPattern = Resources.Load(folderPath + v) as SpawnPattern;
-        Debug.Log(curSpawnPattern.spawnPattern.Count);
     }
 
     private void doEvent()

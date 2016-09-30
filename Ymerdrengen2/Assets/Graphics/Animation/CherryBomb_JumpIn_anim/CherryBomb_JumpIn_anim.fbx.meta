@@ -186,6 +186,7 @@ ModelImporter:
     400176: jDrv_r_pupil_01
     400178: jDrv_root_01
     7400000: CherryBomb_JumpIn_anim_001
+    7400002: CherryBomb_JumpIn_anim_002
     9500000: //RootNode
   materials:
     importMaterials: 1
