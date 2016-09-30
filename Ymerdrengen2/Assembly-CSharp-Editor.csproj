@@ -45,15 +45,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Graphics\Shaders\Glow\_Internal\Editor\MKGlowEditor.cs" />
      <Compile Include="Assets\LeanTouch\Editor\LeanTouch_Editor.cs" />
      <Compile Include="Assets\Scripts\Enemy\Editor\EnemyEditor.cs" />
      <Compile Include="Assets\Scripts\Grid\Editor\GridEditor.cs" />
+     <None Include="Assets\Graphics\Shaders\Glow\Shaders\MK_Mobile-Diffuse.shader" />
      <None Include="Assets\Scripts\Description.txt" />
      <None Include="Assets\Prefabs\Description.txt" />
+     <None Include="Assets\Graphics\Shaders\Glow\_Internal\_MKGlowEffect\MKGlowCompose.shader" />
+     <None Include="Assets\Graphics\Shaders\Glow\_Internal\_MKGlowEffect\MKGlowBlur.shader" />
+     <None Include="Assets\Graphics\Shaders\Glow\Shaders\MK_Mobile-DiffuseBumped.shader" />
      <None Include="Assets\Audio\Description.txt" />
      <None Include="Assets\Graphics\Shaders\PickUpGlowShader.shader" />
      <None Include="Assets\Scenes\Description.txt" />
+     <None Include="Assets\Graphics\Shaders\Glow\Shaders\MK_Mobile-DiffuseBumpSpec-1DirectionalLight.shader" />
      <None Include="Assets\Graphics\Materials\Description.txt" />
+     <None Include="Assets\Graphics\Shaders\Glow\_Internal\_MKGlowEffect\MKGlowRender.shader" />
+     <None Include="Assets\Graphics\Shaders\Glow\_Internal\_MKGlowEffect\MKGlowBlurVHP.shader" />
+     <None Include="Assets\Graphics\Shaders\Glow\Shaders\MK_Mobile-DiffuseBumpSpec.shader" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>

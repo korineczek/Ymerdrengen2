@@ -69,8 +69,8 @@ public class LevelProgression : MonoBehaviour {
         levelInfo.GetComponent<Text>().color = Color.yellow;
         pause.SetActive(false);
         winText.SetActive(true);
-        yield return new WaitForSeconds(2);
         GameObject.Destroy(AudioData.audioManager.gameObject);
+        yield return new WaitForSeconds(2);
         Application.LoadLevel(nextLevel);
         yield break;
     }
