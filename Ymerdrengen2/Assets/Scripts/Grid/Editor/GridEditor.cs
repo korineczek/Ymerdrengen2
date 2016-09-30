@@ -20,6 +20,8 @@ public class GridEditor : Editor
 
         CreateFloorDesigner();
         CreateYoghurtDesigner();
+
+        Undo.RecordObject(target, "Changed scene's initial grid.");
     }
 
     private void CreateFloorDesigner()
