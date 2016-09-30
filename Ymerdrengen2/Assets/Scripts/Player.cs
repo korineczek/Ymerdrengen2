@@ -31,6 +31,12 @@ public class Player : MonoBehaviour
     {
         PlayerAnim.SetBool("Move", true);
 
+        if(PlayerAnim.GetCurrentAnimatorStateInfo(0).IsName("Ymerdreng_Jump_Anim_001"))
+        {
+            Debug.Log("IS JUMOPING WHEEEE");
+            PlayerAnim.Play("Ymerdreng_Jump_Anim_001", -1, 0);
+        }
+
         switch (dir) {
 
 
@@ -88,6 +94,11 @@ public class Player : MonoBehaviour
 
     public void Update()
     {
+        if (PlayerAnim.GetBool("Move") && Time.time > startTime)
+        {
+            PlayerAnim.SetBool("Move", false);
+        }
+
         //Debug.Log("LERPING");
         float distCovered = (Time.time - startTime) * speed;
         float fracJourney = distCovered / journeyLength;

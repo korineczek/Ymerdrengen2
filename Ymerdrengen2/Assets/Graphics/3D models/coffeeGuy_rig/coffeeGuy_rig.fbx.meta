@@ -65,6 +65,19 @@ ModelImporter:
     100114: polySurface2
     100116: polySurface3
     100118: polySurface4
+    100120: geo_coffeeGuy_01
+    100122: geo_cup_01
+    100124: geo_l_eyeBrow_01
+    100126: geo_mustache_01
+    100128: geo_r_eye_01
+    100130: geo_r_eye_02
+    100132: geo_r_eyeBrow_01
+    100134: geo_r_eyeThing_01
+    100136: geo_r_eyeThing_02
+    100138: polySurface5
+    100140: polySurface6
+    100142: polySurface7
+    100144: polySurface8
     400000: anim_chest_01
     400002: anim_head_01
     400004: anim_l_elbow_01
@@ -125,6 +138,19 @@ ModelImporter:
     400114: polySurface2
     400116: polySurface3
     400118: polySurface4
+    400120: geo_coffeeGuy_01
+    400122: geo_cup_01
+    400124: geo_l_eyeBrow_01
+    400126: geo_mustache_01
+    400128: geo_r_eye_01
+    400130: geo_r_eye_02
+    400132: geo_r_eyeBrow_01
+    400134: geo_r_eyeThing_01
+    400136: geo_r_eyeThing_02
+    400138: polySurface5
+    400140: polySurface6
+    400142: polySurface7
+    400144: polySurface8
     4300000: polySurface1
     4300002: polySurface2
     4300004: pCylinder5
@@ -136,6 +162,17 @@ ModelImporter:
     4300016: pCylinder7
     4300018: pCylinder8
     4300020: pCylinder11
+    4300022: geo_cup_01
+    4300024: geo_r_eyeBrow_01
+    4300026: geo_r_eye_01
+    4300028: geo_r_eyeThing_01
+    4300030: geo_l_eyeBrow_01
+    4300032: geo_r_eye_02
+    4300034: geo_r_eyeThing_02
+    4300036: geo_mustache_01
+    4300038: polySurface5
+    4300040: polySurface7
+    4300042: polySurface8
     9500000: //RootNode
     13700000: geo_tie_01
     13700002: geo_tieKnot_01
@@ -148,6 +185,17 @@ ModelImporter:
     13700016: polySurface2
     13700018: polySurface3
     13700020: polySurface4
+    13700022: geo_cup_01
+    13700024: geo_l_eyeBrow_01
+    13700026: geo_mustache_01
+    13700028: geo_r_eye_01
+    13700030: geo_r_eye_02
+    13700032: geo_r_eyeBrow_01
+    13700034: geo_r_eyeThing_01
+    13700036: geo_r_eyeThing_02
+    13700038: polySurface5
+    13700040: polySurface7
+    13700042: polySurface8
   materials:
     importMaterials: 1
     materialName: 0

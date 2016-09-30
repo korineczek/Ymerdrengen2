@@ -39,8 +39,8 @@ public class DropDude : Enemy {
     void Start()
     {
         anim = transform.GetComponent<Animator>();
-        if(anim != null)
-            anim.Stop();
+        if (anim != null)
+            anim.enabled = false;
         this.transform.position = oldPos + new Vector3(0, 5000, 0);
         spawnShadow();
         waitTime = preShadowTime;
@@ -59,7 +59,7 @@ public class DropDude : Enemy {
                 {
                     this.transform.position = oldPos;
                     if (anim != null)
-                        anim.StartPlayback();
+                        anim.enabled = true;
                     state = State.Dropping;
                     waitTime = deathTime;
                 }
