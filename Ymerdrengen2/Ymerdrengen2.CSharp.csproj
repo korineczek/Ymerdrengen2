@@ -94,8 +94,9 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyTypes\ConeBuddy.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyTypes\DropDude.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyTypes\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Enemy\LineGuy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyTypes\LineGuy.cs" />
     <Compile Include="Assets\Scripts\Enemy\SpawnPattern.cs" />
+    <Compile Include="Assets\Scripts\Enemy\WalkingEnemy.cs" />
     <Compile Include="Assets\Scripts\Grid\BaseTile.cs" />
     <Compile Include="Assets\Scripts\Grid\Grid.cs" />
     <Compile Include="Assets\Scripts\Grid\GridData.cs" />
