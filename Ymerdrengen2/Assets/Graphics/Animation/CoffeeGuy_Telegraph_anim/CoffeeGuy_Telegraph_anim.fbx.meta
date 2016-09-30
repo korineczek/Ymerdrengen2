@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b4cfb63a200d73245870d103e519a076
+guid: d368f13786a2f2f4bbfce4163ba3ebf7
 timeCreated: 1475246525
 licenseType: Pro
 ModelImporter:
@@ -137,7 +137,7 @@ ModelImporter:
     400126: polySurface6
     400128: polySurface7
     400130: polySurface8
-    7400000: CoffeeGuy_Walk_anim_001
+    7400000: CoffeeGuy_Telegraph_anim_001
     9500000: //RootNode
   materials:
     importMaterials: 1
