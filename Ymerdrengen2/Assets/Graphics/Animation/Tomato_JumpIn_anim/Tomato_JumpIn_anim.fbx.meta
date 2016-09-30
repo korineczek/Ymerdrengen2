@@ -1,0 +1,197 @@
+fileFormatVersion: 2
+guid: 4866cfdf829d16e46afd0f45240b6d43
+timeCreated: 1475224792
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: anim_head_01
+    100002: anim_l_elbow_01
+    100004: anim_l_foot_01
+    100006: anim_l_knee_01
+    100008: anim_l_shoulder_01
+    100010: anim_master_01
+    100012: anim_masterOffset_01
+    100014: anim_pelvis_01
+    100016: anim_r_elbow_01
+    100018: anim_r_foot_01
+    100020: anim_r_knee_01
+    100022: anim_r_shoulder_01
+    100024: anim_stalk_a_01
+    100026: anim_stalk_b_01
+    100028: anim_stomach_01
+    100030: anim_tie_a_01
+    100032: anim_tie_b_01
+    100034: anim_tie_c_01
+    100036: anim_tie_d_01
+    100038: anim_torso_01
+    100040: be_head_03
+    100042: be_l_wrist_01
+    100044: be_r_wrist_01
+    100046: bind_chest_01
+    100048: bind_head_01
+    100050: bind_head_02
+    100052: bind_l_ankle_01
+    100054: bind_l_elbow_01
+    100056: bind_l_knee_01
+    100058: bind_l_shoulder_01
+    100060: bind_l_thigh_01
+    100062: bind_neck_01
+    100064: bind_pelvis_01
+    100066: bind_r_ankle_01
+    100068: bind_r_elbow_01
+    100070: bind_r_knee_01
+    100072: bind_r_shoulder_01
+    100074: bind_r_thigh_01
+    100076: bind_spine_01
+    100078: geo_l_brow_01
+    100080: geo_l_brow_02
+    100082: geo_l_eye_01
+    100084: geo_l_eye_02
+    100086: geo_tomatoGuy_01
+    100088: geo_tomatoTie_01
+    100090: grp_anim_l_elbow_01
+    100092: grp_anim_l_shoulder_01
+    100094: grp_anim_r_elbow_01
+    100096: grp_anim_r_shoulder_01
+    100098: grp_anim_stalk_a_01
+    100100: grp_anim_stalk_b_01
+    100102: grp_controls
+    100104: grp_geo
+    100106: grp_rig
+    100108: ikHandle1
+    100110: ikHandle2
+    100112: joint1
+    100114: joint2
+    100116: joint3
+    100118: joint4
+    100120: joint5
+    100122: //RootNode
+    400000: anim_head_01
+    400002: anim_l_elbow_01
+    400004: anim_l_foot_01
+    400006: anim_l_knee_01
+    400008: anim_l_shoulder_01
+    400010: anim_master_01
+    400012: anim_masterOffset_01
+    400014: anim_pelvis_01
+    400016: anim_r_elbow_01
+    400018: anim_r_foot_01
+    400020: anim_r_knee_01
+    400022: anim_r_shoulder_01
+    400024: anim_stalk_a_01
+    400026: anim_stalk_b_01
+    400028: anim_stomach_01
+    400030: anim_tie_a_01
+    400032: anim_tie_b_01
+    400034: anim_tie_c_01
+    400036: anim_tie_d_01
+    400038: anim_torso_01
+    400040: be_head_03
+    400042: be_l_wrist_01
+    400044: be_r_wrist_01
+    400046: bind_chest_01
+    400048: bind_head_01
+    400050: bind_head_02
+    400052: bind_l_ankle_01
+    400054: bind_l_elbow_01
+    400056: bind_l_knee_01
+    400058: bind_l_shoulder_01
+    400060: bind_l_thigh_01
+    400062: bind_neck_01
+    400064: bind_pelvis_01
+    400066: bind_r_ankle_01
+    400068: bind_r_elbow_01
+    400070: bind_r_knee_01
+    400072: bind_r_shoulder_01
+    400074: bind_r_thigh_01
+    400076: bind_spine_01
+    400078: geo_l_brow_01
+    400080: geo_l_brow_02
+    400082: geo_l_eye_01
+    400084: geo_l_eye_02
+    400086: geo_tomatoGuy_01
+    400088: geo_tomatoTie_01
+    400090: grp_anim_l_elbow_01
+    400092: grp_anim_l_shoulder_01
+    400094: grp_anim_r_elbow_01
+    400096: grp_anim_r_shoulder_01
+    400098: grp_anim_stalk_a_01
+    400100: grp_anim_stalk_b_01
+    400102: grp_controls
+    400104: grp_geo
+    400106: grp_rig
+    400108: ikHandle1
+    400110: ikHandle2
+    400112: joint1
+    400114: joint2
+    400116: joint3
+    400118: joint4
+    400120: joint5
+    400122: //RootNode
+    7400000: Tomato_JumpIn_anim_001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
