@@ -70,6 +70,7 @@
      <Compile Include="Assets\LeanTouch\Scripts\LeanTouch.cs" />
      <Compile Include="Assets\Scripts\AudioData.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraAutoAdjust.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
      <Compile Include="Assets\Scripts\DeviceSetup.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyManager.cs" />
@@ -209,7 +210,6 @@
      <Compile Include="Assets\Wwise\Deployment\Components\AkUtilities.cs" />
      <None Include="Assets\Graphics\Shaders\Glow\Shaders\MK_Mobile-Diffuse.shader" />
      <None Include="Assets\Scripts\Description.txt" />
-     <None Include="Assets\Prefabs\Description.txt" />
      <None Include="Assets\Graphics\Shaders\Glow\_Internal\_MKGlowEffect\MKGlowCompose.shader" />
      <None Include="Assets\Graphics\Shaders\Glow\_Internal\_MKGlowEffect\MKGlowBlur.shader" />
      <None Include="Assets\Wwise\Readme.txt" />

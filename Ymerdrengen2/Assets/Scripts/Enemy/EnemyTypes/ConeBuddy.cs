@@ -13,6 +13,8 @@ public class ConeBuddy : WalkingEnemy
     public float holdTime = 2f;
     public float reverseTime = 2f;
 
+    public GameObject particles;
+
     Animator anim;
 
     /*
@@ -52,9 +54,14 @@ public class ConeBuddy : WalkingEnemy
                 {
                     if(anim != null)
                     {
-                        anim.SetBool("triggerAttack", true);
+                        particles.SetActive(true);
+
+                        anim.SetTrigger("Walk->Attack");
                     }
                 }
+
+                    //particles.SetActive(true);
+                
 
             }
         }

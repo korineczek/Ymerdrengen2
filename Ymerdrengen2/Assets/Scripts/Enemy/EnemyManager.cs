@@ -99,17 +99,17 @@ public class EnemyManager : MonoBehaviour {
         switch (list.Length)
         {
             case 1:
-                enemyScript.init();
+                enemyScript.init(list[0]);
                 break;
             case 3:
                 int.TryParse(list[1], out x);
                 int.TryParse(list[2], out y);
-                enemyScript.init(x, y);
+                enemyScript.init(x, y, list[0]);
                 break;
             case 4:
                 int.TryParse(list[1], out x);
                 int.TryParse(list[2], out y);
-                enemyScript.init(x, y, parseDirection(list[3]));
+                enemyScript.init(x, y, parseDirection(list[3]), list[0]);
                 break;
         }
     }
