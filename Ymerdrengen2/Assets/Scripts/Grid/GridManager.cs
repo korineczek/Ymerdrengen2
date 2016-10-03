@@ -451,4 +451,20 @@ public class GridManager : MonoBehaviour {
         Debug.Log("Triggered kill event");
     }
 
+    public void DropTiles()
+    {
+        for (int x = 0; x < gridSize; x++)
+        {
+            for (int y = 0; y < gridSize; y++)
+            {
+
+                if (GridData.grid[x, y].HasFloor()) {
+
+                    tileObjects[x, y].transform.GetChild(0).GetComponent<Animator>().SetTrigger("Drop");
+                    //Debug.Log(tileObjects[x, y].transform.GetChild(0).name);
+                }
+            }
+        }
+    }
+
 }
