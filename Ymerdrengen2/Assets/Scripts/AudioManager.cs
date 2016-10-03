@@ -16,6 +16,11 @@ public enum SoundHandle
     TomatoSplat
 }
 
+public enum SoundParameterHandle
+{
+    Distance
+}
+
 public class AudioManager : MonoBehaviour
 {
     //private GameObject playerCharacter { get; set; }
@@ -32,9 +37,19 @@ public class AudioManager : MonoBehaviour
         soundBank.UnloadBank(gameObject);
     }
 
-    public void PlaySound(SoundHandle id)
+    public void SetSoundParameter(SoundParameterHandle handle, float value, GameObject obj)
     {
-        switch (id) {
+        switch (handle) {
+            case SoundParameterHandle.Distance:
+                AkSoundEngine.SetRTPCValue("distanceToCharacter", value, obj); break;
+            default:
+                throw new System.Exception("Enum variant doesn't exist, update SetSoundParameter method (AudioManager.cs)");
+        }
+    }
+
+    public void PlaySound(SoundHandle handle, GameObject obj)
+    {
+        switch (handle) {
             case SoundHandle.Jump:
                 AkSoundEngine.PostEvent("jump", gameObject); break;
             case SoundHandle.PowerUp:
@@ -60,6 +75,11 @@ public class AudioManager : MonoBehaviour
             default:
                 throw new System.Exception("Enum variant doesn't exist, update PlaySound method (AudioManager.cs)");
         }
+    }
+
+    public void PlaySound(SoundHandle handle)
+    {
+        PlaySound(handle, gameObject);
     }
 
     public void StartMusic()

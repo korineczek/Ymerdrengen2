@@ -2,6 +2,7 @@
 
 public class Player : MonoBehaviour
 {
+    public Animator PlayerAnim;
 
     public Vector3 startPos;
     public Vector3 endPos;
@@ -28,12 +29,17 @@ public class Player : MonoBehaviour
 
     public void Move(MoveDirection dir)
     {
+        PlayerAnim.SetBool("Move", true);
+
         switch (dir) {
+
+
             case MoveDirection.LeftUp: {
                     startTime = Time.time;
 
                     startPos = transform.position; 
                     endPos = transform.position + new Vector3(0, 0, 1);
+                    transform.localEulerAngles = new Vector3(0, 0, 0);
                     //transform.Translate(0, 0, 1);
                     break;
                 }
@@ -42,6 +48,8 @@ public class Player : MonoBehaviour
 
                     startPos = transform.position;
                     endPos = transform.position + new Vector3(1, 0, 0);
+                    transform.localEulerAngles = new Vector3(0, 90, 0);
+
                     //transform.Translate(1, 0, 0);
                     break;
                 }
@@ -50,6 +58,7 @@ public class Player : MonoBehaviour
 
                     startPos = transform.position;
                     endPos = transform.position + new Vector3(0, 0, -1);
+                    transform.localEulerAngles = new Vector3(0, 180, 0);
                     //transform.Translate(0, 0, -1);
                     break;
                 }
@@ -58,6 +67,8 @@ public class Player : MonoBehaviour
 
                     startPos = transform.position;
                     endPos = transform.position + new Vector3(-1, 0, 0);
+                    transform.localEulerAngles = new Vector3(0, 270, 0);
+
                     //transform.Translate(-1, 0, 0);
                     break;
                 }
@@ -84,9 +95,11 @@ public class Player : MonoBehaviour
         if(transform.position == endPos)
         {
             isLerping = false;
+
         }
         else
         {
+
             isLerping = true;
         }
     }

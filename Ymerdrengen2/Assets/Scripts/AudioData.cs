@@ -9,6 +9,16 @@ public class AudioData : ScriptableObject
         audioManager.PlaySound(handle);
     }
 
+    public static void SetSoundParameter(SoundParameterHandle handle, float value, GameObject obj)
+    {
+        audioManager.SetSoundParameter(handle, value, obj);
+    }
+
+    public static void PlaySound(SoundHandle handle, GameObject obj)
+    {
+        audioManager.PlaySound(handle, obj);
+    }
+
     public static void StartMusic()
     {
         audioManager.StartMusic();
