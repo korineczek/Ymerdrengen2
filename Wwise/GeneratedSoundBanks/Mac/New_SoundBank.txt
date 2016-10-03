@@ -1,5 +1,7 @@
 Event	ID	Name			Wwise Object Path	Notes
+	100379585	menuClickBack			\Default Work Unit\menuClickBack	
 	221836932	fallDeath			\Default Work Unit\fallDeath	
+	508050639	menuClickFoward			\Default Work Unit\menuClickFoward	
 	605262137	PieCharge			\Default Work Unit\PieCharge	
 	779278001	death			\Default Work Unit\death	
 	909770326	coffeEnterScene			\Default Work Unit\coffeEnterScene	
@@ -8,6 +10,8 @@ Event	ID	Name			Wwise Object Path	Notes
 	1597699814	coffeSpit			\Default Work Unit\coffeSpit	
 	1961133422	placeTile			\Default Work Unit\placeTile	
 	2044852745	cherryFuse			\Default Work Unit\cherryFuse	
+	2136433081	menuMusicStop			\Default Work Unit\menuMusicStop	
+	3006414291	menuMusicPlay			\Default Work Unit\menuMusicPlay	
 	3291087764	coffeSip			\Default Work Unit\coffeSip	
 	3619145211	cherryExplosion			\Default Work Unit\cherryExplosion	
 	3833651337	jump			\Default Work Unit\jump	
@@ -38,7 +42,9 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 
 Effect plug-ins	ID	Name	Type				Notes
 	109045632	Vibrato	Wwise Flanger			
+	1459522457	Brick_Wall_Minus_1dB_Peak_Fast_Release	Wwise Peak Limiter			
 	3442768367	Hall_Large_Dark	Wwise RoomVerb			
+	4072645614	mastercomp	Wwise Compressor			
 
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	25868842	SoundSeed Air Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Wind Ambiences\Polar Winds\SoundSeed Air Wind	
@@ -103,7 +109,7 @@ Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	1055663783	SoundSeed Air Woosh	SoundSeed Air/SoundSeed Woosh		\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects\Game Driven Presets\Wings\SoundSeed Air Woosh	Each wing beating, made for looping.
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	11612723	kaffe svæve2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffe svæve2_6666AA94.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeFloating\kaffe svæve2		27776
+	11612723	kaffe svæve2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffe svæve2_7CFA0175.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeFloating\kaffe svæve2		27776
 	47517820	power_up_4	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\power_up_4_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\power_up_4		132620
 	66191397	place_tile_1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\place_tile_1_EB5CAB23.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\place_tile_1		6615
 	96321094	footstep5	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep5_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep5		4252
@@ -119,11 +125,12 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	257221351	footstep_5	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep_5_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_5		4459
 	276664916	falldeath3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\falldeath3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falldeath3		4824
 	279886706	footstep4	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep4_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep4		3389
+	281564798	music 2_0	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\music 2.0_C7008DD1.wem		\Actor-Mixer Hierarchy\Default Work Unit\music\music 2_0		2077539
 	322061684	footstep9	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep9_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep9		4009
 	362436617	footstep3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep3_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep3		3672
-	369275642	kaffe svæve	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffe svæve_8FEA071E.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeFloating\kaffe svæve		39305
-	375116576	kaffespyt2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffespyt2_88999AE5.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeSpit\kaffespyt2		519364
-	386686197	kaffe svæve4	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffe svæve4_A034B234.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeFloating\kaffe svæve4		62449
+	369275642	kaffe svæve	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffe svæve_798AB157.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeFloating\kaffe svæve		39305
+	375116576	kaffespyt2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffespyt2_88615095.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeSpit\kaffespyt2		519364
+	386686197	kaffe svæve4	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffe svæve4_122A5F25.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeFloating\kaffe svæve4		62449
 	391536908	footstep1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep1_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep1		3585
 	394011225	footstep7	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep7_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep7		4099
 	398732041	falldeath2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\falldeath2_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falldeath2		5606
@@ -132,19 +139,22 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	497596001	dying_3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\dying_3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\death\dying_3		26065
 	509327452	yogurt_pickup_2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\yogurt_pickup_2_334D39AF.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\youghurt\yogurt_pickup_2		15613
 	560350528	falldeath1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\falldeath1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falldeath1		4604
-	583747879	kaffe svæve3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffe svæve3_5C62C313.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeFloating\kaffe svæve3		50076
-	601422202	kaffespyt3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffespyt3_F867F58E.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeSpit\kaffespyt3		525672
+	583747879	kaffe svæve3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffe svæve3_F29CEB32.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeFloating\kaffe svæve3		50076
+	601422202	kaffespyt3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffespyt3_A27AF8A8.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeSpit\kaffespyt3		525672
+	631407802	menu music	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\menu music_37B59102.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\menu music		876256
 	637556535	footstep8	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep8_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep8		3739
 	639126855	tærte pacman1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\tærte pacman1_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\piePacman\tærte pacman1		2964
 	652017141	cherry eksplosion4	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\cherry eksplosion4_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion4		24852
 	681218366	dying_bit_3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\dying_bit_3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\death\dying_bit_3		30842
 	700799902	footstep2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep2_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep2		3297
 	709227095	boy_jump_bit_2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\boy_jump_bit_2_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_bit_2		6600
-	726322053	kaffespyt	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffespyt_00971A46.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeSpit\kaffespyt		533032
+	726322053	kaffespyt	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffespyt_C3D39E0D.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeSpit\kaffespyt		533032
 	789749720	falldeath4	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\falldeath4_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falldeath4		4466
+	803929683	menuclickback	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\menuclickback_C14F39A6.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\menuclickback		8809
 	809159328	tærte pacman4	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\tærte pacman4_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\piePacman\tærte pacman4		2046
 	839441337	footstep_3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep_3_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_3		4178
-	859442589	tomat fall	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\tomat fall_1906995D.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\tomat fall		5233
+	859442589	tomat fall	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\tomat fall_26D17E31.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\tomat fall		5233
+	894838950	menuclickforward	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\menuclickforward_41FF2059.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\menuclickforward		10622
 	898442410	boy_jump_1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\boy_jump_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_1		5757
 	902695573	footstep_2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep_2_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_2		4889
 	906306353	power_up_1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\power_up_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\power_up_1		104260
@@ -154,7 +164,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	970149049	boy_jump_bit_1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\boy_jump_bit_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_bit_1		5940
 	987428480	move_swipe	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\move_swipe_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\move_swipe		3059
 	1022631105	tomat splat	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\tomat splat_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\tomat splat		11042
-	1041246594	kaffesip	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffesip_8C37B082.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\kaffesip		53592
+	1041246594	kaffesip	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\kaffesip_53FC51BA.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\kaffesip		53592
 	1047098623	cherry eksplosion2	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\cherry eksplosion2_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion2		16835
 	1063243270	tærte pacman3	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\tærte pacman3_77EDC8D8.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\piePacman\tærte pacman3		59121
 	1071447843	footstep_1	Y:\Documents\WwiseProjects\grp4 minigame2\.cache\Mac\SFX\footstep_1_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_1		4913

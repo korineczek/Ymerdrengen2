@@ -8,5 +8,7 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 
 Effect plug-ins	ID	Name	Type				Notes
 	109045632	Vibrato	Wwise Flanger			
+	1459522457	Brick_Wall_Minus_1dB_Peak_Fast_Release	Wwise Peak Limiter			
 	3442768367	Hall_Large_Dark	Wwise RoomVerb			
+	4072645614	mastercomp	Wwise Compressor			
 

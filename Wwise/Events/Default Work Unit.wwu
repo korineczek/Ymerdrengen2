@@ -198,6 +198,44 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="menuClickFoward" ID="{0933ED76-BA65-44AE-8313-D494632AEE82}">
+					<ChildrenList>
+						<Action Name="Play" ID="{A8F49A2D-6089-48CB-88E4-6E93A2EFDE41}" ShortID="410726948" Type="Play" Scope="One" Global="false"/>
+					</ChildrenList>
+				</Event>
+				<Event Name="menuClickBack" ID="{3B19B13D-C357-4B21-958B-3CE51F69FD5C}">
+					<ChildrenList>
+						<Action Name="Play" ID="{D027A7FA-4282-48A9-86B2-1D3956BF4311}" ShortID="648774884" Type="Play" Scope="One" Global="false"/>
+					</ChildrenList>
+				</Event>
+				<Event Name="menuMusicPlay" ID="{4949B5D6-47BE-4F2A-87BA-47726CA55B13}">
+					<ChildrenList>
+						<Action Name="Play" ID="{2723FA00-53EC-47B2-B63B-F1C0C2676000}" ShortID="994725836" Type="Play" Scope="One" Global="false">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="3"/>
+							</PropertyList>
+							<ElementList>
+								<Element ID="{0B02339B-D05C-4EC3-9F07-68967D04BCD6}" Global="false">
+									<ObjectRef Name="menu music" ID="{836E1709-A533-4973-BB5A-3BC5BCDBCD21}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="menuMusicStop" ID="{A97CE50F-8BEC-4B53-A4CD-2C2D2FBC0244}">
+					<ChildrenList>
+						<Action Name="Stop" ID="{4B753D9E-E1B2-4EA5-8E89-7C51F48CCDF0}" ShortID="77531488" Type="Stop" Scope="One" Global="false">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="2"/>
+							</PropertyList>
+							<ElementList>
+								<Element ID="{D51C0CBF-3100-4A1A-95C2-12C68C26684A}" Global="false">
+									<ObjectRef Name="menu music" ID="{836E1709-A533-4973-BB5A-3BC5BCDBCD21}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

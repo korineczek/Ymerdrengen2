@@ -4,16 +4,12 @@
 		<WorkUnit Name="Default Work Unit" ID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}" PersistMode="Standalone">
 			<ChildrenList>
 				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
-					<PropertyList>
-						<Property Name="BypassEffect0" Type="bool">
-							<ValueList>
-								<Value>True</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
 					<ReferenceList>
-						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
-							<ObjectRef Name="Hall_Large_Dark" ID="{0F6A7D6D-131C-4650-9561-FC05F5C7A37B}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+							<ObjectRef Name="mastercomp" ID="{77A4D763-4E12-45BE-82E3-AF0F6DD1CC5D}" WorkUnitID="{D47D228A-6D37-42F9-B2E3-6E6BA6947B32}"/>
+						</Reference>
+						<Reference Name="Effect1" PluginName="Wwise Peak Limiter" CompanyID="0" PluginID="110" PluginType="3">
+							<ObjectRef Name="Brick_Wall_Minus_1dB_Peak_Fast_Release" ID="{2144284E-7ADD-4341-86A4-4E468BEC9A2D}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>

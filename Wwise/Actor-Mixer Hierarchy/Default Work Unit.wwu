@@ -1347,6 +1347,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="rvb1" ID="{BE8FC00D-7B50-4143-91E7-C5657EE13168}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="place_tile_1" ID="{B37776B4-18E1-41FA-86C3-907CC89788CE}" ShortID="66191397">
@@ -1384,6 +1387,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="rvb1" ID="{BE8FC00D-7B50-4143-91E7-C5657EE13168}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -1461,6 +1467,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="rvb1" ID="{BE8FC00D-7B50-4143-91E7-C5657EE13168}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="yogurt_pickup_1" ID="{EC3D5474-7E77-488C-AC86-40D4208411CB}" ShortID="594593944" Type="SoundFX">
@@ -1512,6 +1521,9 @@
 				<Folder Name="music" ID="{E6B03677-FCBD-459B-A957-66FE642772E4}" ShortID="121535309">
 					<ChildrenList>
 						<Sound Name="music 1_0" ID="{608A7CC6-5DBE-404F-B6B1-1D277B7A9F2A}" ShortID="707794712" Type="SoundFX">
+							<ExcludedPlatformList>
+								<Platform>Android</Platform>
+							</ExcludedPlatformList>
 							<PropertyList>
 								<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
@@ -1536,6 +1548,140 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="music 1_0" ID="{3AD31917-3D60-4E06-BC8A-35DBDC0C055D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="music 2_0" ID="{BFB75AE4-14DD-4655-A796-1B755D933104}" ShortID="364117111" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="music 2_0" ID="{68079F50-58CB-44AA-A862-6DA078C8FE5F}" ShortID="281564798">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="34.5032822757112"/>
+										<Property Name="FadeOutShape" Type="int16" Value="3"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>music 2.0.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="music 2_0" ID="{68079F50-58CB-44AA-A862-6DA078C8FE5F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Menu" ID="{98263EFC-9A18-4BA6-9209-8264D4DD3A6E}" ShortID="904958204">
+					<ChildrenList>
+						<Sound Name="menu music" ID="{836E1709-A533-4973-BB5A-3BC5BCDBCD21}" ShortID="795308590" Type="SoundFX">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="menu music" ID="{2FAFB9F5-C5F8-4CC9-B515-F435D465CDCA}" ShortID="631407802">
+									<Language>SFX</Language>
+									<AudioFile>menu music.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="menu music" ID="{2FAFB9F5-C5F8-4CC9-B515-F435D465CDCA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="menuclickback" ID="{F40F2BF2-6B05-49B6-93AB-9970C0F459C3}" ShortID="360850961" Type="SoundFX">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{AF081B03-1753-4EF1-A5ED-F52CA05512A5}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="rvb1" ID="{BE8FC00D-7B50-4143-91E7-C5657EE13168}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="menuclickback" ID="{98D3A1B3-E706-4DF0-8BE3-C5A88B0E910C}" ShortID="803929683">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.000820591721371278"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.444760712983224"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>menuclickback.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="menuclickback" ID="{98D3A1B3-E706-4DF0-8BE3-C5A88B0E910C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="menuclickforward" ID="{50FBE965-F027-4916-A945-C11EB11E8BCA}" ShortID="38958792" Type="SoundFX">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{C4732772-F702-47B6-BF54-3294FB51C9C7}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="rvb1" ID="{BE8FC00D-7B50-4143-91E7-C5657EE13168}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="menuclickforward" ID="{7CF5B52F-D328-46DC-8F7E-388BEE0B2B71}" ShortID="894838950">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.00246177516411378"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.269974676331145"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>menuclickforward.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="menuclickforward" ID="{7CF5B52F-D328-46DC-8F7E-388BEE0B2B71}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

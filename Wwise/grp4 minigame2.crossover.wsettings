@@ -3,7 +3,7 @@
 	<UserProjectSettingsInfo>
 		<UserProjectSettings Name="" ID="{07684D21-F4BB-419B-88B5-06E2275DACEF}">
 			<PropertyList>
-				<Property Name="AudioFilesImporter\Path" Type="string" Value="Y:\Desktop\Dadiu\Hold 4\minigame 2\enemies"/>
+				<Property Name="AudioFilesImporter\Path" Type="string" Value="Y:\Desktop\Dadiu\Hold 4\minigame 2\music"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
 						<Value Platform="Mac"></Value>
@@ -44,12 +44,12 @@
 				<Property Name="ProjectExplorer\Expanded_19_1" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\Expanded_1_1" Type="string" Value="2KQUFaYdKkGhfnXKDCFJ8+HOEO9G9U1NmPW+rvQShoI="/>
 				<Property Name="ProjectExplorer\Expanded_20_1" Type="string" Value=""/>
-				<Property Name="ProjectExplorer\Expanded_2_1" Type="string" Value="EtbE2iLVxkKAh+gav4ARGzSD5iIlgQlErGqTLyuUUYYhWkXBG038RJLp8D5eFvWydzaw5r38m0WpV2b+ZCdy5GPDnghgge5FvOWRlvJf8eYF8uFrE34LRq3DEhGEGUTm+nRAEEgpsUaG6tFBWWqN+gNZMjJgz8hIm8SmCTBN05Eb8k9lTxIWSoQxE4N1CY3n/3fz3h8apEybe4vIZZ9u/T6A3QxxenxNrEOKF0QYEYa3Vhq6zflhTqyET4VpyuagGpIYhnzjpE6wJaWRgndwK2CoTCEC4aJPkbTWfhxElzI="/>
+				<Property Name="ProjectExplorer\Expanded_2_1" Type="string" Value="EtbE2iLVxkKAh+gav4ARGzSD5iIlgQlErGqTLyuUUYYhWkXBG038RJLp8D5eFvWydzaw5r38m0WpV2b+ZCdy5ANZMjJgz8hIm8SmCTBN05H/d/PeHxqkTJt7i8hln279GpIYhnzjpE6wJaWRgndwK3LIQ0WZ5zNPr8PwWf9JS0ZgqEwhAuGiT5G01n4cRJcy"/>
 				<Property Name="ProjectExplorer\Expanded_3_1" Type="string" Value="gf7CoZj2UEaRJuTlIwXIog=="/>
 				<Property Name="ProjectExplorer\Expanded_4_1" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\Expanded_5_1" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\Expanded_6_1" Type="string" Value=""/>
-				<Property Name="ProjectExplorer\Expanded_7_1" Type="string" Value=""/>
+				<Property Name="ProjectExplorer\Expanded_7_1" Type="string" Value="rzeHu7rlt0GafBqLcVCh2g=="/>
 				<Property Name="ProjectExplorer\Expanded_8_1" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\FirstVisible_10_1" Type="string" Value="{4C96B38B-3DB4-40C7-91C9-665510E38993}"/>
 				<Property Name="ProjectExplorer\FirstVisible_11_1" Type="string" Value="{23EC2DE3-3ED8-4B82-AC99-92E25F2E4C6B}"/>
@@ -64,6 +64,7 @@
 				<Property Name="RTPC\GameParameterSimValue\{536FA72C-8C7E-4C8B-AE03-EF34FDADC314}" Type="Real64" Value="6"/>
 				<Property Name="RTPC\GameParameterSimValue\{A2AE79DC-CA3A-46BA-9652-9986C322A87B}" Type="Real64" Value="50"/>
 				<Property Name="RTPC\GameParameterSimValue\{A34890AB-B9D5-4526-A64D-5290C43EF2DC}" Type="Real64" Value="50"/>
+				<Property Name="RTPC\GameParameterSimValue\{AED74BE3-B165-42CC-B249-5370AD0935CA}" Type="Real64" Value="73.2712765957447"/>
 				<Property Name="RTPC\GameParameterSimValue\{E3B7811A-7B2F-490F-B44F-5FE51B468041}" Type="Real64" Value="75"/>
 				<Property Name="RTPC\GameParameterSimValue\{E93F8CDB-06D1-4737-ACAF-7CD44BBED783}" Type="Real64" Value="75"/>
 				<Property Name="RTPC\GameParameterSimValue\{EDA87B19-73AA-40A0-9F19-2073606DB710}" Type="Real64" Value="6"/>

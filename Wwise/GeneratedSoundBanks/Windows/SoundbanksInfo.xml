@@ -29,6 +29,10 @@
 				<Event Id="779278001" Name="death" ObjectPath="\Events\Default Work Unit\death"/>
 				<Event Id="221836932" Name="fallDeath" ObjectPath="\Events\Default Work Unit\fallDeath"/>
 				<Event Id="3833651337" Name="jump" ObjectPath="\Events\Default Work Unit\jump"/>
+				<Event Id="100379585" Name="menuClickBack" ObjectPath="\Events\Default Work Unit\menuClickBack"/>
+				<Event Id="508050639" Name="menuClickFoward" ObjectPath="\Events\Default Work Unit\menuClickFoward"/>
+				<Event Id="3006414291" Name="menuMusicPlay" ObjectPath="\Events\Default Work Unit\menuMusicPlay"/>
+				<Event Id="2136433081" Name="menuMusicStop" ObjectPath="\Events\Default Work Unit\menuMusicStop"/>
 				<Event Id="1205645828" Name="musicPlay" ObjectPath="\Events\Default Work Unit\musicPlay"/>
 				<Event Id="3978196478" Name="musicStop" ObjectPath="\Events\Default Work Unit\musicStop"/>
 				<Event Id="605262137" Name="PieCharge" ObjectPath="\Events\Default Work Unit\PieCharge"/>
@@ -40,7 +44,7 @@
 			<IncludedMemoryFiles>
 				<File Id="11612723" Language="SFX">
 					<ShortName>kaffe svæve2.wav</ShortName>
-					<Path>SFX/kaffe svæve2_6666AA94.wem</Path>
+					<Path>SFX/kaffe svæve2_7CFA0175.wem</Path>
 				</File>
 				<File Id="47517820" Language="SFX">
 					<ShortName>power_up_4.wav</ShortName>
@@ -102,6 +106,10 @@
 					<ShortName>footstep4.wav</ShortName>
 					<Path>SFX/footstep4_960863FB.wem</Path>
 				</File>
+				<File Id="281564798" Language="SFX">
+					<ShortName>music 2.0.wav</ShortName>
+					<Path>SFX/music 2.0_C7008DD1.wem</Path>
+				</File>
 				<File Id="322061684" Language="SFX">
 					<ShortName>footstep9.wav</ShortName>
 					<Path>SFX/footstep9_960863FB.wem</Path>
@@ -112,15 +120,15 @@
 				</File>
 				<File Id="369275642" Language="SFX">
 					<ShortName>kaffe svæve.wav</ShortName>
-					<Path>SFX/kaffe svæve_8FEA071E.wem</Path>
+					<Path>SFX/kaffe svæve_798AB157.wem</Path>
 				</File>
 				<File Id="375116576" Language="SFX">
 					<ShortName>kaffespyt2.wav</ShortName>
-					<Path>SFX/kaffespyt2_88999AE5.wem</Path>
+					<Path>SFX/kaffespyt2_88615095.wem</Path>
 				</File>
 				<File Id="386686197" Language="SFX">
 					<ShortName>kaffe svæve4.wav</ShortName>
-					<Path>SFX/kaffe svæve4_A034B234.wem</Path>
+					<Path>SFX/kaffe svæve4_122A5F25.wem</Path>
 				</File>
 				<File Id="391536908" Language="SFX">
 					<ShortName>footstep1.wav</ShortName>
@@ -156,11 +164,15 @@
 				</File>
 				<File Id="583747879" Language="SFX">
 					<ShortName>kaffe svæve3.wav</ShortName>
-					<Path>SFX/kaffe svæve3_5C62C313.wem</Path>
+					<Path>SFX/kaffe svæve3_F29CEB32.wem</Path>
 				</File>
 				<File Id="601422202" Language="SFX">
 					<ShortName>kaffespyt3.wav</ShortName>
-					<Path>SFX/kaffespyt3_F867F58E.wem</Path>
+					<Path>SFX/kaffespyt3_A27AF8A8.wem</Path>
+				</File>
+				<File Id="631407802" Language="SFX">
+					<ShortName>menu music.wav</ShortName>
+					<Path>SFX/menu music_37B59102.wem</Path>
 				</File>
 				<File Id="637556535" Language="SFX">
 					<ShortName>footstep8.wav</ShortName>
@@ -188,11 +200,15 @@
 				</File>
 				<File Id="726322053" Language="SFX">
 					<ShortName>kaffespyt.wav</ShortName>
-					<Path>SFX/kaffespyt_00971A46.wem</Path>
+					<Path>SFX/kaffespyt_C3D39E0D.wem</Path>
 				</File>
 				<File Id="789749720" Language="SFX">
 					<ShortName>falldeath4.wav</ShortName>
 					<Path>SFX/falldeath4_CDFE0F68.wem</Path>
+				</File>
+				<File Id="803929683" Language="SFX">
+					<ShortName>menuclickback.wav</ShortName>
+					<Path>SFX/menuclickback_C14F39A6.wem</Path>
 				</File>
 				<File Id="809159328" Language="SFX">
 					<ShortName>tærte pacman4.wav</ShortName>
@@ -204,7 +220,11 @@
 				</File>
 				<File Id="859442589" Language="SFX">
 					<ShortName>tomat fall.wav</ShortName>
-					<Path>SFX/tomat fall_1906995D.wem</Path>
+					<Path>SFX/tomat fall_26D17E31.wem</Path>
+				</File>
+				<File Id="894838950" Language="SFX">
+					<ShortName>menuclickforward.wav</ShortName>
+					<Path>SFX/menuclickforward_41FF2059.wem</Path>
 				</File>
 				<File Id="898442410" Language="SFX">
 					<ShortName>boy_jump_1.wav</ShortName>
@@ -244,7 +264,7 @@
 				</File>
 				<File Id="1041246594" Language="SFX">
 					<ShortName>kaffesip.wav</ShortName>
-					<Path>SFX/kaffesip_8C37B082.wem</Path>
+					<Path>SFX/kaffesip_53FC51BA.wem</Path>
 				</File>
 				<File Id="1047098623" Language="SFX">
 					<ShortName>cherry eksplosion2.wav</ShortName>
