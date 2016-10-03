@@ -172,15 +172,17 @@ public class DropDude : Enemy {
 
     void spawnShadow()
     {
-        shadow = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        shadow.transform.position = newPos;
-        shadow.transform.localScale = new Vector3(0, 0.1f, 0);
+        //shadow = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        shadow = Resources.Load<GameObject>("Prefabs/shadowPrefab");
+        shadow = Instantiate(shadow);
+        shadow.transform.position = newPos + new Vector3(0, 0.01f, 0);
+        shadow.transform.localScale = new Vector3(0, 0.01f, 0);
     }
 
     void setShadow()
     {
         float scale = (t / preShadowTime) * size;
-        shadow.transform.localScale = new Vector3(scale, 0.1f, scale);
+        shadow.transform.localScale = new Vector3(scale, scale, 0.1f);
     }
 
     public override void init(int x, int y, string name)
