@@ -43,7 +43,6 @@ public class DropDude : Enemy {
 
     public void startShake()
     {
-
         cam.startShake(cam.ShakeOrientation, true);
     }
 
