@@ -36,12 +36,7 @@ namespace Grid
         /// <summary>
         /// Field is blocked
         /// </summary>
-        Blocked = 8,
-
-        /// <summary>
-        /// Field is blocked
-         /// </summary>
-        NewTile = 16
+        Blocked = 8
     }
 
     /// <summary>
@@ -57,7 +52,6 @@ namespace Grid
         bool IsPickUp();
         bool IsOnFire();
         bool IsBlocked();
-        bool IsNewTile();
         void ToggleFlags(FieldStatus toggles);
         FieldStatus GetStatus();
     }
