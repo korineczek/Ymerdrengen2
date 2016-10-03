@@ -54,7 +54,7 @@ public class GridManager : MonoBehaviour {
     {
         Godmode = GameObject.Find("GodModeObject").GetComponent<GodModeScript>().Godmode;
         PickUpDic = new Dictionary<Vector2, GameObject>();
-        numPickUpsCanCarry = 3;
+        numPickUpsCanCarry = PlayerCharacter.GetComponent<Player>().maxYmer + 1;
         targetPickUp = new GameObject[numPickUpsCanCarry];
         PickUpCount = 0;
         possiblePlacement = false;
@@ -434,6 +434,22 @@ public class GridManager : MonoBehaviour {
     internal void triggerConeFireEvent()
     {
         Debug.Log("Triggered kill event");
+    }
+
+    public void DropTiles()
+    {
+        for (int x = 0; x < gridSize; x++)
+        {
+            for (int y = 0; y < gridSize; y++)
+            {
+
+                if (GridData.grid[x, y].HasFloor()) {
+
+                    tileObjects[x, y].transform.GetChild(0).GetComponent<Animator>().SetTrigger("Drop");
+                    //Debug.Log(tileObjects[x, y].transform.GetChild(0).name);
+                }
+            }
+        }
     }
 
 }

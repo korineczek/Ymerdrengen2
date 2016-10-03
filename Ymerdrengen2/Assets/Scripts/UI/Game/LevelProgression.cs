@@ -66,12 +66,19 @@ public class LevelProgression : MonoBehaviour {
 
     IEnumerator LevelTransition()
     {
+        yield return new WaitForSeconds(5);
+        GridData.gridManager.DropTiles();
         levelInfo.GetComponent<Text>().color = Color.yellow;
         pause.SetActive(false);
         winText.SetActive(true);
+<<<<<<< HEAD
         if (AudioData.audioManager != null)
             GameObject.Destroy(AudioData.audioManager.gameObject); // Hacked to reset audio
         yield return new WaitForSeconds(2);
+=======
+        yield return new WaitForSeconds(5);
+        GameObject.Destroy(AudioData.audioManager.gameObject);
+>>>>>>> f7722732451fbd86b8e11c23f679f9ea5f56f6de
         Application.LoadLevel(nextLevel);
         yield break;
     }

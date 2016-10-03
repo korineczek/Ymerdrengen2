@@ -14,13 +14,17 @@ public class Player : MonoBehaviour
     public int maxYmer;
     public int numYmer;
 
+    //void Awake()
+    //{
+    //    maxYmer = 3;
+    //}
+
     void Start()
     {
         startTime = Time.time;
         journeyLength = 1;
         startPos = endPos = transform.position;
 
-        maxYmer = 3;
         numYmer = 0;
     }
 
