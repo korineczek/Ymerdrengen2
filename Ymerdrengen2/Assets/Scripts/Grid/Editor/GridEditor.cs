@@ -21,6 +21,7 @@ public class GridEditor : Editor
 
         CreateFloorDesigner();
         CreateYoghurtDesigner();
+        CreateNewTileDesigner();
 
         Undo.RecordObject(target, "Changed scene's initial grid.");
     }
@@ -56,6 +57,26 @@ public class GridEditor : Editor
             for (int j = 0; j < gridTarget.gridSize; j++) {
                 // Hook floorTiles[x,y] to the designer x,y.
                 gridTarget.YoghurtInitializer[TranslateVector(i, j, gridTarget.gridSize)] = EditorGUILayout.Toggle(gridTarget.YoghurtInitializer[TranslateVector(i, j, gridTarget.gridSize)]);
+            }
+            EditorGUILayout.EndHorizontal();
+        }
+    }
+
+    private void CreateNewTileDesigner()
+    {
+        if (gridTarget.NewTileInitializer == null || gridTarget.NewTileInitializer.Length != (gridTarget.gridSize * gridTarget.gridSize))
+            gridTarget.NewTileInitializer = new bool[gridTarget.gridSize * gridTarget.gridSize];
+
+        // Setup Editor layout.
+        EditorGUILayout.LabelField("New Tile Spawner:");
+        for (int i = 0; i < gridTarget.gridSize; i++)
+        {
+            // Create row of toggle controls.
+            EditorGUILayout.BeginHorizontal(GUILayout.MaxHeight(10), GUILayout.MaxWidth(7 * 12));
+            for (int j = 0; j < gridTarget.gridSize; j++)
+            {
+                // Hook floorTiles[x,y] to the designer x,y.
+                gridTarget.NewTileInitializer[TranslateVector(i, j, gridTarget.gridSize)] = EditorGUILayout.Toggle(gridTarget.NewTileInitializer[TranslateVector(i, j, gridTarget.gridSize)]);
             }
             EditorGUILayout.EndHorizontal();
         }
