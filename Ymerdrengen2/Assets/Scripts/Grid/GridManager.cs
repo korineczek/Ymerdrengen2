@@ -311,7 +311,7 @@ public class GridManager : MonoBehaviour {
         if (!getTile(x,y).IsPickUp())
         {
             // instantiate the pick up on the randomly chosen tile
-            GameObject pickUp = Instantiate(Resources.Load("Prefabs/YogurtCarton") as GameObject);
+            GameObject pickUp = Instantiate(Resources.Load("Prefabs/ymerkarton") as GameObject);
             // put pick up on the center of the tile
             pickUp.transform.position = new Vector3(x + offset, 0, y + offset);
             getTile(x, y).ToggleFlags(FieldStatus.PickUp);
