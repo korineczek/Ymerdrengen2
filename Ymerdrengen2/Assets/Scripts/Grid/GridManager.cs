@@ -37,6 +37,16 @@ public class GridManager : MonoBehaviour {
     bool rightTile;
     bool frontTile;
 
+
+    void Awake()
+    {
+        initFields();
+        initPlayer();
+
+        initGrid(FloorInitializer);
+        createGridObj();
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -47,10 +57,6 @@ public class GridManager : MonoBehaviour {
         PickUpCount = 0;
         possiblePlacement = false;
 
-        initPlayer();
-        initFields();
-        initGrid(FloorInitializer);
-        createGridObj();
     }
 
     void Update()
