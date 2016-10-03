@@ -4,6 +4,12 @@ public class AudioData : ScriptableObject
 {
     public static AudioManager audioManager;
 
+    void Awake()
+    {
+
+        audioManager = GameObject.Find("Managers").GetComponent<AudioManager>();
+    }
+    
     public static void PlaySound(SoundHandle handle)
     {
         audioManager.PlaySound(handle);
