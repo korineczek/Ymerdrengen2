@@ -38,9 +38,9 @@ namespace Grid
         /// </summary>
         Blocked = 8,
 
-            /// <summary>
-            /// Field is blocked
-            /// </summary>
+        /// <summary>
+        /// Field is a possible new tile
+        /// </summary>
         NewTile = 16
     }
 
