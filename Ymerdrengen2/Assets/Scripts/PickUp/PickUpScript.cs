@@ -90,6 +90,10 @@ public class PickUpScript : MonoBehaviour
             Player.GetComponent<Player>().numYmer++;
             isPicked = false;
         }
+       
+            //transform.RotateAround(new Vector3(0, startPos.y, 0), Vector3.right, 30 * Time.deltaTime);
+        
+
     }
 
     /// <summary>
