@@ -34,10 +34,14 @@ public class DropDude : Enemy {
     {
         if (anim != null && anim.GetCurrentAnimatorStateInfo(0).IsName("EndState"))
         {
-            //start shake before explosion 0.1f
-            startShake();
-            StartCoroutine(startExplosion());
+            //StartCoroutine(startExplosion());
 
+           
+
+            GameObject CherrySplosion = Instantiate(Resources.Load("Prefabs/CherrySplosion") as GameObject);
+
+            CherrySplosion.transform.position = transform.position;
+            isDone();
         }
     }
 
@@ -49,13 +53,13 @@ public class DropDude : Enemy {
     //wait for start shake then explode
     private IEnumerator startExplosion()
     {
+        Debug.Log("START COROUTINE");
         //@HARDCODED!
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(1.4f);
 
-        GameObject CherrySplosion = Instantiate(Resources.Load("Prefabs/CherrySplosion") as GameObject);
-
-        CherrySplosion.transform.position = transform.position;
-        isDone();
+        //change shake velocity after explosion
+        cam.ShakeVelocity *= 1.5f;
+        startShake();
     }
 
     void Start()
@@ -99,6 +103,8 @@ public class DropDude : Enemy {
                     state = State.Dropping;
                 }
 
+
+
                 break;
         }
     }
@@ -137,6 +143,10 @@ public class DropDude : Enemy {
             transform.position = newPos;
             blockTiles(true);
             blockedTiles = true;
+
+            
+           StartCoroutine(startExplosion());
+           
         }
     }
 
