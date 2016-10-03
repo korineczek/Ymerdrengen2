@@ -18,7 +18,7 @@ public class PossibleTilePosScript : MonoBehaviour
     {
         if (grid.GetComponent<GridManager>().possiblePlacement)
         {
-            StartCoroutine(Blink());
+            //StartCoroutine(Blink());
         }
         else
         {
