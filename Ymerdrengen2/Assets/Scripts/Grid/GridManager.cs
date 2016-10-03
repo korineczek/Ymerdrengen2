@@ -373,20 +373,6 @@ public class GridManager : MonoBehaviour {
 
     }
 
-    [Obsolete("Use ITile.ToggleFlags(FieldStatus) instead.")]
-    public void ToggleFlags(Vector2 tilePos, FieldStatus flags)
-    {
-        var curTile = GridData.grid[(int)tilePos.x, (int)tilePos.y];
-        GridData.grid[(int)tilePos.x, (int)tilePos.y] = ToggleFlags(GridData.grid[(int)tilePos.x, (int)tilePos.y], FieldStatus.PickUp);
-        //GridData.grid[(int)tilePos.x, (int)tilePos.y] = new BaseTile() { Value = curTile.Value ^ flags };
-    }
-
-    [Obsolete("Use ITile.ToggleFlags(FieldStatus) instead.")]
-    public BaseTile ToggleFlags(BaseTile tile, FieldStatus flags)
-    {
-        return new BaseTile() { Value = tile.Value ^ flags }; // '^' ís a bitwise XOR operator.
-    }
-
     public void NewTilePossiblePlace(Vector2 pos)
     {
         //possiblePlacement = true;
@@ -431,7 +417,6 @@ public class GridManager : MonoBehaviour {
     /// </summary>
     public void triggerLandEvent()
     {
-        AudioData.PlaySound(SoundHandle.TomatoSplat);
         Debug.Log("Triggered landing event");
     }
 

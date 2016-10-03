@@ -29,6 +29,7 @@ public class ConeBuddy : WalkingEnemy
     void Start()
     {
         anim = this.GetComponent<Animator>();
+        AudioData.PlaySound(SoundHandle.CoffeeEnterScene, gameObject);
     }
 
     public override void behavior()
@@ -52,6 +53,7 @@ public class ConeBuddy : WalkingEnemy
 
                 if (hold)
                 {
+                    AudioData.PlaySound(SoundHandle.CoffeeSip, gameObject);
                     if(anim != null)
                     {
                         particles.SetActive(true);
@@ -69,7 +71,8 @@ public class ConeBuddy : WalkingEnemy
         else if (hold && timer > holdTime)
         {
             if (!hasShot)
-            { 
+            {
+                AudioData.PlaySound(SoundHandle.CoffeeSpit, gameObject);
                 fire();
                 hasShot = true;
                 holdTime = reverseTime;

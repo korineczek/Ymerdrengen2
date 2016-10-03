@@ -50,7 +50,7 @@ public class DropDude : Enemy {
     {
         //@HARDCODED!
         yield return new WaitForSeconds(0.1f);
-        AudioData.PlaySound(SoundHandle.CherryExplosion);
+        AudioData.PlaySound(SoundHandle.CherryExplosion, gameObject);
 
         GameObject CherrySplosion = Instantiate(Resources.Load("Prefabs/CherrySplosion") as GameObject);
 
@@ -85,7 +85,10 @@ public class DropDude : Enemy {
                     if (anim != null)
                         anim.enabled = true;
                     state = State.Dropping;
-                    AudioData.PlaySound(SoundHandle.TomatoFall);
+                    if (name == "bigdropdude")
+                        AudioData.PlaySound(SoundHandle.TomatoFall, gameObject);
+                    else if (name == "cherrybomb")
+                        AudioData.PlaySound(SoundHandle.CherryFall, gameObject);
                     waitTime = deathTime;
                 }
                 break;
