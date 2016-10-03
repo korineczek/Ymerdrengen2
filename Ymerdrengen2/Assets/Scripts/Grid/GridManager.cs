@@ -54,7 +54,7 @@ public class GridManager : MonoBehaviour {
     {
         Godmode = GameObject.Find("GodModeObject").GetComponent<GodModeScript>().Godmode;
         PickUpDic = new Dictionary<Vector2, GameObject>();
-        numPickUpsCanCarry = 3;
+        numPickUpsCanCarry = PlayerCharacter.GetComponent<Player>().maxYmer + 1;
         targetPickUp = new GameObject[numPickUpsCanCarry];
         PickUpCount = 0;
         possiblePlacement = false;
