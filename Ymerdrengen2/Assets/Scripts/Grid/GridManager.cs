@@ -22,7 +22,7 @@ public class GridManager : MonoBehaviour {
     Dictionary<Vector2, GameObject> PickUpDic;
     GameObject tileObj;
     GameObject[] targetPickUp;
-    int PickUpCount;
+    public int PickUpCount;
     public bool possiblePlacement;
     private bool killEventTriggered = false;
 
