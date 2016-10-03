@@ -24,7 +24,6 @@ public class GridManager : MonoBehaviour {
     GameObject[] targetPickUp;
     int PickUpCount;
     public bool possiblePlacement;
-
     private bool killEventTriggered = false;
 
     public Player PlayerCharacter;
@@ -40,6 +39,16 @@ public class GridManager : MonoBehaviour {
     bool rightTile;
     bool frontTile;
 
+
+    void Awake()
+    {
+        initFields();
+        initPlayer();
+
+        initGrid(FloorInitializer);
+        createGridObj();
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -50,12 +59,10 @@ public class GridManager : MonoBehaviour {
         PickUpCount = 0;
         possiblePlacement = false;
 
-        initPlayer();
-        initFields();
-        initGrid(FloorInitializer);
         if (NewTileInitializer.Length > 0)
             initNewTile(NewTileInitializer);
-        createGridObj();
+       
+
     }
 
     void Update()
@@ -89,26 +96,26 @@ public class GridManager : MonoBehaviour {
         }
     }
 
-    void initNewTile(bool[] newTileInitializer)
-    {
-        for (int x = 0; x < gridSize; x++)
-        {
-            for (int y = 0; y < gridSize; y++)
-            {
-                if(!getTile(x, y).HasFloor() && newTileInitializer[x + (y * gridSize)])
-                {
-                    NewTilePossiblePlace(new Vector2(x, y));
-                }
-            }
-        }
-    }
-
     void initPickups(bool[] pickupInitializer)
     {
         for (int x = 0; x < gridSize; x++) {
             for (int y = 0; y < gridSize; y++) {
                 if (pickupInitializer[x + (y * gridSize)]) {
                     SpawnPickUp(x, y);
+                }
+            }
+        }
+    }
+
+    void initNewTile(bool[] newTileInitializer)
+    {
+        for (int x = 0; x < gridSize; x++)
+        {
+            for (int y = 0; y < gridSize; y++)
+            {
+                if (!getTile(x, y).HasFloor() && newTileInitializer[x + (y * gridSize)])
+                {
+                    NewTilePossiblePlace(new Vector2(x, y));
                 }
             }
         }
@@ -220,7 +227,7 @@ public class GridManager : MonoBehaviour {
             //if (GridData.grid[(int)newPos.x, (int)newPos.y].IsPickUp())
             //if (getTile(newPos).IsPickUp() && targetPickUp == null) /*this is for carrying only one pickup each time*/
             if (getTile(newPos).IsPickUp())
-            {
+                {
                 PickUpCount++;
                 // identify which pick up player touches (if there are a lot)
                 PickUpDic.TryGetValue(new Vector2((int)newPos.x, (int)newPos.y), out targetPickUp[PickUpCount]);
@@ -230,9 +237,7 @@ public class GridManager : MonoBehaviour {
                 targetPickUp[PickUpCount].GetComponent<PickUpScript>().TriggerPickUp();
                 AudioData.PlaySound(SoundHandle.PowerUp);
                 // start blinking possible positions
-                //NewTilePossiblePlace(newPos);
-                possiblePlacement = true;
-
+                NewTilePossiblePlace(newPos);
                 // remove ymer from dict
                 PickUpDic.Remove(new Vector2((int)newPos.x, (int)newPos.y));
             }
@@ -256,7 +261,7 @@ public class GridManager : MonoBehaviour {
             foreach (object o in obj)
             {
                 GameObject g = (GameObject)o;
-                if(g.name == "PossTileObject(Clone)")
+                if (g.name == "PossTileObject(Clone)")
                 {
                     Destroy(g.gameObject);
                 }
@@ -339,7 +344,7 @@ public class GridManager : MonoBehaviour {
         if (!getTile(x,y).IsPickUp())
         {
             // instantiate the pick up on the randomly chosen tile
-            GameObject pickUp = Instantiate(Resources.Load("Prefabs/YogurtCarton") as GameObject);
+            GameObject pickUp = Instantiate(Resources.Load("Prefabs/ymerkarton") as GameObject);
             // put pick up on the center of the tile
             pickUp.transform.position = new Vector3(x + offset, 0, y + offset);
             getTile(x, y).ToggleFlags(FieldStatus.PickUp);
@@ -369,7 +374,7 @@ public class GridManager : MonoBehaviour {
         GameObject possibleTile = Instantiate(Resources.Load("Prefabs/PossTileObject") as GameObject);
         possibleTile.transform.position = new Vector3(pos.x + offset, 0, pos.y + offset);
 
-        if(!getTile(pos).IsNewTile())
+        if (!getTile(pos).IsNewTile())
             getTile(pos).ToggleFlags(FieldStatus.NewTile);
 
         //for (int x = 0; x < gridSize; x++)

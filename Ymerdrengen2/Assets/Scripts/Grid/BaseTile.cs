@@ -51,11 +51,6 @@ namespace Grid
             return (Value & FieldStatus.PickUp) != FieldStatus.None;
         }
 
-        public bool IsNewTile()
-        {
-            return (Value & FieldStatus.NewTile) != FieldStatus.None;
-        }
-
         public void ToggleFlags(FieldStatus flags)
         {
             Value = Value ^ flags;
