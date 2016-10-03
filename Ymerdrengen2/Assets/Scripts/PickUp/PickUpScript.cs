@@ -85,8 +85,14 @@ public class PickUpScript : MonoBehaviour
     /// </summary>
     public void TriggerPickUp()
     {
+        isPicked = true;
         // lerp the pick up above player's head
         transform.position = new Vector3(transform.position.x, Mathf.Lerp(pickUpStartPos, pickUpEndPos, Time.deltaTime * PickUpGoesUpSpeed), transform.position.z);
-        isPicked = true;
+
+        //if (GridData.gridManager.GetComponent<GridManager>().PickUpCount > 1)
+        //{
+        //    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        //}
+ 
     }
 }
