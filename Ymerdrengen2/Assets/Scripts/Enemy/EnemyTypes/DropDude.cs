@@ -51,10 +51,18 @@ public class DropDude : Enemy {
     {
         //@HARDCODED!
         yield return new WaitForSeconds(0.1f);
+        GameObject Explosion = new GameObject();
+        if (name == "cherrybomb")
+        {
+            Explosion = Instantiate(Resources.Load("Prefabs/CherrySplosion") as GameObject);
+        }
+        else if (name == "bigdropdude")
+        {
+            Explosion = Instantiate(Resources.Load("Prefabs/TomatoDeath_Par") as GameObject);
+        }
 
-        GameObject CherrySplosion = Instantiate(Resources.Load("Prefabs/CherrySplosion") as GameObject);
+        Explosion.transform.position = transform.position;
 
-        CherrySplosion.transform.position = transform.position;
         isDone();
     }
 
@@ -95,8 +103,7 @@ public class DropDude : Enemy {
                 hitAllFields();
                 if (wait())
                 {
-                    isDone();
-                    state = State.Dropping;
+                    StartCoroutine(startExplosion());
                 }
 
                 break;
