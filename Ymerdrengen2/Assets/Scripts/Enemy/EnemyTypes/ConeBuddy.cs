@@ -13,6 +13,10 @@ public class ConeBuddy : WalkingEnemy
     public float holdTime = 2f;
     public float reverseTime = 2f;
 
+    public GameObject particles;
+
+    Animator anim;
+
     /*
      *  Controls the shape of attack of the conebuddy
      */
@@ -21,6 +25,11 @@ public class ConeBuddy : WalkingEnemy
     bool[,] attackPattern = { { false, false, true, false, false},
                               { false, true, true, true, false },
                               { true, true, true, true, true } };
+
+    void Start()
+    {
+        anim = this.GetComponent<Animator>();
+    }
 
     public override void behavior()
     {
@@ -40,6 +49,20 @@ public class ConeBuddy : WalkingEnemy
                 timer = 0;
 
                 hold = base.checkNextTile();
+
+                if (hold)
+                {
+                    if(anim != null)
+                    {
+                        particles.SetActive(true);
+
+                        anim.SetTrigger("Walk->Attack");
+                    }
+                }
+
+                    //particles.SetActive(true);
+                
+
             }
         }
         //IF enter reverse direction and go back to walking

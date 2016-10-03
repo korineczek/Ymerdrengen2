@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{2A6E364E-B74F-24CB-9D1A-4C8774D1351A}") = "RenderingProject", "Assembly-CSharp.csproj", "{DDE70439-F7C4-893F-CD6B-A44E48822F2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDE70439-F7C4-893F-CD6B-A44E48822F2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE70439-F7C4-893F-CD6B-A44E48822F2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE70439-F7C4-893F-CD6B-A44E48822F2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE70439-F7C4-893F-CD6B-A44E48822F2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
