@@ -22,7 +22,7 @@ public class GridManager : MonoBehaviour {
     Dictionary<Vector2, GameObject> PickUpDic;
     GameObject tileObj;
     GameObject[] targetPickUp;
-    int PickUpCount;
+    public int PickUpCount;
     public bool possiblePlacement;
     private bool killEventTriggered = false;
 
@@ -449,6 +449,22 @@ public class GridManager : MonoBehaviour {
     internal void triggerConeFireEvent()
     {
         Debug.Log("Triggered kill event");
+    }
+
+    public void DropTiles()
+    {
+        for (int x = 0; x < gridSize; x++)
+        {
+            for (int y = 0; y < gridSize; y++)
+            {
+
+                if (GridData.grid[x, y].HasFloor()) {
+
+                    tileObjects[x, y].transform.GetChild(0).GetComponent<Animator>().SetTrigger("Drop");
+                    //Debug.Log(tileObjects[x, y].transform.GetChild(0).name);
+                }
+            }
+        }
     }
 
 }

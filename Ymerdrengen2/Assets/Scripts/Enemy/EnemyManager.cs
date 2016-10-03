@@ -14,6 +14,8 @@ public class EnemyManager : MonoBehaviour {
     float stopTime = 0;
     float t = 0;
 
+    bool levelStart = false;
+
     bool levelDone = false;
 
     Dictionary<string, GameObject> monsterDictionary;
@@ -24,12 +26,24 @@ public class EnemyManager : MonoBehaviour {
             loadSpawnPattern("lvl" + curentLevel);
 
         fetchMonsters();
+
 	}
 
     // Update is called once per frame
     void Update ()
     {
-        playEvents();
+
+        if(!levelStart)
+        {
+            t += Time.deltaTime;
+            if (t > 5)
+            {
+                t = 0;
+                levelStart = true;
+            }
+        }
+        else
+            playEvents();
 	}
 
     private void playEvents()

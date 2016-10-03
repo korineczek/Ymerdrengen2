@@ -5,6 +5,9 @@ using Grid;
 public class CameraAutoAdjust : MonoBehaviour
 {
 
+    public float AdjustHeight = 0f;
+    public float AdjustWidth = 0;
+
     public void Start()
     {
         //GetGridData();
@@ -12,6 +15,8 @@ public class CameraAutoAdjust : MonoBehaviour
         Debug.Log("Start Auto Adjust");
         
         GetGridData();
+
+        
     }
 
 
@@ -77,7 +82,7 @@ public class CameraAutoAdjust : MonoBehaviour
         {
             if (i <= lastRowMaxValue && i <= lastColumnMaxValue)
             {
-                Camera.main.transform.position +=  new Vector3(0, 0.6f, 0);
+                Camera.main.transform.position +=  new Vector3(0 + AdjustWidth, 0.6f + AdjustHeight, 0);
             }
             else if (i <= lastRowMaxValue)
             {
@@ -86,7 +91,7 @@ public class CameraAutoAdjust : MonoBehaviour
             }
             else
             {
-                Camera.main.transform.position += new Vector3(-0.5f, 0.7f, 0);
+                Camera.main.transform.position += new Vector3(-0.5f + AdjustWidth, 0.7f + AdjustHeight, 0);
             }
         }
 
