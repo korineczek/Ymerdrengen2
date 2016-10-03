@@ -165,8 +165,9 @@ public class DropDude : Enemy {
         base.destroyThis();
     }
 
-    public override void init()
+    public override void init(string name)
     {
+        this.name = name;
         setPos(UnityEngine.Random.Range(0, GridData.gridSize), UnityEngine.Random.Range(0, GridData.gridSize));
     }
 
@@ -183,8 +184,9 @@ public class DropDude : Enemy {
         shadow.transform.localScale = new Vector3(scale, 0.1f, scale);
     }
 
-    public override void init(int x, int y)
+    public override void init(int x, int y, string name)
     {
+        this.name = name;
         setPos(x, y);
     }
 
@@ -234,8 +236,8 @@ public class DropDude : Enemy {
         }
     }
 
-    public override void init(int x, int y, Direction dir)
+    public override void init(int x, int y, Direction dir, string name)
     {
-        init();
+        init(name);
     }
 }
