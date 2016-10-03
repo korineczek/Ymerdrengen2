@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
         soundBank = GetComponent<AkBank>();
         AudioData.audioManager = this;
 
-        if (PlayerPrefs.GetInt("SoundMute") == 0) {
+        if (PlayerPrefs.GetInt("SoundMute") == 1) {
             SetSoundParameter(SoundParameterHandle.MasterVolume, 0);
             return;
         }
