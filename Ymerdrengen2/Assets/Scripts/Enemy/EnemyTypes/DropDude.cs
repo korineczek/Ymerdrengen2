@@ -85,10 +85,12 @@ public class DropDude : Enemy {
                     if (anim != null)
                         anim.enabled = true;
                     state = State.Dropping;
+
                     if (name == "bigdropdude")
                         AudioData.PlaySound(SoundHandle.TomatoFall, gameObject);
                     else if (name == "cherrybomb")
                         AudioData.PlaySound(SoundHandle.CherryFall, gameObject);
+
                     waitTime = deathTime;
                 }
                 break;
