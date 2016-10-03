@@ -5,12 +5,10 @@ using Grid;
 public class CameraAutoAdjust : MonoBehaviour
 {
 
-    public GridManager grid;
-
     public void Start()
     {
         //GetGridData();
-        Camera.main.transform.position = new Vector3(-18, 26, -18);
+        Camera.main.transform.position = new Vector3(-18, 26.1f, -18);
         Debug.Log("Start Auto Adjust");
         
         GetGridData();
@@ -20,7 +18,7 @@ public class CameraAutoAdjust : MonoBehaviour
     public void GetGridData()
     {
         
-        Debug.Log(grid.gridSize);
+        
         int gridSize = GridData.gridManager.gridSize;
 
 
@@ -68,6 +66,29 @@ public class CameraAutoAdjust : MonoBehaviour
         //          (lastRowMaxValue, firstColumnMaxValue) ------  (lastRowMaxValue, lastColumnMaxValue)
         Debug.Log("(" + firstRowMaxValue + ", " + firstColumnMaxValue + ") - (" + firstRowMaxValue + ", " + lastColumnMaxValue + ")");
         Debug.Log("(" + lastRowMaxValue + ", " + firstColumnMaxValue + ") - (" + lastRowMaxValue + ", " + lastColumnMaxValue + ")");
+
+
+        int max = lastColumnMaxValue;
+        if (max < lastRowMaxValue)
+        {
+            max = lastRowMaxValue;
+        }
+        for (int i = 0; i < max; i++)
+        {
+            if (i <= lastRowMaxValue && i <= lastColumnMaxValue)
+            {
+                Camera.main.transform.position +=  new Vector3(0, 0.6f, 0);
+            }
+            else if (i <= lastRowMaxValue)
+            {
+                Camera.main.transform.position += new Vector3(0.5f, 0.05f, 0);
+                
+            }
+            else
+            {
+                Camera.main.transform.position += new Vector3(-0.5f, 0.7f, 0);
+            }
+        }
 
 
         //lastColumnMaxValue * 6
