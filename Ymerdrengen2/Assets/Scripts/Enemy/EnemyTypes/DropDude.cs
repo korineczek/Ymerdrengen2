@@ -108,7 +108,7 @@ public class DropDude : Enemy {
         // margin until shake starts
         float fallMargin = 0.05f;
 
-        t += Time.deltaTime * speed / dropTime;
+        t += Time.deltaTime / dropTime;
         transform.position = Vector3.Lerp(oldPos, newPos, t);
 
         //start shake close to floor
