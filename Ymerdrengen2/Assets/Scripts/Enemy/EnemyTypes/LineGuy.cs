@@ -4,16 +4,15 @@ using System.Collections;
 public class LineGuy : WalkingEnemy
 {
 
-    public bool enableDirectionIndicator = true;
-
     float t = 0;
 
     GameObject directionIndicator;
 
     void Start()
     {
-        //directionIndicator = transform.FindChild("GlowIndicator").gameObject;
         AudioData.PlaySound(SoundHandle.PieCharge, gameObject);
+        loadDirIndicator();
+        indicatorCalc();
     }
 
     public override void behavior()
@@ -27,9 +26,10 @@ public class LineGuy : WalkingEnemy
 
         if (t >= 1)
         {
+            t = 0;
             oldPos = newPos;
             newPos += vectorDir;
-            t = 0;
+            indicatorCalc();
         }
 
         var maxDistance = Vector3.Distance(new Vector3(3, 35, 0), GridData.gridManager.PlayerCharacter.transform.position);
@@ -38,5 +38,27 @@ public class LineGuy : WalkingEnemy
         //Debug.Log(string.Format("Distance: {0}; Normalized: {1}", distance, normalizedDistance));
         //Debug.Log(string.Format("{0}: {1} - {2} = {3}", gameObject.name, transform.position, Vector3.zero, distance));
         AudioData.SetSoundParameter(SoundParameterHandle.Distance, normalizedDistance, gameObject);
+    }
+
+    void indicatorCalc()
+    {
+        if (!enableDirectionIndication && checkTile(newPos.x, newPos.z))
+        {
+            disAbledirectionIndicator();
+            return;
+        }
+            
+        for(int i = 0; i < dirIndicatorLength; i++)
+        {
+            float x = newPos.x + vectorDir.x * i;
+            float z = newPos.z + vectorDir.z * i;
+
+            if (checkTile(x, z))
+            {
+                enableDirectionIndicator(x, z);
+                return;
+            }
+        }
+        
     }
 }

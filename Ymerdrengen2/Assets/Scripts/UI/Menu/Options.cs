@@ -36,6 +36,16 @@ public class Options : MonoBehaviour {
         //Debug.Log("Volume: " + newVolume);
     }
 
+    public void SoundMusic()
+    {
+        PlayerPrefs.SetFloat("SoundMusic", gameObject.GetComponent<Slider>().value);
+    }
+
+    public void SoundSound()
+    {
+        PlayerPrefs.SetFloat("SoundSound", gameObject.GetComponent<Slider>().value);
+    }
+
     public void SoundMute()
     {
         if(PlayerPrefs.GetInt("SoundMute") == 0)

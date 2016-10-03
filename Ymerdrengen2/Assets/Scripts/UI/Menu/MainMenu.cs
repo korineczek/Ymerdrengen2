@@ -16,6 +16,8 @@ public class MainMenu : MonoBehaviour {
             PlayerPrefs.SetString("Language", "English");
             PlayerPrefs.SetInt("Level", 1);
             PlayerPrefs.SetFloat("SoundVolume", 1);
+            PlayerPrefs.SetFloat("SoundMusic", 1);
+            PlayerPrefs.SetFloat("SoundSound", 1);
             PlayerPrefs.SetInt("SoundMute", 1);
             PlayerPrefs.SetString("Setup", "Done");
             PlayerPrefs.Save();
