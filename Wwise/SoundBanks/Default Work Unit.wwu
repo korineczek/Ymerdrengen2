@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8D4282E6-00D6-4680-BC9D-B881A94C45A9}" SchemaVersion="72">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{8D4282E6-00D6-4680-BC9D-B881A94C45A9}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="New_SoundBank" ID="{2546A70A-C812-48A4-87BF-228D131388D9}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Default Work Unit" ID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Default Work Unit" ID="{A1C2FE81-F698-4650-9126-E4E52305C8A2}" WorkUnitID="{A1C2FE81-F698-4650-9126-E4E52305C8A2}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Default Work Unit" ID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Factory SoundSeed Air Objects" ID="{BB5DD793-F285-4F74-8D1D-DF7A4B893280}" WorkUnitID="{BB5DD793-F285-4F74-8D1D-DF7A4B893280}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>
