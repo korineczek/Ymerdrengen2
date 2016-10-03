@@ -75,12 +75,14 @@ public class LevelProgression : MonoBehaviour {
     {
         // Animation plz
 
-        yield return new WaitForSeconds(5);
+        
         GridData.gridManager.DropTiles();
         levelInfo.GetComponent<Text>().color = Color.yellow;
+        yield return new WaitForSeconds(1);
+        tracker.SetActive(false);
         pause.SetActive(false);
         winText.SetActive(true);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         GameObject.Destroy(AudioData.audioManager.gameObject);
         Application.LoadLevel(nextLevel);
         yield break;
