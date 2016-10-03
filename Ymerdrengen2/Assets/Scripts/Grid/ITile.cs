@@ -32,6 +32,11 @@ namespace Grid
         /// Field contains power-up
         /// </summary>
         PickUp = 4,
+
+        /// <summary>
+        /// Field is blocked
+        /// </summary>
+        Blocked = 8
     }
 
     /// <summary>
@@ -46,6 +51,7 @@ namespace Grid
         bool HasFloor();
         bool IsPickUp();
         bool IsOnFire();
+        bool IsBlocked();
         void ToggleFlags(FieldStatus toggles);
         FieldStatus GetStatus();
     }

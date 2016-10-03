@@ -56,7 +56,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TiledGridTest.cs" />
     <Compile Include="TileTests.cs" />
-    <Compile Include="GridManagerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ymerdrengen2\Ymerdrengen2.CSharp.csproj">

@@ -5,7 +5,10 @@ using UnityEngine.UI;
 public class LevelProgression : MonoBehaviour {
 
     public GameObject tracker;
-    public Animator anim;
+    public GameObject progressionTracker;
+    public GameObject levelInfo;
+    public GameObject pause;
+    //public Animator anim;
     public GameObject winText;
     public GameObject deathText;
 
@@ -18,6 +21,8 @@ public class LevelProgression : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Time.timeScale = 1f;
+        levelInfo.GetComponent<Text>().text = Application.loadedLevel.ToString();
         StartGame();
 	}
 	
@@ -27,9 +32,10 @@ public class LevelProgression : MonoBehaviour {
         if (progressTimer)
         {
             levelTime += Time.deltaTime;
-            anim.Play("Tracker60", -1, levelTime / trackerTime);
+            //anim.Play("Tracker60", -1, levelTime / trackerTime);
+            progressionTracker.GetComponent<Image>().fillAmount += 1.0f / trackerTime * Time.deltaTime;
 
-            if((int)levelTime == trackerTime)
+            if ((int)levelTime == trackerTime)
             {
 
                 if(PlayerPrefs.GetInt("Level") < nextLevel)
@@ -54,14 +60,19 @@ public class LevelProgression : MonoBehaviour {
     {
         progressTimer = false;
         deathText.SetActive(true);
+        progressionTracker.SetActive(false);
+        Time.timeScale = 0f;
     }
 
     IEnumerator LevelTransition()
     {
+        levelInfo.GetComponent<Text>().color = Color.yellow;
+        pause.SetActive(false);
         winText.SetActive(true);
         yield return new WaitForSeconds(2);
+        GameObject.Destroy(AudioData.audioManager.gameObject);
         Application.LoadLevel(nextLevel);
-
+        yield break;
     }
    
 }

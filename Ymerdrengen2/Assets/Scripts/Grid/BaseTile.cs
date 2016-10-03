@@ -36,6 +36,11 @@ namespace Grid
             return (Value & FieldStatus.Floor) != FieldStatus.None;
         }
 
+        public bool IsBlocked()
+        {
+            return (Value & FieldStatus.Blocked) != FieldStatus.None;
+        }
+
         public bool IsOnFire()
         {
             return (Value & FieldStatus.OnFire) != FieldStatus.None;

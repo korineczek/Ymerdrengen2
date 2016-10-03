@@ -47,15 +47,14 @@ public class EnemyManager : MonoBehaviour {
 
     private void loadSpawnPattern(string v)
     {
-        Debug.Log("BUDIDOPIDUU");
         curSpawnPattern = Resources.Load(folderPath + v) as SpawnPattern;
-        Debug.Log(curSpawnPattern.spawnPattern.Count);
     }
 
     private void doEvent()
     {
         string s = curSpawnPattern.spawnPattern[spawnPatternIndex];
         string[] list = s.Split(' ');
+        list[0] = list[0].ToLower();
 
         if (list.Length <= 0)
             Debug.LogError("Line " + spawnPatternIndex + " in lvl " + curentLevel + " could not be loaded");
@@ -70,7 +69,7 @@ public class EnemyManager : MonoBehaviour {
             }
         }
 
-        if(list[0] == "Yogurt")
+        if(list[0] == "yogurt")
             spawnYogurt(list);
         else
             spawnMonster(list);
@@ -91,7 +90,6 @@ public class EnemyManager : MonoBehaviour {
             return;
         }
 
-        Debug.Log(list[0]);
         GameObject monster = Instantiate(monsterDictionary[list[0]]);
         Enemy enemyScript = monster.GetComponent<Enemy>();
 
@@ -118,7 +116,7 @@ public class EnemyManager : MonoBehaviour {
 
     public void spawnYogurt(string[] list)
     {
-        if (list.Length >= 1)
+        if (list.Length > 1)
         {
             int x;
             int y;
