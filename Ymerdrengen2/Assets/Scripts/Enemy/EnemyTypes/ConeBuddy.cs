@@ -52,7 +52,8 @@ public class ConeBuddy : WalkingEnemy
                 {
                     if(anim != null)
                     {
-                        anim.SetBool("triggerAttack", true);
+                        Debug.Log("COFFEE SPEW WHEE");
+                        anim.SetTrigger("Walk->Attack");
                     }
                 }
 

@@ -88,6 +88,7 @@
     <Compile Include="Assets\LeanTouch\Scripts\LeanTouch.cs" />
     <Compile Include="Assets\Scripts\AudioData.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraAutoAdjust.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
     <Compile Include="Assets\Scripts\DeviceSetup.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyManager.cs" />
