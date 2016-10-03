@@ -26,14 +26,37 @@ public class DropDude : Enemy {
     Animator anim;
     GameObject shadow;
 
+    //needed for shakes
+    private CameraShake cam;
+    private bool shakeDrop = false;
+
     void animationControl()
     {
         if (anim != null && anim.GetCurrentAnimatorStateInfo(0).IsName("EndState"))
         {
-            GameObject CherrySplosion = Instantiate(Resources.Load("Prefabs/CherrySplosion") as GameObject);
-            CherrySplosion.transform.position = transform.position;
-            isDone();
+            //start shake before explosion 0.1f
+            startShake();
+            StartCoroutine(startExplosion());
+
         }
+    }
+
+    public void startShake()
+    {
+
+        cam.startShake(cam.ShakeOrientation, true);
+    }
+
+    //wait for start shake then explode
+    private IEnumerator startExplosion()
+    {
+        //@HARDCODED!
+        yield return new WaitForSeconds(0.1f);
+
+        GameObject CherrySplosion = Instantiate(Resources.Load("Prefabs/CherrySplosion") as GameObject);
+
+        CherrySplosion.transform.position = transform.position;
+        isDone();
     }
 
     void Start()
@@ -44,6 +67,8 @@ public class DropDude : Enemy {
         this.transform.position = oldPos + new Vector3(0, 5000, 0);
         spawnShadow();
         waitTime = preShadowTime;
+
+        cam = GameObject.Find("Main Camera").GetComponent<CameraShake>();
     }
 
     public override void behavior()
@@ -74,16 +99,29 @@ public class DropDude : Enemy {
                     isDone();
                     state = State.Dropping;
                 }
+
                 break;
         }
     }
 
     void dropCalc()
     {
+        // margin until shake starts
+        float fallMargin = 0.05f;
+
         t += Time.deltaTime * speed / dropTime;
         transform.position = Vector3.Lerp(oldPos, newPos, t);
+
+        //start shake close to floor
+        if(1 - t <= fallMargin && !shakeDrop)
+        {
+            shakeDrop = true;
+            startShake();
+        }
+
         if (t >= 1)
         {
+            shakeDrop = false;
             state = State.Waiting;
             hitFloorEvent();
             t = 0;
