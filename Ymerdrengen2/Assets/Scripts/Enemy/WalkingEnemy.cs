@@ -11,11 +11,16 @@ public class WalkingEnemy : Enemy {
 
     protected Vector3 vectorDir;
     protected Direction direction;
+    private GameObject dirIndicator;
+
+    public bool enableDirectionIndication = true;
+    public int dirIndicatorLength = 3;
 
     public override void behavior() { } // DO nothing
 
-    public override void init()
+    public override void init(string name)
     {
+        this.name = name;
         int rand = UnityEngine.Random.Range(0, 3);
         int laneNum = UnityEngine.Random.Range(0, 5);
         switch (rand)
@@ -41,13 +46,14 @@ public class WalkingEnemy : Enemy {
         setDirVector();
     }
 
-    public override void init(int x, int y)
+    public override void init(int x, int y, string name)
     {
-        init();
+        init(name);
     }
 
-    public override void init(int x, int y, Direction dir)
+    public override void init(int x, int y, Direction dir, string name)
     {
+        this.name = name;
         transform.position = new Vector3(x + GridData.offset, 0, y + GridData.offset);
         direction = dir;
 
@@ -82,5 +88,39 @@ public class WalkingEnemy : Enemy {
         }
         transform.Rotate(new Vector3(0, 180, 0));
         setDirVector();
+    }
+
+    protected void enableDirectionIndicator(float x, float y)
+    {
+        if (enableDirectionIndication)
+        {
+            if (dirIndicator == null)
+            {
+                Debug.Log("No direction indicator could be loaded");
+                return;
+            }
+
+            dirIndicator.SetActive(true);
+            dirIndicator.transform.position = new Vector3(x, -0.01f, y) - vectorDir/2;
+
+            if (direction == Direction.Down || direction == Direction.Up)
+                dirIndicator.transform.Rotate(0, 0, 90);
+
+            enableDirectionIndication = false;
+        }
+    }
+
+    protected void disAbledirectionIndicator()
+    {
+        Destroy(dirIndicator);
+    }
+
+    protected void loadDirIndicator()
+    {
+        if (enableDirectionIndication)
+        {
+            dirIndicator = Instantiate(Resources.Load<GameObject>("Prefabs/" + name + "DirInd"));
+            dirIndicator.SetActive(false);
+        }
     }
 }
