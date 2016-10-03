@@ -49,6 +49,7 @@ public class DropDude : Enemy {
     //wait for start shake then explode
     private IEnumerator startExplosion()
     {
+        Debug.Log("START COROUTINE");
         //@HARDCODED!
         yield return new WaitForSeconds(0.1f);
         GameObject Explosion = new GameObject();
@@ -60,10 +61,14 @@ public class DropDude : Enemy {
         {
             Explosion = Instantiate(Resources.Load("Prefabs/TomatoDeath_Par") as GameObject);
         }
+        AudioData.PlaySound(SoundHandle.CherryExplosion, gameObject);
 
         Explosion.transform.position = transform.position;
 
         isDone();
+        //change shake velocity after explosion
+        cam.ShakeVelocity *= 1.5f;
+        startShake();
     }
 
     void Start()
@@ -93,6 +98,12 @@ public class DropDude : Enemy {
                     if (anim != null)
                         anim.enabled = true;
                     state = State.Dropping;
+
+                    if (name == "bigdropdude")
+                        AudioData.PlaySound(SoundHandle.TomatoFall, gameObject);
+                    else if (name == "cherrybomb")
+                        AudioData.PlaySound(SoundHandle.CherryFall, gameObject);
+
                     waitTime = deathTime;
                 }
                 break;
@@ -105,6 +116,8 @@ public class DropDude : Enemy {
                 {
                     StartCoroutine(startExplosion());
                 }
+
+
 
                 break;
         }
@@ -144,6 +157,10 @@ public class DropDude : Enemy {
             transform.position = newPos;
             blockTiles(true);
             blockedTiles = true;
+
+            
+           StartCoroutine(startExplosion());
+           
         }
     }
 

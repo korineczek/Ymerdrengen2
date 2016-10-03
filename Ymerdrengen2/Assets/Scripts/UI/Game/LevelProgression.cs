@@ -82,8 +82,9 @@ public class LevelProgression : MonoBehaviour {
         tracker.SetActive(false);
         pause.SetActive(false);
         winText.SetActive(true);
+        if (AudioData.audioManager != null)
+            GameObject.Destroy(AudioData.audioManager.gameObject); // Hacked to reset audio
         yield return new WaitForSeconds(2);
-        GameObject.Destroy(AudioData.audioManager.gameObject);
         Application.LoadLevel(nextLevel);
         yield break;
     }
