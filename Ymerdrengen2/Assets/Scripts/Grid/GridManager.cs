@@ -227,7 +227,7 @@ public class GridManager : MonoBehaviour {
             //if (GridData.grid[(int)newPos.x, (int)newPos.y].IsPickUp())
             //if (getTile(newPos).IsPickUp() && targetPickUp == null) /*this is for carrying only one pickup each time*/
             if (getTile(newPos).IsPickUp())
-                {
+            {
                 PickUpCount++;
                 // identify which pick up player touches (if there are a lot)
                 PickUpDic.TryGetValue(new Vector2((int)newPos.x, (int)newPos.y), out targetPickUp[PickUpCount]);
@@ -237,7 +237,9 @@ public class GridManager : MonoBehaviour {
                 targetPickUp[PickUpCount].GetComponent<PickUpScript>().TriggerPickUp();
                 AudioData.PlaySound(SoundHandle.PowerUp);
                 // start blinking possible positions
-                NewTilePossiblePlace(newPos);
+                //NewTilePossiblePlace(newPos);
+                possiblePlacement = true;
+
                 // remove ymer from dict
                 PickUpDic.Remove(new Vector2((int)newPos.x, (int)newPos.y));
             }
@@ -269,6 +271,23 @@ public class GridManager : MonoBehaviour {
             NewTileInitializer[(int)newPos.x + ((int)newPos.y * gridSize)] = false;
             initNewTile(NewTileInitializer);
 
+            if (getTile(newPos).IsPickUp())
+            {
+                PickUpCount++;
+                // identify which pick up player touches (if there are a lot)
+                PickUpDic.TryGetValue(new Vector2((int)newPos.x, (int)newPos.y), out targetPickUp[PickUpCount]);
+                // say to the grid that this tile doesn't have a pick up anymore
+                getTile(newPos).ToggleFlags(FieldStatus.PickUp);
+                // call the triggerPickUp function from PickUpScript
+                targetPickUp[PickUpCount].GetComponent<PickUpScript>().TriggerPickUp();
+                AudioData.PlaySound(SoundHandle.PowerUp);
+                // start blinking possible positions
+                //NewTilePossiblePlace(newPos);
+                possiblePlacement = true;
+
+                // remove ymer from dict
+                PickUpDic.Remove(new Vector2((int)newPos.x, (int)newPos.y));
+            }
         }
         else {
             if(!Godmode) { 

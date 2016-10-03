@@ -20,6 +20,8 @@ public class PossibleTilePosScript : MonoBehaviour
         if (grid.GetComponent<GridManager>().possiblePlacement)
         {
             //StartCoroutine(Blink());
+            this.GetComponent<Renderer>().enabled = true;
+
         }
         else
         {
