@@ -23,8 +23,8 @@ public class LevelProgression : MonoBehaviour {
     void Start () {
         Time.timeScale = 1f;
         levelInfo.GetComponent<Text>().text = Application.loadedLevel.ToString();
-        StartGame();
-	}
+        StartCoroutine(LevelBegin());
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -64,8 +64,17 @@ public class LevelProgression : MonoBehaviour {
         Time.timeScale = 0f;
     }
 
+    IEnumerator LevelBegin()
+    {
+        yield return new WaitForSeconds(5);
+        StartGame();
+        yield break;
+    }
+
     IEnumerator LevelTransition()
     {
+        // Animation plz
+
         yield return new WaitForSeconds(5);
         GridData.gridManager.DropTiles();
         levelInfo.GetComponent<Text>().color = Color.yellow;
