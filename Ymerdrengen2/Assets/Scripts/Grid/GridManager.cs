@@ -53,7 +53,8 @@ public class GridManager : MonoBehaviour {
         initPlayer();
         initFields();
         initGrid(FloorInitializer);
-        initNewTile(NewTileInitializer);
+        if (NewTileInitializer.Length > 0)
+            initNewTile(NewTileInitializer);
         createGridObj();
     }
 
