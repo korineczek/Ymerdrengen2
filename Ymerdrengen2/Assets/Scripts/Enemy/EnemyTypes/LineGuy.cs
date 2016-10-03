@@ -32,10 +32,10 @@ public class LineGuy : WalkingEnemy
             t = 0;
         }
 
-        var maxDistance = Vector3.Distance(new Vector3(3, 35, 0), Vector3.zero);
-        var distance = Vector3.Distance(transform.position, Vector3.zero);
+        var maxDistance = Vector3.Distance(new Vector3(3, 35, 0), GridData.gridManager.PlayerCharacter.transform.position);
+        var distance = Vector3.Distance(transform.position, GridData.gridManager.PlayerCharacter.transform.position);
         var normalizedDistance = (distance / maxDistance) * 100f; // 100f because we normalize between 0 and 100.
-        Debug.Log(string.Format("Distance: {0}; Normalized: {1}", distance, normalizedDistance));
+        //Debug.Log(string.Format("Distance: {0}; Normalized: {1}", distance, normalizedDistance));
         //Debug.Log(string.Format("{0}: {1} - {2} = {3}", gameObject.name, transform.position, Vector3.zero, distance));
         AudioData.SetSoundParameter(SoundParameterHandle.Distance, normalizedDistance, gameObject);
     }

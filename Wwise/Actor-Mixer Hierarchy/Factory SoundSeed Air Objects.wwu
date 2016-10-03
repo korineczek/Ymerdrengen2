@@ -404,7 +404,7 @@ An example of trajectories and positioning handled in Wwise as opposed to SS Air
 						<Flags>5</Flags>
 					</Point>
 					<Point>
-						<XPos>0.0519466666666667</XPos>
+						<XPos>5.19466666666667E-02</XPos>
 						<YPos>195.918</YPos>
 						<Flags>0</Flags>
 					</Point>
@@ -639,7 +639,7 @@ An example of trajectories and positioning handled in Wwise as opposed to SS Air
 						<Flags>5</Flags>
 					</Point>
 					<Point>
-						<XPos>0.0584421686746988</XPos>
+						<XPos>5.84421686746988E-02</XPos>
 						<YPos>0</YPos>
 						<Flags>0</Flags>
 					</Point>
@@ -874,7 +874,7 @@ An example of trajectories and positioning handled in Wwise as opposed to SS Air
 						<Flags>5</Flags>
 					</Point>
 					<Point>
-						<XPos>0.0681825301204819</XPos>
+						<XPos>6.81825301204819E-02</XPos>
 						<YPos>0</YPos>
 						<Flags>0</Flags>
 					</Point>
@@ -6337,7 +6337,7 @@ RPM - a throttle control for the engine</Comment>
 				</PropertyList>
 				<PointList>
 					<Point>
-						<XPos>1E-05</XPos>
+						<XPos>0.00001</XPos>
 						<YPos>0</YPos>
 						<Flags>12</Flags>
 						<Time>0</Time>
@@ -8738,6 +8738,13 @@ Foes will take more time to load bigger arrows and bolts, unless they're furious
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="jumpSwoosh" ID="{4EEF5456-7853-42A1-AFCE-0D010FFF344F}" ShortID="71271298" Type="SoundFX">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
@@ -8814,7 +8821,7 @@ Foes will take more time to load bigger arrows and bolts, unless they're furious
 												<List Name="Deflectors">
 													<PluginInnerObject Name="" ID="{6878D2A4-3A74-4A3F-BFB1-973703FD5B4C}" PluginName="Deflector" CompanyID="0" PluginID="122">
 														<PropertyList>
-															<Property Name="Frequency" Type="Real32" Value="800"/>
+															<Property Name="Frequency" Type="Real32" Value="400"/>
 															<Property Name="QFactor" Type="Real32" Value="7"/>
 														</PropertyList>
 													</PluginInnerObject>
@@ -8824,6 +8831,136 @@ Foes will take more time to load bigger arrows and bolts, unless they're furious
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="SoundSeed Woosh" ID="{7DC4D9ED-58AD-40CB-8161-9D4B7B70B78D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="puff" ID="{3A94941D-23F7-403C-9A63-8C51A6B4D831}" ShortID="25681792" Type="SoundFX">
+									<PropertyList>
+										<Property Name="BypassEffect1" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+											<ObjectRef Name="comb1" ID="{AEBF1C94-F514-47DC-A64C-E77E4527A41E}" WorkUnitID="{D47D228A-6D37-42F9-B2E3-6E6BA6947B32}"/>
+										</Reference>
+										<Reference Name="Effect1" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+											<ObjectRef Name="comb2" ID="{1A75D45E-089A-414F-B44A-FF58DA29F724}" WorkUnitID="{D47D228A-6D37-42F9-B2E3-6E6BA6947B32}"/>
+										</Reference>
+										<Reference Name="Effect2">
+											<Custom>
+												<Effect Name="Wwise Guitar Distortion (Custom)" ID="{0C10E889-56F6-4C20-B060-F1E013212F54}" ShortID="801870283" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+													<PropertyList>
+														<Property Name="DistortionDrive" Type="Real32" Value="70"/>
+														<Property Name="DistortionType" Type="int32" Value="2"/>
+														<Property Name="PreEQBand1Enable" Type="bool" Value="True"/>
+														<Property Name="PreEQBand2Enable" Type="bool" Value="True"/>
+														<Property Name="PreEQBand3Enable" Type="bool" Value="True"/>
+														<Property Name="Rectification" Type="Real32" Value="20"/>
+													</PropertyList>
+												</Effect>
+											</Custom>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="rvb1" ID="{BE8FC00D-7B50-4143-91E7-C5657EE13168}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<SourcePlugin Name="SoundSeed Woosh" ID="{10B1C5B4-64D0-4E68-AB03-1169624C6E08}" ShortID="697277469" PluginName="SoundSeed Air/SoundSeed Woosh" CompanyID="0" PluginID="120">
+											<PropertyList>
+												<Property Name="Duration" Type="Real64" Value="0.7"/>
+												<Property Name="FrequencyScale" Type="Real32" Value="1"/>
+												<Property Name="FrequencyScaleRandom" Type="Real32" Value="2"/>
+												<Property Name="QFactorScaleRandom" Type="Real32" Value="3"/>
+												<Property Name="SpeedAutomate" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<PluginData>
+	<WooshData>
+		<CurveList Version="1">
+			<CurveInfo Name="Speed">
+				<Curve Name="" ID="{470791A7-FF4C-4421-8239-8FD0AB8AF6BE}">
+					<PropertyList>
+						<Property Name="Flags" Type="int32" Value="1"/>
+					</PropertyList>
+					<PointList>
+						<Point>
+							<XPos>0</XPos>
+							<YPos>0</YPos>
+							<Flags>5</Flags>
+						</Point>
+						<Point>
+							<XPos>0.008652</XPos>
+							<YPos>100</YPos>
+							<Flags>0</Flags>
+						</Point>
+						<Point>
+							<XPos>0.094388</XPos>
+							<YPos>54.55818</YPos>
+							<Flags>0</Flags>
+						</Point>
+						<Point>
+							<XPos>0.487634</XPos>
+							<YPos>32.40518</YPos>
+							<Flags>0</Flags>
+						</Point>
+						<Point>
+							<XPos>0.68112</XPos>
+							<YPos>0.31447</YPos>
+							<Flags>0</Flags>
+						</Point>
+						<Point>
+							<XPos>0.7</XPos>
+							<YPos>0</YPos>
+							<Flags>37</Flags>
+						</Point>
+					</PointList>
+				</Curve>
+			</CurveInfo>
+		</CurveList>
+		<Path Version="1">
+			<Path2D Name="" ID="{A6321056-5FC8-49C4-808B-23213B7634F6}">
+				<PropertyList>
+					<Property Name="LinearTime" Type="bool" Value="False"/>
+				</PropertyList>
+				<PointList>
+					<Point>
+						<XPos>0</XPos>
+						<YPos>0</YPos>
+						<Flags>12</Flags>
+						<Time>0</Time>
+					</Point>
+				</PointList>
+			</Path2D>
+		</Path>
+	</WooshData>
+</PluginData>
+											<PluginInnerObjectList>
+												<List Name="Deflectors">
+													<PluginInnerObject Name="" ID="{47095372-A268-4B8F-8E3E-0A9E8FBA1EE0}" PluginName="Deflector" CompanyID="0" PluginID="122">
+														<PropertyList>
+															<Property Name="Frequency" Type="Real32" Value="100"/>
+															<Property Name="QFactor" Type="Real32" Value="1"/>
+														</PropertyList>
+													</PluginInnerObject>
+												</List>
+											</PluginInnerObjectList>
+										</SourcePlugin>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SoundSeed Woosh" ID="{10B1C5B4-64D0-4E68-AB03-1169624C6E08}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
@@ -10983,7 +11120,7 @@ Presence is roughly related to distance and occlusion</Comment>
 				</PropertyList>
 				<PointList>
 					<Point>
-						<XPos>1E-05</XPos>
+						<XPos>0.00001</XPos>
 						<YPos>-0.59347</YPos>
 						<Flags>12</Flags>
 						<Time>0</Time>

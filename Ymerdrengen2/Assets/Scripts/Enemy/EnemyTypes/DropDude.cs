@@ -31,6 +31,7 @@ public class DropDude : Enemy {
         if (anim != null && anim.GetCurrentAnimatorStateInfo(0).IsName("EndState"))
         {
             GameObject CherrySplosion = Instantiate(Resources.Load("Prefabs/CherrySplosion") as GameObject);
+            AudioData.PlaySound(SoundHandle.CherryExplosion);
             CherrySplosion.transform.position = transform.position;
             isDone();
         }
@@ -61,6 +62,7 @@ public class DropDude : Enemy {
                     if (anim != null)
                         anim.enabled = true;
                     state = State.Dropping;
+                    AudioData.PlaySound(SoundHandle.TomatoFall);
                     waitTime = deathTime;
                 }
                 break;

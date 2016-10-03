@@ -4,6 +4,36 @@
 		<WorkUnit Name="Default Work Unit" ID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}" PersistMode="Standalone">
 			<ChildrenList>
 				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
+					<PropertyList>
+						<Property Name="BusVolume" Type="Real64">
+							<RTPCList>
+								<RTPC Name="" ID="{8DA0D15A-D9C5-4095-9740-BF8BB2DBED57}" ShortID="327135525">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="masterVolume" ID="{F855535C-EEDD-41CF-B489-15ED268042CB}" WorkUnitID="{BB8737AF-E5BA-41B7-9A7C-1A8B7150A1DA}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{F034D7C2-CE67-42F1-8390-943CC7B67C62}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-200</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
 							<ObjectRef Name="mastercomp" ID="{77A4D763-4E12-45BE-82E3-AF0F6DD1CC5D}" WorkUnitID="{D47D228A-6D37-42F9-B2E3-6E6BA6947B32}"/>
@@ -24,6 +54,38 @@
 							</ReferenceList>
 						</AuxBus>
 						<Bus Name="enemies" ID="{BEB2EB97-AD3E-4777-86A3-A305E06BA669}"/>
+						<Bus Name="music" ID="{19664150-7586-4284-BA6B-EC4A7F8BBFD3}">
+							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{49F15572-F926-4363-AF76-CB930EE3BBC3}" ShortID="417412677">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="musicVolume" ID="{E097C0A0-835C-41C4-A3AE-718F2905E199}" WorkUnitID="{BB8737AF-E5BA-41B7-9A7C-1A8B7150A1DA}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{CEEB8C21-B888-4CD4-BFF6-A9480CE44E6C}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-200</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
+						</Bus>
 					</ChildrenList>
 				</Bus>
 				<Bus Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}"/>

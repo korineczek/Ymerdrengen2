@@ -7,40 +7,21 @@
 					<ChildrenList>
 						<RandomSequenceContainer Name="cherryExplosion" ID="{214CA860-E102-4FA2-91B4-D67E1C449732}" ShortID="37959094">
 							<PropertyList>
-								<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
-									<RTPCList>
-										<RTPC Name="" ID="{0FE53A17-2926-4B2D-9CD0-900B9AC945CD}" ShortID="157913451">
-											<ReferenceList>
-												<Reference Name="ControlInput">
-													<ObjectRef Name="distanceToCharacter" ID="{AED74BE3-B165-42CC-B249-5370AD0935CA}" WorkUnitID="{BB8737AF-E5BA-41B7-9A7C-1A8B7150A1DA}"/>
-												</Reference>
-											</ReferenceList>
-											<Curve Name="" ID="{8D1E5AA5-848F-4F97-B3D4-5D2EE068CA67}">
-												<PropertyList>
-													<Property Name="Flags" Type="int32" Value="3"/>
-												</PropertyList>
-												<PointList>
-													<Point>
-														<XPos>0</XPos>
-														<YPos>-0.04812</YPos>
-														<Flags>5</Flags>
-														<SegmentShape>Log3</SegmentShape>
-													</Point>
-													<Point>
-														<XPos>100</XPos>
-														<YPos>-200</YPos>
-														<Flags>37</Flags>
-													</Point>
-												</PointList>
-											</Curve>
-										</RTPC>
-									</RTPCList>
+									<ValueList>
+										<Value>12</Value>
+									</ValueList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<ObjectRef Name="bomb" ID="{C1B6F82D-7A0A-428D-AEB4-17E57701D2FB}" WorkUnitID="{D47D228A-6D37-42F9-B2E3-6E6BA6947B32}"/>
+								</Reference>
+								<Reference Name="Effect1" CompanyID="4095" PluginID="65535" PluginType="15">
+									<ObjectRef Name="High_Impact" ID="{2AFD6FB0-C906-4683-A377-FEEEF72967B0}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="enemies" ID="{BEB2EB97-AD3E-4777-86A3-A305E06BA669}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
@@ -58,6 +39,10 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="cherry eksplosion" ID="{1F60901A-A751-4CB0-BEBC-9A8952FCC164}" ShortID="172811041">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="2.69649832589286E-03"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.107859933035714"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>cherry eksplosion.wav</AudioFile>
 										</AudioFileSource>
@@ -77,6 +62,10 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="cherry eksplosion2" ID="{7CE16C8B-CC0C-4FFF-B71F-1871904F5137}" ShortID="1047098623">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="5.39299665178571E-03"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.110556431361607"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>cherry eksplosion2.wav</AudioFile>
 										</AudioFileSource>
@@ -96,6 +85,10 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="cherry eksplosion3" ID="{129BCF98-1E10-4456-8B3A-C0E3A0F65A7D}" ShortID="958543224">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="5.39299665178571E-03"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.1132529296875"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>cherry eksplosion3.wav</AudioFile>
 										</AudioFileSource>
@@ -115,6 +108,10 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="cherry eksplosion4" ID="{C0BEA2A3-CEA6-402E-9500-1BA559FB7180}" ShortID="652017141">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="2.69649832589286E-03"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.1132529296875"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>cherry eksplosion4.wav</AudioFile>
 										</AudioFileSource>
@@ -134,6 +131,10 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="cherry eksplosion5" ID="{2D68E73B-880E-4985-88D3-AE32BB383E0E}" ShortID="204181595">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="8.08949497767857E-03"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.1132529296875"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>cherry eksplosion5.wav</AudioFile>
 										</AudioFileSource>
@@ -148,6 +149,14 @@
 							<PropertyList>
 								<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{AF6C5E1F-1D5B-4E51-92B8-AB367833A464}"/>
+										</ModifierInfo>
+									</ModifierList>
 									<RTPCList>
 										<RTPC Name="" ID="{3EA4338E-3B37-4475-8B5A-61892AB5C331}" ShortID="837159215">
 											<ReferenceList>
@@ -162,9 +171,21 @@
 												<PointList>
 													<Point>
 														<XPos>0</XPos>
-														<YPos>0.04812</YPos>
+														<YPos>0.14626</YPos>
 														<Flags>5</Flags>
 														<SegmentShape>Log3</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>5.44503</XPos>
+														<YPos>-0.36359</YPos>
+														<Flags>0</Flags>
+														<SegmentShape>Exp1</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>20.52356</XPos>
+														<YPos>-200</YPos>
+														<Flags>0</Flags>
+														<SegmentShape>Exp3</SegmentShape>
 													</Point>
 													<Point>
 														<XPos>100</XPos>
@@ -187,6 +208,10 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="cherry lunte" ID="{7F6D6A4A-5DCB-4A33-820A-E62FFCE74931}" ShortID="186580343">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="4.10496651785714E-02"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.294189267113095"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>cherry lunte.wav</AudioFile>
 								</AudioFileSource>
@@ -198,6 +223,21 @@
 						<Sound Name="tomat fall" ID="{C40C24B8-636E-4451-8971-C47B3B9950A4}" ShortID="114134837" Type="SoundFX">
 							<PropertyList>
 								<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-500</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{9B4612F8-A496-42FE-ADF3-672E59871276}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<RTPCList>
 										<RTPC Name="" ID="{955E0682-9718-4E3D-AD99-AECA643F1840}" ShortID="352942940">
@@ -239,11 +279,16 @@
 							<ChildrenList>
 								<AudioFileSource Name="tomat fall" ID="{3AE94B85-0E13-4F97-9630-8D291741CFDE}" ShortID="859442589">
 									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.147094633556548"/>
 										<Property Name="FadeOutDuration" Type="Real64" Value="0.690808078045223"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.454967122395833"/>
 										<Property Name="TrimEnd" Type="Real64" Value="1.93493330598104"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>tomat fall.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="480880974"/>
+									</ConvertedFileIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
@@ -252,7 +297,22 @@
 						</Sound>
 						<Sound Name="tomat splat" ID="{64E24174-5806-4EEE-B8E7-1FD9E3FCAC95}" ShortID="149731923" Type="SoundFX">
 							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{ADA3896D-DFF7-4369-A4A0-F704104ECF3B}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-300"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
 									<RTPCList>
 										<RTPC Name="" ID="{340718C3-3122-473A-8F8F-F9AA6369C366}" ShortID="1036787721">
 											<ReferenceList>
@@ -304,6 +364,9 @@
 							<PropertyList>
 								<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
 									<RTPCList>
 										<RTPC Name="" ID="{2442A32A-EA6C-41EC-8AEF-F03B387B8F6D}" ShortID="131925281">
 											<ReferenceList>
@@ -318,8 +381,20 @@
 												<PointList>
 													<Point>
 														<XPos>0</XPos>
-														<YPos>0.04812</YPos>
+														<YPos>0.14626</YPos>
 														<Flags>5</Flags>
+														<SegmentShape>Log3</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>4.50262</XPos>
+														<YPos>-0.12235</YPos>
+														<Flags>0</Flags>
+														<SegmentShape>Log3</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>20</XPos>
+														<YPos>-200</YPos>
+														<Flags>0</Flags>
 														<SegmentShape>Log3</SegmentShape>
 													</Point>
 													<Point>
@@ -354,7 +429,7 @@
 									<ChildrenList>
 										<AudioFileSource Name="kaffe svæve" ID="{51CE3429-47E8-49CB-92B3-0627645F0BFA}" ShortID="369275642">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.0389201312910284"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="3.89201312910284E-02"/>
 												<Property Name="FadeOutDuration" Type="Real64" Value="1.29895938183807"/>
 												<Property Name="FadeOutShape" Type="int16" Value="3"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.379471280087527"/>
@@ -406,7 +481,7 @@
 									<ChildrenList>
 										<AudioFileSource Name="kaffe svæve3" ID="{76013AE2-39F3-4B81-AE02-A46B9B612BA4}" ShortID="583747879">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.0474410557986871"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="4.74410557986871E-02"/>
 												<Property Name="FadeOutDuration" Type="Real64" Value="1.33625640499635"/>
 												<Property Name="FadeOutShape" Type="int16" Value="3"/>
 												<Property Name="TrimBegin" Type="Real64" Value="1.70787800875274"/>
@@ -432,7 +507,7 @@
 									<ChildrenList>
 										<AudioFileSource Name="kaffe svæve4" ID="{E2C256F0-5C88-4243-94E1-236DCEFBD7FF}" ShortID="386686197">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.0362017915754923"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="3.62017915754923E-02"/>
 												<Property Name="FadeOutDuration" Type="Real64" Value="1.12949589715536"/>
 												<Property Name="FadeOutShape" Type="int16" Value="3"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.760237623085339"/>
@@ -451,7 +526,32 @@
 						<RandomSequenceContainer Name="piePacman" ID="{22E68334-8125-4409-AC6A-932F2B945186}" ShortID="389585807">
 							<PropertyList>
 								<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{96091006-C5C0-4B9E-A2B6-3B6E22D621FA}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{E8CE8B94-97B9-4A0A-ADCB-985E44901221}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-3"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
 									<RTPCList>
 										<RTPC Name="" ID="{1F7B235F-1A97-46DE-B3A3-205B79D39619}" ShortID="1039535994">
 											<ReferenceList>
@@ -469,6 +569,18 @@
 														<YPos>-0.04812</YPos>
 														<Flags>5</Flags>
 														<SegmentShape>Log3</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>6.91099</XPos>
+														<YPos>0.01043</YPos>
+														<Flags>0</Flags>
+														<SegmentShape>Log3</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>19.89529</XPos>
+														<YPos>-200</YPos>
+														<Flags>0</Flags>
+														<SegmentShape>Exp3</SegmentShape>
 													</Point>
 													<Point>
 														<XPos>100</XPos>
@@ -524,7 +636,7 @@
 									<ChildrenList>
 										<AudioFileSource Name="tærte pacman2" ID="{81B41A96-C09B-4916-942B-13DA1057846B}" ShortID="426299725">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.0182407002188184"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="1.82407002188184E-02"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.291851203501094"/>
 											</PropertyList>
 											<Language>SFX</Language>
@@ -547,8 +659,8 @@
 									<ChildrenList>
 										<AudioFileSource Name="tærte pacman3" ID="{29641BDA-9CE5-422E-A43C-82D93991507A}" ShortID="1063243270">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.0119275847921226"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.0397586159737418"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="1.19275847921226E-02"/>
+												<Property Name="TrimBegin" Type="Real64" Value="3.97586159737418E-02"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>tærte pacman3.wav</AudioFile>
@@ -585,6 +697,47 @@
 						<Sound Name="kaffesip" ID="{5FA9368E-B17B-4C53-A4E6-7415DA598BEC}" ShortID="795410302" Type="SoundFX">
 							<PropertyList>
 								<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
+								<Property Name="Highpass" Type="int16">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{FCDFE63E-076A-4F60-A501-E07E6F5DDC77}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="40"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{4EE0FD40-7057-4015-B188-E018ED58D506}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="20"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{4505A8BB-2D09-4C0E-9AE8-F51DF0609938}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-300"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -597,8 +750,8 @@
 							<ChildrenList>
 								<AudioFileSource Name="kaffesip" ID="{EAB6A29F-1DD1-4CCE-ADD0-5D393C299EBB}" ShortID="1041246594">
 									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.0170711159737418"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.0396293763676149"/>
+										<Property Name="FadeInDuration" Type="Real64" Value="1.70711159737418E-02"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="3.96293763676149E-02"/>
 										<Property Name="TrimBegin" Type="Real64" Value="0.278625"/>
 									</PropertyList>
 									<Language>SFX</Language>
@@ -650,7 +803,7 @@
 									<ChildrenList>
 										<AudioFileSource Name="kaffespyt" ID="{CEAEB492-35BB-4615-904C-26F5C6C3EEE2}" ShortID="726322053">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.0273737235594457"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="2.73737235594457E-02"/>
 												<Property Name="FadeOutDuration" Type="Real64" Value="1.00187828227571"/>
 												<Property Name="FadeOutShape" Type="int16" Value="3"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.662444110138585"/>
@@ -676,7 +829,7 @@
 									<ChildrenList>
 										<AudioFileSource Name="kaffespyt2" ID="{812A5D72-4F65-45F4-BB9A-C79F6036BA43}" ShortID="375116576">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.0383232129832239"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="3.83232129832239E-02"/>
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.750040025528812"/>
 												<Property Name="FadeOutShape" Type="int16" Value="3"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.662444110138585"/>
@@ -702,7 +855,7 @@
 									<ChildrenList>
 										<AudioFileSource Name="kaffespyt3" ID="{A518473F-B76C-44EF-B213-C8E0BD21DD2A}" ShortID="601422202">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.0273737235594457"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="2.73737235594457E-02"/>
 												<Property Name="FadeOutDuration" Type="Real64" Value="1.08399945295405"/>
 												<Property Name="FadeOutShape" Type="int16" Value="3"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.667918854850474"/>
@@ -718,6 +871,78 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<Sound Name="cherryFAll" ID="{C5D01A90-3AFF-4B35-9CD1-6B15F00C1D35}" ShortID="512941238" Type="SoundFX">
+							<PropertyList>
+								<Property Name="EnableLoudnessNormalization" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{05B7EE0C-1C8E-4C38-A9EC-E233B990C872}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{155ABB4C-870C-42D7-AD61-50527FB4E4C1}" ShortID="460197093">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="distanceToCharacter" ID="{AED74BE3-B165-42CC-B249-5370AD0935CA}" WorkUnitID="{BB8737AF-E5BA-41B7-9A7C-1A8B7150A1DA}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{A42C80F3-6D6E-4EFC-8B27-6749E32B95A4}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0.04812</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Log3</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>-200</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="enemies" ID="{BEB2EB97-AD3E-4777-86A3-A305E06BA669}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="tomat fall" ID="{49B6A9EA-05C0-4BC1-943F-B4316711F944}" ShortID="480880974">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.188144298735119"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.690808078045223"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.509700009300595"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.93493330598104"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>tomat fall.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="859442589"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="tomat fall" ID="{49B6A9EA-05C0-4BC1-943F-B4316711F944}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="characterSounds" ID="{104074FA-2948-46B1-86EA-D141596A8DFA}" ShortID="393348470">
@@ -742,12 +967,40 @@
 							</ActiveSourceList>
 						</Sound>
 						<RandomSequenceContainer Name="jump" ID="{089EC363-8160-45EE-BCE5-9196F25FF1E6}" ShortID="1064960803">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{8AA2D80D-95F1-42B9-A729-D02645CC5FB9}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="100"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="UserAuxSendVolume0" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="rvb1" ID="{BE8FC00D-7B50-4143-91E7-C5657EE13168}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -762,6 +1015,10 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="boy_jump_1" ID="{D3017AE1-106B-4B1C-8070-46718CD84BCA}" ShortID="898442410">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="1.01947544642857E-02"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.126160086495536"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>boy_jump_1.wav</AudioFile>
 										</AudioFileSource>
@@ -781,6 +1038,10 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="boy_jump_2" ID="{7B274EAA-2536-42ED-94BD-5AC3AF9C1D18}" ShortID="962648408">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="4.88027808779762E-03"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.145521019345238"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>boy_jump_2.wav</AudioFile>
 										</AudioFileSource>
@@ -800,6 +1061,10 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="boy_jump_bit_1" ID="{346674E9-3AC1-4C90-91C6-6210D647AB42}" ShortID="970149049">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="3.8735816592262E-03"/>
+												<Property Name="TrimBegin" Type="Real64" Value="9.47266787574405E-02"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>boy_jump_bit_1.wav</AudioFile>
 										</AudioFileSource>
@@ -819,6 +1084,10 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="boy_jump_bit_2" ID="{903277DA-CF95-4073-ADC5-D2231FFB03F8}" ShortID="709227095">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="1.05990745907738E-02"/>
+												<Property Name="TrimBegin" Type="Real64" Value="5.95178803943451E-02"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>boy_jump_bit_2.wav</AudioFile>
 										</AudioFileSource>
@@ -1206,6 +1475,11 @@
 										</ModifierInfo>
 									</ModifierList>
 								</Property>
+								<Property Name="UserAuxSendVolume0" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-4</Value>
@@ -1354,8 +1628,8 @@
 							<ChildrenList>
 								<AudioFileSource Name="place_tile_1" ID="{B37776B4-18E1-41FA-86C3-907CC89788CE}" ShortID="66191397">
 									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.00183673469387755"/>
-										<Property Name="TrimBegin" Type="Real64" Value="0.0514285714285714"/>
+										<Property Name="FadeInDuration" Type="Real64" Value="1.83673469387755E-03"/>
+										<Property Name="TrimBegin" Type="Real64" Value="5.14285714285714E-02"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>place_tile_1.wav</AudioFile>
@@ -1503,7 +1777,7 @@
 									<ChildrenList>
 										<AudioFileSource Name="yogurt_pickup_2" ID="{D73507D0-7073-43CF-9A49-442051ABBF65}" ShortID="509327452">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.0442441648431802"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="4.42441648431802E-02"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.167021722283005"/>
 											</PropertyList>
 											<Language>SFX</Language>
@@ -1550,7 +1824,170 @@
 								<ActiveSource Name="music 1_0" ID="{3AD31917-3D60-4E06-BC8A-35DBDC0C055D}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<RandomSequenceContainer Name="musicrandom" ID="{D808F552-9475-498E-AE93-089683A7C191}" ShortID="937536609">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="music" ID="{19664150-7586-4284-BA6B-EC4A7F8BBFD3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="music 2_01" ID="{1779279D-8728-4D46-AFCD-5C627745162E}" ShortID="859306040" Type="SoundFX">
+									<ExcludedPlatformList>
+										<Platform>Android</Platform>
+									</ExcludedPlatformList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="music 2_0" ID="{9DBE822F-9A25-4644-BD6A-0FBE332E4AA4}" ShortID="861941171">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="4.72544642857143"/>
+												<Property Name="FadeInShape" Type="int16" Value="3"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="34.5032822757112"/>
+												<Property Name="FadeOutShape" Type="int16" Value="3"/>
+												<Property Name="TrimBegin" Type="Real64" Value="28.515625"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>music 2.0.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="music 2_0" ID="{9DBE822F-9A25-4644-BD6A-0FBE332E4AA4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="music 2_02" ID="{8259537D-1F47-4F8A-A150-00CA5003EDC4}" ShortID="2302221" Type="SoundFX">
+									<ExcludedPlatformList>
+										<Platform>Android</Platform>
+									</ExcludedPlatformList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="music 2_0" ID="{47F97696-F848-4E3F-88E0-902B1A41C1F6}" ShortID="949877070">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="3.09598214285714"/>
+												<Property Name="FadeInShape" Type="int16" Value="3"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="34.5032822757112"/>
+												<Property Name="FadeOutShape" Type="int16" Value="3"/>
+												<Property Name="TrimBegin" Type="Real64" Value="44.9732142857143"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>music 2.0.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="music 2_0" ID="{47F97696-F848-4E3F-88E0-902B1A41C1F6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="music 2_03" ID="{EEDF0C0F-D3F9-49AD-97B9-6741637CDB55}" ShortID="359037979" Type="SoundFX">
+									<ExcludedPlatformList>
+										<Platform>Android</Platform>
+									</ExcludedPlatformList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="music 2_0" ID="{2C3D5854-47DF-49E5-8050-4AC01ED05626}" ShortID="623994141">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="4.88839285714285"/>
+												<Property Name="FadeInShape" Type="int16" Value="3"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="34.5032822757112"/>
+												<Property Name="FadeOutShape" Type="int16" Value="3"/>
+												<Property Name="TrimBegin" Type="Real64" Value="65.3415178571428"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>music 2.0.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="281564798"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="music 2_0" ID="{2C3D5854-47DF-49E5-8050-4AC01ED05626}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="music 2_04" ID="{FD987341-91BF-42D9-AE08-011CDF3264E5}" ShortID="665729527" Type="SoundFX">
+									<ExcludedPlatformList>
+										<Platform>Android</Platform>
+									</ExcludedPlatformList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="music 2_0" ID="{22C1D720-6464-46D1-9109-CDEAB4E221D7}" ShortID="753186888">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="3.25892857142857"/>
+												<Property Name="FadeInShape" Type="int16" Value="6"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="34.5032822757112"/>
+												<Property Name="FadeOutShape" Type="int16" Value="3"/>
+												<Property Name="TrimBegin" Type="Real64" Value="74.3035714285714"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>music 2.0.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="music 2_0" ID="{22C1D720-6464-46D1-9109-CDEAB4E221D7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="music 2_05" ID="{2E7A6EE1-541D-466A-917B-52C210926D8F}" ShortID="966494493" Type="SoundFX">
+									<ExcludedPlatformList>
+										<Platform>Android</Platform>
+									</ExcludedPlatformList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="music 2_0" ID="{2DDFEC55-D264-4A70-8D98-1B519B79A31D}" ShortID="1029138932">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="3.25892857142857"/>
+												<Property Name="FadeInShape" Type="int16" Value="6"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="34.5032822757112"/>
+												<Property Name="FadeOutShape" Type="int16" Value="3"/>
+												<Property Name="TrimBegin" Type="Real64" Value="88.6428571428572"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>music 2.0.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="music 2_0" ID="{2DDFEC55-D264-4A70-8D98-1B519B79A31D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 						<Sound Name="music 2_0" ID="{BFB75AE4-14DD-4655-A796-1B755D933104}" ShortID="364117111" Type="SoundFX">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="megaComp" ID="{12117D38-2C9E-4759-BEBC-48043E8F5B31}" WorkUnitID="{58FE5479-AAC5-48FD-9706-3E10EDC14B82}"/>
@@ -1562,11 +1999,15 @@
 							<ChildrenList>
 								<AudioFileSource Name="music 2_0" ID="{68079F50-58CB-44AA-A862-6DA078C8FE5F}" ShortID="281564798">
 									<PropertyList>
+										<Property Name="FadeInShape" Type="int16" Value="6"/>
 										<Property Name="FadeOutDuration" Type="Real64" Value="34.5032822757112"/>
 										<Property Name="FadeOutShape" Type="int16" Value="3"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>music 2.0.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="623994141"/>
+									</ConvertedFileIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
@@ -1633,7 +2074,7 @@
 							<ChildrenList>
 								<AudioFileSource Name="menuclickback" ID="{98D3A1B3-E706-4DF0-8BE3-C5A88B0E910C}" ShortID="803929683">
 									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.000820591721371278"/>
+										<Property Name="FadeInDuration" Type="Real64" Value="8.20591721371278E-04"/>
 										<Property Name="TrimBegin" Type="Real64" Value="0.444760712983224"/>
 									</PropertyList>
 									<Language>SFX</Language>
@@ -1673,7 +2114,7 @@
 							<ChildrenList>
 								<AudioFileSource Name="menuclickforward" ID="{7CF5B52F-D328-46DC-8F7E-388BEE0B2B71}" ShortID="894838950">
 									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.00246177516411378"/>
+										<Property Name="FadeInDuration" Type="Real64" Value="2.46177516411378E-03"/>
 										<Property Name="TrimBegin" Type="Real64" Value="0.269974676331145"/>
 									</PropertyList>
 									<Language>SFX</Language>

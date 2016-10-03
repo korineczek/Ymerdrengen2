@@ -1,7 +1,12 @@
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	2346531308	musicVolume			\Default Work Unit\musicVolume	
+	2918011349	masterVolume			\Default Work Unit\masterVolume	
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	805203703	Master Secondary Bus			\Default Work Unit\Master Secondary Bus	
 	2242381963	enemies			\Default Work Unit\Master Audio Bus\enemies	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	music			\Default Work Unit\Master Audio Bus\music	
 
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 	2425890738	rvb1			\Default Work Unit\Master Audio Bus\rvb1	

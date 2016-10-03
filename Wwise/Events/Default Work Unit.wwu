@@ -22,6 +22,16 @@
 								</Element>
 							</ElementList>
 						</Action>
+						<Action Name="Play" ID="{67C0A560-F0B5-4C12-9A37-7E12D3B6E482}" ShortID="895127978" Type="Play" Scope="One" Global="false">
+							<PropertyList>
+								<Property Name="Probability" Type="Real64" Value="20"/>
+							</PropertyList>
+							<ElementList>
+								<Element ID="{91490E25-4A34-4DE0-9AD4-519BE2721DC9}" Global="false">
+									<ObjectRef Name="jump" ID="{089EC363-8160-45EE-BCE5-9196F25FF1E6}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="placeTile" ID="{83FA21C6-519F-408F-9E9D-129FBFDD039C}">
@@ -65,6 +75,13 @@
 				</Event>
 				<Event Name="cherryExplosion" ID="{0A9B8B6B-5547-47C4-90E8-20719149390A}">
 					<ChildrenList>
+						<Action Name="Stop" ID="{9620B224-E2E5-406B-9218-A54033C5B005}" ShortID="950364928" Type="Stop" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{552EE7C9-C0FB-4B6A-B4C1-CFD21B8761FA}" Global="false">
+									<ObjectRef Name="cherry lunte" ID="{942FD078-D0C0-41C8-9266-3827806BA717}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
 						<Action Name="Play" ID="{C34DC20E-8E6C-4965-A78D-83EF9F9D5E55}" ShortID="491886134" Type="Play" Scope="One" Global="false">
 							<ElementList>
 								<Element ID="{32F57200-ADD7-4E8D-A31A-DBCDE6789645}" Global="false">
@@ -87,6 +104,13 @@
 				</Event>
 				<Event Name="tomatoSplat" ID="{C83CC0BB-8D61-4FFC-A214-7EA3CD4B5847}">
 					<ChildrenList>
+						<Action Name="Stop" ID="{3F032DC2-E529-4ED6-BA40-96E91D1886D9}" ShortID="952922363" Type="Stop" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{B6F4E6D3-EF4E-4D8B-BF78-FE422D82239F}" Global="false">
+									<ObjectRef Name="tomat fall" ID="{C40C24B8-636E-4451-8971-C47B3B9950A4}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
 						<Action Name="Play" ID="{711CF486-B15E-475D-BE44-450714F2C115}" ShortID="692716625" Type="Play" Scope="One" Global="false">
 							<ElementList>
 								<Element ID="{B2942571-F84C-4F33-81AF-C00E56E56C6D}" Global="false">
@@ -96,7 +120,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="PieCharge" ID="{75FD6CC7-C190-46D0-B39A-506A1D5EBDC7}">
+				<Event Name="pieCharge" ID="{75FD6CC7-C190-46D0-B39A-506A1D5EBDC7}">
 					<ChildrenList>
 						<Action Name="Play" ID="{DFAA6FB5-0DA4-4A45-AA12-81DF96AF9E8A}" ShortID="760087445" Type="Play" Scope="One" Global="false">
 							<ElementList>
@@ -120,6 +144,13 @@
 				</Event>
 				<Event Name="cherryFuse" ID="{C007C5BD-551A-4352-A93C-F70EFD5268F5}">
 					<ChildrenList>
+						<Action Name="Stop" ID="{18D7A39B-F59E-4DBA-910A-561639557814}" ShortID="254808072" Type="Stop" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{AD4F2E10-9543-4760-B363-6990D4626EFD}" Global="false">
+									<ObjectRef Name="cherryFAll" ID="{C5D01A90-3AFF-4B35-9CD1-6B15F00C1D35}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
 						<Action Name="Play" ID="{ED223558-B7B3-4ECC-9E1E-9E6CFFF9AC1D}" ShortID="798678126" Type="Play" Scope="One" Global="false">
 							<ElementList>
 								<Element ID="{92C089FE-AE04-4000-8179-3FCCA4A19ABC}" Global="false">
@@ -134,7 +165,7 @@
 						<Action Name="Play" ID="{0AC30395-560E-41F0-86CC-92D10E5BF5E4}" ShortID="602603456" Type="Play" Scope="One" Global="false">
 							<ElementList>
 								<Element ID="{F4C767BC-3AA0-4280-BE0C-EC04762E51FC}" Global="false">
-									<ObjectRef Name="death" ID="{6BE1F205-7E13-460B-ADC3-1211841944E6}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+									<ObjectRef Name="puff" ID="{3A94941D-23F7-403C-9A63-8C51A6B4D831}" WorkUnitID="{BB5DD793-F285-4F74-8D1D-DF7A4B893280}"/>
 								</Element>
 							</ElementList>
 						</Action>
@@ -156,7 +187,7 @@
 						<Action Name="Play" ID="{0C85BE19-651E-46AA-9F6C-D911344AA234}" ShortID="93132307" Type="Play" Scope="One" Global="false">
 							<ElementList>
 								<Element ID="{CA6A87E8-3F0A-4C74-AEAA-473FB35413BD}" Global="false">
-									<ObjectRef Name="music 1_0" ID="{608A7CC6-5DBE-404F-B6B1-1D277B7A9F2A}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+									<ObjectRef Name="music 2_0" ID="{BFB75AE4-14DD-4655-A796-1B755D933104}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
 								</Element>
 							</ElementList>
 						</Action>
@@ -200,12 +231,24 @@
 				</Event>
 				<Event Name="menuClickFoward" ID="{0933ED76-BA65-44AE-8313-D494632AEE82}">
 					<ChildrenList>
-						<Action Name="Play" ID="{A8F49A2D-6089-48CB-88E4-6E93A2EFDE41}" ShortID="410726948" Type="Play" Scope="One" Global="false"/>
+						<Action Name="Play" ID="{A8F49A2D-6089-48CB-88E4-6E93A2EFDE41}" ShortID="410726948" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{5923EA2E-7429-4975-ABE8-DF522895DC8A}" Global="false">
+									<ObjectRef Name="menuclickforward" ID="{50FBE965-F027-4916-A945-C11EB11E8BCA}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="menuClickBack" ID="{3B19B13D-C357-4B21-958B-3CE51F69FD5C}">
 					<ChildrenList>
-						<Action Name="Play" ID="{D027A7FA-4282-48A9-86B2-1D3956BF4311}" ShortID="648774884" Type="Play" Scope="One" Global="false"/>
+						<Action Name="Play" ID="{D027A7FA-4282-48A9-86B2-1D3956BF4311}" ShortID="648774884" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{9482A01C-9640-4627-A84E-153DE5C6E63C}" Global="false">
+									<ObjectRef Name="menuclickback" ID="{F40F2BF2-6B05-49B6-93AB-9970C0F459C3}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="menuMusicPlay" ID="{4949B5D6-47BE-4F2A-87BA-47726CA55B13}">
@@ -230,6 +273,58 @@
 							</PropertyList>
 							<ElementList>
 								<Element ID="{D51C0CBF-3100-4A1A-95C2-12C68C26684A}" Global="false">
+									<ObjectRef Name="menu music" ID="{836E1709-A533-4973-BB5A-3BC5BCDBCD21}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="pieChargeStop" ID="{9395B0E6-F040-4EAC-A815-D3C29AB63939}">
+					<ChildrenList>
+						<Action Name="Stop" ID="{B9BCE375-EB10-426D-9064-7771A256CEF6}" ShortID="344608332" Type="Stop" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{8056549E-5710-4E12-BC2C-EC29386FEBFD}" Global="false">
+									<ObjectRef Name="piePacman" ID="{22E68334-8125-4409-AC6A-932F2B945186}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="cherryFall" ID="{CB7A1A99-3222-4CCF-94B9-C46542AF5CC4}">
+					<ChildrenList>
+						<Action Name="Play" ID="{C0922175-5700-45AB-81DA-BBFC5E5BCDAC}" ShortID="315513428" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{61A16A7C-9561-4D00-9C60-7ED0E49858FE}" Global="false">
+									<ObjectRef Name="cherryFAll" ID="{C5D01A90-3AFF-4B35-9CD1-6B15F00C1D35}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="pause" ID="{63454547-A410-465C-A34D-D2E259D76109}">
+					<ChildrenList>
+						<Action Name="Pause All" ID="{9BD724EB-1A6F-4BA1-862B-3A5CBFF13F78}" ShortID="552709948" Type="Pause" Scope="All" Global="false"/>
+						<Action Name="Play" ID="{5005B48A-C290-46BD-BBF7-AAC695AE3629}" ShortID="864288016" Type="Play" Scope="One" Global="false">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="2"/>
+							</PropertyList>
+							<ElementList>
+								<Element ID="{CFDB3F98-F881-4BFF-8680-D45FFFE1055A}" Global="false">
+									<ObjectRef Name="menu music" ID="{836E1709-A533-4973-BB5A-3BC5BCDBCD21}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="resume" ID="{35655B54-08D7-4A70-8926-BFB62DDB130C}">
+					<ChildrenList>
+						<Action Name="Resume All" ID="{9691B5A7-0609-4F48-B5F0-F4D9FC41CAEC}" ShortID="971648330" Type="Resume" Scope="All" Global="false"/>
+						<Action Name="Stop" ID="{34E58D91-97BE-4921-AFD0-CBC1669FFE49}" ShortID="473335051" Type="Stop" Scope="One" Global="false">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ElementList>
+								<Element ID="{042A6C20-E741-437A-A0B7-2E645AA0E321}" Global="false">
 									<ObjectRef Name="menu music" ID="{836E1709-A533-4973-BB5A-3BC5BCDBCD21}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
 								</Element>
 							</ElementList>
