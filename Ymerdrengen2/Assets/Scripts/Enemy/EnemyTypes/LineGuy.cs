@@ -10,6 +10,7 @@ public class LineGuy : WalkingEnemy
 
     void Start()
     {
+        AudioData.PlaySound(SoundHandle.PieCharge, gameObject);
         loadDirIndicator();
         indicatorCalc();
     }
@@ -30,7 +31,6 @@ public class LineGuy : WalkingEnemy
             newPos += vectorDir;
             indicatorCalc();
         }
-
     }
 
     void indicatorCalc()

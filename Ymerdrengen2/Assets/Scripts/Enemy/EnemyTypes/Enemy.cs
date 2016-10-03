@@ -17,6 +17,11 @@ public abstract class Enemy : MonoBehaviour
 
     void Update()
     {
+        var maxDistance = Vector3.Distance(new Vector3(3, 40, 0), GridData.gridManager.PlayerCharacter.transform.position);
+        var distance = Vector3.Distance(transform.position, GridData.gridManager.PlayerCharacter.transform.position);
+        var normalizedDistance = (distance / maxDistance) * 100f; // 100f because we normalize between 0 and 100.
+
+        AudioData.SetSoundParameter(SoundParameterHandle.Distance, normalizedDistance, gameObject);
         behavior();
         despawnCheck();
     }

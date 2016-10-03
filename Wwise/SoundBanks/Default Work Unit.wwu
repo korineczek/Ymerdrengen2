@@ -5,6 +5,7 @@
 			<ChildrenList>
 				<SoundBank Name="New_SoundBank" ID="{2546A70A-C812-48A4-87BF-228D131388D9}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Default Work Unit" ID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Default Work Unit" ID="{A1C2FE81-F698-4650-9126-E4E52305C8A2}" WorkUnitID="{A1C2FE81-F698-4650-9126-E4E52305C8A2}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Default Work Unit" ID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}" WorkUnitID="{EF10CEE1-F546-4D4D-98F5-BEAEF4128682}" Filter="7" Origin="Manual"/>

@@ -34,14 +34,9 @@ public class DropDude : Enemy {
     {
         if (anim != null && anim.GetCurrentAnimatorStateInfo(0).IsName("EndState"))
         {
-            //StartCoroutine(startExplosion());
-
-           
-
-            GameObject CherrySplosion = Instantiate(Resources.Load("Prefabs/CherrySplosion") as GameObject);
-
-            CherrySplosion.transform.position = transform.position;
-            isDone();
+            //start shake before explosion 0.1f
+            startShake();
+            StartCoroutine(startExplosion());
         }
     }
 
@@ -55,7 +50,10 @@ public class DropDude : Enemy {
     {
         Debug.Log("START COROUTINE");
         //@HARDCODED!
-        yield return new WaitForSeconds(1.4f);
+        yield return new WaitForSeconds(0.1f);
+        AudioData.PlaySound(SoundHandle.CherryExplosion, gameObject);
+
+        GameObject CherrySplosion = Instantiate(Resources.Load("Prefabs/CherrySplosion") as GameObject);
 
         //change shake velocity after explosion
         cam.ShakeVelocity *= 1.5f;
@@ -89,6 +87,12 @@ public class DropDude : Enemy {
                     if (anim != null)
                         anim.enabled = true;
                     state = State.Dropping;
+
+                    if (name == "bigdropdude")
+                        AudioData.PlaySound(SoundHandle.TomatoFall, gameObject);
+                    else if (name == "cherrybomb")
+                        AudioData.PlaySound(SoundHandle.CherryFall, gameObject);
+
                     waitTime = deathTime;
                 }
                 break;
