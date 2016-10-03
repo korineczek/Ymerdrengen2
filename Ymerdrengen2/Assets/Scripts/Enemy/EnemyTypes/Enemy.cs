@@ -5,6 +5,8 @@ using System;
 public abstract class Enemy : MonoBehaviour
 {
 
+    protected string name;
+
     protected Vector3 newPos;
     protected Vector3 oldPos;
 
@@ -43,6 +45,18 @@ public abstract class Enemy : MonoBehaviour
         return false;
     }
 
+    protected bool checkTile(float x, float z)
+    {
+        if (round(x) >= 0 && round(z) >= 0 && round(x) < GridData.gridSize && round(z) < GridData.gridSize)
+        {
+            if (GridData.grid[round(x), round(z)].HasFloor())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     protected int round(float f)
     {
         if (f >= 0)
@@ -52,8 +66,8 @@ public abstract class Enemy : MonoBehaviour
     }
 
     public abstract void behavior();
-    public abstract void init();
-    public abstract void init(int x, int y);
-    public abstract void init(int x, int y, Direction dir);
+    public abstract void init(string name);
+    public abstract void init(int x, int y, string name);
+    public abstract void init(int x, int y, Direction dir, string name);
 
 }

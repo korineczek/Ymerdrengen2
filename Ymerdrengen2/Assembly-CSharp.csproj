@@ -209,7 +209,6 @@
      <Compile Include="Assets\Wwise\Deployment\Components\AkUtilities.cs" />
      <None Include="Assets\Graphics\Shaders\Glow\Shaders\MK_Mobile-Diffuse.shader" />
      <None Include="Assets\Scripts\Description.txt" />
-     <None Include="Assets\Prefabs\Description.txt" />
      <None Include="Assets\Graphics\Shaders\Glow\_Internal\_MKGlowEffect\MKGlowCompose.shader" />
      <None Include="Assets\Graphics\Shaders\Glow\_Internal\_MKGlowEffect\MKGlowBlur.shader" />
      <None Include="Assets\Wwise\Readme.txt" />
