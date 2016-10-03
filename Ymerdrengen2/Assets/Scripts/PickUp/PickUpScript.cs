@@ -64,7 +64,7 @@ public class PickUpScript : MonoBehaviour
     /// <summary>
     /// start function
     /// </summary>
-    public void Start()
+    public void Awake()
     {
         Player = GameObject.Find("Character");
         isPicked = false;
@@ -101,6 +101,7 @@ public class PickUpScript : MonoBehaviour
     /// </summary>
     public void TriggerPickUp()
     {
+        Debug.Log("PICKUP TRIGGERD");
         isPicked = true;
         // lerp the pick up above player's head
         transform.position = new Vector3(transform.position.x, Mathf.Lerp(pickUpStartPos, pickUpEndPos, Time.deltaTime * PickUpGoesUpSpeed), transform.position.z);

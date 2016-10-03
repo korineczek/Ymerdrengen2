@@ -360,7 +360,19 @@ public class GridManager : MonoBehaviour {
 
     public void createPickUp(int x, int y)
     {
-        if (!getTile(x,y).IsPickUp())
+        if ((int)PlayerPosition.x == x && (int)PlayerPosition.y == y)
+        {
+            GameObject pickUp = Instantiate(Resources.Load("Prefabs/ymerkarton") as GameObject);
+            pickUp.transform.position = new Vector3(x + offset, 0, y + offset);
+            PickUpCount++;
+            targetPickUp[PickUpCount] = pickUp;
+            targetPickUp[PickUpCount].GetComponent<PickUpScript>().TriggerPickUp();
+            AudioData.PlaySound(SoundHandle.PowerUp);
+            possiblePlacement = true;
+
+
+        }
+        else if (!getTile(x,y).IsPickUp())
         {
             // instantiate the pick up on the randomly chosen tile
             GameObject pickUp = Instantiate(Resources.Load("Prefabs/ymerkarton") as GameObject);
