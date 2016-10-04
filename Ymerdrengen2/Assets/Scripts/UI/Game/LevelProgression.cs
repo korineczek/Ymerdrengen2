@@ -31,7 +31,18 @@ public class LevelProgression : MonoBehaviour {
     void Start () {
         Time.timeScale = 1f;
         levelInfo.GetComponent<Text>().text = SceneManager.GetActiveScene().buildIndex.ToString();
-        StartCoroutine(LevelBegin());
+
+        GridData.lvlProgression = this;
+        if (GridData.gridManager.isIntroAnimationPresent)
+        {
+            StartCoroutine(LevelBegin(7.5f));
+            Debug.Log("Animation detected adding start time");
+        }
+        else
+        {
+            GridData.gridManager.triggerTileAnimations();
+            StartCoroutine(LevelBegin(5));
+        }
     }
 	
 	// Update is called once per frame
@@ -72,13 +83,17 @@ public class LevelProgression : MonoBehaviour {
         Time.timeScale = 0f;
     }
 
-    IEnumerator LevelBegin()
+    IEnumerator LevelBegin(float time)
     {
         GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = false;
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(time);
         GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = true;
         StartGame();
-        yield break;
+        GridData.enemyManager.startLevel();
+        if (GridData.gridManager.isIntroAnimationPresent)
+        {
+            GridData.gridManager.triggerTileAnimations();
+        }
     }
 
     IEnumerator LevelTransition()

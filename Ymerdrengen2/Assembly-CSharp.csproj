@@ -91,6 +91,7 @@
      <Compile Include="Assets\Scripts\Grid\ITile.cs" />
      <Compile Include="Assets\Scripts\JoystickManager.cs" />
      <Compile Include="Assets\Scripts\MoveDirection.cs" />
+     <Compile Include="Assets\Scripts\PickUp\ChargeScript.cs" />
      <Compile Include="Assets\Scripts\PickUp\PickUpScript.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PossibleTilePosScript.cs" />
