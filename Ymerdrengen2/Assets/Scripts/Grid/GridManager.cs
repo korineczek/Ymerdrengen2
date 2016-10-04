@@ -41,13 +41,10 @@ public class GridManager : MonoBehaviour {
     bool behindTile;
     bool rightTile;
     bool frontTile;
-<<<<<<< HEAD
 
     public bool tileAdded;
 
-=======
     public bool isIntroAnimationPresent = false;
->>>>>>> 9306121a7619fb6e5b263c44d8d5910ddb12f398
 
     void Awake()
     {
@@ -67,12 +64,9 @@ public class GridManager : MonoBehaviour {
         targetPickUp = new GameObject[numPickUpsCanCarry];
         PickUpCount = 0;
         possiblePlacement = false;
-<<<<<<< HEAD
         tileAdded = false;
 
-=======
         TriggerTiles(true);
->>>>>>> 9306121a7619fb6e5b263c44d8d5910ddb12f398
         if (NewTileInitializer.Length > 0)
             initNewTile(NewTileInitializer);  
 
