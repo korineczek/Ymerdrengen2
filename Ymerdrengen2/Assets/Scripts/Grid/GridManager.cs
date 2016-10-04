@@ -66,10 +66,14 @@ public class GridManager : MonoBehaviour {
         possiblePlacement = false;
         tileAdded = false;
 
-        TriggerTiles(true);
         if (NewTileInitializer.Length > 0)
             initNewTile(NewTileInitializer);  
 
+    }
+    
+    public void triggerTileAnimations()
+    {
+        TriggerTiles(true);
     }
 
     void Update()
