@@ -304,28 +304,94 @@
 				<Event Name="pause" ID="{63454547-A410-465C-A34D-D2E259D76109}">
 					<ChildrenList>
 						<Action Name="Pause All" ID="{9BD724EB-1A6F-4BA1-862B-3A5CBFF13F78}" ShortID="552709948" Type="Pause" Scope="All" Global="false"/>
-						<Action Name="Play" ID="{5005B48A-C290-46BD-BBF7-AAC695AE3629}" ShortID="864288016" Type="Play" Scope="One" Global="false">
-							<PropertyList>
-								<Property Name="FadeTime" Type="Real64" Value="2"/>
-							</PropertyList>
-							<ElementList>
-								<Element ID="{CFDB3F98-F881-4BFF-8680-D45FFFE1055A}" Global="false">
-									<ObjectRef Name="menu music" ID="{836E1709-A533-4973-BB5A-3BC5BCDBCD21}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
-								</Element>
-							</ElementList>
-						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="resume" ID="{35655B54-08D7-4A70-8926-BFB62DDB130C}">
 					<ChildrenList>
 						<Action Name="Resume All" ID="{9691B5A7-0609-4F48-B5F0-F4D9FC41CAEC}" ShortID="971648330" Type="Resume" Scope="All" Global="false"/>
-						<Action Name="Stop" ID="{34E58D91-97BE-4921-AFD0-CBC1669FFE49}" ShortID="473335051" Type="Stop" Scope="One" Global="false">
+					</ChildrenList>
+				</Event>
+				<Event Name="intro" ID="{96BBB5D4-F946-4D5D-8120-594D97AA0AEC}">
+					<ChildrenList>
+						<Action Name="Play" ID="{D17D9BCF-0149-4367-8F9C-DFB89057A79D}" ShortID="202364772" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{787818F4-C667-4080-9D06-37FADDEF0F71}" Global="false">
+									<ObjectRef Name="start scene" ID="{BB55AAA4-E99C-497E-9CBA-B399D56B2DF2}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="playTilesClicks" ID="{F3EB2E7F-2C37-4BDC-AD13-D8A648585556}">
+					<ChildrenList>
+						<Action Name="Play" ID="{E063D3E2-B8E6-4386-8976-B39F0714914F}" ShortID="856393418" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{1BE91DA0-A1C4-4976-954C-C45051019CD8}" Global="false">
+									<ObjectRef Name="start platforme click tør" ID="{3E1ABD36-A8B6-4417-9ABE-568E434F6F0C}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="stopTilesClicks" ID="{1ADE7CC7-47F2-4FEA-B2F7-7ACD736D0957}">
+					<ChildrenList>
+						<Action Name="Stop" ID="{48BDEB31-A829-48F5-AE48-F7ECB018923B}" ShortID="92269469" Type="Stop" Scope="One" Global="false">
 							<PropertyList>
-								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.03"/>
 							</PropertyList>
 							<ElementList>
-								<Element ID="{042A6C20-E741-437A-A0B7-2E645AA0E321}" Global="false">
-									<ObjectRef Name="menu music" ID="{836E1709-A533-4973-BB5A-3BC5BCDBCD21}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								<Element ID="{25C2077A-CCBE-4DD8-812C-48AC7F2D40BF}" Global="false">
+									<ObjectRef Name="start platforme click tør" ID="{3E1ABD36-A8B6-4417-9ABE-568E434F6F0C}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="playTilesRubble" ID="{603EE360-BA66-46A7-A19F-FB863528EAF4}">
+					<ChildrenList>
+						<Action Name="Play" ID="{5E43AB83-9326-4C57-8357-2D304F6BEE2B}" ShortID="218576336" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{709C8390-F27C-45B2-99BA-6341AE3EF266}" Global="false">
+									<ObjectRef Name="start platforme rubble" ID="{24E4DF1D-F9F9-455F-ACD2-3FC03FA065F0}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="stopTilesRubble" ID="{6606EBB1-752D-4EF4-AFEE-1EE2FC36C0BC}">
+					<ChildrenList>
+						<Action Name="Stop" ID="{F2DC0A3E-425E-4E9C-B77C-C797D6D037C8}" ShortID="212833375" Type="Stop" Scope="One" Global="false">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="0.03"/>
+							</PropertyList>
+							<ElementList>
+								<Element ID="{2DE1BD3D-75DC-4AD3-B3FA-F718DD5CEAF5}" Global="false">
+									<ObjectRef Name="start platforme rumlen" ID="{6423BF9F-40A4-4B70-841F-E45D0E0330FF}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="playTilesGrinding" ID="{8E5F10DD-93DB-4C63-955D-76C303DAD13D}">
+					<ChildrenList>
+						<Action Name="Play" ID="{AD80280B-B39F-46CC-B82E-BC8E024612F5}" ShortID="990967689" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{0DFF9F8E-8881-4B69-9FDC-CE7371155BE1}" Global="false">
+									<ObjectRef Name="start platforme rumlen" ID="{6423BF9F-40A4-4B70-841F-E45D0E0330FF}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="stopTilesGrinding" ID="{4A4F3628-5698-46A5-A6C4-1BD936F55E6C}">
+					<ChildrenList>
+						<Action Name="Stop" ID="{819811CA-F840-497D-AECE-93D4EAD412AC}" ShortID="986907781" Type="Stop" Scope="One" Global="false">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="0.03"/>
+							</PropertyList>
+							<ElementList>
+								<Element ID="{6D94B683-00AC-4238-B376-FAAB0EBB4375}" Global="false">
+									<ObjectRef Name="start platforme rumlen" ID="{6423BF9F-40A4-4B70-841F-E45D0E0330FF}" WorkUnitID="{C1455A21-4D1B-44FC-92E9-F03E5E16F5B2}"/>
 								</Element>
 							</ElementList>
 						</Action>

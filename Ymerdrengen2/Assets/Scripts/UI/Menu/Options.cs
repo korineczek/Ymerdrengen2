@@ -10,12 +10,10 @@ public class Options : MonoBehaviour {
     public GameObject menu;
     public GameObject options;
 
-    private Slider volumeSlider;
-
     void Start()
     {
-        volumeSlider = GetComponentInChildren<Slider>();
-        volumeSlider.value = PlayerPrefs.GetFloat("SoundVolume");
+        //volumeSlider = GetComponentInChildren<Slider>();
+        //volumeSlider.value = PlayerPrefs.GetFloat("SoundVolume");
     }
 
     public void Dansk()
@@ -28,22 +26,25 @@ public class Options : MonoBehaviour {
         PlayerPrefs.SetString("Language", "English");
     }
   
-    public void SoundVolume()
+    public void SoundVolume(GameObject obj)
     {
-        PlayerPrefs.SetFloat("SoundVolume", volumeSlider.value);
-        var newVolume = volumeSlider.value * 100;
+        var newVolume = (int)(obj.GetComponent<Slider>().value * 100f);
+        PlayerPrefs.SetInt("SoundVolume", newVolume);
         AudioData.SetSoundParameter(SoundParameterHandle.MasterVolume, newVolume);
-        //Debug.Log("Volume: " + newVolume);
     }
 
-    public void SoundMusic()
+    public void SoundMusic(GameObject obj)
     {
-        PlayerPrefs.SetFloat("SoundMusic", gameObject.GetComponent<Slider>().value);
+        var newVolume = (int)(obj.GetComponent<Slider>().value * 100f);
+        PlayerPrefs.SetInt("SoundMusic", newVolume);
+        AudioData.SetSoundParameter(SoundParameterHandle.MusicVolume, newVolume);
     }
 
-    public void SoundSound()
+    public void SoundSound(GameObject obj)
     {
-        PlayerPrefs.SetFloat("SoundSound", gameObject.GetComponent<Slider>().value);
+        var newVolume = (int)(obj.GetComponent<Slider>().value * 100f);
+        PlayerPrefs.SetInt("SoundSound", newVolume);
+        AudioData.SetSoundParameter(SoundParameterHandle.SoundVolume, newVolume);
     }
 
     public void SoundMute()

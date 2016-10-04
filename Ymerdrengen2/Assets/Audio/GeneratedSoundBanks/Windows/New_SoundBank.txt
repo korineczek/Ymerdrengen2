@@ -128,17 +128,17 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	96321094	footstep5	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\footstep5_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep5		4252
 	98010391	footstep6	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\footstep6_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep6		4118
 	139903624	power_up_3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\power_up_3_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\power_up_3		71088
-	172811041	cherry eksplosion	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\cherry eksplosion_8473F1AA.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion		17591
-	186580343	cherry lunte	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\cherry lunte_52C2C5DE.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherry lunte		63482
+	172811041	cherry eksplosion	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\cherry eksplosion_C826C09F.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion		17591
+	186580343	cherry lunte	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\cherry lunte_7D68DB91.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherry lunte		63482
 	203156319	place_tile_2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\place_tile_2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\place_tile_2		60984
-	204181595	cherry eksplosion5	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\cherry eksplosion5_37E1BF23.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion5		18674
+	204181595	cherry eksplosion5	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\cherry eksplosion5_61585ABB.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion5		18674
 	220625273	falling_bit_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\falling_bit_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falling_bit_1		43794
 	244721812	music 1_0	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\music 1.0_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\music\music 1_0		1289753
 	251275923	yogurt_pickup_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\yogurt_pickup_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\youghurt\yogurt_pickup_1		21522
 	257221351	footstep_5	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\footstep_5_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_5		4459
 	276664916	falldeath3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\falldeath3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falldeath3		4816
 	279886706	footstep4	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\footstep4_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep4		3389
-	281564798	music 2_03	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\music 2.0_D32A54F0.wem		\Actor-Mixer Hierarchy\Default Work Unit\music\musicrandom\music 2_03		1118651
+	281564798	music 2_03	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\music 2.0_151EFBD8.wem		\Actor-Mixer Hierarchy\Default Work Unit\music\musicrandom\music 2_03		1118651
 	322061684	footstep9	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\footstep9_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep9		4008
 	362436617	footstep3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\footstep3_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep3		3672
 	369275642	kaffe svæve	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\kaffe svæve_92086C12.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeFloating\kaffe svæve		39310
@@ -149,7 +149,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	398732041	falldeath2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\falldeath2_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falldeath2		5615
 	426299725	tærte pacman2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\tærte pacman2_AA01BA23.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\piePacman\tærte pacman2		59327
 	456317862	footstep10	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\footstep10_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep10		3361
-	480880974	tomat fall	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\tomat fall_04B973AF.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\tomat fall		3410
+	480880974	tomat fall	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\tomat fall_7F75312E.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\tomat fall		3410
 	497596001	dying_3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\dying_3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\death\dying_3		26072
 	509327452	yogurt_pickup_2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\yogurt_pickup_2_334D39AF.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\youghurt\yogurt_pickup_2		15613
 	560350528	falldeath1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\falldeath1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falldeath1		4606
@@ -159,32 +159,32 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	631407802	menu music	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\menu music_37B59102.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\menu music		876238
 	637556535	footstep8	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\footstep8_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep8		3739
 	639126855	tærte pacman1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\tærte pacman1_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\piePacman\tærte pacman1		2964
-	652017141	cherry eksplosion4	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\cherry eksplosion4_1E3C0D60.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion4		24626
+	652017141	cherry eksplosion4	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\cherry eksplosion4_E3C1F120.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion4		24626
 	681218366	dying_bit_3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\dying_bit_3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\death\dying_bit_3		30838
 	700799902	footstep2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\footstep2_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep2		3297
-	709227095	boy_jump_bit_2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\boy_jump_bit_2_BA7FEB66.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_bit_2		5203
+	709227095	boy_jump_bit_2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\boy_jump_bit_2_B97F1F9E.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_bit_2		5203
 	726322053	kaffespyt	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\kaffespyt_BC1C572E.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeSpit\kaffespyt		533032
-	753186888	music 2_04	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\music 2.0_8ECAE5DC.wem		\Actor-Mixer Hierarchy\Default Work Unit\music\musicrandom\music 2_04		992096
+	753186888	music 2_04	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\music 2.0_A73B9558.wem		\Actor-Mixer Hierarchy\Default Work Unit\music\musicrandom\music 2_04		992096
 	789749720	falldeath4	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\falldeath4_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falldeath4		4472
 	803929683	menuclickback	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\menuclickback_1DBB07E0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\menuclickback		8808
 	809159328	tærte pacman4	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\tærte pacman4_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\piePacman\tærte pacman4		2046
 	839441337	footstep_3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\footstep_3_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_3		4184
-	859442589	cherryFAll	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\tomat fall_D3FBAFA6.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryFAll		3238
-	861941171	music 2_01	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\music 2.0_8901156A.wem		\Actor-Mixer Hierarchy\Default Work Unit\music\musicrandom\music 2_01		1686626
+	859442589	cherryFAll	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\tomat fall_FA2FB168.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryFAll		3238
+	861941171	music 2_01	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\music 2.0_CF8482F3.wem		\Actor-Mixer Hierarchy\Default Work Unit\music\musicrandom\music 2_01		1686626
 	894838950	menuclickforward	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\menuclickforward_6CF05BB8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\menuclickforward		10621
-	898442410	boy_jump_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\boy_jump_1_4989F56C.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_1		5313
+	898442410	boy_jump_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\boy_jump_1_FBF087FC.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_1		5313
 	902695573	footstep_2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\footstep_2_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_2		4889
 	906306353	power_up_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\power_up_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\power_up_1		104260
 	929128180	footstep_4	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\footstep_4_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_4		4096
-	949877070	music 2_02	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\music 2.0_55ACCDA7.wem		\Actor-Mixer Hierarchy\Default Work Unit\music\musicrandom\music 2_02		1432496
-	958543224	cherry eksplosion3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\cherry eksplosion3_E317CED0.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion3		27585
-	962648408	boy_jump_2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\boy_jump_2_E7A9B9FF.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_2		4417
-	970149049	boy_jump_bit_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\boy_jump_bit_1_3528C535.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_bit_1		4574
+	949877070	music 2_02	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\music 2.0_21169451.wem		\Actor-Mixer Hierarchy\Default Work Unit\music\musicrandom\music 2_02		1432496
+	958543224	cherry eksplosion3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\cherry eksplosion3_89A4D907.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion3		27585
+	962648408	boy_jump_2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\boy_jump_2_7B96C2E6.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_2		4417
+	970149049	boy_jump_bit_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\boy_jump_bit_1_0D7D1987.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_bit_1		4574
 	987428480	move_swipe	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\move_swipe_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\move_swipe		3068
 	1022631105	tomat splat	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\tomat splat_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\tomat splat		11039
-	1029138932	music 2_05	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\music 2.0_1F83459A.wem		\Actor-Mixer Hierarchy\Default Work Unit\music\musicrandom\music 2_05		776024
+	1029138932	music 2_05	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\music 2.0_18E6A6AF.wem		\Actor-Mixer Hierarchy\Default Work Unit\music\musicrandom\music 2_05		776024
 	1041246594	kaffesip	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\kaffesip_34682266.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\kaffesip		53592
-	1047098623	cherry eksplosion2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\cherry eksplosion2_3D0996BB.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion2		18303
+	1047098623	cherry eksplosion2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\cherry eksplosion2_ACB75A22.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion2		18303
 	1063243270	tærte pacman3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\tærte pacman3_77EDC8D8.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\piePacman\tærte pacman3		59125
 	1071447843	footstep_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Windows\SFX\footstep_1_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_1		4913
 

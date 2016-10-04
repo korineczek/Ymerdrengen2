@@ -29,6 +29,7 @@
 				<Event Id="1597699814" Name="coffeSpit" ObjectPath="\Events\Default Work Unit\coffeSpit"/>
 				<Event Id="779278001" Name="death" ObjectPath="\Events\Default Work Unit\death"/>
 				<Event Id="221836932" Name="fallDeath" ObjectPath="\Events\Default Work Unit\fallDeath"/>
+				<Event Id="1125500713" Name="intro" ObjectPath="\Events\Default Work Unit\intro"/>
 				<Event Id="3833651337" Name="jump" ObjectPath="\Events\Default Work Unit\jump"/>
 				<Event Id="100379585" Name="menuClickBack" ObjectPath="\Events\Default Work Unit\menuClickBack"/>
 				<Event Id="508050639" Name="menuClickFoward" ObjectPath="\Events\Default Work Unit\menuClickFoward"/>
@@ -40,8 +41,14 @@
 				<Event Id="605262137" Name="pieCharge" ObjectPath="\Events\Default Work Unit\pieCharge"/>
 				<Event Id="2350880065" Name="pieChargeStop" ObjectPath="\Events\Default Work Unit\pieChargeStop"/>
 				<Event Id="1961133422" Name="placeTile" ObjectPath="\Events\Default Work Unit\placeTile"/>
+				<Event Id="3041356613" Name="playTilesClicks" ObjectPath="\Events\Default Work Unit\playTilesClicks"/>
+				<Event Id="2592373348" Name="playTilesGrinding" ObjectPath="\Events\Default Work Unit\playTilesGrinding"/>
+				<Event Id="2147323136" Name="playTilesRubble" ObjectPath="\Events\Default Work Unit\playTilesRubble"/>
 				<Event Id="3950429679" Name="powerUp" ObjectPath="\Events\Default Work Unit\powerUp"/>
 				<Event Id="953277036" Name="resume" ObjectPath="\Events\Default Work Unit\resume"/>
+				<Event Id="2342575563" Name="stopTilesClicks" ObjectPath="\Events\Default Work Unit\stopTilesClicks"/>
+				<Event Id="1045712006" Name="stopTilesGrinding" ObjectPath="\Events\Default Work Unit\stopTilesGrinding"/>
+				<Event Id="2616974346" Name="stopTilesRubble" ObjectPath="\Events\Default Work Unit\stopTilesRubble"/>
 				<Event Id="1142183312" Name="tomatoFall" ObjectPath="\Events\Default Work Unit\tomatoFall"/>
 				<Event Id="4180613081" Name="tomatoSplat" ObjectPath="\Events\Default Work Unit\tomatoSplat"/>
 			</IncludedEvents>
@@ -49,6 +56,10 @@
 				<File Id="11612723" Language="SFX">
 					<ShortName>kaffe svæve2.wav</ShortName>
 					<Path>SFX\kaffe svæve2_F6A3B67C.wem</Path>
+				</File>
+				<File Id="28285552" Language="SFX">
+					<ShortName>start platforme rumlen.wav</ShortName>
+					<Path>SFX\start platforme rumlen_CDFE0F68.wem</Path>
 				</File>
 				<File Id="47517820" Language="SFX">
 					<ShortName>power_up_4.wav</ShortName>
@@ -66,17 +77,21 @@
 					<ShortName>footstep6.wav</ShortName>
 					<Path>SFX\footstep6_960863FB.wem</Path>
 				</File>
+				<File Id="136404851" Language="SFX">
+					<ShortName>start scene .wav</ShortName>
+					<Path>SFX\start scene _CDFE0F68.wem</Path>
+				</File>
 				<File Id="139903624" Language="SFX">
 					<ShortName>power_up_3.wav</ShortName>
 					<Path>SFX\power_up_3_9E69E797.wem</Path>
 				</File>
 				<File Id="172811041" Language="SFX">
 					<ShortName>cherry eksplosion.wav</ShortName>
-					<Path>SFX\cherry eksplosion_8473F1AA.wem</Path>
+					<Path>SFX\cherry eksplosion_C826C09F.wem</Path>
 				</File>
 				<File Id="186580343" Language="SFX">
 					<ShortName>cherry lunte.wav</ShortName>
-					<Path>SFX\cherry lunte_52C2C5DE.wem</Path>
+					<Path>SFX\cherry lunte_7D68DB91.wem</Path>
 				</File>
 				<File Id="203156319" Language="SFX">
 					<ShortName>place_tile_2.wav</ShortName>
@@ -84,7 +99,7 @@
 				</File>
 				<File Id="204181595" Language="SFX">
 					<ShortName>cherry eksplosion5.wav</ShortName>
-					<Path>SFX\cherry eksplosion5_37E1BF23.wem</Path>
+					<Path>SFX\cherry eksplosion5_61585ABB.wem</Path>
 				</File>
 				<File Id="220625273" Language="SFX">
 					<ShortName>falling_bit_1.wav</ShortName>
@@ -148,7 +163,7 @@
 				</File>
 				<File Id="480880974" Language="SFX">
 					<ShortName>tomat fall.wav</ShortName>
-					<Path>SFX\tomat fall_04B973AF.wem</Path>
+					<Path>SFX\tomat fall_7F75312E.wem</Path>
 				</File>
 				<File Id="497596001" Language="SFX">
 					<ShortName>dying_3.wav</ShortName>
@@ -174,6 +189,10 @@
 					<ShortName>music 2.0.wav</ShortName>
 					<Path>SFX\music 2.0_31305939.wem</Path>
 				</File>
+				<File Id="624711211" Language="SFX">
+					<ShortName>start platforme click tør.wav</ShortName>
+					<Path>SFX\start platforme click tør_CDFE0F68.wem</Path>
+				</File>
 				<File Id="631407802" Language="SFX">
 					<ShortName>menu music.wav</ShortName>
 					<Path>SFX\menu music_37B59102.wem</Path>
@@ -184,7 +203,7 @@
 				</File>
 				<File Id="652017141" Language="SFX">
 					<ShortName>cherry eksplosion4.wav</ShortName>
-					<Path>SFX\cherry eksplosion4_1E3C0D60.wem</Path>
+					<Path>SFX\cherry eksplosion4_E3C1F120.wem</Path>
 				</File>
 				<File Id="681218366" Language="SFX">
 					<ShortName>dying_bit_3.wav</ShortName>
@@ -196,7 +215,7 @@
 				</File>
 				<File Id="709227095" Language="SFX">
 					<ShortName>boy_jump_bit_2.wav</ShortName>
-					<Path>SFX\boy_jump_bit_2_BA7FEB66.wem</Path>
+					<Path>SFX\boy_jump_bit_2_B97F1F9E.wem</Path>
 				</File>
 				<File Id="726322053" Language="SFX">
 					<ShortName>kaffespyt.wav</ShortName>
@@ -216,7 +235,7 @@
 				</File>
 				<File Id="859442589" Language="SFX">
 					<ShortName>tomat fall.wav</ShortName>
-					<Path>SFX\tomat fall_D3FBAFA6.wem</Path>
+					<Path>SFX\tomat fall_FA2FB168.wem</Path>
 				</File>
 				<File Id="894838950" Language="SFX">
 					<ShortName>menuclickforward.wav</ShortName>
@@ -224,7 +243,7 @@
 				</File>
 				<File Id="898442410" Language="SFX">
 					<ShortName>boy_jump_1.wav</ShortName>
-					<Path>SFX\boy_jump_1_4989F56C.wem</Path>
+					<Path>SFX\boy_jump_1_FBF087FC.wem</Path>
 				</File>
 				<File Id="902695573" Language="SFX">
 					<ShortName>footstep_2.wav</ShortName>
@@ -240,15 +259,15 @@
 				</File>
 				<File Id="958543224" Language="SFX">
 					<ShortName>cherry eksplosion3.wav</ShortName>
-					<Path>SFX\cherry eksplosion3_E317CED0.wem</Path>
+					<Path>SFX\cherry eksplosion3_89A4D907.wem</Path>
 				</File>
 				<File Id="962648408" Language="SFX">
 					<ShortName>boy_jump_2.wav</ShortName>
-					<Path>SFX\boy_jump_2_E7A9B9FF.wem</Path>
+					<Path>SFX\boy_jump_2_7B96C2E6.wem</Path>
 				</File>
 				<File Id="970149049" Language="SFX">
 					<ShortName>boy_jump_bit_1.wav</ShortName>
-					<Path>SFX\boy_jump_bit_1_3528C535.wem</Path>
+					<Path>SFX\boy_jump_bit_1_0D7D1987.wem</Path>
 				</File>
 				<File Id="987428480" Language="SFX">
 					<ShortName>move_swipe.wav</ShortName>
@@ -264,7 +283,11 @@
 				</File>
 				<File Id="1047098623" Language="SFX">
 					<ShortName>cherry eksplosion2.wav</ShortName>
-					<Path>SFX\cherry eksplosion2_3D0996BB.wem</Path>
+					<Path>SFX\cherry eksplosion2_ACB75A22.wem</Path>
+				</File>
+				<File Id="1048238672" Language="SFX">
+					<ShortName>start platforme rubble.wav</ShortName>
+					<Path>SFX\start platforme rubble_CDFE0F68.wem</Path>
 				</File>
 				<File Id="1063243270" Language="SFX">
 					<ShortName>tærte pacman3.wav</ShortName>

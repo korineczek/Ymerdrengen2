@@ -31,6 +31,7 @@ public enum SoundParameterHandle
 {
     MasterVolume,
     MusicVolume,
+    SoundVolume,
     Distance
 }
 
@@ -50,7 +51,7 @@ public class AudioManager : MonoBehaviour
             SetSoundParameter(SoundParameterHandle.MasterVolume, 0);
             return;
         }
-        SetSoundParameter(SoundParameterHandle.MasterVolume, PlayerPrefs.GetFloat("SoundVolume"));
+        SetSoundParameter(SoundParameterHandle.MasterVolume, PlayerPrefs.GetInt("SoundVolume"));
 
         if (InMenu) {
             StartMenuMusic();
@@ -68,6 +69,8 @@ public class AudioManager : MonoBehaviour
                 AkSoundEngine.SetRTPCValue("masterVolume", value, obj); break;
             case SoundParameterHandle.MusicVolume:
                 AkSoundEngine.SetRTPCValue("musicVolume", value, obj); break;
+            case SoundParameterHandle.SoundVolume:
+                Debug.Log(string.Format("Sound Volume set to: {0} (But doesn't work!)", value)); break;
             default:
                 throw new System.Exception("Enum variant doesn't exist, update SetSoundParameter method (AudioManager.cs)");
         }

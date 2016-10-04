@@ -6,15 +6,22 @@ Event	ID	Name			Wwise Object Path	Notes
 	779278001	death			\Default Work Unit\death	
 	909770326	coffeEnterScene			\Default Work Unit\coffeEnterScene	
 	953277036	resume			\Default Work Unit\resume	
+	1045712006	stopTilesGrinding			\Default Work Unit\stopTilesGrinding	
+	1125500713	intro			\Default Work Unit\intro	
 	1142183312	tomatoFall			\Default Work Unit\tomatoFall	
 	1205645828	musicPlay			\Default Work Unit\musicPlay	
 	1597699814	coffeSpit			\Default Work Unit\coffeSpit	
 	1961133422	placeTile			\Default Work Unit\placeTile	
 	2044852745	cherryFuse			\Default Work Unit\cherryFuse	
 	2136433081	menuMusicStop			\Default Work Unit\menuMusicStop	
+	2147323136	playTilesRubble			\Default Work Unit\playTilesRubble	
+	2342575563	stopTilesClicks			\Default Work Unit\stopTilesClicks	
 	2350880065	pieChargeStop			\Default Work Unit\pieChargeStop	
 	2432606425	cherryFall			\Default Work Unit\cherryFall	
+	2592373348	playTilesGrinding			\Default Work Unit\playTilesGrinding	
+	2616974346	stopTilesRubble			\Default Work Unit\stopTilesRubble	
 	3006414291	menuMusicPlay			\Default Work Unit\menuMusicPlay	
+	3041356613	playTilesClicks			\Default Work Unit\playTilesClicks	
 	3092587493	pause			\Default Work Unit\pause	
 	3291087764	coffeSip			\Default Work Unit\coffeSip	
 	3619145211	cherryExplosion			\Default Work Unit\cherryExplosion	
@@ -123,15 +130,17 @@ Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	11612723	kaffe svæve2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\kaffe svæve2_F6A3B67C.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeFloating\kaffe svæve2		27797
+	28285552	start platforme rumlen	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\start platforme rumlen_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\cinematics\start platforme rumlen		17012
 	47517820	power_up_4	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\power_up_4_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\power_up_4		132620
 	66191397	place_tile_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\place_tile_1_9C012982.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\place_tile_1		6612
 	96321094	footstep5	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\footstep5_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep5		4252
 	98010391	footstep6	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\footstep6_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep6		4118
+	136404851	start scene	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\start scene _CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\cinematics\start scene		90539
 	139903624	power_up_3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\power_up_3_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\power_up_3		71088
-	172811041	cherry eksplosion	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\cherry eksplosion_8473F1AA.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion		17591
-	186580343	cherry lunte	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\cherry lunte_52C2C5DE.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherry lunte		63482
+	172811041	cherry eksplosion	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\cherry eksplosion_C826C09F.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion		17591
+	186580343	cherry lunte	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\cherry lunte_7D68DB91.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherry lunte		63482
 	203156319	place_tile_2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\place_tile_2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\place_tile_2		60984
-	204181595	cherry eksplosion5	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\cherry eksplosion5_37E1BF23.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion5		18674
+	204181595	cherry eksplosion5	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\cherry eksplosion5_61585ABB.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion5		18674
 	220625273	falling_bit_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\falling_bit_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falling_bit_1		43794
 	251275923	yogurt_pickup_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\yogurt_pickup_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\youghurt\yogurt_pickup_1		21522
 	257221351	footstep_5	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\footstep_5_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_5		4459
@@ -147,36 +156,38 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	398732041	falldeath2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\falldeath2_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falldeath2		5615
 	426299725	tærte pacman2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\tærte pacman2_AA01BA23.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\piePacman\tærte pacman2		59327
 	456317862	footstep10	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\footstep10_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep10		3361
-	480880974	tomat fall	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\tomat fall_04B973AF.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\tomat fall		3410
+	480880974	tomat fall	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\tomat fall_7F75312E.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\tomat fall		3410
 	497596001	dying_3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\dying_3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\death\dying_3		26072
 	509327452	yogurt_pickup_2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\yogurt_pickup_2_334D39AF.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\youghurt\yogurt_pickup_2		15613
 	560350528	falldeath1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\falldeath1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falldeath1		4606
 	583747879	kaffe svæve3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\kaffe svæve3_F29CEB32.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeFloating\kaffe svæve3		50087
 	601422202	kaffespyt3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\kaffespyt3_B9E7B591.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeSpit\kaffespyt3		525672
 	623994141	music 2_0	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\music 2.0_31305939.wem		\Actor-Mixer Hierarchy\Default Work Unit\music\music 2_0		2077598
+	624711211	start platforme click tør	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\start platforme click tør_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\cinematics\start platforme click tør		20974
 	631407802	menu music	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\menu music_37B59102.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\menu music		876238
 	637556535	footstep8	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\footstep8_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep8		3739
-	652017141	cherry eksplosion4	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\cherry eksplosion4_1E3C0D60.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion4		24626
+	652017141	cherry eksplosion4	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\cherry eksplosion4_E3C1F120.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion4		24626
 	681218366	dying_bit_3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\dying_bit_3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\death\dying_bit_3		30838
 	700799902	footstep2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\footstep2_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep2		3297
-	709227095	boy_jump_bit_2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\boy_jump_bit_2_BA7FEB66.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_bit_2		5203
+	709227095	boy_jump_bit_2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\boy_jump_bit_2_B97F1F9E.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_bit_2		5203
 	726322053	kaffespyt	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\kaffespyt_BC1C572E.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\coffeSpit\kaffespyt		533032
 	789749720	falldeath4	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\falldeath4_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falldeath4		4472
 	803929683	menuclickback	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\menuclickback_1DBB07E0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\menuclickback		8808
 	839441337	footstep_3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\footstep_3_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_3		4184
-	859442589	cherryFAll	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\tomat fall_D3FBAFA6.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryFAll		3238
+	859442589	cherryFAll	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\tomat fall_FA2FB168.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryFAll		3238
 	894838950	menuclickforward	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\menuclickforward_6CF05BB8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\menuclickforward		10621
-	898442410	boy_jump_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\boy_jump_1_4989F56C.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_1		5313
+	898442410	boy_jump_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\boy_jump_1_FBF087FC.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_1		5313
 	902695573	footstep_2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\footstep_2_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_2		4889
 	906306353	power_up_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\power_up_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\power_up_1		104260
 	929128180	footstep_4	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\footstep_4_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_4		4096
-	958543224	cherry eksplosion3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\cherry eksplosion3_E317CED0.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion3		27585
-	962648408	boy_jump_2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\boy_jump_2_E7A9B9FF.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_2		4417
-	970149049	boy_jump_bit_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\boy_jump_bit_1_3528C535.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_bit_1		4574
+	958543224	cherry eksplosion3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\cherry eksplosion3_89A4D907.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion3		27585
+	962648408	boy_jump_2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\boy_jump_2_7B96C2E6.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_2		4417
+	970149049	boy_jump_bit_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\boy_jump_bit_1_0D7D1987.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\jump\boy_jump_bit_1		4574
 	987428480	move_swipe	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\move_swipe_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\move_swipe		3068
 	1022631105	tomat splat	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\tomat splat_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\tomat splat		11039
 	1041246594	kaffesip	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\kaffesip_34682266.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\kaffesip		53592
-	1047098623	cherry eksplosion2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\cherry eksplosion2_3D0996BB.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion2		18303
+	1047098623	cherry eksplosion2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\cherry eksplosion2_ACB75A22.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion2		18303
+	1048238672	start platforme rubble	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\start platforme rubble_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\cinematics\start platforme rubble		38102
 	1063243270	tærte pacman3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\tærte pacman3_77EDC8D8.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\piePacman\tærte pacman3		59125
 	1071447843	footstep_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\footstep_1_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_1		4913
 
