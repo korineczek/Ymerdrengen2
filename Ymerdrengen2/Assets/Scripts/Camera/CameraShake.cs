@@ -9,6 +9,10 @@ public class CameraShake : MonoBehaviour {
 
     public float ShakeIntensity = 0.1f;
 
+    public float ExplosionShakeVelocity = 15;
+
+    public bool ExplosionShake = false;
+
     public enum Orientation
     {
         horizontal = 0, vertical = 1
@@ -18,23 +22,18 @@ public class CameraShake : MonoBehaviour {
     public bool ShakeOtherDirection = false;
 
 
-<<<<<<< HEAD
-    // Usage StartCoroutine(startShake(ShakeOrientation, ShakeOtherDirection));
-    public IEnumerator startShake(Orientation ScreenOrientation, bool shakeOtherDirection = false)
-=======
-    public void startShake(Orientation ScreenOrientation, bool shakeOtherDirection = false)
+    public void startShake(bool isExplosion)
     {
-        StartCoroutine(startCoroutineShake(ScreenOrientation, shakeOtherDirection));
+        StartCoroutine(startCoroutineShake(isExplosion));
     }
 
     // Usage StartCoroutine(startShake(ShakeOrientation, ShakeOtherDirection));
-    public IEnumerator startCoroutineShake(Orientation ScreenOrientation, bool shakeOtherDirection = false)
->>>>>>> 6ae3ff336e7fc7ccef199c3f29c27a52146a4885
+    public IEnumerator startCoroutineShake(bool isExplosion = false)
     {
 
         Vector3 direction;
         //horizontal shake
-        if (ScreenOrientation == 0)
+        if (ShakeOrientation == 0)
         {
             //start randomly
             direction = Vector3.left;
@@ -63,12 +62,8 @@ public class CameraShake : MonoBehaviour {
 
             elapsed += Time.deltaTime * 4;
 
-<<<<<<< HEAD
-            float percentComplete = elapsed / ShakeDuration;
-=======
             float percentComplete = ShakeDuration / elapsed;
             //adjust here
->>>>>>> 6ae3ff336e7fc7ccef199c3f29c27a52146a4885
 
             shakeTurn++;
 
@@ -76,8 +71,13 @@ public class CameraShake : MonoBehaviour {
 
             Vector3 currentDirection = direction;
 
-
             float currentShakeVelocity = ShakeVelocity * (percentComplete * Time.deltaTime);
+
+            if (ExplosionShake && isExplosion)
+            {
+                currentShakeVelocity = ExplosionShakeVelocity * (percentComplete * Time.deltaTime);
+            }
+            
             
             //reverse direction
             if (shakeTurn % 2 != 0)
@@ -98,7 +98,7 @@ public class CameraShake : MonoBehaviour {
             Camera.main.transform.position += currentShakeVelocity * currentDirection;
 
             //shake in random directions too
-            if (shakeOtherDirection)
+            if (ShakeOtherDirection)
             {
                 float damper = 1.0f - Mathf.Clamp(4.0f * percentComplete - 3.0f, 0.0f, 1.0f);
                 // map value to [-1, 1]

@@ -8,5 +8,5 @@ public static class GridData {
     public static float offset = 0.5f;
     public static Grid<BaseTile> grid;
     public static GridManager gridManager;
-
+    public static UIManager _UIManager;
 }
