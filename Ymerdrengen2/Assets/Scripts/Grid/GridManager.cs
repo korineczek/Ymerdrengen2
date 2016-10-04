@@ -147,6 +147,7 @@ public class GridManager : MonoBehaviour {
             tileObjects[x, y] = null;
             getTile(x,y).ToggleFlags(FieldStatus.Floor);
         }
+        initNewTile(NewTileInitializer);
     }
 
     public void addTile(int x, int y)
@@ -403,13 +404,14 @@ public class GridManager : MonoBehaviour {
 
     public void NewTilePossiblePlace(Vector2 pos)
     {
-        //possiblePlacement = true;
+        // this is used for sandra to choose which positions to glow
         GameObject possibleTile = Instantiate(Resources.Load("Prefabs/PossTileObject") as GameObject);
         possibleTile.transform.position = new Vector3(pos.x + offset, 0, pos.y + offset);
 
         if (!getTile(pos).IsNewTile())
             getTile(pos).ToggleFlags(FieldStatus.NewTile);
 
+        // this is used for glowing all possible positions
         //for (int x = 0; x < gridSize; x++)
         //{
         //    for (int y = 0; y < gridSize; y++)
