@@ -41,7 +41,11 @@ public class ConeBuddy : WalkingEnemy
 
         if (hold)
         {
-            filler.SetFillAmount(timer / holdTime + 0.1f);
+            //float tic = ((float)((int)((timer / holdTime) * 100) / 33)) / 100f;
+            Debug.Log((timer / holdTime));
+            float tic = ((int)((timer / holdTime + 0.33f) / 0.33f)) * 0.33f;
+           
+            filler.SetFillAmount(tic);
         }
 
         timer += Time.deltaTime;
@@ -114,9 +118,9 @@ public class ConeBuddy : WalkingEnemy
                     int intX = round(point.x);
                     int intZ = round(point.z);
                     //DEBUG
-                    if (x == 2) { 
-                        SPAWNCUBE(point, z + (1 * z) + 1);
-                    }
+                    //if (x == 2) { 
+                    //  SPAWNCUBE(point, z + (1 * z) + 1);
+                    //}
                     //DEBUG
                     if (intX >= 0 && intZ >= 0 && intX < GridData.gridSize && intZ < GridData.gridSize)
                     {
