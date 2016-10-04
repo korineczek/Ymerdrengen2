@@ -122,7 +122,7 @@ public class ConeBuddy : WalkingEnemy
                     {
                         if (GridData.grid[intX, intZ].HasFloor())
                         {
-                            GridData.gridManager.hitTile(intX, intZ);
+                            GridData.gridManager.hitTile(intX, intZ, "ConeBuddy");
                         }
                     }
                 }

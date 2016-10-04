@@ -53,6 +53,11 @@ public class PickUpScript : MonoBehaviour
     private bool isPicked;
 
     /// <summary>
+    /// boolean is rotating above head
+    /// </summary>
+    private bool isRotating;
+
+    /// <summary>
     /// starting position of ymer
     /// </summary>
     private Vector3 startPos;
@@ -68,6 +73,7 @@ public class PickUpScript : MonoBehaviour
     {
         Player = GameObject.Find("Character");
         isPicked = false;
+        isRotating = false;
         transform.position = new Vector3(transform.position.x, transform.position.y + PickUpStandingHeight, transform.position.z);
         pickUpStartPos = transform.position.y;
         pickUpEndPos = transform.position.y + PickUpAboveHead;
@@ -89,10 +95,16 @@ public class PickUpScript : MonoBehaviour
             this.transform.SetParent(Player.transform);
             Player.GetComponent<Player>().numYmer++;
             isPicked = false;
+            isRotating = true;
         }
-       
-            //transform.RotateAround(new Vector3(0, startPos.y, 0), Vector3.right, 30 * Time.deltaTime);
-        
+
+        if (isRotating)
+        {
+            transform.RotateAround(Player.transform.position, Vector3.up, 20 * Time.deltaTime);
+
+        }
+
+
 
     }
 
@@ -101,7 +113,6 @@ public class PickUpScript : MonoBehaviour
     /// </summary>
     public void TriggerPickUp()
     {
-        Debug.Log("PICKUP TRIGGERD");
         isPicked = true;
         // lerp the pick up above player's head
         transform.position = new Vector3(transform.position.x, Mathf.Lerp(pickUpStartPos, pickUpEndPos, Time.deltaTime * PickUpGoesUpSpeed), transform.position.z);
