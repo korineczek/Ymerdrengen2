@@ -39,7 +39,7 @@ public class GridManager : MonoBehaviour {
     bool behindTile;
     bool rightTile;
     bool frontTile;
-
+    public bool isIntroAnimationPresent = false;
 
     void Awake()
     {
@@ -61,8 +61,7 @@ public class GridManager : MonoBehaviour {
         possiblePlacement = false;
 
         if (NewTileInitializer.Length > 0)
-            initNewTile(NewTileInitializer);
-       
+            initNewTile(NewTileInitializer);  
 
     }
 
@@ -77,6 +76,13 @@ public class GridManager : MonoBehaviour {
     void initPlayer()
     {
         PlayerCharacter.transform.position = new Vector3(PlayerPosition.x + GridData.offset, 0, PlayerPosition.y + GridData.offset);
+        GameObject obj = GameObject.Find("IntroAnimation");
+        if(obj != null && obj.activeSelf)
+        {
+            PlayerCharacter.gameObject.SetActive(false);
+            isIntroAnimationPresent = true;
+            obj.transform.position = PlayerCharacter.transform.position;
+        }
     }
 
     void initFields()
