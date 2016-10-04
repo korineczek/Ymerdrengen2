@@ -103,6 +103,8 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyTypes\DropDude.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyTypes\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyTypes\LineGuy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyUI\UIManager.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyUI\filledScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\SpawnPattern.cs" />
     <Compile Include="Assets\Scripts\Enemy\WalkingEnemy.cs" />
     <Compile Include="Assets\Scripts\Grid\BaseTile.cs" />

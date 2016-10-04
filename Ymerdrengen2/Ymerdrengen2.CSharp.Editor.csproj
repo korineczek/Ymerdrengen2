@@ -163,6 +163,7 @@
     <None Include="Assets\Graphics\Shaders\Glow\_Internal\_MKGlowEffect\MKGlowCompose.shader" />
     <None Include="Assets\Graphics\Shaders\Glow\_Internal\_MKGlowEffect\MKGlowRender.shader" />
     <None Include="Assets\Graphics\Shaders\PickUpGlowShader.shader" />
+    <None Include="Assets\Graphics\Shaders\VaryingColor.shader" />
     <None Include="Assets\Scenes\Description.txt" />
     <None Include="Assets\Scripts\Description.txt" />
     <None Include="Assets\StreamingAssets\Audio\GeneratedSoundBanks\Android\Init.txt" />
