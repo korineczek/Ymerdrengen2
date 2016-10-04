@@ -9,9 +9,9 @@ public class CameraShake : MonoBehaviour {
 
     public float ShakeIntensity = 0.1f;
 
-    public float ExplosionShakeVelocity = 15;
+    public float ExplosionShakeVelocity = 4;
 
-    public bool ExplosionShake = false;
+    public bool ExplosionShake = true;
 
     public enum Orientation
     {

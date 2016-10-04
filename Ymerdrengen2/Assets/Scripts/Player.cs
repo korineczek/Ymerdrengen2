@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public Vector3 startPos;
     public Vector3 endPos;
     public bool isLerping;
+    public bool isFalling;
     public float speed;
     private float startTime;
     private float journeyLength;
@@ -24,18 +25,24 @@ public class Player : MonoBehaviour
         startTime = Time.time;
         journeyLength = 1;
         startPos = endPos = transform.position;
-
+        isFalling = false;
         numYmer = 0;
     }
 
-    public void Move(MoveDirection dir)
+    public void Move(MoveDirection dir, bool fall)
     {
-        PlayerAnim.SetBool("Move", true);
+        if (!fall) { 
+            PlayerAnim.SetBool("Move", true);
 
-        if(PlayerAnim.GetCurrentAnimatorStateInfo(0).IsName("Ymerdreng_Jump_Anim_001"))
+            if (PlayerAnim.GetCurrentAnimatorStateInfo(0).IsName("Ymerdreng_Jump_Anim_001"))
+            {
+                Debug.Log("IS JUMOPING WHEEEE");
+                PlayerAnim.Play("Ymerdreng_Jump_Anim_001", -1, 0);
+            }
+        }
+        else
         {
-            Debug.Log("IS JUMOPING WHEEEE");
-            PlayerAnim.Play("Ymerdreng_Jump_Anim_001", -1, 0);
+            PlayerAnim.SetTrigger("Fall");
         }
 
         switch (dir) {
@@ -99,6 +106,7 @@ public class Player : MonoBehaviour
         {
             PlayerAnim.SetBool("Move", false);
         }
+
 
         //Debug.Log("LERPING");
         float distCovered = (Time.time - startTime) * speed;

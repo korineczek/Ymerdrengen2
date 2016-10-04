@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Credits.cs" />
      <Compile Include="Assets\GodModeScript.cs" />
      <Compile Include="Assets\Graphics\Shaders\Glow\Script\MKGlow.cs" />
      <Compile Include="Assets\LeanTouch\Examples\SimpleDrag.cs" />
@@ -78,6 +79,8 @@
      <Compile Include="Assets\Scripts\Enemy\EnemyTypes\DropDude.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyTypes\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyTypes\LineGuy.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyUI\UIManager.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyUI\filledScript.cs" />
      <Compile Include="Assets\Scripts\Enemy\SpawnPattern.cs" />
      <Compile Include="Assets\Scripts\Enemy\WalkingEnemy.cs" />
      <Compile Include="Assets\Scripts\Grid\BaseTile.cs" />
@@ -102,6 +105,7 @@
      <Compile Include="Assets\Scripts\UI\Menu\SetupData.cs" />
      <Compile Include="Assets\Scripts\UI\Menu\TestSave.cs" />
      <Compile Include="Assets\Scripts\UI\Menu\UnlockLevel.cs" />
+     <Compile Include="Assets\Scripts\introAnimation.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Android\AkAudioOutputType_Android.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Android\AkMemPoolAttributes_Android.cs" />
      <Compile Include="Assets\Wwise\Deployment\API\Generated\Android\AkPlatformInitSettings_Android.cs" />

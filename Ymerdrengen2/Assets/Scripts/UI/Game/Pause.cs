@@ -12,7 +12,32 @@ public class Pause : MonoBehaviour {
     public GameObject unPauseButton;
     public GameObject resetButton;
     public GameObject menuButton;
-   
+
+    bool isPaused;
+
+    public void Start()
+    {
+        isPaused = false;
+    }
+
+    public void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused) 
+        {
+            Debug.Log("Hey");
+            PauseGame();
+            isPaused = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
+        {
+            UnPauseGame();
+            isPaused = false;
+        }
+
+       
+    }
 
     public void PauseGame()
     {
@@ -47,13 +72,11 @@ public class Pause : MonoBehaviour {
     public void ResetLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //Application.LoadLevel(Application.loadedLevel);
     }
 
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
-        //Application.LoadLevel(0);
     }
 
 }

@@ -58,14 +58,12 @@ public class PickUpScript : MonoBehaviour
     private bool isRotating;
 
     /// <summary>
-    /// starting position of ymer
-    /// </summary>
-    private Vector3 startPos;
-
-    /// <summary>
     /// timer
     /// </summary>
     private float timer;
+
+    GameObject charge;
+
     /// <summary>
     /// start function
     /// </summary>
@@ -74,10 +72,10 @@ public class PickUpScript : MonoBehaviour
         Player = GameObject.Find("Character");
         isPicked = false;
         isRotating = false;
+
         transform.position = new Vector3(transform.position.x, transform.position.y + PickUpStandingHeight, transform.position.z);
         pickUpStartPos = transform.position.y;
         pickUpEndPos = transform.position.y + PickUpAboveHead;
-        startPos = transform.position;
     }
 
     /// <summary>
@@ -100,6 +98,7 @@ public class PickUpScript : MonoBehaviour
 
         if (isRotating)
         {
+            // rotate ymers around player's head
             transform.RotateAround(Player.transform.position, Vector3.up, 20 * Time.deltaTime);
 
         }
@@ -113,17 +112,27 @@ public class PickUpScript : MonoBehaviour
     /// </summary>
     public void TriggerPickUp()
     {
+
         isPicked = true;
         // lerp the pick up above player's head
         transform.position = new Vector3(transform.position.x, Mathf.Lerp(pickUpStartPos, pickUpEndPos, Time.deltaTime * PickUpGoesUpSpeed), transform.position.z);
 
-        if (GridData.gridManager.GetComponent<GridManager>().PickUpCount > 1)
-        {
-            //transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
-            //transform.RotateAround(startPos, Vector3.right, 30 * Time.deltaTime);
-            this.transform.position = new Vector3((transform.position.x + Mathf.Sin(timer) ), transform.position.y, ((transform.position.z + Mathf.Cos(timer) )));
+        // change to the sphere
+        //if(this.gameObject.name == "ymerkarton(Clone)")
+        //{
+            this.gameObject.SetActive(false);
+            
+            charge = Instantiate(Resources.Load("Prefabs/Charge") as GameObject);
+            charge.transform.position = this.transform.position;
+            charge.transform.rotation = this.transform.rotation;
+        //}
 
-        }
+        //if (GridData.gridManager.PickUpCount > 1)
+        //{
+        //    // place picked ymers on a circle 
+        //    this.transform.position = new Vector3((transform.position.x + Mathf.Sin(timer)), transform.position.y, ((transform.position.z + Mathf.Cos(timer))));
+
+        //}
 
     }
 }
