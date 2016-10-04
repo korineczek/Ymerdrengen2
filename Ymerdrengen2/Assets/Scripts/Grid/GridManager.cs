@@ -26,6 +26,7 @@ public class GridManager : MonoBehaviour {
     GameObject[] targetPickUp;
     public int PickUpCount;
     public bool possiblePlacement;
+
     private bool killEventTriggered = false;
 
     public Player PlayerCharacter;
@@ -154,6 +155,22 @@ public class GridManager : MonoBehaviour {
             tileObjects[x, y] = null;
             getTile(x,y).ToggleFlags(FieldStatus.Floor);
         }
+        NewTilePossiblePlace(new Vector2(x, y));
+
+        //if (possiblePlacement)
+        //{
+        //    object[] obj = GameObject.FindObjectsOfType(typeof(GameObject));
+        //    foreach (object o in obj)
+        //    {
+        //        GameObject g = (GameObject)o;
+        //        if (g.name == "PossTileObject(Clone)")
+        //        {
+        //            Destroy(g.gameObject);
+        //        }
+        //    }
+        //    NewTileInitializer[x + (y * gridSize)] = true;
+        //    initNewTile(NewTileInitializer);
+        //}
     }
 
     public void addTile(int x, int y)
@@ -186,7 +203,7 @@ public class GridManager : MonoBehaviour {
         return GridData.grid[(int)coord.x, (int)coord.y];
     }
 
-    public bool hitTile(int x, int y)
+    public bool hitTile(int x, int y, string monsterTag)
     {
         if (!Godmode)
         {
@@ -196,6 +213,22 @@ public class GridManager : MonoBehaviour {
                 killEventTriggered = true;
                 killPlayer();
                 AudioData.PlaySound(SoundHandle.Death);
+
+                if(monsterTag == "ConeBuddy")
+                {
+                    GameObject.FindGameObjectWithTag("Progression").GetComponent<LevelProgression>().CoffieDeath();
+                }
+
+                if (monsterTag == "DropDude")
+                {
+                    GameObject.FindGameObjectWithTag("Progression").GetComponent<LevelProgression>().CherryDeath();
+                }
+
+                if (monsterTag == "LineGuy")
+                {
+                    GameObject.FindGameObjectWithTag("Progression").GetComponent<LevelProgression>().PieDeath();
+                }
+
             }
             return isPlayerHit;
         }
@@ -234,7 +267,7 @@ public class GridManager : MonoBehaviour {
             // if player steps in a tile where a pick up exists
             //if (GridData.grid[(int)newPos.x, (int)newPos.y].IsPickUp())
             //if (getTile(newPos).IsPickUp() && targetPickUp == null) /*this is for carrying only one pickup each time*/
-            if (getTile(newPos).IsPickUp())
+            if (getTile(newPos).IsPickUp() && PickUpCount < numPickUpsCanCarry - 1)
             {
                 PickUpCount++;
                 // identify which pick up player touches (if there are a lot)
@@ -279,7 +312,7 @@ public class GridManager : MonoBehaviour {
             NewTileInitializer[(int)newPos.x + ((int)newPos.y * gridSize)] = false;
             initNewTile(NewTileInitializer);
 
-            if (getTile(newPos).IsPickUp())
+            if (getTile(newPos).IsPickUp() && PickUpCount < numPickUpsCanCarry - 1)
             {
                 PickUpCount++;
                 // identify which pick up player touches (if there are a lot)
@@ -368,7 +401,7 @@ public class GridManager : MonoBehaviour {
 
     public void createPickUp(int x, int y)
     {
-        if ((int)PlayerPosition.x == x && (int)PlayerPosition.y == y)
+        if ((int)PlayerPosition.x == x && (int)PlayerPosition.y == y && PickUpCount < numPickUpsCanCarry - 1)
         {
             GameObject pickUp = Instantiate(Resources.Load("Prefabs/ymerkarton") as GameObject);
             pickUp.transform.position = new Vector3(x + offset, 0, y + offset);
@@ -395,13 +428,14 @@ public class GridManager : MonoBehaviour {
 
     public void NewTilePossiblePlace(Vector2 pos)
     {
-        //possiblePlacement = true;
+        // this is used for sandra to choose which positions to glow
         GameObject possibleTile = Instantiate(Resources.Load("Prefabs/PossTileObject") as GameObject);
         possibleTile.transform.position = new Vector3(pos.x + offset, 0, pos.y + offset);
 
         if (!getTile(pos).IsNewTile())
             getTile(pos).ToggleFlags(FieldStatus.NewTile);
 
+        // this is used for glowing all possible positions
         //for (int x = 0; x < gridSize; x++)
         //{
         //    for (int y = 0; y < gridSize; y++)

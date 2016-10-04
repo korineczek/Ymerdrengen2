@@ -29,29 +29,27 @@ public class DropDude : Enemy {
     //needed for shakes
     private CameraShake cam;
     private bool shakeDrop = false;
+    private bool shakeAnim = false;
 
     void animationControl()
     {
-        if (anim != null && anim.GetCurrentAnimatorStateInfo(0).IsName("EndState"))
+        if (anim != null && anim.GetCurrentAnimatorStateInfo(0).IsName("EndState") && !shakeAnim)
         {
-            //start shake before explosion 0.1f
-            startShake();
+            //start shake only once
+            shakeAnim = true;
             StartCoroutine(startExplosion());
 
         }
     }
 
-    public void startShake()
-    {
-        cam.startShake(cam.ShakeOrientation, true);
-    }
-
     //wait for start shake then explode
     private IEnumerator startExplosion()
     {
-        Debug.Log("START COROUTINE");
-        //@HARDCODED!
+        //start shake
+        startShake(true);
+        
         yield return new WaitForSeconds(0.1f);
+        Debug.Log(name);
         GameObject Explosion = new GameObject();
         if (name == "cherrybomb")
         {
@@ -66,9 +64,7 @@ public class DropDude : Enemy {
         Explosion.transform.position = transform.position;
 
         isDone();
-        //change shake velocity after explosion
-        cam.ShakeVelocity *= 1.5f;
-        startShake();
+
     }
 
     void Start()
@@ -114,11 +110,9 @@ public class DropDude : Enemy {
                 hitAllFields();
                 if (wait())
                 {
+                    //wierd shit that animationControl() doesnt get called
                     StartCoroutine(startExplosion());
                 }
-
-
-
                 break;
         }
     }
@@ -126,7 +120,7 @@ public class DropDude : Enemy {
     void dropCalc()
     {
         // margin until shake starts
-        float fallMargin = 0.05f;
+        float fallMargin = 0.2f;
 
         t += Time.deltaTime / dropTime;
         transform.position = Vector3.Lerp(oldPos, newPos, t);
@@ -134,8 +128,11 @@ public class DropDude : Enemy {
         //start shake close to floor
         if(1 - t <= fallMargin && !shakeDrop)
         {
-            shakeDrop = true;
-            startShake();
+            if (name == "bigdropdude")
+            {
+                shakeDrop = true;
+                startShake(false);
+            }
         }
 
         if (t >= 1)
@@ -152,15 +149,13 @@ public class DropDude : Enemy {
         //Hit Floor Event
         if (BlockTiles && !blockedTiles)
         {
+
             //Triggers landing sound
             GridData.gridManager.triggerLandEvent();
             transform.position = newPos;
             blockTiles(true);
             blockedTiles = true;
 
-            
-           StartCoroutine(startExplosion());
-           
         }
     }
 
@@ -230,7 +225,7 @@ public class DropDude : Enemy {
         {
             for(int z = 0; z < size; z++)
             {
-                GridData.gridManager.hitTile((int)(internalX) + x, (int)(internalZ) + z);
+                GridData.gridManager.hitTile((int)(internalX) + x, (int)(internalZ) + z, "DropDude");
             }
         }
     }
@@ -265,4 +260,11 @@ public class DropDude : Enemy {
     {
         init(name);
     }
+
+
+    public void startShake(bool isExplosion)
+    {
+        cam.startShake(isExplosion);
+    }
+
 }

@@ -49,4 +49,9 @@ public class MainMenu : MonoBehaviour {
         options.SetActive(true);
     }
 
+    public void BackToMenu()
+    {
+        Application.LoadLevel(0);
+    }
+
 }
