@@ -75,10 +75,10 @@ public class LevelProgression : MonoBehaviour {
     {
         // Animation plz
 
-        
-        GridData.gridManager.DropTiles();
+
+        GridData.gridManager.TriggerTiles(false);
         levelInfo.GetComponent<Text>().color = Color.yellow;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(4);
         tracker.SetActive(false);
         pause.SetActive(false);
         winText.SetActive(true);

@@ -3,6 +3,8 @@ using UnityEngine;
 
 using Grid;
 using System.Collections.Generic;
+using System.Collections;
+
 
 [Serializable]
 public class GridManager : MonoBehaviour {
@@ -58,7 +60,7 @@ public class GridManager : MonoBehaviour {
         targetPickUp = new GameObject[numPickUpsCanCarry];
         PickUpCount = 0;
         possiblePlacement = false;
-
+        TriggerTiles(true);
         if (NewTileInitializer.Length > 0)
             initNewTile(NewTileInitializer);
        
@@ -134,6 +136,11 @@ public class GridManager : MonoBehaviour {
                     GameObject tile = Instantiate(tileObj, this.transform) as GameObject;
                     tileObjects[x, y] = tile;
                     tile.transform.position = new Vector3(x + offset, 0, y + offset);
+                    if((int)PlayerPosition.x == x && (int)PlayerPosition.y == y)
+                    {
+                        tile.transform.GetChild(0).gameObject.SetActive(true);
+                        tile.transform.GetChild(0).GetComponent<Animator>().SetTrigger("StartTile");
+                    }
                 }
             }
         }
@@ -156,6 +163,7 @@ public class GridManager : MonoBehaviour {
             GameObject tile = Instantiate(tileObj, this.transform) as GameObject;
             tileObjects[x, y] = tile;
             tile.transform.position = new Vector3(x + offset, 0f, y + offset);
+            tile.transform.GetChild(0).GetComponent<Animator>().speed = 3;
             getTile(x, y).ToggleFlags(FieldStatus.Floor);
         } 
     }
@@ -461,6 +469,62 @@ public class GridManager : MonoBehaviour {
                     //Debug.Log(tileObjects[x, y].transform.GetChild(0).name);
                 }
             }
+        }
+    }
+
+    SortedDictionary<int, List<GameObject>> listVecs;
+
+    public void TriggerTiles(bool started)
+    {
+
+        listVecs = new SortedDictionary<int, List<GameObject>>();
+        for (int x = 0; x < gridSize; x++)
+        {
+            for (int y = 0; y < gridSize; y++)
+            {
+
+                if (GridData.grid[x, y].HasFloor())
+                {
+
+                    int mag = (int)Vector2.SqrMagnitude(new Vector2(x, y) - PlayerPosition);
+                    if (!started)
+                    {
+                        mag *= -1;
+                    }
+                    Vector2 vec = new Vector2(x, y);
+                    if (mag != 0) {
+                        if (listVecs.ContainsKey(mag))
+                        {
+                            listVecs[mag].Add(tileObjects[x, y]);
+                        }
+                        else
+                        {
+                            listVecs.Add(mag, new List<GameObject> { tileObjects[x, y] });
+                        }
+                    }
+                }
+            }
+        }
+        StartCoroutine(trigger(started));
+    }
+
+    IEnumerator trigger(bool started) {
+
+
+            foreach (var entry in listVecs)
+            {
+            yield return new WaitForSeconds(0.1f);
+
+                foreach (var tile in entry.Value)
+                {
+                    tile.transform.GetChild(0).gameObject.SetActive(true);
+                    if(started)
+                        tile.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Raise");
+                    else
+                        tile.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Drop");
+
+                }
+            
         }
     }
 
