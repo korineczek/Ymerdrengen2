@@ -18,13 +18,22 @@ public enum SoundHandle
     CherryFuse,
     CherryExplosion,
     MenuClickForward,
-    MenuClickBack
+    MenuClickBack,
+    TilesClicks,
+    TilesGrinding,
+    TilesRubble,
+    Intro,
+    Resume,
+    Win
 }
 
 public enum StopSoundHandle
 {
     Pause,
-    PieCharge
+    PieCharge,
+    TilesClicks,
+    TilesGrinding,
+    TilesRubble,
 }
 
 public enum SoundParameterHandle
@@ -116,11 +125,28 @@ public class AudioManager : MonoBehaviour
                 identifier = "menuClickFoward"; break; // Spelling Error.
             case SoundHandle.MenuClickBack:
                 identifier = "menuClickBack"; break;
+            case SoundHandle.TilesClicks:
+                identifier = "playTilesClicks"; break;
+            case SoundHandle.TilesGrinding:
+                identifier = "playTilesGrinding"; break;
+            case SoundHandle.TilesRubble:
+                identifier = "playTilesRubble"; break;
+            case SoundHandle.Intro:
+                identifier = "intro"; break;
+            case SoundHandle.Resume:
+                identifier = "resume"; break;
+            case SoundHandle.Win:
+                identifier = "win"; break;
             default:
                 throw new System.NotImplementedException("Enum variant doesn't exist, update PlaySound method (AudioManager.cs)");
         }
 
         AkSoundEngine.PostEvent(identifier, obj);
+    }
+
+    public void PlaySound(SoundHandle handle)
+    {
+        PlaySound(handle, gameObject);
     }
 
     public void StopSound(StopSoundHandle handle, GameObject obj)
@@ -131,16 +157,22 @@ public class AudioManager : MonoBehaviour
                 identifier = "pause"; break;
             case StopSoundHandle.PieCharge:
                 identifier = "pieChargeStop"; break;
+            case StopSoundHandle.TilesClicks:
+                identifier = "stopTilesClicks"; break;
+            case StopSoundHandle.TilesGrinding:
+                identifier = "stopTilesGrinding"; break;
+            case StopSoundHandle.TilesRubble:
+                identifier = "stopTilesRubble"; break;
             default:
                 throw new System.NotImplementedException("Enum variant doesn't exist, update StopSound method (AudioManager.cs)");
         }
 
         AkSoundEngine.PostEvent(identifier, obj);
     }
-
-    public void PlaySound(SoundHandle handle)
+    
+    public void StopSound(StopSoundHandle handle)
     {
-        PlaySound(handle, gameObject);
+        StopSound(handle, gameObject);
     }
 
     public void StartMusic()

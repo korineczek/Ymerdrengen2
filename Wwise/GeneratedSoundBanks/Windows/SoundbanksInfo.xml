@@ -51,6 +51,7 @@
 				<Event Id="2616974346" Name="stopTilesRubble" ObjectPath="\Events\Default Work Unit\stopTilesRubble"/>
 				<Event Id="1142183312" Name="tomatoFall" ObjectPath="\Events\Default Work Unit\tomatoFall"/>
 				<Event Id="4180613081" Name="tomatoSplat" ObjectPath="\Events\Default Work Unit\tomatoSplat"/>
+				<Event Id="979765101" Name="win" ObjectPath="\Events\Default Work Unit\win"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="11612723" Language="SFX">
@@ -93,6 +94,10 @@
 					<ShortName>cherry lunte.wav</ShortName>
 					<Path>SFX\cherry lunte_7D68DB91.wem</Path>
 				</File>
+				<File Id="197791396" Language="SFX">
+					<ShortName>pacman mindre kraftig1.wav</ShortName>
+					<Path>SFX\pacman mindre kraftig1_960863FB.wem</Path>
+				</File>
 				<File Id="203156319" Language="SFX">
 					<ShortName>place_tile_2.wav</ShortName>
 					<Path>SFX\place_tile_2_9E69E797.wem</Path>
@@ -112,6 +117,10 @@
 				<File Id="251275923" Language="SFX">
 					<ShortName>yogurt_pickup_1.wav</ShortName>
 					<Path>SFX\yogurt_pickup_1_CDFE0F68.wem</Path>
+				</File>
+				<File Id="254412841" Language="SFX">
+					<ShortName>pacman mindre kraftig2.wav</ShortName>
+					<Path>SFX\pacman mindre kraftig2_960863FB.wem</Path>
 				</File>
 				<File Id="257221351" Language="SFX">
 					<ShortName>footstep_5.wav</ShortName>
@@ -168,6 +177,10 @@
 				<File Id="456317862" Language="SFX">
 					<ShortName>footstep10.wav</ShortName>
 					<Path>SFX\footstep10_960863FB.wem</Path>
+				</File>
+				<File Id="471477255" Language="SFX">
+					<ShortName>win tune2.wav</ShortName>
+					<Path>SFX\win tune2_EF36BB9D.wem</Path>
 				</File>
 				<File Id="480880974" Language="SFX">
 					<ShortName>tomat fall.wav</ShortName>

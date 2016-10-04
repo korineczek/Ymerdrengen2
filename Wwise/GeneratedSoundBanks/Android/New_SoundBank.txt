@@ -6,6 +6,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	779278001	death			\Default Work Unit\death	
 	909770326	coffeEnterScene			\Default Work Unit\coffeEnterScene	
 	953277036	resume			\Default Work Unit\resume	
+	979765101	win			\Default Work Unit\win	
 	1045712006	stopTilesGrinding			\Default Work Unit\stopTilesGrinding	
 	1125500713	intro			\Default Work Unit\intro	
 	1142183312	tomatoFall			\Default Work Unit\tomatoFall	
@@ -139,10 +140,12 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	139903624	power_up_3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\power_up_3_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\power_up_3		71088
 	172811041	cherry eksplosion	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\cherry eksplosion_C826C09F.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion		17591
 	186580343	cherry lunte	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\cherry lunte_7D68DB91.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherry lunte		63482
+	197791396	pacman mindre kraftig1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\pacman mindre kraftig1_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\piePacman\pacman mindre kraftig1		57705
 	203156319	place_tile_2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\place_tile_2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\place_tile_2		60984
 	204181595	cherry eksplosion5	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\cherry eksplosion5_61585ABB.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion5		18674
 	220625273	falling_bit_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\falling_bit_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falling_bit_1		43794
 	251275923	yogurt_pickup_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\yogurt_pickup_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\youghurt\yogurt_pickup_1		21522
+	254412841	pacman mindre kraftig2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\pacman mindre kraftig2_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\piePacman\pacman mindre kraftig2		61086
 	257221351	footstep_5	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\footstep_5_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_5		4459
 	276664916	falldeath3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\falldeath3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falldeath3		4816
 	279886706	footstep4	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\footstep4_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep4		3389
@@ -154,8 +157,8 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	391536908	footstep1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\footstep1_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep1		3585
 	394011225	footstep7	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\footstep7_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep7		4100
 	398732041	falldeath2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\falldeath2_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\fallDeath\falldeath2		5615
-	426299725	tærte pacman2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\tærte pacman2_AA01BA23.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\piePacman\tærte pacman2		59327
 	456317862	footstep10	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\footstep10_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepHeavy\footstep10		3361
+	471477255	win tune2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\win tune2_EF36BB9D.wem		\Actor-Mixer Hierarchy\Default Work Unit\cinematics\win tune2		169281
 	480880974	tomat fall	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\tomat fall_7F75312E.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\tomat fall		3410
 	497596001	dying_3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\dying_3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\death\dying_3		26072
 	509327452	yogurt_pickup_2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\yogurt_pickup_2_334D39AF.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup\youghurt\yogurt_pickup_2		15613
@@ -188,6 +191,5 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	1041246594	kaffesip	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\kaffesip_34682266.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\kaffesip		53592
 	1047098623	cherry eksplosion2	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\cherry eksplosion2_ACB75A22.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\cherryExplosion\cherry eksplosion2		18303
 	1048238672	start platforme rubble	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\start platforme rubble_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\cinematics\start platforme rubble		38102
-	1063243270	tærte pacman3	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\tærte pacman3_77EDC8D8.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemies\piePacman\tærte pacman3		59125
 	1071447843	footstep_1	C:\Users\dadiu\Documents\Projects\Minigame_II\Wwise\.cache\Android\SFX\footstep_1_960863FB.wem		\Actor-Mixer Hierarchy\Default Work Unit\characterSounds\footstepLight\footstep_1		4913
 

@@ -41,6 +41,7 @@ public class Pause : MonoBehaviour {
 
     public void PauseGame()
     {
+        AudioData.StopSound(StopSoundHandle.Pause);
         Time.timeScale = 0f;
         progress.GetComponent<LevelProgression>().progressTimer = false;
         score.GetComponent<Score>().getScore = false;
@@ -55,6 +56,7 @@ public class Pause : MonoBehaviour {
 
     public void UnPauseGame()
     {
+        AudioData.PlaySound(SoundHandle.Resume);
         Time.timeScale = 1f;
         progress.GetComponent<LevelProgression>().progressTimer = true;
         score.GetComponent<Score>().getScore = true;
@@ -65,17 +67,22 @@ public class Pause : MonoBehaviour {
         unPauseButton.SetActive(false);
         resetButton.SetActive(false);
         menuButton.SetActive(false);
-        
     }
 
 
     public void ResetLevel()
     {
+        if (AudioData.audioManager != null)
+            GameObject.Destroy(AudioData.audioManager.gameObject); // Hacked to reset audio
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void MainMenu()
     {
+        if (AudioData.audioManager != null)
+            GameObject.Destroy(AudioData.audioManager.gameObject); // Hacked to reset audio
+
         SceneManager.LoadScene(0);
     }
 

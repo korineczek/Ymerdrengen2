@@ -569,24 +569,32 @@ public class GridManager : MonoBehaviour {
         StartCoroutine(trigger(started));
     }
 
-    IEnumerator trigger(bool started) {
+    IEnumerator trigger(bool started)
+    {
+        AudioData.PlaySound(SoundHandle.TilesClicks);
+        AudioData.PlaySound(SoundHandle.TilesGrinding);
+        AudioData.PlaySound(SoundHandle.TilesRubble);
+        yield return new WaitForSeconds(0.8f); // Times the clicks to the tiles.
 
-
-            foreach (var entry in listVecs)
-            {
+        foreach (var entry in listVecs)
+        {
             yield return new WaitForSeconds(0.1f);
+            foreach (var tile in entry.Value)
+            {
+                tile.transform.GetChild(0).gameObject.SetActive(true);
+                if(started)
+                    tile.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Raise");
+                else
+                    tile.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Drop");
 
-                foreach (var tile in entry.Value)
-                {
-                    tile.transform.GetChild(0).gameObject.SetActive(true);
-                    if(started)
-                        tile.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Raise");
-                    else
-                        tile.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Drop");
+            }
 
-                }
-            
         }
+
+        AudioData.StopSound(StopSoundHandle.TilesRubble);
+        AudioData.StopSound(StopSoundHandle.TilesGrinding);
+        yield return new WaitForSeconds(0.1f);
+        AudioData.StopSound(StopSoundHandle.TilesClicks);
     }
 
 }

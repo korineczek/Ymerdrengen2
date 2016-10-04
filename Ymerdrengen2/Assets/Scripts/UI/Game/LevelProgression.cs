@@ -90,6 +90,7 @@ public class LevelProgression : MonoBehaviour {
         levelInfo.GetComponent<Text>().color = Color.yellow;
         GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = false;
         yield return new WaitForSeconds(4);
+        AudioData.PlaySound(SoundHandle.Win); // Hack to play winning sound.
         GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = true;
         tracker.SetActive(false);
         pause.SetActive(false);

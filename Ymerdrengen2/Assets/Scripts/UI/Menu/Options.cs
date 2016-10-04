@@ -53,7 +53,8 @@ public class Options : MonoBehaviour {
         if(PlayerPrefs.GetInt("SoundMute") == 0)
         {
             PlayerPrefs.SetInt("SoundMute", 1);
-        } else if (PlayerPrefs.GetInt("SoundMute") == 1)
+        }
+        else if (PlayerPrefs.GetInt("SoundMute") == 1)
         {
             PlayerPrefs.SetInt("SoundMute", 0);
         }
