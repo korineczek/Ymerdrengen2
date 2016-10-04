@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -24,21 +25,13 @@ public class LevelProgression : MonoBehaviour {
     public float trackerTime;
     float levelTime;
 
+
+
     // Use this for initialization
     void Start () {
         Time.timeScale = 1f;
-        levelInfo.GetComponent<Text>().text = Application.loadedLevel.ToString();
-        GridData.lvlProgression = this;
-        if (GridData.gridManager.isIntroAnimationPresent)
-        {
-            StartCoroutine(LevelBegin(7.5f));
-            Debug.Log("Animation detected adding start time");
-        }
-        else
-        {
-            StartCoroutine(LevelBegin(5));
-        }
-        
+        levelInfo.GetComponent<Text>().text = SceneManager.GetActiveScene().buildIndex.ToString();
+        StartCoroutine(LevelBegin());
     }
 	
 	// Update is called once per frame
@@ -79,38 +72,45 @@ public class LevelProgression : MonoBehaviour {
         Time.timeScale = 0f;
     }
 
-    IEnumerator LevelBegin(float time)
+    IEnumerator LevelBegin()
     {
-        yield return new WaitForSeconds(time);
+        GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = false;
+        yield return new WaitForSeconds(4);
+        GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = true;
         StartGame();
-        GridData.enemyManager.startLevel();
-        if (GridData.gridManager.isIntroAnimationPresent)
-            GridData.gridManager.triggerTileAnimation();
+        yield break;
     }
 
     IEnumerator LevelTransition()
     {
         // Animation plz
- 
-        GridData.gridManager.DropTiles();
+
+
+        GridData.gridManager.TriggerTiles(false);
         levelInfo.GetComponent<Text>().color = Color.yellow;
-        yield return new WaitForSeconds(1);
+        GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = false;
+        yield return new WaitForSeconds(4);
+        GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = true;
         tracker.SetActive(false);
         pause.SetActive(false);
         winText.SetActive(true);
-        if (AudioData.audioManager != null)
-            GameObject.Destroy(AudioData.audioManager.gameObject); // Hacked to reset audio
         yield break;
     }
 
     public void NextLevel()
     {
-        Application.LoadLevel(nextLevel);
+        if (AudioData.audioManager != null)
+            GameObject.Destroy(AudioData.audioManager.gameObject); // Hacked to reset audio
+
+        SceneManager.LoadScene(nextLevel);
     }
 
     public void BackMenu()
     {
-        Application.LoadLevel(0);
+        if (AudioData.audioManager != null)
+            GameObject.Destroy(AudioData.audioManager.gameObject); // Hacked to reset audio
+
+        SceneManager.LoadScene(0);
     }
 
     public void CherryDeath()

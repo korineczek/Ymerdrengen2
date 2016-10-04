@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 //using UnityEditor.SceneManagement;
@@ -35,7 +36,7 @@ public class UnlockLevel : MonoBehaviour {
         yield return new WaitForSeconds(0.4f);
         GameObject.Destroy(AudioData.audioManager.gameObject); // Unload SoundBank
         yield return new WaitForSeconds(0.2f);
-        Application.LoadLevel(level);
+        SceneManager.LoadScene(level);
     }
 
 }

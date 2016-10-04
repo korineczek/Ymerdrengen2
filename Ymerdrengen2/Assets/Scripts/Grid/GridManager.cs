@@ -41,6 +41,9 @@ public class GridManager : MonoBehaviour {
     bool behindTile;
     bool rightTile;
     bool frontTile;
+
+    public bool tileAdded;
+
     public bool isIntroAnimationPresent = false;
 
     void Awake()
@@ -61,14 +64,12 @@ public class GridManager : MonoBehaviour {
         targetPickUp = new GameObject[numPickUpsCanCarry];
         PickUpCount = 0;
         possiblePlacement = false;
+        tileAdded = false;
+
+        TriggerTiles(true);
         if (NewTileInitializer.Length > 0)
             initNewTile(NewTileInitializer);  
 
-    }
-
-    public void triggerTileAnimation()
-    {
-        TriggerTiles(true);
     }
 
     void Update()
@@ -88,9 +89,6 @@ public class GridManager : MonoBehaviour {
             PlayerCharacter.gameObject.SetActive(false);
             isIntroAnimationPresent = true;
             obj.transform.position = PlayerCharacter.transform.position;
-        }else
-        { //If no animation is present play tile animations
-            triggerTileAnimation();
         }
     }
 
@@ -276,7 +274,7 @@ public class GridManager : MonoBehaviour {
         if (newPosHasFloor)
         {
             PlayerCharacter.isLerping = true;
-            PlayerCharacter.Move(dir);
+            PlayerCharacter.Move(dir,false);
             PlayerPosition = newPos;
 
             // if player steps in a tile where a pick up exists
@@ -308,12 +306,13 @@ public class GridManager : MonoBehaviour {
             addTile((int)newPos.x, (int)newPos.y);
             // Move the player to the new tile
             PlayerCharacter.isLerping = true;
-            PlayerCharacter.Move(dir);
+            PlayerCharacter.Move(dir,false);
             PlayerPosition = newPos;
             // destroy the pick up above player's head
             Destroy(targetPickUp[PickUpCount]);
             // inform counter that you placed a tile
             PickUpCount--;
+            tileAdded = true;
 
             object[] obj = GameObject.FindObjectsOfType(typeof(GameObject));
             foreach (object o in obj)
@@ -347,16 +346,29 @@ public class GridManager : MonoBehaviour {
         }
         else {
             if(!Godmode) { 
-                killPlayer();
                 AudioData.PlaySound(SoundHandle.FallDeath);
+                PlayerCharacter.isLerping = true;
+                PlayerCharacter.Move(dir,true);
+                Debug.Log("diwjaoida");
+                StartCoroutine(falling());
             }
         }
+    }
+
+    IEnumerator falling()
+    {
+        GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = false;
+        yield return new WaitForSeconds(1f);
+        GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = true;
+        killPlayer();
+
     }
 
     public void killPlayer()
     {
         PlayerCharacter.GetComponent<Player>().loseYogurt();
         PlayerCharacter.gameObject.SetActive(false);
+        //Debug.Log("diwjaoida");
 
         GameObject.FindGameObjectWithTag("Progression").GetComponent<LevelProgression>().Death();
         AudioData.StopMusic();
