@@ -9,13 +9,21 @@ public class ConeBuddy : WalkingEnemy
     float timer = 0;
 
     bool hold = false;
+    bool preAtk = false;
+    bool atk = false;
     bool hasShot = false;
+    float waitTime = 0;
     public float holdTime = 2f;
+    public float preAttacktime = 0.25f;
+    public float attackTime = 1.5f;
     public float reverseTime = 2f;
+
+    filledScript filler;
 
     public GameObject particles;
 
     Animator anim;
+    
 
     /*
      *  Controls the shape of attack of the conebuddy
@@ -28,12 +36,19 @@ public class ConeBuddy : WalkingEnemy
 
     void Start()
     {
+        filler = GridData._UIManager.getCoffeInd();
         anim = this.GetComponent<Animator>();
         AudioData.PlaySound(SoundHandle.CoffeeEnterScene, gameObject);
     }
 
     public override void behavior()
     {
+
+        if (hold)
+        {
+            float tic = ((int)((timer / holdTime + 0.33f) / 0.33f)) * 0.33f;  
+            filler.SetFillAmount(tic);
+        }
 
         timer += Time.deltaTime;
         //Walking
@@ -53,6 +68,10 @@ public class ConeBuddy : WalkingEnemy
 
                 if (hold)
                 {
+                    //Enables the fillerObject
+                    filler.setPos(newPos, direction);
+                    waitTime = holdTime;
+
                     AudioData.PlaySound(SoundHandle.CoffeeSip, gameObject);
                     if(anim != null)
                     {
@@ -61,31 +80,55 @@ public class ConeBuddy : WalkingEnemy
                         anim.SetTrigger("Walk->Attack");
                     }
                 }
-
                     //particles.SetActive(true);
-                
-
             }
         }
         //IF enter reverse direction and go back to walking
-        else if (hold && timer > holdTime)
+        else if (hold)
         {
-            if (!hasShot)
+            if(timer > waitTime)
             {
-                AudioData.PlaySound(SoundHandle.CoffeeSpit, gameObject);
+                if(!preAtk && !atk)
+                {
+                    if (!hasShot)
+                    {
+                        AudioData.PlaySound(SoundHandle.CoffeeSpit, gameObject);
+                        fire();
+                        hasShot = true;
+                        holdTime = reverseTime;
+                        timer = 0;
+                        preAtk = true;
+                        waitTime = preAttacktime;
+                        return;
+                    }
+                    revereseDirection();
+                    newPos = oldPos + vectorDir;
+                    hold = false;
+                    timer = 0;
+                }
+                else if (preAtk)
+                {
+                    filler.disableFiller();
+                    waitTime = attackTime;
+                    preAtk = false;
+                    atk = true;
+                    timer = 0;
+                }else if (atk)
+                {
+                    atk = false;
+                    GridData._UIManager.disableSpawnInd(filler);
+                    waitTime = holdTime;
+                    particles.SetActive(false);
+                    timer = 0;
+                } 
+            }else if(timer < waitTime && atk)
+            {
                 fire();
-                hasShot = true;
-                holdTime = reverseTime;
-                timer = 0;
-                return;
             }
-            revereseDirection();
-            newPos = oldPos + vectorDir;
-            hold = false;
-            timer = 0;
         }
 
         //Holding still
+
     }
 
     private void fire()
@@ -102,11 +145,6 @@ public class ConeBuddy : WalkingEnemy
                     Vector3 point = rotVector + oldPos;
                     int intX = round(point.x);
                     int intZ = round(point.z);
-                    //DEBUG
-                    if (x == 2) { 
-                        SPAWNCUBE(point, z + (1 * z) + 1);
-                    }
-                    //DEBUG
                     if (intX >= 0 && intZ >= 0 && intX < GridData.gridSize && intZ < GridData.gridSize)
                     {
                         if (GridData.grid[intX, intZ].HasFloor())

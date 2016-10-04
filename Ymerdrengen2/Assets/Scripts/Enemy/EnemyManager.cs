@@ -66,6 +66,9 @@ public class EnemyManager : MonoBehaviour {
 
     private void doEvent()
     {
+        if (spawnPatternIndex >= curSpawnPattern.spawnPattern.Count)
+            return;
+
         string s = curSpawnPattern.spawnPattern[spawnPatternIndex];
         string[] list = s.Split(' ');
         list[0] = list[0].ToLower();
