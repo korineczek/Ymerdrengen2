@@ -25,8 +25,16 @@ public class UnlockLevel : MonoBehaviour {
     {
         if (PlayerPrefs.GetInt("Level") >= level)
         {
-            //EditorSceneManager.LoadScene(level);
-            Application.LoadLevel(level);
+            StartCoroutine(CoStartLevel(level));
         }
+    }
+
+    private IEnumerator CoStartLevel(int level)
+    {
+        AudioData.PlaySound(SoundHandle.MenuClickForward);
+        yield return new WaitForSeconds(0.4f);
+        GameObject.Destroy(AudioData.audioManager.gameObject); // Unload SoundBank
+        yield return new WaitForSeconds(0.2f);
+        Application.LoadLevel(level);
     }
 }

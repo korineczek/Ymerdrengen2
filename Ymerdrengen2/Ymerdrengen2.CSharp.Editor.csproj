@@ -82,9 +82,6 @@
     <Reference Include="UnityEditor.Graphs">
       <HintPath>Library\UnityAssemblies\UnityEditor.Graphs.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.Android.Extensions">
-      <HintPath>Library\UnityAssemblies\UnityEditor.Android.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>Library\UnityAssemblies\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
@@ -141,6 +138,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Audio\Description.txt" />
+    <None Include="Assets\Audio\GeneratedSoundBanks\Android_backup\Init.txt" />
+    <None Include="Assets\Audio\GeneratedSoundBanks\Android_backup\New_SoundBank.txt" />
+    <None Include="Assets\Audio\GeneratedSoundBanks\Android_backup\PluginInfo.xml" />
+    <None Include="Assets\Audio\GeneratedSoundBanks\Android_backup\SoundbanksInfo.xml" />
+    <None Include="Assets\Audio\GeneratedSoundBanks\Mac\Init.txt" />
+    <None Include="Assets\Audio\GeneratedSoundBanks\Mac\New_SoundBank.txt" />
+    <None Include="Assets\Audio\GeneratedSoundBanks\Mac\PluginInfo.xml" />
+    <None Include="Assets\Audio\GeneratedSoundBanks\Mac\SoundbanksInfo.xml" />
+    <None Include="Assets\Audio\GeneratedSoundBanks\Windows\Init.txt" />
+    <None Include="Assets\Audio\GeneratedSoundBanks\Windows\New_SoundBank.txt" />
+    <None Include="Assets\Audio\GeneratedSoundBanks\Windows\PluginInfo.xml" />
+    <None Include="Assets\Audio\GeneratedSoundBanks\Windows\SoundbanksInfo.xml" />
     <None Include="Assets\Graphics\Materials\Description.txt" />
     <None Include="Assets\Graphics\Shaders\Glow\Shaders\MK_Mobile-Diffuse.shader" />
     <None Include="Assets\Graphics\Shaders\Glow\Shaders\MK_Mobile-DiffuseBumpSpec-1DirectionalLight.shader" />

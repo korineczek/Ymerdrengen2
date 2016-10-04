@@ -38,12 +38,14 @@ public class MainMenu : MonoBehaviour {
     
     public void Play()
     {
+        AudioData.PlaySound(SoundHandle.MenuClickForward);
         levelSelection.SetActive(true);
         levelSelection.GetComponent<LevelSelection>().Fade();
     }	
 
     public void Options()
     {
+        AudioData.PlaySound(SoundHandle.MenuClickForward);
         options.SetActive(true);
     }
 

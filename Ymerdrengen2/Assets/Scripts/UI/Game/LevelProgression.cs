@@ -23,8 +23,8 @@ public class LevelProgression : MonoBehaviour {
     void Start () {
         Time.timeScale = 1f;
         levelInfo.GetComponent<Text>().text = Application.loadedLevel.ToString();
-        StartGame();
-	}
+        StartCoroutine(LevelBegin());
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -64,15 +64,27 @@ public class LevelProgression : MonoBehaviour {
         Time.timeScale = 0f;
     }
 
-    IEnumerator LevelTransition()
+    IEnumerator LevelBegin()
     {
         yield return new WaitForSeconds(5);
+        StartGame();
+        yield break;
+    }
+
+    IEnumerator LevelTransition()
+    {
+        // Animation plz
+
+        
         GridData.gridManager.DropTiles();
         levelInfo.GetComponent<Text>().color = Color.yellow;
+        yield return new WaitForSeconds(1);
+        tracker.SetActive(false);
         pause.SetActive(false);
         winText.SetActive(true);
-        yield return new WaitForSeconds(5);
-        GameObject.Destroy(AudioData.audioManager.gameObject);
+        if (AudioData.audioManager != null)
+            GameObject.Destroy(AudioData.audioManager.gameObject); // Hacked to reset audio
+        yield return new WaitForSeconds(2);
         Application.LoadLevel(nextLevel);
         yield break;
     }
