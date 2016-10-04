@@ -36,7 +36,7 @@ public class EnemyManager : MonoBehaviour {
         if(!levelStart)
         {
             t += Time.deltaTime;
-            if (t > 0)
+            if (t > 4)
             {
                 t = 0;
                 levelStart = true;

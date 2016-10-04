@@ -74,7 +74,9 @@ public class LevelProgression : MonoBehaviour {
 
     IEnumerator LevelBegin()
     {
-        yield return new WaitForSeconds(5);
+        GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = false;
+        yield return new WaitForSeconds(4);
+        GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = true;
         StartGame();
         yield break;
     }
@@ -83,10 +85,12 @@ public class LevelProgression : MonoBehaviour {
     {
         // Animation plz
 
-        
-        GridData.gridManager.DropTiles();
+
+        GridData.gridManager.TriggerTiles(false);
         levelInfo.GetComponent<Text>().color = Color.yellow;
-        yield return new WaitForSeconds(1);
+        GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = false;
+        yield return new WaitForSeconds(4);
+        GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = true;
         tracker.SetActive(false);
         pause.SetActive(false);
         winText.SetActive(true);

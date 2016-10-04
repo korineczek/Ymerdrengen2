@@ -1,6 +1,16 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: c06d73bc8cc73784dbca8ccb34001b48
 timeCreated: 1475584193
+=======
+<<<<<<< HEAD:Ymerdrengen2/Assets/Graphics/3D models/laptop_rig/Materials/lambert1.mat.meta~HEAD.meta
+guid: b605979d7a2d4f84daac0ea6e95f6fe6
+timeCreated: 1475583370
+=======
+guid: 74c6ff687eee80a4d8f2fcba09f3ee2d
+timeCreated: 1475585090
+>>>>>>> 9306121a7619fb6e5b263c44d8d5910ddb12f398:Ymerdrengen2/Assets/Graphics/3D models/laptop_rig/Materials/lambert1.mat.meta~HEAD.meta
+>>>>>>> 01c3407f68eb6ce25b34b473ce8394cd27f08cb3
 licenseType: Pro
 DefaultImporter:
   userData: 
