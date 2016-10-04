@@ -179,7 +179,7 @@ public class GridManager : MonoBehaviour {
         return GridData.grid[(int)coord.x, (int)coord.y];
     }
 
-    public bool hitTile(int x, int y)
+    public bool hitTile(int x, int y, string monsterTag)
     {
         if (!Godmode)
         {
@@ -189,6 +189,22 @@ public class GridManager : MonoBehaviour {
                 killEventTriggered = true;
                 killPlayer();
                 AudioData.PlaySound(SoundHandle.Death);
+
+                if(monsterTag == "ConeBuddy")
+                {
+                    GameObject.FindGameObjectWithTag("Progression").GetComponent<LevelProgression>().CoffieDeath();
+                }
+
+                if (monsterTag == "DropDude")
+                {
+                    GameObject.FindGameObjectWithTag("Progression").GetComponent<LevelProgression>().CherryDeath();
+                }
+
+                if (monsterTag == "LineGuy")
+                {
+                    GameObject.FindGameObjectWithTag("Progression").GetComponent<LevelProgression>().PieDeath();
+                }
+
             }
             return isPlayerHit;
         }

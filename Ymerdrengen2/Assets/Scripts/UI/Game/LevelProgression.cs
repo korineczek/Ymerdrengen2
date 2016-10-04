@@ -12,6 +12,13 @@ public class LevelProgression : MonoBehaviour {
     public GameObject winText;
     public GameObject deathText;
 
+
+    //Death Screens
+    public GameObject deathPie;
+    public GameObject deathDrop;
+    public GameObject deathCoffie;
+    public GameObject deathFall;
+
     public int nextLevel;
     public bool progressTimer = false;
     public float trackerTime;
@@ -84,9 +91,34 @@ public class LevelProgression : MonoBehaviour {
         winText.SetActive(true);
         if (AudioData.audioManager != null)
             GameObject.Destroy(AudioData.audioManager.gameObject); // Hacked to reset audio
-        yield return new WaitForSeconds(2);
-        Application.LoadLevel(nextLevel);
         yield break;
     }
-   
+
+    public void NextLevel()
+    {
+        Application.LoadLevel(nextLevel);
+    }
+
+    public void BackMenu()
+    {
+        Application.LoadLevel(0);
+    }
+
+    public void CherryDeath()
+    {
+        deathFall.SetActive(false);
+        deathDrop.SetActive(true);
+    }
+
+    public void PieDeath()
+    {
+        deathFall.SetActive(false);
+        deathPie.SetActive(true);
+    }
+
+    public void CoffieDeath()
+    {
+        deathFall.SetActive(false);
+        deathCoffie.SetActive(true);
+    }
 }

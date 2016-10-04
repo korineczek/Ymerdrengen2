@@ -19,7 +19,7 @@ public class LineGuy : WalkingEnemy
     {
 
         //Collide with grid tile
-        GridData.gridManager.hitTile(round(newPos.x), (round(newPos.z)));
+        GridData.gridManager.hitTile(round(newPos.x), (round(newPos.z)), "LineGuy");
 
         t += Time.deltaTime * speed;
         transform.position = Vector3.Lerp(oldPos, newPos, t);
