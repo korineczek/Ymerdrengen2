@@ -36,7 +36,7 @@ public class EnemyManager : MonoBehaviour {
         if(!levelStart)
         {
             t += Time.deltaTime;
-            if (t > 0)
+            if (t > 4)
             {
                 t = 0;
                 levelStart = true;
@@ -66,6 +66,9 @@ public class EnemyManager : MonoBehaviour {
 
     private void doEvent()
     {
+        if (spawnPatternIndex >= curSpawnPattern.spawnPattern.Count)
+            return;
+
         string s = curSpawnPattern.spawnPattern[spawnPatternIndex];
         string[] list = s.Split(' ');
         list[0] = list[0].ToLower();

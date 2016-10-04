@@ -117,7 +117,7 @@ public class PickUpScript : MonoBehaviour
         // lerp the pick up above player's head
         transform.position = new Vector3(transform.position.x, Mathf.Lerp(pickUpStartPos, pickUpEndPos, Time.deltaTime * PickUpGoesUpSpeed), transform.position.z);
 
-        if (GridData.gridManager.GetComponent<GridManager>().PickUpCount > 1)
+        if (GridData.gridManager.PickUpCount > 1)
         {
             //transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
             //transform.RotateAround(startPos, Vector3.right, 30 * Time.deltaTime);

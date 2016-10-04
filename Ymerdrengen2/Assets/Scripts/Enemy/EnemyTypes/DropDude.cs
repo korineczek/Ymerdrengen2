@@ -35,8 +35,7 @@ public class DropDude : Enemy {
     {
         if (anim != null && anim.GetCurrentAnimatorStateInfo(0).IsName("EndState") && !shakeAnim)
         {
-            //start shake before explosion 0.1f
-            //startShake(true);
+            //start shake only once
             shakeAnim = true;
             StartCoroutine(startExplosion());
 
@@ -46,7 +45,7 @@ public class DropDude : Enemy {
     //wait for start shake then explode
     private IEnumerator startExplosion()
     {
-        Debug.Log("START COROUTINE");
+        //start shake
         startShake(true);
         
         yield return new WaitForSeconds(0.1f);
@@ -114,9 +113,6 @@ public class DropDude : Enemy {
                     //wierd shit that animationControl() doesnt get called
                     StartCoroutine(startExplosion());
                 }
-
-
-
                 break;
         }
     }
@@ -160,7 +156,6 @@ public class DropDude : Enemy {
             blockTiles(true);
             blockedTiles = true;
 
-           
         }
     }
 

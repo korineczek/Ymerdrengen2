@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Image))]
 public class filledScript : MonoBehaviour {
 
     Image img;
@@ -15,8 +16,14 @@ public class filledScript : MonoBehaviour {
         img.fillAmount = f;
 	}
 
+    public void disableFiller()
+    {
+        img.enabled = false;
+    }
+
     public void setPos(Vector3 pos, Direction dir)
     {
+        img.enabled = true;
         transform.position = pos + new Vector3(0, 0.01f, 0);
         transform.rotation = Quaternion.identity;
         transform.Rotate(new Vector3(0, 0, 180));
@@ -35,7 +42,7 @@ public class filledScript : MonoBehaviour {
                 transform.Rotate(new Vector3(90, 0, 90));
                 break;
             case Direction.Left:
-                transform.position -= new Vector3(-0.5f, 0, 0.5f);
+                transform.position -= new Vector3(-0.5f, 0, 0);
                 transform.Rotate(new Vector3(270, 0, 270));
                 break;
         }
