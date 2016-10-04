@@ -41,6 +41,9 @@ public class GridManager : MonoBehaviour {
     bool behindTile;
     bool rightTile;
     bool frontTile;
+
+    public bool tileAdded;
+
     public bool isIntroAnimationPresent = false;
 
     void Awake()
@@ -61,6 +64,8 @@ public class GridManager : MonoBehaviour {
         targetPickUp = new GameObject[numPickUpsCanCarry];
         PickUpCount = 0;
         possiblePlacement = false;
+        tileAdded = false;
+
         TriggerTiles(true);
         if (NewTileInitializer.Length > 0)
             initNewTile(NewTileInitializer);  
@@ -307,6 +312,7 @@ public class GridManager : MonoBehaviour {
             Destroy(targetPickUp[PickUpCount]);
             // inform counter that you placed a tile
             PickUpCount--;
+            tileAdded = true;
 
             object[] obj = GameObject.FindObjectsOfType(typeof(GameObject));
             foreach (object o in obj)

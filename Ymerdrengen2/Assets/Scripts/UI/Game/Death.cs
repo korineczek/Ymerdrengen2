@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Death : MonoBehaviour {
@@ -16,12 +17,12 @@ public class Death : MonoBehaviour {
 
     public void Retry()
     {
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         GameObject.Destroy(AudioData.audioManager.gameObject);
     }
 
     public void Menu()
     {
-        Application.LoadLevel(0);
+        SceneManager.LoadScene(0);
     }
 }

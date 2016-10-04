@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class MainMenu : MonoBehaviour {
@@ -35,7 +36,15 @@ public class MainMenu : MonoBehaviour {
            
         }
     }
-    
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
     public void Play()
     {
         AudioData.PlaySound(SoundHandle.MenuClickForward);
@@ -51,7 +60,7 @@ public class MainMenu : MonoBehaviour {
 
     public void BackToMenu()
     {
-        Application.LoadLevel(0);
+        SceneManager.LoadScene(0);
     }
 
 }
