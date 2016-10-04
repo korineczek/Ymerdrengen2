@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -29,7 +30,7 @@ public class LevelProgression : MonoBehaviour {
     // Use this for initialization
     void Start () {
         Time.timeScale = 1f;
-        levelInfo.GetComponent<Text>().text = Application.loadedLevel.ToString();
+        levelInfo.GetComponent<Text>().text = SceneManager.GetActiveScene().buildIndex.ToString();
         StartCoroutine(LevelBegin());
     }
 	
@@ -93,19 +94,23 @@ public class LevelProgression : MonoBehaviour {
         tracker.SetActive(false);
         pause.SetActive(false);
         winText.SetActive(true);
-        if (AudioData.audioManager != null)
-            GameObject.Destroy(AudioData.audioManager.gameObject); // Hacked to reset audio
         yield break;
     }
 
     public void NextLevel()
     {
-        Application.LoadLevel(nextLevel);
+        if (AudioData.audioManager != null)
+            GameObject.Destroy(AudioData.audioManager.gameObject); // Hacked to reset audio
+
+        SceneManager.LoadScene(nextLevel);
     }
 
     public void BackMenu()
     {
-        Application.LoadLevel(0);
+        if (AudioData.audioManager != null)
+            GameObject.Destroy(AudioData.audioManager.gameObject); // Hacked to reset audio
+
+        SceneManager.LoadScene(0);
     }
 
     public void CherryDeath()

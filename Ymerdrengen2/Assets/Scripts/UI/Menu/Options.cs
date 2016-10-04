@@ -52,9 +52,7 @@ public class Options : MonoBehaviour {
         if(PlayerPrefs.GetInt("SoundMute") == 0)
         {
             PlayerPrefs.SetInt("SoundMute", 1);
-        }
-
-        if (PlayerPrefs.GetInt("SoundMute") == 1)
+        } else if (PlayerPrefs.GetInt("SoundMute") == 1)
         {
             PlayerPrefs.SetInt("SoundMute", 0);
         }
@@ -62,7 +60,7 @@ public class Options : MonoBehaviour {
 
     public void StartCredits()
     {
-        Application.LoadLevel(credits);
+        SceneManager.LoadScene(credits);
     }
 
 
