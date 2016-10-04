@@ -243,7 +243,7 @@ public class GridManager : MonoBehaviour {
             // if player steps in a tile where a pick up exists
             //if (GridData.grid[(int)newPos.x, (int)newPos.y].IsPickUp())
             //if (getTile(newPos).IsPickUp() && targetPickUp == null) /*this is for carrying only one pickup each time*/
-            if (getTile(newPos).IsPickUp())
+            if (getTile(newPos).IsPickUp() && PickUpCount < numPickUpsCanCarry - 1)
             {
                 PickUpCount++;
                 // identify which pick up player touches (if there are a lot)
@@ -288,7 +288,7 @@ public class GridManager : MonoBehaviour {
             NewTileInitializer[(int)newPos.x + ((int)newPos.y * gridSize)] = false;
             initNewTile(NewTileInitializer);
 
-            if (getTile(newPos).IsPickUp())
+            if (getTile(newPos).IsPickUp() && PickUpCount < numPickUpsCanCarry - 1)
             {
                 PickUpCount++;
                 // identify which pick up player touches (if there are a lot)
@@ -377,7 +377,7 @@ public class GridManager : MonoBehaviour {
 
     public void createPickUp(int x, int y)
     {
-        if ((int)PlayerPosition.x == x && (int)PlayerPosition.y == y)
+        if ((int)PlayerPosition.x == x && (int)PlayerPosition.y == y && PickUpCount < numPickUpsCanCarry - 1)
         {
             GameObject pickUp = Instantiate(Resources.Load("Prefabs/ymerkarton") as GameObject);
             pickUp.transform.position = new Vector3(x + offset, 0, y + offset);
