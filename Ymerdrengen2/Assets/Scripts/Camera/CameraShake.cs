@@ -18,8 +18,18 @@ public class CameraShake : MonoBehaviour {
     public bool ShakeOtherDirection = false;
 
 
+<<<<<<< HEAD
     // Usage StartCoroutine(startShake(ShakeOrientation, ShakeOtherDirection));
     public IEnumerator startShake(Orientation ScreenOrientation, bool shakeOtherDirection = false)
+=======
+    public void startShake(Orientation ScreenOrientation, bool shakeOtherDirection = false)
+    {
+        StartCoroutine(startCoroutineShake(ScreenOrientation, shakeOtherDirection));
+    }
+
+    // Usage StartCoroutine(startShake(ShakeOrientation, ShakeOtherDirection));
+    public IEnumerator startCoroutineShake(Orientation ScreenOrientation, bool shakeOtherDirection = false)
+>>>>>>> 6ae3ff336e7fc7ccef199c3f29c27a52146a4885
     {
 
         Vector3 direction;
@@ -53,7 +63,12 @@ public class CameraShake : MonoBehaviour {
 
             elapsed += Time.deltaTime * 4;
 
+<<<<<<< HEAD
             float percentComplete = elapsed / ShakeDuration;
+=======
+            float percentComplete = ShakeDuration / elapsed;
+            //adjust here
+>>>>>>> 6ae3ff336e7fc7ccef199c3f29c27a52146a4885
 
             shakeTurn++;
 

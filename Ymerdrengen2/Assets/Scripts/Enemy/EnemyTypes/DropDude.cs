@@ -4,6 +4,8 @@ using System;
 
 public class DropDude : Enemy {
 
+    enum State { preState, Dropping, Waiting }
+
     int internalX, internalZ;
     float t = 0;
 
@@ -14,76 +16,202 @@ public class DropDude : Enemy {
     public int size = 1;
     public float startHeight = 8f;
     public float endHeight = 0.5f;
+
+    float waitTime = 1f;
     public float dropTime = 2f;
     public float deathTime = 1f;
+    public float preShadowTime = 1f;
 
+    State state = State.preState;
     Animator anim;
+    GameObject shadow;
+
+    //needed for shakes
+    private CameraShake cam;
+    private bool shakeDrop = false;
 
     void animationControl()
     {
         if (anim != null && anim.GetCurrentAnimatorStateInfo(0).IsName("EndState"))
         {
-            GameObject CherrySplosion = Instantiate(Resources.Load("Prefabs/CherrySplosion") as GameObject);
-            CherrySplosion.transform.position = transform.position;
-            isDone();
+            //start shake before explosion 0.1f
+            startShake();
+            StartCoroutine(startExplosion());
+
         }
+    }
+
+    public void startShake()
+    {
+        cam.startShake(cam.ShakeOrientation, true);
+    }
+
+    //wait for start shake then explode
+    private IEnumerator startExplosion()
+    {
+        Debug.Log("START COROUTINE");
+        //@HARDCODED!
+        yield return new WaitForSeconds(0.1f);
+        GameObject Explosion = new GameObject();
+        if (name == "cherrybomb")
+        {
+            Explosion = Instantiate(Resources.Load("Prefabs/CherrySplosion") as GameObject);
+        }
+        else if (name == "bigdropdude")
+        {
+            Explosion = Instantiate(Resources.Load("Prefabs/TomatoDeath_Par") as GameObject);
+        }
+        AudioData.PlaySound(SoundHandle.CherryExplosion, gameObject);
+
+        Explosion.transform.position = transform.position;
+
+        isDone();
+        //change shake velocity after explosion
+        cam.ShakeVelocity *= 1.5f;
+        startShake();
     }
 
     void Start()
     {
         anim = transform.GetComponent<Animator>();
+        if (anim != null)
+            anim.enabled = false;
+        this.transform.position = oldPos + new Vector3(0, 5000, 0);
+        spawnShadow();
+        waitTime = preShadowTime;
+
+        cam = GameObject.Find("Main Camera").GetComponent<CameraShake>();
     }
 
     public override void behavior()
     {
+
         animationControl();
 
-        if (t < 1)
-        { 
-            t +=  Time.deltaTime * speed / dropTime;
-            transform.position = Vector3.Lerp(oldPos, newPos, t);
-        }
-        else
+        switch (state)
         {
+            case State.preState:
+                setShadow();
+                if (wait())
+                {
+                    this.transform.position = oldPos;
+                    if (anim != null)
+                        anim.enabled = true;
+                    state = State.Dropping;
 
-            hitAllFields();
+                    if (name == "bigdropdude")
+                        AudioData.PlaySound(SoundHandle.TomatoFall, gameObject);
+                    else if (name == "cherrybomb")
+                        AudioData.PlaySound(SoundHandle.CherryFall, gameObject);
 
-            //Hit Floor Event
-            if (BlockTiles && !blockedTiles)
-            {
-                //Triggers landing sound
-                //GridData.gridManager.triggerLandEvent();
-                transform.position = newPos;
-                blockTiles(true);
-                blockedTiles = true;
-            }
+                    waitTime = deathTime;
+                }
+                break;
+            case State.Dropping:
+                dropCalc();
+                break;
+            case State.Waiting:
+                hitAllFields();
+                if (wait())
+                {
+                    StartCoroutine(startExplosion());
+                }
 
-            t += Time.deltaTime;
-            if (t >= 1 + deathTime)
-                isDone();
+
+
+                break;
         }
     }
 
-    public override void init()
+    void dropCalc()
     {
-        setPos(UnityEngine.Random.Range(0, GridData.gridSize), UnityEngine.Random.Range(0, GridData.gridSize));
+        // margin until shake starts
+        float fallMargin = 0.05f;
+
+        t += Time.deltaTime / dropTime;
+        transform.position = Vector3.Lerp(oldPos, newPos, t);
+
+        //start shake close to floor
+        if(1 - t <= fallMargin && !shakeDrop)
+        {
+            shakeDrop = true;
+            startShake();
+        }
+
+        if (t >= 1)
+        {
+            shakeDrop = false;
+            state = State.Waiting;
+            hitFloorEvent();
+            t = 0;
+        }   
+    }
+
+    void hitFloorEvent()
+    {
+        //Hit Floor Event
+        if (BlockTiles && !blockedTiles)
+        {
+            //Triggers landing sound
+            GridData.gridManager.triggerLandEvent();
+            transform.position = newPos;
+            blockTiles(true);
+            blockedTiles = true;
+
+            
+           StartCoroutine(startExplosion());
+           
+        }
+    }
+
+    bool wait()
+    {
+        t += Time.deltaTime;
+        if(t > waitTime) {
+            t = 0;
+            return true;
+        }
+        return false;
     }
 
     void isDone()
     {
-        Debug.Log("HERE");
 
         if (BlockTiles)
-           blockTiles(false);
+            blockTiles(false);
+
+        Destroy(shadow);
 
         if (DestroyTiles)
             removeTiles();
-        
+
         base.destroyThis();
     }
 
-    public override void init(int x, int y)
+    public override void init(string name)
     {
+        this.name = name;
+        setPos(UnityEngine.Random.Range(0, GridData.gridSize), UnityEngine.Random.Range(0, GridData.gridSize));
+    }
+
+    void spawnShadow()
+    {
+        //shadow = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        shadow = Resources.Load<GameObject>("Prefabs/shadowPrefab");
+        shadow = Instantiate(shadow);
+        shadow.transform.position = newPos + new Vector3(0, 0.01f, 0);
+        shadow.transform.localScale = new Vector3(0, 0.01f, 0);
+    }
+
+    void setShadow()
+    {
+        float scale = (t / preShadowTime) * size;
+        shadow.transform.localScale = new Vector3(scale, scale, 0.1f);
+    }
+
+    public override void init(int x, int y, string name)
+    {
+        this.name = name;
         setPos(x, y);
     }
 
@@ -94,9 +222,6 @@ public class DropDude : Enemy {
         oldPos = new Vector3(x + (float)(size) / 2, startHeight, y + (float)(size) / 2);
         transform.position = oldPos;
         newPos = new Vector3(x + (float)(size) / 2, endHeight, y + (float)(size) / 2);
-
-        // Hack to play sound upon spawn. Reevaluate later.
-        AudioData.PlaySound(SoundHandle.TomatoFall);
     }
 
     private void hitAllFields()
@@ -136,9 +261,8 @@ public class DropDude : Enemy {
         }
     }
 
-
-    public override void init(int x, int y, Direction dir)
+    public override void init(int x, int y, Direction dir, string name)
     {
-        init();
+        init(name);
     }
 }

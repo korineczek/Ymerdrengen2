@@ -16,9 +16,12 @@ public class PossibleTilePosScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (grid.GetComponent<GridManager>().possiblePlacement)
         {
-            StartCoroutine(Blink());
+            //StartCoroutine(Blink());
+            this.GetComponent<Renderer>().enabled = true;
+
         }
         else
         {

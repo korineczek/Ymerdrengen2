@@ -45,9 +45,10 @@
 						<Effect Name="High_Impact" ID="{2AFD6FB0-C906-4683-A377-FEEEF72967B0}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
 							<PropertyList>
 								<Property Name="AttackTime" Type="Real32" Value="0.04"/>
+								<Property Name="OutputGain" Type="Real32" Value="10"/>
 								<Property Name="Ratio" Type="Real32" Value="12"/>
 								<Property Name="ReleaseTime" Type="Real32" Value="0.5"/>
-								<Property Name="Threshold" Type="Real32" Value="-6"/>
+								<Property Name="Threshold" Type="Real32" Value="-2"/>
 							</PropertyList>
 						</Effect>
 						<Effect Name="Attack_Remover" ID="{174E7B9A-A16F-4CA7-86D0-530212B5A6AA}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
@@ -1597,13 +1598,14 @@
 						</Folder>
 						<Effect Name="Vibrato" ID="{D9586A30-FF0D-4DCC-89C5-04CDC4716ED6}" PluginName="Wwise Flanger" CompanyID="0" PluginID="125" PluginType="3">
 							<PropertyList>
-								<Property Name="DelayTime" Type="Real32" Value="15"/>
+								<Property Name="DelayTime" Type="Real32" Value="20"/>
 								<Property Name="DryLevel" Type="Real32" Value="0.45"/>
-								<Property Name="FeedBackLevel" Type="Real32" Value="0.7"/>
-								<Property Name="FeedForwardLevel" Type="Real32" Value="0.7"/>
+								<Property Name="FeedBackLevel" Type="Real32" Value="0.1"/>
+								<Property Name="FeedForwardLevel" Type="Real32" Value="0.3"/>
 								<Property Name="ModDepth" Type="Real32" Value="100"/>
+								<Property Name="ModFrequency" Type="Real32" Value="0.2"/>
 								<Property Name="ModPWM" Type="Real32" Value="0"/>
-								<Property Name="WetDryMix" Type="Real32" Value="62"/>
+								<Property Name="WetDryMix" Type="Real32" Value="30"/>
 							</PropertyList>
 						</Effect>
 						<Effect Name="Special_Effect_1" ID="{83317D8A-9D4C-438E-BE8C-BC7D27CAD1B0}" PluginName="Wwise Flanger" CompanyID="0" PluginID="125" PluginType="3">

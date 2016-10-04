@@ -10,6 +10,7 @@ public class GridEditor : Editor
 
     public override void OnInspectorGUI()
     {
+        DrawDefaultInspector();
         gridTarget = (GridManager)target;
 
         // Set the player position.
@@ -19,7 +20,8 @@ public class GridEditor : Editor
         serializedObject.Update();
 
         CreateFloorDesigner();
-        CreateYoghurtDesigner();
+        //CreateYoghurtDesigner();
+        CreateNewTileDesigner();
 
         Undo.RecordObject(target, "Changed scene's initial grid.");
     }
@@ -42,19 +44,39 @@ public class GridEditor : Editor
         }
     }
 
-    private void CreateYoghurtDesigner()
+    //private void CreateYoghurtDesigner()
+    //{
+    //    if (gridTarget.YoghurtInitializer == null || gridTarget.YoghurtInitializer.Length != (gridTarget.gridSize * gridTarget.gridSize))
+    //        gridTarget.YoghurtInitializer = new bool[gridTarget.gridSize * gridTarget.gridSize];
+
+    //    // Setup Editor layout.
+    //    EditorGUILayout.LabelField("Yoghurt Spawner:");
+    //    for (int i = 0; i < gridTarget.gridSize; i++) {
+    //        // Create row of toggle controls.
+    //        EditorGUILayout.BeginHorizontal(GUILayout.MaxHeight(10), GUILayout.MaxWidth(7 * 12));
+    //        for (int j = 0; j < gridTarget.gridSize; j++) {
+    //            // Hook floorTiles[x,y] to the designer x,y.
+    //            gridTarget.YoghurtInitializer[TranslateVector(i, j, gridTarget.gridSize)] = EditorGUILayout.Toggle(gridTarget.YoghurtInitializer[TranslateVector(i, j, gridTarget.gridSize)]);
+    //        }
+    //        EditorGUILayout.EndHorizontal();
+    //    }
+    //}
+
+    private void CreateNewTileDesigner()
     {
-        if (gridTarget.YoghurtInitializer == null || gridTarget.YoghurtInitializer.Length != (gridTarget.gridSize * gridTarget.gridSize))
-            gridTarget.YoghurtInitializer = new bool[gridTarget.gridSize * gridTarget.gridSize];
+        if (gridTarget.NewTileInitializer == null || gridTarget.NewTileInitializer.Length != (gridTarget.gridSize * gridTarget.gridSize))
+            gridTarget.NewTileInitializer = new bool[gridTarget.gridSize * gridTarget.gridSize];
 
         // Setup Editor layout.
-        EditorGUILayout.LabelField("Yoghurt Spawner:");
-        for (int i = 0; i < gridTarget.gridSize; i++) {
+        EditorGUILayout.LabelField("New Tile Spawner:");
+        for (int i = 0; i < gridTarget.gridSize; i++)
+        {
             // Create row of toggle controls.
             EditorGUILayout.BeginHorizontal(GUILayout.MaxHeight(10), GUILayout.MaxWidth(7 * 12));
-            for (int j = 0; j < gridTarget.gridSize; j++) {
+            for (int j = 0; j < gridTarget.gridSize; j++)
+            {
                 // Hook floorTiles[x,y] to the designer x,y.
-                gridTarget.YoghurtInitializer[TranslateVector(i, j, gridTarget.gridSize)] = EditorGUILayout.Toggle(gridTarget.YoghurtInitializer[TranslateVector(i, j, gridTarget.gridSize)]);
+                gridTarget.NewTileInitializer[TranslateVector(i, j, gridTarget.gridSize)] = EditorGUILayout.Toggle(gridTarget.NewTileInitializer[TranslateVector(i, j, gridTarget.gridSize)]);
             }
             EditorGUILayout.EndHorizontal();
         }

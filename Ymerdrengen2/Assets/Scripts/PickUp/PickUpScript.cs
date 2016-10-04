@@ -53,15 +53,25 @@ public class PickUpScript : MonoBehaviour
     private bool isPicked;
 
     /// <summary>
+    /// starting position of ymer
+    /// </summary>
+    private Vector3 startPos;
+
+    /// <summary>
+    /// timer
+    /// </summary>
+    private float timer;
+    /// <summary>
     /// start function
     /// </summary>
-    public void Start()
+    public void Awake()
     {
         Player = GameObject.Find("Character");
         isPicked = false;
         transform.position = new Vector3(transform.position.x, transform.position.y + PickUpStandingHeight, transform.position.z);
         pickUpStartPos = transform.position.y;
         pickUpEndPos = transform.position.y + PickUpAboveHead;
+        startPos = transform.position;
     }
 
     /// <summary>
@@ -70,6 +80,8 @@ public class PickUpScript : MonoBehaviour
     public void Update()
     {
         transform.Rotate(0, Time.deltaTime * PickUpRotateSpeed, 0);
+        timer += Time.deltaTime;
+
 
         if (isPicked && !Player.GetComponent<Player>().isLerping)
         {
@@ -78,6 +90,10 @@ public class PickUpScript : MonoBehaviour
             Player.GetComponent<Player>().numYmer++;
             isPicked = false;
         }
+       
+            //transform.RotateAround(new Vector3(0, startPos.y, 0), Vector3.right, 30 * Time.deltaTime);
+        
+
     }
 
     /// <summary>
@@ -85,8 +101,18 @@ public class PickUpScript : MonoBehaviour
     /// </summary>
     public void TriggerPickUp()
     {
+        Debug.Log("PICKUP TRIGGERD");
+        isPicked = true;
         // lerp the pick up above player's head
         transform.position = new Vector3(transform.position.x, Mathf.Lerp(pickUpStartPos, pickUpEndPos, Time.deltaTime * PickUpGoesUpSpeed), transform.position.z);
-        isPicked = true;
+
+        if (GridData.gridManager.GetComponent<GridManager>().PickUpCount > 1)
+        {
+            //transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+            //transform.RotateAround(startPos, Vector3.right, 30 * Time.deltaTime);
+            this.transform.position = new Vector3((transform.position.x + Mathf.Sin(timer) ), transform.position.y, ((transform.position.z + Mathf.Cos(timer) )));
+
+        }
+
     }
 }

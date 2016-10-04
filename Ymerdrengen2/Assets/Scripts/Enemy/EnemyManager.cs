@@ -14,6 +14,8 @@ public class EnemyManager : MonoBehaviour {
     float stopTime = 0;
     float t = 0;
 
+    bool levelStart = false;
+
     bool levelDone = false;
 
     Dictionary<string, GameObject> monsterDictionary;
@@ -24,12 +26,24 @@ public class EnemyManager : MonoBehaviour {
             loadSpawnPattern("lvl" + curentLevel);
 
         fetchMonsters();
+
 	}
 
     // Update is called once per frame
     void Update ()
     {
-        playEvents();
+
+        if(!levelStart)
+        {
+            t += Time.deltaTime;
+            if (t > 0)
+            {
+                t = 0;
+                levelStart = true;
+            }
+        }
+        else
+            playEvents();
 	}
 
     private void playEvents()
@@ -99,17 +113,17 @@ public class EnemyManager : MonoBehaviour {
         switch (list.Length)
         {
             case 1:
-                enemyScript.init();
+                enemyScript.init(list[0]);
                 break;
             case 3:
                 int.TryParse(list[1], out x);
                 int.TryParse(list[2], out y);
-                enemyScript.init(x, y);
+                enemyScript.init(x, y, list[0]);
                 break;
             case 4:
                 int.TryParse(list[1], out x);
                 int.TryParse(list[2], out y);
-                enemyScript.init(x, y, parseDirection(list[3]));
+                enemyScript.init(x, y, parseDirection(list[3]), list[0]);
                 break;
         }
     }

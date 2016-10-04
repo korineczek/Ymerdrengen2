@@ -9,8 +9,14 @@ public class Options : MonoBehaviour {
 
     public GameObject menu;
     public GameObject options;
-    
 
+    private Slider volumeSlider;
+
+    void Start()
+    {
+        volumeSlider = GetComponentInChildren<Slider>();
+        volumeSlider.value = PlayerPrefs.GetFloat("SoundVolume");
+    }
 
     public void Dansk()
     {
@@ -24,7 +30,20 @@ public class Options : MonoBehaviour {
   
     public void SoundVolume()
     {
-        PlayerPrefs.SetFloat("SoundVolume", gameObject.GetComponent<Slider>().value);
+        PlayerPrefs.SetFloat("SoundVolume", volumeSlider.value);
+        var newVolume = volumeSlider.value * 100;
+        AudioData.SetSoundParameter(SoundParameterHandle.MasterVolume, newVolume);
+        //Debug.Log("Volume: " + newVolume);
+    }
+
+    public void SoundMusic()
+    {
+        PlayerPrefs.SetFloat("SoundMusic", gameObject.GetComponent<Slider>().value);
+    }
+
+    public void SoundSound()
+    {
+        PlayerPrefs.SetFloat("SoundSound", gameObject.GetComponent<Slider>().value);
     }
 
     public void SoundMute()
@@ -53,6 +72,9 @@ public class Options : MonoBehaviour {
 
     public void Back()
     {
+        PlayerPrefs.Save();
+
+        AudioData.PlaySound(SoundHandle.MenuClickBack);
         menu.SetActive(true);
         options.SetActive(false);
     }

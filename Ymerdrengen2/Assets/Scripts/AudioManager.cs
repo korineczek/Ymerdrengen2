@@ -3,63 +3,141 @@ using System.Collections;
 
 public enum SoundHandle
 {
-    FallDeath,
-    PieCharge,
-    Death,
-    CoffeeEnterScene, // called "CoffeEnterScene" in Soundbank
-    TomatoFall,
-    PlaceTile,
-    CherryFuse,
-    CherryExplosion,
     Jump,
     PowerUp,
-    TomatoSplat
+    PlaceTile,
+    Death,
+    FallDeath,
+    PieCharge,
+    CoffeeEnterScene,
+    CoffeeSip,
+    CoffeeSpit,
+    TomatoFall,
+    TomatoSplat,
+    CherryFall,
+    CherryFuse,
+    CherryExplosion,
+    MenuClickForward,
+    MenuClickBack
+}
+
+public enum StopSoundHandle
+{
+    Pause,
+    PieCharge
+}
+
+public enum SoundParameterHandle
+{
+    MasterVolume,
+    MusicVolume,
+    Distance
 }
 
 public class AudioManager : MonoBehaviour
 {
+    public bool InMenu = false;
+
     //private GameObject playerCharacter { get; set; }
     private AkBank soundBank;
-
+    
     void Start()
     {
         soundBank = GetComponent<AkBank>();
         AudioData.audioManager = this;
-    }
 
-    public void UnloadBank()
-    {
-        soundBank.UnloadBank(gameObject);
-    }
-
-    public void PlaySound(SoundHandle id)
-    {
-        switch (id) {
-            case SoundHandle.Jump:
-                AkSoundEngine.PostEvent("jump", gameObject); break;
-            case SoundHandle.PowerUp:
-                AkSoundEngine.PostEvent("powerUp", gameObject); break;
-            case SoundHandle.PlaceTile:
-                AkSoundEngine.PostEvent("placeTile", gameObject); break;
-            case SoundHandle.Death:
-                AkSoundEngine.PostEvent("death", gameObject); break;
-            case SoundHandle.FallDeath:
-                AkSoundEngine.PostEvent("fallDeath", gameObject); break;
-            case SoundHandle.PieCharge:
-                AkSoundEngine.PostEvent("PieCharge", gameObject); break;
-            case SoundHandle.CoffeeEnterScene:
-                AkSoundEngine.PostEvent("coffeEnterScene", gameObject); break;
-            case SoundHandle.TomatoFall:
-                AkSoundEngine.PostEvent("tomatoFall", gameObject); break;
-            case SoundHandle.TomatoSplat:
-                AkSoundEngine.PostEvent("tomatoSplat", gameObject); break;
-            case SoundHandle.CherryFuse:
-                AkSoundEngine.PostEvent("cherryFuse", gameObject); break;
-            case SoundHandle.CherryExplosion:
-                AkSoundEngine.PostEvent("cherryExplosion", gameObject); break;
-            default:
-                throw new System.Exception("Enum variant doesn't exist, update PlaySound method (AudioManager.cs)");
+        if (PlayerPrefs.GetInt("SoundMute") == 1) {
+            SetSoundParameter(SoundParameterHandle.MasterVolume, 0);
+            return;
         }
+        SetSoundParameter(SoundParameterHandle.MasterVolume, PlayerPrefs.GetFloat("SoundVolume"));
+
+        if (InMenu) {
+            StartMenuMusic();
+        } else {
+            StartMusic();
+        }
+    }
+
+    public void SetSoundParameter(SoundParameterHandle handle, float value, GameObject obj)
+    {
+        switch (handle) {
+            case SoundParameterHandle.Distance:
+                AkSoundEngine.SetRTPCValue("distanceToCharacter", value, obj); break;
+            case SoundParameterHandle.MasterVolume:
+                AkSoundEngine.SetRTPCValue("masterVolume", value, obj); break;
+            case SoundParameterHandle.MusicVolume:
+                AkSoundEngine.SetRTPCValue("musicVolume", value, obj); break;
+            default:
+                throw new System.Exception("Enum variant doesn't exist, update SetSoundParameter method (AudioManager.cs)");
+        }
+    }
+    public void SetSoundParameter(SoundParameterHandle handle, float value)
+    {
+        SetSoundParameter(handle, value, gameObject);
+    }
+
+    public void PlaySound(SoundHandle handle, GameObject obj)
+    {
+        string identifier = string.Empty;
+        switch (handle) {
+            case SoundHandle.Jump:
+                identifier = "jump";  break;
+            case SoundHandle.PowerUp:
+                identifier = "powerUp"; break;
+            case SoundHandle.PlaceTile:
+                identifier = "placeTile"; break;
+            case SoundHandle.Death:
+                identifier = "death"; break;
+            case SoundHandle.FallDeath:
+                identifier = "fallDeath"; break;
+            case SoundHandle.PieCharge:
+                identifier = "pieCharge"; break;
+            case SoundHandle.CoffeeEnterScene:
+                identifier = "coffeEnterScene"; break;
+            case SoundHandle.CoffeeSip:
+                identifier = "coffeSip"; break;
+            case SoundHandle.CoffeeSpit:
+                identifier = "coffeSpit"; break;
+            case SoundHandle.TomatoFall:
+                identifier = "tomatoFall"; break;
+            case SoundHandle.TomatoSplat:
+                identifier = "tomatoSplat"; break;
+            case SoundHandle.CherryFall:
+                identifier = "cherryFall"; break;
+            case SoundHandle.CherryFuse:
+                identifier = "cherryFuse"; break;
+            case SoundHandle.CherryExplosion:
+                identifier = "cherryExplosion"; break;
+            case SoundHandle.MenuClickForward:
+                identifier = "menuClickFoward"; break; // Spelling Error.
+            case SoundHandle.MenuClickBack:
+                identifier = "menuClickBack"; break;
+            default:
+                throw new System.NotImplementedException("Enum variant doesn't exist, update PlaySound method (AudioManager.cs)");
+        }
+
+        AkSoundEngine.PostEvent(identifier, obj);
+    }
+
+    public void StopSound(StopSoundHandle handle, GameObject obj)
+    {
+        string identifier = string.Empty;
+        switch (handle) {
+            case StopSoundHandle.Pause:
+                identifier = "pause"; break;
+            case StopSoundHandle.PieCharge:
+                identifier = "pieChargeStop"; break;
+            default:
+                throw new System.NotImplementedException("Enum variant doesn't exist, update StopSound method (AudioManager.cs)");
+        }
+
+        AkSoundEngine.PostEvent(identifier, obj);
+    }
+
+    public void PlaySound(SoundHandle handle)
+    {
+        PlaySound(handle, gameObject);
     }
 
     public void StartMusic()
@@ -70,5 +148,15 @@ public class AudioManager : MonoBehaviour
     public void StopMusic()
     {
         AkSoundEngine.PostEvent("musicStop", gameObject);
+    }
+    
+    public void StartMenuMusic()
+    {
+        AkSoundEngine.PostEvent("menuMusicPlay", gameObject);
+    }
+
+    public void StopMenuMusic()
+    {
+        AkSoundEngine.PostEvent("menuMusicStop", gameObject);
     }
 }
