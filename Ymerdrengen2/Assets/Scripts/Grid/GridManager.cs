@@ -61,10 +61,14 @@ public class GridManager : MonoBehaviour {
         targetPickUp = new GameObject[numPickUpsCanCarry];
         PickUpCount = 0;
         possiblePlacement = false;
-        TriggerTiles(true);
         if (NewTileInitializer.Length > 0)
             initNewTile(NewTileInitializer);  
 
+    }
+
+    public void triggerTileAnimation()
+    {
+        TriggerTiles(true);
     }
 
     void Update()
@@ -84,6 +88,9 @@ public class GridManager : MonoBehaviour {
             PlayerCharacter.gameObject.SetActive(false);
             isIntroAnimationPresent = true;
             obj.transform.position = PlayerCharacter.transform.position;
+        }else
+        { //If no animation is present play tile animations
+            triggerTileAnimation();
         }
     }
 

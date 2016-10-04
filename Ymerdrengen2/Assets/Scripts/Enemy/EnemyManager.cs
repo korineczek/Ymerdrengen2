@@ -15,34 +15,30 @@ public class EnemyManager : MonoBehaviour {
     float t = 0;
 
     bool levelStart = false;
-
     bool levelDone = false;
 
     Dictionary<string, GameObject> monsterDictionary;
 
 	// Use this for initialization
 	void Start () {
+        GridData.enemyManager = this;
+
         if(curSpawnPattern == null)
             loadSpawnPattern("lvl" + curentLevel);
 
         fetchMonsters();
-
 	}
+
+    public void startLevel()
+    {
+        levelStart = true;
+    }
 
     // Update is called once per frame
     void Update ()
     {
 
-        if(!levelStart)
-        {
-            t += Time.deltaTime;
-            if (t > 4)
-            {
-                t = 0;
-                levelStart = true;
-            }
-        }
-        else
+        if(levelStart)
             playEvents();
 	}
 
