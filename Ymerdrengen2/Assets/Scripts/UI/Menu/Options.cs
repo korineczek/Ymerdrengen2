@@ -9,6 +9,7 @@ public class Options : MonoBehaviour {
 
     public GameObject menu;
     public GameObject options;
+    public int credits;
 
     private Slider volumeSlider;
 
@@ -58,6 +59,12 @@ public class Options : MonoBehaviour {
             PlayerPrefs.SetInt("SoundMute", 0);
         }
     }
+
+    public void StartCredits()
+    {
+        Application.LoadLevel(credits);
+    }
+
 
     public void ResetData()
     {
