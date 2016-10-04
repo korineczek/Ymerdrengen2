@@ -13,9 +13,12 @@ public class ConeBuddy : WalkingEnemy
     public float holdTime = 2f;
     public float reverseTime = 2f;
 
+    filledScript filler;
+
     public GameObject particles;
 
     Animator anim;
+    
 
     /*
      *  Controls the shape of attack of the conebuddy
@@ -28,12 +31,18 @@ public class ConeBuddy : WalkingEnemy
 
     void Start()
     {
+        filler = GridData._UIManager.getCoffeInd();
         anim = this.GetComponent<Animator>();
         AudioData.PlaySound(SoundHandle.CoffeeEnterScene, gameObject);
     }
 
     public override void behavior()
     {
+
+        if (hold)
+        {
+            filler.SetFillAmount(timer / holdTime + 0.1f);
+        }
 
         timer += Time.deltaTime;
         //Walking
@@ -53,6 +62,9 @@ public class ConeBuddy : WalkingEnemy
 
                 if (hold)
                 {
+                    //Enables the fillerObject
+                    filler.setPos(newPos, direction);
+
                     AudioData.PlaySound(SoundHandle.CoffeeSip, gameObject);
                     if(anim != null)
                     {
@@ -61,10 +73,7 @@ public class ConeBuddy : WalkingEnemy
                         anim.SetTrigger("Walk->Attack");
                     }
                 }
-
                     //particles.SetActive(true);
-                
-
             }
         }
         //IF enter reverse direction and go back to walking
@@ -86,10 +95,12 @@ public class ConeBuddy : WalkingEnemy
         }
 
         //Holding still
+
     }
 
     private void fire()
     {
+        GridData._UIManager.disableSpawnInd(filler);
         //GridData.gridManager.triggerConeFireEvent();
         for(int x = 0; x < attackPattern.GetLength(1); x++)
         {
