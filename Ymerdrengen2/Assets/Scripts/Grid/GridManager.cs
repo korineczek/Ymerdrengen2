@@ -180,6 +180,8 @@ public class GridManager : MonoBehaviour {
             GameObject tile = Instantiate(tileObj, this.transform) as GameObject;
             tileObjects[x, y] = tile;
             tile.transform.position = new Vector3(x + offset, 0f, y + offset);
+            tile.transform.GetChild(0).gameObject.SetActive(true);
+            tile.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Raise");
             tile.transform.GetChild(0).GetComponent<Animator>().speed = 3;
             getTile(x, y).ToggleFlags(FieldStatus.Floor);
         } 
