@@ -18,7 +18,7 @@ public class LevelSelection : MonoBehaviour {
         {
             foreach (Animator level in levels)
             {
-                level.SetBool("Fade", true);
+                //level.SetBool("Fade", true);
             }
 
         }
