@@ -24,21 +24,13 @@ public class LevelProgression : MonoBehaviour {
     public float trackerTime;
     float levelTime;
 
+
+
     // Use this for initialization
     void Start () {
         Time.timeScale = 1f;
         levelInfo.GetComponent<Text>().text = Application.loadedLevel.ToString();
-        GridData.lvlProgression = this;
-        if (GridData.gridManager.isIntroAnimationPresent)
-        {
-            StartCoroutine(LevelBegin(7.5f));
-            Debug.Log("Animation detected adding start time");
-        }
-        else
-        {
-            StartCoroutine(LevelBegin(5));
-        }
-        
+        StartCoroutine(LevelBegin());
     }
 	
 	// Update is called once per frame
@@ -79,20 +71,21 @@ public class LevelProgression : MonoBehaviour {
         Time.timeScale = 0f;
     }
 
-    IEnumerator LevelBegin(float time)
+    IEnumerator LevelBegin()
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(5);
         StartGame();
-        GridData.enemyManager.startLevel();
+        yield break;
     }
 
     IEnumerator LevelTransition()
     {
         // Animation plz
- 
-        GridData.gridManager.DropTiles();
+
+
+        GridData.gridManager.TriggerTiles(false);
         levelInfo.GetComponent<Text>().color = Color.yellow;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(4);
         tracker.SetActive(false);
         pause.SetActive(false);
         winText.SetActive(true);
