@@ -280,7 +280,7 @@ public class GridManager : MonoBehaviour {
         if (newPosHasFloor)
         {
             PlayerCharacter.isLerping = true;
-            PlayerCharacter.Move(dir);
+            PlayerCharacter.Move(dir,false);
             PlayerPosition = newPos;
 
             // if player steps in a tile where a pick up exists
@@ -312,7 +312,7 @@ public class GridManager : MonoBehaviour {
             addTile((int)newPos.x, (int)newPos.y);
             // Move the player to the new tile
             PlayerCharacter.isLerping = true;
-            PlayerCharacter.Move(dir);
+            PlayerCharacter.Move(dir,false);
             PlayerPosition = newPos;
             // destroy the pick up above player's head
             Destroy(targetPickUp[PickUpCount]);
@@ -352,16 +352,29 @@ public class GridManager : MonoBehaviour {
         }
         else {
             if(!Godmode) { 
-                killPlayer();
                 AudioData.PlaySound(SoundHandle.FallDeath);
+                PlayerCharacter.isLerping = true;
+                PlayerCharacter.Move(dir,true);
+                Debug.Log("diwjaoida");
+                StartCoroutine(falling());
             }
         }
+    }
+
+    IEnumerator falling()
+    {
+        GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = false;
+        yield return new WaitForSeconds(1f);
+        GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = true;
+        killPlayer();
+
     }
 
     public void killPlayer()
     {
         PlayerCharacter.GetComponent<Player>().loseYogurt();
         PlayerCharacter.gameObject.SetActive(false);
+        //Debug.Log("diwjaoida");
 
         GameObject.FindGameObjectWithTag("Progression").GetComponent<LevelProgression>().Death();
         AudioData.StopMusic();
