@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BFSTEST.cs" />
      <Compile Include="Assets\Credits.cs" />
      <Compile Include="Assets\GodModeScript.cs" />
      <Compile Include="Assets\Graphics\Shaders\Glow\Script\MKGlow.cs" />
