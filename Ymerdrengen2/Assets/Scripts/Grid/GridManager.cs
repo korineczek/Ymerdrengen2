@@ -24,6 +24,7 @@ public class GridManager : MonoBehaviour {
     GameObject[] targetPickUp;
     public int PickUpCount;
     public bool possiblePlacement;
+
     private bool killEventTriggered = false;
 
     public Player PlayerCharacter;
@@ -147,7 +148,22 @@ public class GridManager : MonoBehaviour {
             tileObjects[x, y] = null;
             getTile(x,y).ToggleFlags(FieldStatus.Floor);
         }
-        initNewTile(NewTileInitializer);
+        NewTilePossiblePlace(new Vector2(x, y));
+
+        //if (possiblePlacement)
+        //{
+        //    object[] obj = GameObject.FindObjectsOfType(typeof(GameObject));
+        //    foreach (object o in obj)
+        //    {
+        //        GameObject g = (GameObject)o;
+        //        if (g.name == "PossTileObject(Clone)")
+        //        {
+        //            Destroy(g.gameObject);
+        //        }
+        //    }
+        //    NewTileInitializer[x + (y * gridSize)] = true;
+        //    initNewTile(NewTileInitializer);
+        //}
     }
 
     public void addTile(int x, int y)
