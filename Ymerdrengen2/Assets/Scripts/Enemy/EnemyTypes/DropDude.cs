@@ -230,7 +230,7 @@ public class DropDude : Enemy {
         {
             for(int z = 0; z < size; z++)
             {
-                GridData.gridManager.hitTile((int)(internalX) + x, (int)(internalZ) + z);
+                GridData.gridManager.hitTile((int)(internalX) + x, (int)(internalZ) + z, "DropDude");
             }
         }
     }

@@ -147,6 +147,7 @@ public class GridManager : MonoBehaviour {
             tileObjects[x, y] = null;
             getTile(x,y).ToggleFlags(FieldStatus.Floor);
         }
+        initNewTile(NewTileInitializer);
     }
 
     public void addTile(int x, int y)
@@ -178,7 +179,7 @@ public class GridManager : MonoBehaviour {
         return GridData.grid[(int)coord.x, (int)coord.y];
     }
 
-    public bool hitTile(int x, int y)
+    public bool hitTile(int x, int y, string monsterTag)
     {
         if (!Godmode)
         {
@@ -188,6 +189,22 @@ public class GridManager : MonoBehaviour {
                 killEventTriggered = true;
                 killPlayer();
                 AudioData.PlaySound(SoundHandle.Death);
+
+                if(monsterTag == "ConeBuddy")
+                {
+                    GameObject.FindGameObjectWithTag("Progression").GetComponent<LevelProgression>().CoffieDeath();
+                }
+
+                if (monsterTag == "DropDude")
+                {
+                    GameObject.FindGameObjectWithTag("Progression").GetComponent<LevelProgression>().CherryDeath();
+                }
+
+                if (monsterTag == "LineGuy")
+                {
+                    GameObject.FindGameObjectWithTag("Progression").GetComponent<LevelProgression>().PieDeath();
+                }
+
             }
             return isPlayerHit;
         }
@@ -387,13 +404,14 @@ public class GridManager : MonoBehaviour {
 
     public void NewTilePossiblePlace(Vector2 pos)
     {
-        //possiblePlacement = true;
+        // this is used for sandra to choose which positions to glow
         GameObject possibleTile = Instantiate(Resources.Load("Prefabs/PossTileObject") as GameObject);
         possibleTile.transform.position = new Vector3(pos.x + offset, 0, pos.y + offset);
 
         if (!getTile(pos).IsNewTile())
             getTile(pos).ToggleFlags(FieldStatus.NewTile);
 
+        // this is used for glowing all possible positions
         //for (int x = 0; x < gridSize; x++)
         //{
         //    for (int y = 0; y < gridSize; y++)
