@@ -3,8 +3,10 @@
 public class AudioData : ScriptableObject
 {
     public static AudioManager audioManager;
-
-
+    
+    public static bool IsMuted { get; set; }
+    public static int MasterVolume { get; set; }
+    public static int MusicVolume { get; set; }
 
     public static void SetSoundParameter(SoundParameterHandle handle, float value, GameObject obj)
     {
@@ -44,5 +46,15 @@ public class AudioData : ScriptableObject
     public static void StopMusic()
     {
         audioManager.StopMusic();
+    }
+
+    public static void StartMenuMusic()
+    {
+        audioManager.StartMenuMusic();
+    }
+
+    public static void StopMenuMusic()
+    {
+        audioManager.StopMenuMusic();
     }
 }

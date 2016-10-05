@@ -54,6 +54,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         soundBank = GetComponent<AkBank>();
+        Debug.Log("AudioManager Awakens.");
         AudioData.audioManager = this;
 
         if (PlayerPrefs.GetInt("SoundMute") == 1) {
@@ -62,6 +63,7 @@ public class AudioManager : MonoBehaviour
         }
         SetSoundParameter(SoundParameterHandle.MasterVolume, PlayerPrefs.GetInt("SoundVolume"));
 
+        Debug.Log("Start Music");
         if (InMenu) {
             StartMenuMusic();
         } else {
@@ -84,6 +86,7 @@ public class AudioManager : MonoBehaviour
                 throw new System.Exception("Enum variant doesn't exist, update SetSoundParameter method (AudioManager.cs)");
         }
     }
+
     public void SetSoundParameter(SoundParameterHandle handle, float value)
     {
         SetSoundParameter(handle, value, gameObject);
