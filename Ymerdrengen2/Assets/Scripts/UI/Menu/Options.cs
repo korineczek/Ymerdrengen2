@@ -11,10 +11,27 @@ public class Options : MonoBehaviour {
     public GameObject options;
     public int credits;
 
+    private Slider masterVolSlider;
+    private Slider musicVolSlider;
+    private Slider soundVolSlider;
+
     void Start()
     {
-        //volumeSlider = GetComponentInChildren<Slider>();
-        //volumeSlider.value = PlayerPrefs.GetFloat("SoundVolume");
+        var allSliders = GetComponentsInChildren<Slider>();
+        foreach (Slider s in allSliders) {
+            switch (s.gameObject.name) {
+                case "Master Slider":
+                    masterVolSlider = s; break;
+                case "Music Slider":
+                    musicVolSlider = s; break;
+                case "Sounds Slider":
+                    soundVolSlider = s; break;
+                default: Debug.LogWarning("Found unknown slider in '" + s.gameObject.name + "'!"); break;
+            }
+        }
+
+        masterVolSlider.value = System.Convert.ToSingle(PlayerPrefs.GetInt("SoundVolume")) / 100f;
+        musicVolSlider.value = System.Convert.ToSingle(PlayerPrefs.GetInt("SoundMusic")) / 100f;
     }
 
     public void Dansk()
@@ -30,21 +47,20 @@ public class Options : MonoBehaviour {
     public void SoundVolume(GameObject obj)
     {
         var newVolume = (int)(obj.GetComponent<Slider>().value * 100f);
-        PlayerPrefs.SetInt("SoundVolume", newVolume);
         AudioData.SetSoundParameter(SoundParameterHandle.MasterVolume, newVolume);
+        AudioData.MasterVolume = newVolume;
     }
 
     public void SoundMusic(GameObject obj)
     {
         var newVolume = (int)(obj.GetComponent<Slider>().value * 100f);
-        PlayerPrefs.SetInt("SoundMusic", newVolume);
         AudioData.SetSoundParameter(SoundParameterHandle.MusicVolume, newVolume);
+        AudioData.MusicVolume = newVolume;
     }
 
     public void SoundSound(GameObject obj)
     {
         var newVolume = (int)(obj.GetComponent<Slider>().value * 100f);
-        PlayerPrefs.SetInt("SoundSound", newVolume);
         AudioData.SetSoundParameter(SoundParameterHandle.SoundVolume, newVolume);
     }
 
@@ -53,10 +69,12 @@ public class Options : MonoBehaviour {
         if(PlayerPrefs.GetInt("SoundMute") == 0)
         {
             PlayerPrefs.SetInt("SoundMute", 1);
+            AudioData.StopMenuMusic();
         }
         else if (PlayerPrefs.GetInt("SoundMute") == 1)
         {
             PlayerPrefs.SetInt("SoundMute", 0);
+            AudioData.StartMenuMusic();
         }
     }
 
@@ -82,6 +100,12 @@ public class Options : MonoBehaviour {
 
     public void Back()
     {
+        var newMaster = masterVolSlider.value * 100f;
+        var newMusic = musicVolSlider.value * 100f;
+        var newSound = soundVolSlider.value * 100f;
+        PlayerPrefs.SetInt("SoundMusic", (int)newMaster);
+        PlayerPrefs.SetInt("SoundVolume", (int)newMusic);
+        PlayerPrefs.SetInt("SoundSound", (int)newSound);
         PlayerPrefs.Save();
 
         AudioData.PlaySound(SoundHandle.MenuClickBack);
