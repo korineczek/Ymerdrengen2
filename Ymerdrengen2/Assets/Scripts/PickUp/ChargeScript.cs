@@ -78,8 +78,10 @@ public class ChargeScript : MonoBehaviour
 
         this.transform.SetParent(Player.transform);
 
-        if (GridData.gridManager.PickUpCount > 1)
+        if (GridData.gridManager.PickUpCount== 1)
         {
+            // lerp the pick up above player's head
+            transform.position = new Vector3(Player.transform.position.x, transform.position.y + PickUpAboveHead, Player.transform.position.z);
             // place picked ymers on a circle 
             //this.transform.position = new Vector3((transform.position.x + Mathf.Sin(timer)), transform.position.y, ((transform.position.z + Mathf.Cos(timer))));
         }

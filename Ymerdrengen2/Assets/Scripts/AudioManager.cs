@@ -51,7 +51,7 @@ public class AudioManager : MonoBehaviour
     //private GameObject playerCharacter { get; set; }
     private AkBank soundBank;
     
-    void Start()
+    void Awake()
     {
         soundBank = GetComponent<AkBank>();
         AudioData.audioManager = this;
@@ -61,10 +61,16 @@ public class AudioManager : MonoBehaviour
             return;
         }
         SetSoundParameter(SoundParameterHandle.MasterVolume, PlayerPrefs.GetInt("SoundVolume"));
+    }
 
-        if (InMenu) {
+    void Start()
+    {
+        if (InMenu)
+        {
             StartMenuMusic();
-        } else {
+        }
+        else
+        {
             StartMusic();
         }
     }

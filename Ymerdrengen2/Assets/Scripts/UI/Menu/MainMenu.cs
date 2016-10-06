@@ -60,6 +60,9 @@ public class MainMenu : MonoBehaviour {
 
     public void BackToMenu()
     {
+        if (AudioData.audioManager != null)
+            GameObject.Destroy(AudioData.audioManager.gameObject); // Hacked to reset audio
+
         SceneManager.LoadScene(0);
     }
 

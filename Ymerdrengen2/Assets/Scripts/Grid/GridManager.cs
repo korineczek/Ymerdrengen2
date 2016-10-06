@@ -58,14 +58,14 @@ public class GridManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        Godmode = GameObject.Find("GodModeObject").GetComponent<GodModeScript>().Godmode;
+        //Godmode = GameObject.Find("GodModeObject").GetComponent<GodModeScript>().Godmode;
         PickUpDic = new Dictionary<Vector2, GameObject>();
         numPickUpsCanCarry = PlayerCharacter.GetComponent<Player>().maxYmer + 1;
         targetPickUp = new GameObject[numPickUpsCanCarry];
         PickUpCount = 0;
         possiblePlacement = false;
         tileAdded = false;
-
+        Godmode = false;
         if (NewTileInitializer.Length > 0)
             initNewTile(NewTileInitializer);  
 
@@ -353,7 +353,6 @@ public class GridManager : MonoBehaviour {
                 AudioData.PlaySound(SoundHandle.FallDeath);
                 PlayerCharacter.isLerping = true;
                 PlayerCharacter.Move(dir,true);
-                Debug.Log("diwjaoida");
                 StartCoroutine(falling());
             }
         }
@@ -575,9 +574,12 @@ public class GridManager : MonoBehaviour {
 
     IEnumerator trigger(bool started)
     {
-        AudioData.PlaySound(SoundHandle.TilesClicks);
-        AudioData.PlaySound(SoundHandle.TilesGrinding);
-        AudioData.PlaySound(SoundHandle.TilesRubble);
+        if (AudioData.audioManager != null)
+        {
+            AudioData.PlaySound(SoundHandle.TilesClicks);
+            AudioData.PlaySound(SoundHandle.TilesGrinding);
+            AudioData.PlaySound(SoundHandle.TilesRubble);
+        }
         yield return new WaitForSeconds(0.8f); // Times the clicks to the tiles.
 
         foreach (var entry in listVecs)
@@ -595,10 +597,12 @@ public class GridManager : MonoBehaviour {
 
         }
 
-        AudioData.StopSound(StopSoundHandle.TilesRubble);
-        AudioData.StopSound(StopSoundHandle.TilesGrinding);
-        yield return new WaitForSeconds(0.1f);
-        AudioData.StopSound(StopSoundHandle.TilesClicks);
+        if (AudioData.audioManager != null) { 
+            AudioData.StopSound(StopSoundHandle.TilesRubble);
+            AudioData.StopSound(StopSoundHandle.TilesGrinding);
+            yield return new WaitForSeconds(0.1f);
+            AudioData.StopSound(StopSoundHandle.TilesClicks);
+        }
     }
 
 }

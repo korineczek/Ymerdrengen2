@@ -23,6 +23,7 @@ public class LevelProgression : MonoBehaviour {
     public int nextLevel;
     public bool progressTimer = false;
     public float trackerTime;
+    public bool showText;
     float levelTime;
 
 
@@ -73,6 +74,7 @@ public class LevelProgression : MonoBehaviour {
     public void StartGame()
     {
         progressTimer = true;
+        showText = false;
     }
 
     public void Death()
@@ -85,28 +87,28 @@ public class LevelProgression : MonoBehaviour {
 
     IEnumerator LevelBegin(float time)
     {
+        showText = true;
         GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = false;
         yield return new WaitForSeconds(time);
-        GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = true;
         StartGame();
         GridData.enemyManager.startLevel();
         if (GridData.gridManager.isIntroAnimationPresent)
         {
             GridData.gridManager.triggerTileAnimations();
+            yield return new WaitForSeconds(2);
         }
+        GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = true;
+        showText = false;
     }
 
     IEnumerator LevelTransition()
     {
         // Animation plz
-
-
         GridData.gridManager.TriggerTiles(false);
         levelInfo.GetComponent<Text>().color = Color.yellow;
         GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = false;
         yield return new WaitForSeconds(4);
         AudioData.PlaySound(SoundHandle.Win); // Hack to play winning sound.
-        GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = true;
         tracker.SetActive(false);
         pause.SetActive(false);
         winText.SetActive(true);

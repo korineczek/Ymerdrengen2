@@ -68,6 +68,9 @@ public class Options : MonoBehaviour {
 
     public void ResetData()
     {
+        if (AudioData.audioManager != null)
+            GameObject.Destroy(AudioData.audioManager.gameObject); // Hacked to reset audio
+
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene(0);
         //Application.LoadLevel(0);
