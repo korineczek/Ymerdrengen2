@@ -97,7 +97,6 @@ public class LevelProgression : MonoBehaviour {
             GridData.gridManager.triggerTileAnimations();
             yield return new WaitForSeconds(2);
         }
-        GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = true;
         showText = false;
     }
 

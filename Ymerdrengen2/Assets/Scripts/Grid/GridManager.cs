@@ -596,6 +596,12 @@ public class GridManager : MonoBehaviour {
             }
 
         }
+        if (started)
+        {
+            yield return new WaitForSeconds(1f);
+            GameObject.Find("Managers").transform.FindChild("inputManager").GetComponent<SwipeManager>().enabled = true;
+        }
+
 
         if (AudioData.audioManager != null) { 
             AudioData.StopSound(StopSoundHandle.TilesRubble);
